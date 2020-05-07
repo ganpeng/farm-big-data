@@ -1,13 +1,16 @@
 <template>
     <div class="app-container">
-        <div v-show="showHeaderAndAside" class="header clearfix">
+        <div class="header clearfix">
             <ul class="nav-list clearfix float-left">
+                <!--
                 <li v-for="(item, index) in navList" :key="index"
                     :class="['nav-item', active === index ? 'active' : '']"
                     @click="changeActive(index)">
                     {{item}}
                 </li>
+                -->
             </ul>
+            <!--
             <div :class="[active === navList.length - 1 ? 'active' : '']"
                 class="user-info float-right clearfix">
                 <svg-icon icon-class="avatar_icon"/>
@@ -16,8 +19,9 @@
                     <svg-icon icon-class="logout"/>
                 </div>
             </div>
+            -->
         </div>
-        <div v-show="showHeaderAndAside" class="aside">
+        <div class="aside">
             <div class="logo">
                 <svg-icon icon-class="example"/>
             </div>
@@ -62,8 +66,7 @@ export default {
             defaultActive: '',
             minHeight: 400,
             top: 60,
-            left: 200,
-            showHeaderAndAside: true
+            left: 200
         };
     },
     computed: {

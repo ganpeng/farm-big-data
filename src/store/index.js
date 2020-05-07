@@ -7,6 +7,7 @@ import scale from './modules/scale';
 import common from './modules/common';
 import task from './modules/task';
 import setting from './modules/setting';
+import pee from './modules/pee';
 
 Vue.use(Vuex);
 
@@ -17,7 +18,9 @@ const store = new Vuex.Store({
         account,
         scale,
         task,
-        setting
+        setting,
+        //  农业大数据
+        pee
     }
 });
 
