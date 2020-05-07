@@ -1,12 +1,12 @@
 <template>
-    <div id="app">
-        <router-view/>
+    <div class="error-container">
+        404
     </div>
 </template>
 <script>
 export default {
-    name: 'App'
-}
+    name: 'Error'
+};
 </script>
 <style lang="scss" scoped>
 

@@ -1,12 +1,12 @@
 <template>
-    <div id="app">
-        <router-view/>
+    <div class="user-edit-container">
+        UserEdit
     </div>
 </template>
 <script>
 export default {
-    name: 'App'
-}
+    name: 'UserEdit'
+};
 </script>
 <style lang="scss" scoped>
 

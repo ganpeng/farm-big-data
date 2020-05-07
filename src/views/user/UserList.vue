@@ -1,12 +1,12 @@
 <template>
-    <div id="app">
-        <router-view/>
+    <div class="user-list-container">
+        UserList
     </div>
 </template>
 <script>
 export default {
-    name: 'App'
-}
+    name: 'UserList'
+};
 </script>
 <style lang="scss" scoped>
 

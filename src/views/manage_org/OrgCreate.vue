@@ -1,11 +1,11 @@
 <template>
-    <div id="app">
-        <router-view/>
+    <div class="org-create-container">
+        OrgCreate
     </div>
 </template>
 <script>
 export default {
-    name: 'App'
+    name: 'OrgCreate'
 }
 </script>
 <style lang="scss" scoped>

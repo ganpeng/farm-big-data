@@ -1,13 +1,14 @@
 <template>
-    <div id="app">
-        <router-view/>
+    <div class="org-edit-container">
+        OrgEdit
     </div>
 </template>
 <script>
 export default {
-    name: 'App'
+    name: 'OrgEdit'
 }
 </script>
+
 <style lang="scss" scoped>
 
 </style>

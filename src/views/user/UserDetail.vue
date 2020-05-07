@@ -1,11 +1,11 @@
 <template>
-    <div id="app">
-        <router-view/>
+    <div class="user-detail-container">
+        UserDetail
     </div>
 </template>
 <script>
 export default {
-    name: 'App'
+    name: 'UserDetail'
 }
 </script>
 <style lang="scss" scoped>
