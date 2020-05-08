@@ -1,13 +1,13 @@
 <template>
-    <div class="org-create-container">
-        OrgCreate
+    <div class="home-container">
+        Home
     </div>
 </template>
 <script>
 export default {
-    name: 'OrgCreate'
-}
+    name: 'Home'
+};
 </script>
 <style lang="scss" scoped>
-
+.home-container {}
 </style>

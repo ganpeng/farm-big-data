@@ -11,7 +11,6 @@ import '@/assets/css/global.less';
 import '@/assets/css/global.scss';
 
 //  获取service
-import service from '@/service';
 import store from '@/store'
 import router from '@/router';
 import filterInit from '@/util/filter';
@@ -24,14 +23,10 @@ import './icons';
 
 filterInit(Vue);
 
-Vue.prototype.$service = service;
 Vue.prototype.$util = util;
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);
-
-Vue.use(VTree);
-Vue.use(VSelectTree);
 
 new Vue({
     router,

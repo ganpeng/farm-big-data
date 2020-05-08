@@ -1,13 +1,13 @@
 <template>
-    <div class="user-list-container">
-        UserList
+    <div class="farm-visual-container">
+        FarmVisual
     </div>
 </template>
 <script>
 export default {
-    name: 'UserList'
+    name: 'FarmVisual'
 };
 </script>
 <style lang="scss" scoped>
-
+.farm-visual-container {}
 </style>

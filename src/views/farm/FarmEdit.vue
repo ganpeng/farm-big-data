@@ -1,13 +1,13 @@
 <template>
-    <div class="org-detail container">
-        OrgDetail
+    <div class="farm-edit-container">
+        FarmEdit
     </div>
 </template>
 <script>
 export default {
-    name: 'OrgDetail'
-}
+    name: 'FarmEdit'
+};
 </script>
 <style lang="scss" scoped>
-
+.farm-edit-container {}
 </style>

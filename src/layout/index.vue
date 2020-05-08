@@ -1,50 +1,69 @@
 <template>
     <div class="app-container">
         <div class="header clearfix">
-            <ul class="nav-list clearfix float-left">
-                <!--
-                <li v-for="(item, index) in navList" :key="index"
-                    :class="['nav-item', active === index ? 'active' : '']"
-                    @click="changeActive(index)">
-                    {{item}}
-                </li>
-                -->
-            </ul>
-            <!--
-            <div :class="[active === navList.length - 1 ? 'active' : '']"
-                class="user-info float-right clearfix">
+            <div class="user-info float-right clearfix">
                 <svg-icon icon-class="avatar_icon"/>
-                <label @click="changeActive(navList.length - 1)">{{user.name}}</label>
+                <label>admin</label>
                 <div class="logout" @click="logout">
                     <svg-icon icon-class="logout"/>
                 </div>
             </div>
-            -->
         </div>
         <div class="aside">
             <div class="logo">
                 <svg-icon icon-class="example"/>
             </div>
-            <ul class="aside-list">
-                <li v-for="(asides, index) in asideList.filter((item, _index) => _index === active)" :key="index" class="aside-item">
-                    <el-menu
-                        :default-active="defaultActive"
-                        class="el-menu-vertical-demo"
-                        background-color="transparent"
-                        text-color="#6a707c"
-                        active-text-color="#fff">
-                        <el-menu-item
-                            v-for="(item, innerIndex) in asides"
-                            :key="innerIndex"
-                            :index="item.uri"
-                            :class="[defaultActive === item.uri ? 'is-active' : '']"
-                            @click="menuChangeHandler(item)">
-                            <svg-icon icon-class="example"/>
-                            <span slot="title">{{item.text}}</span>
-                        </el-menu-item>
-                    </el-menu>
-                </li>
-            </ul>
+            <el-menu
+                router
+                :default-active="activeMenu"
+                class="aside-list">
+                <el-menu-item index="/dashboard">
+                    <i class="el-icon-menu"></i>
+                    <span slot="title">数据概览</span>
+                </el-menu-item>
+                <el-submenu index="2">
+                    <template slot="title">
+                        <i class="el-icon-location"></i>
+                        <span>农场管理</span>
+                    </template>
+                    <el-menu-item-group>
+                        <el-menu-item index="/farm/list">农场信息管理</el-menu-item>
+                        <el-menu-item index="/farm/visual">可视农场</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-submenu index="3">
+                    <template slot="title">
+                        <i class="el-icon-location"></i>
+                        <span>销售管理</span>
+                    </template>
+                    <el-menu-item-group>
+                        <el-menu-item index="/sale/tracing">溯源农品</el-menu-item>
+                        <el-menu-item index="/sale/channel">渠道管理</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-menu-item index="/pee/list">
+                    <i class="el-icon-menu"></i>
+                    <span slot="title">物环设备</span>
+                </el-menu-item>
+                <el-menu-item index="/base-station">
+                    <i class="el-icon-menu"></i>
+                    <span slot="title">基站管理</span>
+                </el-menu-item>
+                <el-menu-item index="/logistics">
+                    <i class="el-icon-menu"></i>
+                    <span slot="title">物流管理</span>
+                </el-menu-item>
+                <el-submenu index="7">
+                    <template slot="title">
+                        <i class="el-icon-location"></i>
+                        <span>数据洞察</span>
+                    </template>
+                    <el-menu-item-group>
+                        <el-menu-item index="/data/statistics">数据统计</el-menu-item>
+                        <el-menu-item index="/data/alert">大数据预警</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+            </el-menu>
         </div>
         <div :style="contentStyleStr()" id="global-content" class="content">
             <div class="content-wrapper" :style="`min-height: ${minHeight}px`">
@@ -54,16 +73,10 @@
     </div>
 </template>
 <script>
-import {mapGetters, mapActions} from 'vuex';
-import _ from 'lodash';
-import constants from '@/util/constants';
-
+import {mapGetters} from 'vuex';
 export default {
     data() {
         return {
-            layoutId: '',
-            active: 0,
-            defaultActive: '',
             minHeight: 400,
             top: 60,
             left: 200
@@ -73,74 +86,26 @@ export default {
         ...mapGetters({
             user: 'common/user'
         }),
-        navList() {
-            if (this.user.role === 'BACKEND') {
-                return constants.NAV_LIST;
-            } else {
-                return constants.ORG_NAV_LIST;
+        activeMenu() {
+            const route = this.$route;
+            const { meta, path } = route;
+            if (meta.activeMenu) {
+                return meta.activeMenu;
             }
-        },
-        asideList() {
-            if (this.user.role === 'BACKEND') {
-                return constants.ASIDE_LIST;
-            } else {
-                return constants.ORG_ASIDE_LIST;
-            }
+            return path
         }
-    },
-    mounted() {
-        let content = document.querySelector('.content');
-        content.addEventListener('scroll', this.toggleFixedBtnContainer.bind(this), false);
     },
     async created() {
         try {
-            await this.getUserByToken();
-            await this.$nextTick();
-
-            let {active, activePath} = this.getActivePath();
-            this.active = active;
-            this.defaultActive = activePath;
             this.setMinHeight();
-
             window.addEventListener('resize', this.setMinHeight, false);
         } catch (err) {
             console.log(err);
         }
     },
     methods: {
-        ...mapActions({
-            getUserByToken: 'common/getUserByToken'
-        }),
         contentStyleStr() {
             return `top: ${this.top}px;left: ${this.left}px;`;
-        },
-        getActivePath() {
-            let {path} = this.$route;
-            let leftPart = path.split('/')[1];
-            let active = 0;
-            let activePath = '';
-            for (let i = 0; i < this.asideList.length; i++) {
-                for (let j = 0; j < this.asideList[i].length; j++) {
-                    let {uri} = this.asideList[i][j];
-                    if (leftPart === uri.split('/')[1]) {
-                        active = i;
-                        activePath = uri;
-                        break;
-                    }
-                }
-            }
-
-            return {active, activePath};
-        },
-        changeActive(index) {
-            if (index === this.active) {
-                window.location.reload();
-            } else {
-                this.active = index;
-                let newPath = this.asideList[this.active][0].uri;
-                this.defaultActive = newPath;
-                this.$router.push(newPath);
-            }
         },
         setMinHeight() {
             let minHeight = window.innerHeight - 60;
@@ -149,26 +114,6 @@ export default {
         logout() {
             localStorage.removeItem('token');
             this.$router.push({name: 'Login'});
-        },
-        toggleFixedBtnContainer() {
-            let content = document.querySelector('.content');
-            let fixedBtnContainer = document.querySelector('.fixed-btn-container');
-            let isBottom = content.scrollHeight - content.scrollTop === content.clientHeight;
-            if (fixedBtnContainer) {
-                if (isBottom) {
-                    fixedBtnContainer.style.background = 'transparent';
-                } else {
-                    fixedBtnContainer.style.background = '#293550';
-                }
-            }
-        },
-        menuChangeHandler(pathObj) {
-            let path = _.get(pathObj, 'uri');
-            if (path === '/page-layout') {
-                path = `${path}/${this.layoutId}`;
-            }
-            this.defaultActive = path;
-            this.$router.push({path});
         }
     }
 };
@@ -318,10 +263,6 @@ export default {
         }
     }
 
-    .el-menu {
-        border-right: none;
-        background: transparent;
-    }
 
     .aside-list {
         .el-menu-item {
@@ -358,4 +299,35 @@ export default {
         margin-top: 20px;
         margin-right: 20px;
     }
+</style>
+<style lang="scss">
+.aside {
+    .aside-list {
+        .el-menu {
+            background-color: transparent;
+        }
+        .el-submenu {
+            .el-submenu__title {
+                padding-left: 34px!important;
+                text-align: left;
+                span {
+                    font-size: 20px;
+                    color: $navText;
+                }
+                &:hover {
+                    background: #0A1730 !important;
+                }
+            }
+            .el-menu-item-group {
+                .el-menu-item-group__title {
+                    padding: 0;
+                }
+            }
+        }
+    }
+    .el-menu {
+        border-right: none;
+        background: transparent;
+    }
+}
 </style>

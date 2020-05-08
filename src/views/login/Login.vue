@@ -37,7 +37,6 @@
 </template>
 <script>
 import {mapActions} from 'vuex';
-import {authRoutes, createRouter, routes} from '../../router/index';
 export default {
     name: 'Login',
         data() {
@@ -58,17 +57,7 @@ export default {
                     let valid = await this.$refs.loginForm.validate();
                     if (valid) {
                         let res = await this.login(this.admin);
-                        if (res && res.errorCode === 0) {
-                            if (res.body.role !== 'BACKEND') {
-                                this.$router.matcher = createRouter(routes).matcher;
-                                this.$router.addRoutes(authRoutes);
-                                this.$router.push({name: 'TaskList'});
-                            } else {
-                                this.$router.push({name: 'Console'});
-                            }
-                        } else {
-                            this.$message.error(res.errorMsg);
-                        }
+                        console.log(res);
                     }
                 } catch (err) {
                     console.log(err);
