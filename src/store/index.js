@@ -8,6 +8,7 @@ import common from './modules/common';
 import task from './modules/task';
 import setting from './modules/setting';
 import pee from './modules/pee';
+import data_alert from './modules/data_alert';
 
 Vue.use(Vuex);
 
@@ -20,7 +21,8 @@ const store = new Vuex.Store({
         task,
         setting,
         //  农业大数据
-        pee
+        pee,
+        data_alert
     }
 });
 

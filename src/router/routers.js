@@ -173,8 +173,7 @@ export const constantRouterMap = [{
                 name: 'DataAlert',
                 component: () => import('@/views/data/DataAlert'),
                 meta: {
-                    title: '数据预警',
-                    activeMenu: '/data/statistics'
+                    title: '数据预警'
                 }
             }
         ]
