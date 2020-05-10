@@ -233,6 +233,44 @@ const staffOptions = [
     }
 ];
 
+const channelTypeOptions = [
+    {
+        value: '自营电商',
+        label: '自营电商'
+    },
+    {
+        value: '合作渠道',
+        label: '合作渠道'
+    },
+    {
+        value: '线下渠道',
+        label: '线下渠道'
+    }
+];
+
+const tracingTypeOptions = [
+    {
+        value: '稻米',
+        label: '稻米'
+    },
+    {
+        value: '杂粮',
+        label: '杂粮'
+    },
+    {
+        value: '果蔬',
+        label: '果蔬'
+    },
+    {
+        value: '菌类',
+        label: '菌类'
+    },
+    {
+        value: '其他',
+        label: '其他'
+    }
+];
+
 const lonlatOptions = _.times(180, (i) => {
     return {
         value: i + 1,
@@ -260,5 +298,9 @@ export default {
     peeFarmOptions,
     peeCompanyOptions,
     staffOptions,
-    lonlatOptions
+    lonlatOptions,
+    //  channel
+    channelTypeOptions,
+    // tracing
+    tracingTypeOptions
 };

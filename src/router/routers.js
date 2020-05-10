@@ -66,6 +66,7 @@ export const constantRouterMap = [{
             }
         ]
     },
+    //  销售
     {
         path: '/sale',
         component: Layout,
@@ -84,8 +85,40 @@ export const constantRouterMap = [{
                 name: 'ChannelList',
                 component: () => import('@/views/sale/ChannelList'),
                 meta: {
-                    title: '编辑农场',
-                    activeMenu: '/sale/tracing'
+                    title: '渠道管理'
+                }
+            },
+            {
+                path: 'channel/create',
+                name: 'ChannelCreate',
+                component: () => import('@/views/sale/ChannelCreate'),
+                meta: {
+                    title: '新增渠道'
+                }
+            },
+            {
+                path: 'channel/edit/:id(\\d+)',
+                name: 'ChannelEdit',
+                component: () => import('@/views/sale/ChannelEdit'),
+                meta: {
+                    title: '编辑渠道'
+                }
+            },
+            {
+                path: 'channel/detail/:id(\\d+)',
+                name: 'ChannelDetail',
+                component: () => import('@/views/sale/ChannelDetail'),
+                meta: {
+                    title: '渠道详情'
+                }
+            },
+            {
+                path: 'statistics/:id(\\d+)',
+                name: 'ChannelStatistics',
+                component: () => import('@/views/sale/ChannelStatistics'),
+                meta: {
+                    title: '渠道统计',
+                    activeMenu: '/sale/channel'
                 }
             }
         ]

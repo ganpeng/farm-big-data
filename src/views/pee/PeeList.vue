@@ -139,8 +139,8 @@
                 <el-table-column width="220px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
-                            <span class="btn-text text-danger">暂停</span>
-                            <span class="btn-text">重启</span>
+                            <span class="btn-text text-danger" @click="pausePeeHandler(scope.row.id)">暂停</span>
+                            <span class="btn-text" @click="restartPeeHandler(scope.row.id)">重启</span>
                             <span class="btn-text" @click="editPeeHandler(scope.row.id)">编辑</span>
                             <span class="btn-text text-danger" @click="deletePeeHandler(scope.row.id)">删除</span>
                         </div>
@@ -225,6 +225,30 @@ export default {
                 console.log(err);
             }
 
+        },
+        async pausePeeHandler(id) {
+            try {
+                let confirm = await this.$confirm('你确定要暂停吗, 是否继续?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                });
+                if (confirm) {}
+            } catch (err) {
+                console.log(err);
+            }
+        },
+        async restartPeeHandler(id) {
+            try {
+                let confirm = await this.$confirm('你确定要重启吗, 是否继续?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                });
+                if (confirm) {}
+            } catch (err) {
+                console.log(err);
+            }
         },
         gotoPeeDetail(id) {
             this.$router.push({ name: 'PeeDetail', params: {id} });
