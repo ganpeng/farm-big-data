@@ -5,6 +5,7 @@ import pee from './modules/pee';
 import data_alert from './modules/data_alert';
 import channel from './modules/channel';
 import tracing from './modules/tracing';
+import farm_visual from './modules/farm_visual';
 
 Vue.use(Vuex);
 
@@ -13,7 +14,8 @@ const store = new Vuex.Store({
         pee,
         data_alert,
         channel,
-        tracing
+        tracing,
+        farm_visual
     }
 });
 

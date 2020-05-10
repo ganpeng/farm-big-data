@@ -8,27 +8,16 @@ const defaultSearchFiled = {
     type: '' // 类型
 };
 
-const defaultTracing = {
+const defaultFarmVisual = {
     id: '', // id
-    pId: '', // 商品id
-    name: '', // 商品名称
-    type: '', // 种类
-    variety: '', // 品种
-    specs: '', // 规格
-    auth: '', // 认证
-    farm: '',
-    price: 0, // 价格
-    salesVolume: 0,
-    createdAt: '',
-    visible: false,
-    status: 1,
     createdAt: '', // 上线日期
+    status: '' // 状态
 };
 
 const state = {
     searchField: _.cloneDeep(defaultSearchFiled),
     list: _.cloneDeep(Object.assign(DEFAULT_LIST, {data: tracingList})),
-    currentTracing: _.cloneDeep(defaultTracing)
+    currentFarmVisual: _.cloneDeep(defaultFarmVisual)
 };
 
 const getters = {
@@ -38,8 +27,8 @@ const getters = {
     list(state) {
         return state.list;
     },
-    currentTracing(state) {
-        return state.currentTracing;
+    currentFarmVisual(state) {
+        return state.currentFarmVisual;
     }
 };
 
@@ -73,31 +62,22 @@ const mutations = {
         state.searchField = _.cloneDeep(defaultSearchFiled);
     },
     //  当前物环设备
-    setCurrentTracing(state, payload) {
-        state.currentTracing = payload.tracing;
+    setCurrentFarmVisual(state, payload) {
+        state.currentFarmVisual = payload.farmVisual;
     },
-    setCurrentTracingById(state, payload) {
+    setCurrentFarmVisualById(state, payload) {
         let {id} = payload;
-        let tracing = tracingList.find((item) => item.id === parseInt(id));
-        if (tracing) {
-            state.currentTracing = tracing;
+        let farmVisual = tracingList.find((item) => item.id === parseInt(id));
+        if (farmVisual) {
+            state.currentFarmVisual = farmVisual;
         }
     },
-    updateCurrentTracing(state, payload) {
+    updateCurrentFarmVisual(state, payload) {
         let {key, value} = payload;
-        _.set(state.currentTracing, key, value);
+        _.set(state.currentFarmVisual, key, value);
     },
-    resetCurrentTracing(state) {
-        state.currentTracing = _.cloneDeep(defaultTracing);
-    },
-    toggleVisibleById(state, payload) {
-        let {id} = payload;
-        state.list.data = state.list.data.map((item) => {
-            if (item.id === id) {
-                item.visible = !item.visible;
-            }
-            return item;
-        });
+    resetCurrentFarmVisual(state) {
+        state.currentFarmVisual = _.cloneDeep(defaultFarmVisual);
     }
 }
 

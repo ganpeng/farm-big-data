@@ -81,6 +81,15 @@ export const constantRouterMap = [{
                 }
             },
             {
+                path: 'tracing/edit/:id(\\d+)',
+                name: 'TracingEdit',
+                component: () => import('@/views/sale/TracingEdit'),
+                meta: {
+                    title: '溯源农品编辑',
+                    activeMenu: '/sale/tracing'
+                }
+            },
+            {
                 path: 'channel',
                 name: 'ChannelList',
                 component: () => import('@/views/sale/ChannelList'),

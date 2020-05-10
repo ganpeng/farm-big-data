@@ -271,6 +271,36 @@ const tracingTypeOptions = [
     }
 ];
 
+const farmVisualTypeOptions = [
+    {
+        value: '农名专业合作社',
+        label: '农名专业合作社'
+    },
+    {
+        value: '农村集体经济组织',
+        label: '农村集体经济组织'
+    },
+    {
+        value: '家庭农场',
+        label: '家庭农场'
+    }
+];
+
+const tracingAuthOptions = [
+    {
+        value: '绿色农产品认证',
+        label: '绿色农产品认证'
+    },
+    {
+        value: '有机农产品认证',
+        label: '有机农产品认证'
+    },
+    {
+        value: '无公害农产品认证',
+        label: '无公害农产品认证'
+    }
+];
+
 const lonlatOptions = _.times(180, (i) => {
     return {
         value: i + 1,
@@ -302,5 +332,7 @@ export default {
     //  channel
     channelTypeOptions,
     // tracing
-    tracingTypeOptions
+    tracingTypeOptions,
+    farmVisualTypeOptions,
+    tracingAuthOptions
 };

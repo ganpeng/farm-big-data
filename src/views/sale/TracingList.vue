@@ -42,7 +42,7 @@
         </div>
         <div class="seperator-line"></div>
         <div class="tabel-field">
-            <h2 class="content-title">渠道列表</h2>
+            <h2 class="content-title">溯源列表</h2>
             <el-table header-row-class-name="common-table-header" class="my-table-style" :data="list.data" border>
                 <el-table-column align="center" min-width="120px" label="商品ID">
                     <template slot-scope="scope">
@@ -174,7 +174,9 @@ export default {
             });
             window.open(routeData.href, '_blank');
         },
-        editChannelHandler(id) {},
+        editChannelHandler(id) {
+            this.$router.push({ name: 'TracingEdit', params: {id} });
+        },
         async deleteChannelHandler(id) {
             try {
                 let confirm = await this.$confirm('你确定要删除吗, 是否继续?', '提示', {
