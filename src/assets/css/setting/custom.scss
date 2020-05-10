@@ -2026,3 +2026,46 @@ html, body {
     background: transparent;
     border: 1px solid #3E495E;
 }
+
+// 信息弹窗
+.el-popover.el-popper {
+    background: #293550;
+    border: 1px solid rgba(99, 116, 151, 0.5);
+    .popper__arrow {
+        display: none;
+    }
+    .pop-content {
+        color: #6F7480;
+        .title {
+            font-size: 20px;
+        }
+        .date-time {
+            margin: 10px 0;
+        }
+    }
+}
+
+//  详情页的样式
+.text-info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    .text-info-item {
+        width: 50%;
+        font-size: 16px;
+        line-height: 32px;
+        color: #A8ABB3;
+        .text-info-item-wrapper {
+            display: flex;
+            .label {
+                display: block;
+                width: 120px;
+                text-align: right;
+            }
+            .value {
+                text-align: left;
+                flex: 1;
+            }
+        }
+    }
+}

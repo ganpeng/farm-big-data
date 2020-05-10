@@ -1,5 +1,6 @@
 <template>
     <div class="data-alert-container">
+        <bord></bord>
         <div class="table-container">
             <h2 class="content-title">搜索筛选</h2>
         </div>
@@ -8,7 +9,7 @@
                 <div class="search-field-item">
                     <el-input
                         :value="searchField.keyword"
-                        placeholder="请输入频道名称或编号"
+                        placeholder="请输入关键字"
                         @input="inputHandler($event, 'keyword')"
                         clearable
                         class="border-input"
@@ -19,17 +20,49 @@
                     <svg-icon icon-class="search"/> 搜索
                 </el-button>
                 <div class="search-field-item">
-                    <label class="search-field-item-label">状态</label>
+                    <label class="search-field-item-label">级别</label>
                     <el-select
-                        :value="searchField.status"
+                        :value="searchField.level"
                         filterable
                         clearable
                         placeholder="全部"
-                        @input="inputHandler($event, 'status')">
+                        @input="inputHandler($event, 'level')">
                         <el-option
-                            v-for="(item, index) in taskSearchStatusOptons"
+                            v-for="(item, index) in levelOptions"
                             :key="index"
-                            :label="item.text"
+                            :label="item.label"
+                            :value="item.value">
+                        </el-option>
+                    </el-select>
+                </div>
+                <div class="search-field-item">
+                    <label class="search-field-item-label">类型</label>
+                    <el-select
+                        :value="searchField.type"
+                        filterable
+                        clearable
+                        placeholder="全部"
+                        @input="inputHandler($event, 'type')">
+                        <el-option
+                            v-for="(item, index) in dataAlertTypeOptions"
+                            :key="index"
+                            :label="item.label"
+                            :value="item.value">
+                        </el-option>
+                    </el-select>
+                </div>
+                <div class="search-field-item">
+                    <label class="search-field-item-label">来源</label>
+                    <el-select
+                        :value="searchField.source"
+                        filterable
+                        clearable
+                        placeholder="全部"
+                        @input="inputHandler($event, 'source')">
+                        <el-option
+                            v-for="(item, index) in dataAlertSourceOptions"
+                            :key="index"
+                            :label="item.label"
                             :value="item.value">
                         </el-option>
                     </el-select>
@@ -41,59 +74,73 @@
         </div>
         <div class="seperator-line"></div>
         <div class="tabel-field">
-            <h2 class="content-title">任务列表</h2>
-            <div class="table-operator-field clearfix">
-                <div class="float-left">
-                </div>
-                <div class="float-right">
-                    <el-button
-                        v-if="user.role === 'BACKEND'"
-                        class="btn-style-two contain-svg-icon"
-                        @click="createTask">
-                        <svg-icon icon-class="add"/>
-                        添加
-                    </el-button>
-                </div>
-            </div>
-            <el-table header-row-class-name="common-table-header" class="my-table-style" :data="list.data" border>
-                <el-table-column prop="id" align="center" min-width="120px" label="任务id"></el-table-column>
-                <el-table-column prop="name" align="center" min-width="120px" label="名称">
+            <h2 class="content-title">预警列表</h2>
+            <el-table
+                header-row-class-name="common-table-header"
+                class="my-table-style"
+                :data="list.data" border>
+                <el-table-column prop="id" align="center" min-width="50px" label="编号"></el-table-column>
+                <el-table-column prop="level" align="center" min-width="80px" label="级别">
                     <template slot-scope="scope">
-                        <span @click="gotoTaskDetail(scope.row.id)" class="ellipsis two name">
-                            {{scope.row.name}}
+                        <span :class="levelClass(scope.row.level)">
+                            {{levelLabel(scope.row.level)}}
                         </span>
                     </template>
                 </el-table-column>
-                <el-table-column align="center" min-width="120px" label="量表信息">
+                <el-table-column prop="type" align="center" min-width="80px" label="类型">
                     <template slot-scope="scope">
-                        {{ scope.row.questionSheetList && scope.row.questionSheetList.length ? scope.row.questionSheetList.map((item) => item.name).join(', ') : ''}}
+                        <span class="">
+                            {{typeLabel(scope.row.type)}}
+                        </span>
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="评测有效期">
+                <el-table-column prop="desc" align="center" min-width="280px" label="详情"></el-table-column>
+                <el-table-column prop="source" align="center" min-width="80px" label="来源">
                     <template slot-scope="scope">
-                        {{scope.row.startedAt | dateFormat}} - {{scope.row.endedAt | dateFormat}}
+                        <span class="">
+                            {{sourceLabel(scope.row.source)}}
+                        </span>
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="状态">
+                <el-table-column min-width="120px" align="center" label="发生时间段">
                     <template slot-scope="scope">
-                        {{getStatusLabel(scope.row)}}
+                        {{scope.row.startAt}} - {{scope.row.endAt}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="创建日期">
+                <el-table-column min-width="80px" align="center" label="预警时间">
                     <template slot-scope="scope">
-                        {{scope.row.createdAt | dateFormat}}
+                        {{scope.row.createdAt}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="报告是否上传">
+                <el-table-column min-width="60px" align="center" label="状态">
                     <template slot-scope="scope">
-                        {{scope.row.hasReport ? '是' : '否'}}
+                        <span v-if="scope.row.processingStatus === 1" class="text-danger">{{statusLabel(scope.row.processingStatus)}}</span>
+                        <span v-else class="text-success">{{statusLabel(scope.row.processingStatus)}}</span>
                     </template>
                 </el-table-column>
-                <el-table-column v-if="user.role === 'BACKEND'" width="220px" align="center" label="操作">
+                <el-table-column width="120px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
-                            <span class="btn-text" @click="editTaskHandler(scope.row.id)">编辑</span>
-                            <span class="btn-text text-danger" @click="deleteTaskHandler(scope.row.id)">删除</span>
+                            <span v-if="scope.row.processingStatus === 1"
+                                class="btn-text" @click="processingHandler(scope.row)">去处理</span>
+                            <el-popover
+                                v-else
+                                class="my-popover"
+                                placement="left-start"
+                                width="300" trigger="hover">
+                                <div class="pop-content">
+                                    <div class="title">
+                                        {{processing(scope.row.processingResult, 'title')}}
+                                    </div>
+                                    <div class="date-time">
+                                        {{processing(scope.row.processingResult, 'time')}}
+                                    </div>
+                                    <div class="date-content">
+                                        {{processing(scope.row.processingResult, 'content')}}
+                                    </div>
+                                </div>
+                                <span class="text-success pointer" slot="reference">处理结果</span>
+                            </el-popover>
                         </div>
                     </template>
                 </el-table-column>
@@ -108,118 +155,121 @@
             layout="total, sizes, prev, pager, next, jumper"
             :total="list.pagination.total">
         </el-pagination>
+        <processing-dialog ref="processingDialog"></processing-dialog>
     </div>
 </template>
 <script>
-import {mapGetters, mapMutations, mapActions} from 'vuex';
-import _ from 'lodash';
+import {mapGetters, mapMutations} from 'vuex';
+import ProcessingDialog from './ProcessingDialog';
+import Bord from './Bord';
 export default {
     name: 'DataAlert',
+    components: {ProcessingDialog, Bord},
     data() {
         return {
-            taskSearchStatusOptons: this.$util.taskStatusOption
+            levelOptions: this.$util.levelOptions,
+            dataAlertTypeOptions: this.$util.dataAlertTypeOptions,
+            dataAlertSourceOptions: this.$util.dataAlertSourceOptions,
+            processingStatusOptions: this.$util.processingStatusOptions
         }
     },
     computed: {
         ...mapGetters({
-            list: 'task/list',
-            searchField: 'task/searchField',
-            user: 'common/user'
+            list: 'data_alert/list',
+            searchField: 'data_alert/searchField',
         }),
-        getStatusLabel() {
-            return (row) => {
-                let now = new Date().getTime();
-                let status = '';
-                if (now < row.startedAt) {
-                    status = '未开始';
-                } else if (now > row.startedAt && now < row.endedAt) {
-                    status = '进行中'
-                } else {
-                    status = '已结束';
+        levelClass() {
+            return (level) => {
+                switch (level) {
+                    case 1:
+                        return 'text-level1';
+                    case 2:
+                        return 'text-level2';
+                    case 3:
+                        return 'text-level3';
+                    case 4:
+                        return 'text-level4';
+                    default:
+                        return ''
                 }
-
-                return status;
             };
-        }
-    },
-    async created() {
-        try {
-            this.resetSearchField();
-            this.resetPagination();
-            await this.getUserByToken();
-            await this.getTaskListWrapper();
-        } catch (err) {
-            console.log(err);
+        },
+        levelLabel() {
+            return (value) => {
+                return this.$util.getLabelByValue(this.levelOptions, value);
+            }
+        },
+        typeLabel() {
+            return (value) => {
+                return this.$util.getLabelByValue(this.dataAlertTypeOptions, value);
+            }
+        },
+        sourceLabel() {
+            return (value) => {
+                return this.$util.getLabelByValue(this.dataAlertSourceOptions, value);
+            }
+        },
+        statusLabel() {
+            return (value) => {
+                return this.$util.getLabelByValue(this.processingStatusOptions, value);
+            }
+        },
+        processing() {
+            return (data, prop) => {
+                switch (prop) {
+                    case 'title':
+                        return `${data.user} ${data.phone}`;
+                    case 'time':
+                        return `${data.dateTime}`;
+                    case 'content':
+                        return `${data.desc}`;
+                    default:
+                        return '';
+                }
+            }
         }
     },
     methods: {
         ...mapMutations({
-            updateSearchField: 'task/updateSearchField',
-            updatePagination: 'task/updatePagination',
-            resetSearchField: 'task/resetSearchField',
-            resetPagination: 'task/resetPagination'
-        }),
-        ...mapActions({
-            getTaskList: 'task/getTaskList',
-            getOrgTaskList: 'task/getOrgTaskList',
-            getUserByToken: 'common/getUserByToken'
+            updateSearchField: 'data_alert/updateSearchField',
+            updatePagination: 'data_alert/updatePagination',
+            resetSearchField: 'data_alert/resetSearchField',
+            resetPagination: 'data_alert/resetPagination'
         }),
         inputHandler(value, key) {
             this.updateSearchField({key, value});
-            if (key !== 'keyword') {
-                this.getTaskListWrapper();
-            }
         },
-        getTaskListWrapper() {
-            if (_.get(this.user, 'role') === 'BACKEND') {
-                this.getTaskList();
-            } else {
-                this.getOrgTaskList(_.get(this.user, 'instituteId'));
-            }
+        processingHandler() {
+            this.$refs.processingDialog.show();
         },
         searchHandler() {
-            this.getTaskListWrapper();
         },
         clearSearchField() {
             this.resetSearchField();
         },
         handlePaginationChange(value, key) {
             this.updatePagination({key, value});
-            this.getTaskListWrapper();
-        },
-        createTask() {
-            let routeData = this.$router.resolve({
-                name: 'TaskCreate'
-            });
-            window.open(routeData.href, '_blank');
-        },
-        editTaskHandler(id) {
-            this.$router.push({ name: 'TaskEdit', params: {id} });
-        },
-        async deleteTaskHandler(id) {
-            try {
-                let confirm = await this.$confirm('你确定要删除吗, 是否继续?', '提示', {
-                    confirmButtonText: '确定',
-                    cancelButtonText: '取消',
-                    type: 'warning'
-                });
-                if (confirm) {
-                    let res = await this.$service.deleteTaskById(id);
-                    if (res && res.errorCode === 0) {
-                        this.getTaskList();
-                    }
-                }
-            } catch (err) {
-                console.log(err);
-            }
-
-        },
-        gotoTaskDetail(id) {
-            this.$router.push({ name: 'TaskDetail', params: {id} });
         }
     }
 };
 </script>
 <style lang="scss" scoped>
-.data-alert-container {}
+.data-alert-container {
+    .text-level1 {
+        color: red;
+    }
+    .text-level2 {
+        color: yellow;
+    }
+    .text-level3 {
+        color: orange;
+    }
+    .text-level4 {
+        color: blue;
+    }
+}
 </style>
+<style lang="scss">
+
+</style>
+

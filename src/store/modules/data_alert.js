@@ -1,11 +1,13 @@
 // 物理环境设备
 import _ from 'lodash';
 import {DEFAULT_LIST, DEFAULT_PAGINATION} from '@/util/constants';
+import dataAlertList from '@/mock/data_alert';
 
 const defaultSearchFiled = {
     keyword: '',
-    sensorType: '', // 类型
-    firmName: '' // 厂商
+    level: '', // 级别
+    source: '', // 来源
+    type: '' // 类型
 };
 
 const defaultDataAlert = {
@@ -23,7 +25,9 @@ const defaultDataAlert = {
 
 const state = {
     searchField: _.cloneDeep(defaultSearchFiled),
-    list: _.cloneDeep(DEFAULT_LIST),
+    list: _.cloneDeep(Object.assign(DEFAULT_LIST, {
+        data: dataAlertList
+    })),
     currentDataAlert: _.cloneDeep(defaultDataAlert)
 };
 

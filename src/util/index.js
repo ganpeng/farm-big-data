@@ -1,3 +1,4 @@
+import _ from 'lodash';
 
 const trueFalseOptions = (type) => {
     let trueLabel = '是';
@@ -45,81 +46,219 @@ const downloadFile = (url, name) => {
     aLink.dispatchEvent(event);
 };
 
-const taskStatusOption = [
+// level级别
+const levelOptions = [
     {
-        value: 'READY',
-        text: '未开始'
+        value: 1,
+        label: '红色预警'
     },
     {
-        value: 'UNDERWAY',
-        text: '进行中'
+        value: 2,
+        label: '黄色预警'
     },
     {
-        value: 'COMPLETE',
-        text: '已结束'
+        value: 3,
+        label: '橙色预警'
+    },
+    {
+        value: 4,
+        label: '蓝色预警'
     }
 ];
 
-const CAREER_OPTION = [
-    // STUDENT | CLERK | OFFICIAL | MERCHANT | FARMER | FULLTIME_PARENT | OTHER
+const dataAlertTypeOptions = [
     {
-        value: 'STUDENT',
-        text: '学生'
+        value: 1,
+        label: '气象灾害预警'
     },
     {
-        value: 'CLERK',
-        text: '职员'
+        value: 2,
+        label: '虫灾预警'
     },
     {
-        value: 'OFFICIAL',
-        text: '企事业单位'
+        value: 3,
+        label: '农产品价格波动'
     },
     {
-        value: 'MERCHANT',
-        text: '商人'
+        value: 4,
+        label: '农作物产量异动'
     },
     {
-        value: 'FARMER',
-        text: '务农'
+        value: 5,
+        label: '种植适合度预警'
     },
     {
-        value: 'FULLTIME_PARENT',
-        text: '全职父母'
-    },
-    {
-        value: 'OTHER',
-        text: '其他'
+        value: 6,
+        label: '设备异常预警'
     }
 ];
 
-const SENIORITY_OPTION = [
-    // ONE2FIVE | SIX2TEN | TEN2FIFTEEN | FIFTEEN2TWENTY | TWENTYABOVE
+const dataAlertSourceOptions = [
     {
-        value: 'ONE2FIVE',
-        text: '1~5年'
+        value: 1,
+        label: '中央气象局'
     },
     {
-        value: 'SIX2TEN',
-        text: '6~10年'
+        value: 2,
+        label: '农业部'
     },
     {
-        value: 'TEN2FIFTEEN',
-        text: '10~15年'
-    },
-    {
-        value: 'FIFTEEN2TWENTY',
-        text: '15~20年'
-    },
-    {
-        value: 'TWENTYABOVE',
-        text: '20年以上'
-    },
+        value: 3,
+        label: '内部大数据平台'
+    }
 ];
+
+const processingStatusOptions = [
+    {
+        value: 1,
+        label: '未处理'
+    },
+    {
+        value: 2,
+        label: '已处理'
+    }
+];
+
+const sensorTypeOptions = [
+    {
+        value: 1,
+        label: '气象传感器'
+    },
+    {
+        value: 2,
+        label: '虫情传感器'
+    },
+    {
+        value: 3,
+        label: '土壤传感器'
+    },
+    {
+        value: 4,
+        label: '水质传感器'
+    },
+    {
+        value: 5,
+        label: '枪机摄像头'
+    },
+    {
+        value: 6,
+        label: '球机摄像头'
+    }
+];
+
+const peeStatusOptions = [
+    {
+        value: 1,
+        label: '正常'
+    },
+    {
+        value: 2,
+        label: '异常'
+    }
+];
+
+const peeFirmOptions = [
+    {
+        value: 1,
+        label: '飞利信'
+    },
+    {
+        value: 2,
+        label: '上海大唐'
+    },
+    {
+        value: 3,
+        label: '华为'
+    },
+    {
+        value: 4,
+        label: '海康威视'
+    }
+];
+
+const peeFarmOptions = [
+    {
+        value: '吉林市十月稻田生态农场',
+        label: '吉林市十月稻田生态农场'
+    },
+    {
+        value: '吉林市意禾田家庭生态农场',
+        label: '吉林市意禾田家庭生态农场'
+    },
+    {
+        value: '吉林市绿源农业观光农场',
+        label: '吉林市绿源农业观光农场'
+    },
+    {
+        value: '白山市长白上下家庭生态农场',
+        label: '白山市长白上下家庭生态农场'
+    }
+];
+
+const peeCompanyOptions = [
+    {
+        value: '舒兰分公司',
+        label: '舒兰分公司'
+    },
+    {
+        value: '白山分公司',
+        label: '白山分公司'
+    },
+    {
+        value: '长春分公司',
+        label: '长春分公司'
+    },
+    {
+        value: '双阳分公司',
+        label: '双阳分公司'
+    },
+    {
+        value: '榆树分公司',
+        label: '榆树分公司'
+    }
+];
+
+const staffOptions = [
+    {
+        value: '王进',
+        label: '王进 运维部'
+    },
+    {
+        value: '李德农',
+        label: '李德农 运维部'
+    },
+    {
+        value: '张许',
+        label: '张许 运维部'
+    }
+];
+
+const lonlatOptions = _.times(180, (i) => {
+    return {
+        value: i + 1,
+        label: i + 1
+    };
+});
+
+const getLabelByValue = (options, value) => {
+    let option = options.find((item) => item.value === value);
+    return _.get(option, 'label');
+}
 
 export default {
     trueFalseOptions,
     downloadFile,
-    taskStatusOption,
-    CAREER_OPTION,
-    SENIORITY_OPTION
+    levelOptions,
+    dataAlertTypeOptions,
+    dataAlertSourceOptions,
+    processingStatusOptions,
+    getLabelByValue,
+    //  pee
+    sensorTypeOptions,
+    peeStatusOptions,
+    peeFirmOptions,
+    peeFarmOptions,
+    peeCompanyOptions,
+    staffOptions,
+    lonlatOptions
 };

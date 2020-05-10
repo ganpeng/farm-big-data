@@ -151,6 +151,15 @@ export const constantRouterMap = [{
                     title: '物环设备编辑',
                     activeMenu: '/pee/list'
                 }
+            },
+            {
+                path: 'detail/:id(\\d+)',
+                name: 'PeeDetail',
+                component: () => import('@/views/pee/PeeDetail'),
+                meta: {
+                    title: '物环设备详情',
+                    activeMenu: '/pee/list'
+                }
             }
         ]
     },

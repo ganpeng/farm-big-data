@@ -1,29 +1,37 @@
 // 物理环境设备
 import _ from 'lodash';
 import {DEFAULT_LIST, DEFAULT_PAGINATION} from '@/util/constants';
+import peeList from '@/mock/pee';
 
 const defaultSearchFiled = {
     keyword: '',
-    sensorType: '', // 类型
-    firmName: '' // 厂商
+    type: '', // 类型
+    firm: '' // 厂商
 };
 
 const defaultPee = {
+    id: '', // id
+    dId: '', // 设备id
     sn: '', // 设备sn
-    sensorType: '', // 传感器类型
-    address: '', // 地址
+    type: '', // 传感器类型
+    address: {}, // 地址
     latitude: '', // 经度
     longitude: '', // 纬度
     firmName: '', // 厂商名称
+    dataIndicators: '', // 数据指标
     farm: '', // 所属农场
-    head: '', // 负责人
+    head: {
+        name: '',
+        phone: '',
+        company: ''
+    }, // 负责人
     createdAt: '', // 上线日期
     status: '' // 状态
 };
 
 const state = {
     searchField: _.cloneDeep(defaultSearchFiled),
-    list: _.cloneDeep(DEFAULT_LIST),
+    list: _.cloneDeep(Object.assign(DEFAULT_LIST, {data: peeList})),
     currentPee: _.cloneDeep(defaultPee)
 };
 
@@ -73,9 +81,16 @@ const mutations = {
     setCurrentPee(state, payload) {
         state.currentPee = payload.pee;
     },
+    setCurrentPeeById(state, payload) {
+        let {id} = payload;
+        let pee = peeList.find((item) => item.id === parseInt(id));
+        if (pee) {
+            state.currentPee = pee;
+        }
+    },
     updateCurrentPee(state, payload) {
         let {key, value} = payload;
-        state.currentPee[key] = value;
+        _.set(state.currentPee, key, value);
     },
     resetCurrentPee(state) {
         state.currentPee = _.cloneDeep(defaultPee);
