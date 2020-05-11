@@ -126,7 +126,6 @@
 </template>
 <script>
 import {mapGetters, mapMutations} from 'vuex';
-import _ from 'lodash';
 import TracingBord from './TracingBord';
 export default {
     name: 'TracingList',
@@ -177,20 +176,19 @@ export default {
         editChannelHandler(id) {
             this.$router.push({ name: 'TracingEdit', params: {id} });
         },
-        async deleteChannelHandler(id) {
+        async deleteChannelHandler() {
             try {
-                let confirm = await this.$confirm('你确定要删除吗, 是否继续?', '提示', {
+                await this.$confirm('你确定要删除吗, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
                     type: 'warning'
                 });
-                if (confirm) {}
             } catch (err) {
                 console.log(err);
             }
 
         },
-        showCode(id) {},
+        showCode() {},
         gotoChannelStatistics(id) {
             this.$router.push({ name: 'ChannelStatistics', params: {id} });
         },

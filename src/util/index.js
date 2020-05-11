@@ -301,6 +301,56 @@ const tracingAuthOptions = [
     }
 ];
 
+const projectOptions = [
+    {
+        value: '水稻种植',
+        label: '水稻种植'
+    },
+    {
+        value: '杂粮种植',
+        label: '杂粮种植'
+    },
+    {
+        value: '菌类种植',
+        label: '菌类种植'
+    },
+    {
+        value: '果蔬种植',
+        label: '果蔬种植'
+    },
+    {
+        value: '家禽养殖',
+        label: '家禽养殖'
+    },
+    {
+        value: '水产养殖',
+        label: '水产养殖'
+    },
+    {
+        value: '其他',
+        label: '其他'
+    }
+];
+
+const farmLevelOptions = [
+    {
+        value: '省级专业合作社',
+        label: '省级专业合作社'
+    },
+    {
+        value: '市级专业合作社',
+        label: '市级专业合作社'
+    },
+    {
+        value: '县级专业合作社',
+        label: '县级专业合作社'
+    },
+    {
+        value: '无',
+        label: '无'
+    }
+];
+
 const lonlatOptions = _.times(180, (i) => {
     return {
         value: i + 1,
@@ -334,5 +384,8 @@ export default {
     // tracing
     tracingTypeOptions,
     farmVisualTypeOptions,
-    tracingAuthOptions
+    tracingAuthOptions,
+    //  farm
+    projectOptions,
+    farmLevelOptions
 };

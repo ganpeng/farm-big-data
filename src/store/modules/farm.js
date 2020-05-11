@@ -1,33 +1,48 @@
 // 物理环境设备
 import _ from 'lodash';
 import {DEFAULT_LIST, DEFAULT_PAGINATION} from '@/util/constants';
-import tracingList from '@/mock/tracing';
+import farmList from '@/mock/farm';
 
 const defaultSearchFiled = {
     keyword: '',
     type: '' // 类型
 };
 
-const defaultTracing = {
-    id: '', // id
-    pId: '', // 商品id
-    name: '', // 商品名称
-    type: '', // 种类
-    variety: '', // 品种
-    specs: '', // 规格
-    auth: '', // 认证
-    farm: '',
-    price: 0, // 价格
-    salesVolume: 0,
-    visible: false,
-    status: 1,
-    createdAt: '', // 上线日期
+const defaultFarm = {
+    id: 0,
+    name: '', // 名称
+    type: '', // 类型
+    area: 0, // 地块面积
+    address: { // 地址
+        province: '',
+        city: '',
+        area: '',
+        detail: ''
+    },
+    latitude: '', // 经度
+    longitude: '', // 纬度
+    creditCode: '', // 统一社会信用代码
+    standing: {  // 常务联系人
+        name: '',
+        phone: ''
+    },
+    legal: { // 法人
+        name: '',
+        phone: '',
+        cId: '',
+        address: ''
+    },
+    isPart: false, // 是否成立党组织
+    partCount: 0, // 党组织成员
+    project: '', // 经营项目
+    level: '', // 专业级别
+    createdAt: '' // 创立时间
 };
 
 const state = {
     searchField: _.cloneDeep(defaultSearchFiled),
-    list: _.cloneDeep(Object.assign(DEFAULT_LIST, {data: tracingList})),
-    currentTracing: _.cloneDeep(defaultTracing)
+    list: _.cloneDeep(Object.assign(DEFAULT_LIST, {data: farmList})),
+    currentFarm: _.cloneDeep(defaultFarm)
 };
 
 const getters = {
@@ -37,8 +52,8 @@ const getters = {
     list(state) {
         return state.list;
     },
-    currentTracing(state) {
-        return state.currentTracing;
+    currentFarm(state) {
+        return state.currentFarm;
     }
 };
 
@@ -72,31 +87,22 @@ const mutations = {
         state.searchField = _.cloneDeep(defaultSearchFiled);
     },
     //  当前物环设备
-    setCurrentTracing(state, payload) {
-        state.currentTracing = payload.tracing;
+    setCurrentFarm(state, payload) {
+        state.currentFarm = payload.farm;
     },
-    setCurrentTracingById(state, payload) {
+    setCurrentFarmById(state, payload) {
         let {id} = payload;
-        let tracing = tracingList.find((item) => item.id === parseInt(id));
-        if (tracing) {
-            state.currentTracing = tracing;
+        let farm = farmList.find((item) => item.id === parseInt(id));
+        if (farm) {
+            state.currentFarm = farm;
         }
     },
-    updateCurrentTracing(state, payload) {
+    updateCurrentFarm(state, payload) {
         let {key, value} = payload;
-        _.set(state.currentTracing, key, value);
+        _.set(state.currentFarm, key, value);
     },
-    resetCurrentTracing(state) {
-        state.currentTracing = _.cloneDeep(defaultTracing);
-    },
-    toggleVisibleById(state, payload) {
-        let {id} = payload;
-        state.list.data = state.list.data.map((item) => {
-            if (item.id === id) {
-                item.visible = !item.visible;
-            }
-            return item;
-        });
+    resetCurrentFarm(state) {
+        state.currentFarm = _.cloneDeep(defaultFarm);
     }
 }
 

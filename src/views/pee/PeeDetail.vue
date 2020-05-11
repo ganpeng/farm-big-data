@@ -116,10 +116,8 @@
 <script>
 import {mapGetters, mapMutations} from 'vuex';
 import _ from 'lodash';
-import PeeForm from './PeeForm';
 export default {
     name: 'PeeDetail',
-    components: {PeeForm},
     created() {
         let {id} = this.$route.params;
         this.setCurrentPeeById({id});

@@ -73,7 +73,6 @@
     </div>
 </template>
 <script>
-import {mapGetters} from 'vuex';
 export default {
     data() {
         return {
@@ -83,9 +82,6 @@ export default {
         };
     },
     computed: {
-        ...mapGetters({
-            user: 'common/user'
-        }),
         activeMenu() {
             const route = this.$route;
             const { meta, path } = route;
