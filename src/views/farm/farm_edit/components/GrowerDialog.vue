@@ -31,8 +31,23 @@
                             </el-input>
                         </el-form-item>
                         <el-form-item label="性别">
-                            <el-radio v-model="grower.isPoor" :label="true">是</el-radio>
-                            <el-radio v-model="grower.isPoor" :label="false">否</el-radio>
+                            <el-radio v-model="grower.gender" label="男">男</el-radio>
+                            <el-radio v-model="grower.gender" label="女">女</el-radio>
+                        </el-form-item>
+                        <el-form-item label="主要分工" prop="divide">
+                            <el-select
+                                :value="grower.divide"
+                                clearable
+                                placeholder="请选择"
+                                @input="inputHandler($event, 'divide')"
+                            >
+                                <el-option
+                                    v-for="item in divideOptions"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                                </el-option>
+                            </el-select>
                         </el-form-item>
                     </el-col>
                     <el-col :span="12">
@@ -49,8 +64,8 @@
                             </el-input>
                         </el-form-item>
                         <el-form-item label="贫困户">
-                            <el-radio v-model="grower.gender" label="男">男</el-radio>
-                            <el-radio v-model="grower.gender" label="女">女</el-radio>
+                            <el-radio v-model="grower.isPoor" :label="true">是</el-radio>
+                            <el-radio v-model="grower.isPoor" :label="false">否</el-radio>
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -141,6 +156,7 @@ export default {
     data() {
         return {
             visible: false,
+            divideOptions: this.$util.divideOptions,
             grower: {
                 id: 0,
                 name: '',

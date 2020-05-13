@@ -1,5 +1,5 @@
 <template>
-    <div class="grower-list-container">
+    <div class="cland-list-container">
         <div class="search-field">
             <div class="field-row">
                 <div class="search-field-item">
@@ -44,63 +44,48 @@
                 <div class="float-right">
                     <el-button
                         class="btn-style-two contain-svg-icon"
-                        @click="createGrower">
+                        @click="createCland">
                         <svg-icon icon-class="add"/>
                         添加
                     </el-button>
                 </div>
             </div>
             <el-table header-row-class-name="common-table-header" class="my-table-style" :data="list.data" border>
-                <el-table-column align="center" min-width="120px" label="姓名">
+                <el-table-column align="center" min-width="120px" label="地块名称">
                     <template slot-scope="scope">
                         <span class="ellipsis two name">
                             {{scope.row.name}}
                         </span>
                     </template>
                 </el-table-column>
-                <el-table-column align="center" min-width="120px" label="成员类型">
+                <el-table-column align="center" min-width="120px" label="土地来源">
                     <template slot-scope="scope">
-                        {{ scope.row.type}}
-                    </template>
-                </el-table-column>
-                <el-table-column align="center" min-width="60px" label="性别">
-                    <template slot-scope="scope">
-                        {{ scope.row.gender}}
+                        {{ scope.row.roam.type}}
                     </template>
                 </el-table-column>
                 <el-table-column min-width="120px" align="center" label="地址">
                     <template slot-scope="scope">
-                        {{scope.row.address.city}}/{{scope.row.address.area}}/{{scope.row.address.detail}}
+                        {{scope.row.roam.address.city}}/{{scope.row.roam.address.area}}/{{scope.row.roam.address.detail}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="100px" align="center" label="联系电话">
+                <el-table-column min-width="100px" align="center" label="水利条件">
                     <template slot-scope="scope">
-                        {{scope.row.phone}}
+                        {{scope.row.wcc}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="160px" align="center" label="身份证号">
+                <el-table-column min-width="160px" align="center" label="土地编号">
                     <template slot-scope="scope">
-                        {{scope.row.cId}}
+                        {{scope.row.code}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="培训时长(小时)">
+                <el-table-column min-width="120px" align="center" label="合同编号">
                     <template slot-scope="scope">
-                        {{scope.row.trainHour}}
+                        {{scope.row.cCode}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="证书">
+                <el-table-column min-width="120px" align="center" label="实测面积(公倾)">
                     <template slot-scope="scope">
-                        {{scope.row.certi}}
-                    </template>
-                </el-table-column>
-                <el-table-column min-width="80px" align="center" label="贫困户">
-                    <template slot-scope="scope">
-                        {{scope.row.isPoor}}
-                    </template>
-                </el-table-column>
-                <el-table-column min-width="120px" align="center" label="分工">
-                    <template slot-scope="scope">
-                        {{scope.row.divide}}
+                        {{scope.row.areaThree}}
                     </template>
                 </el-table-column>
                 <el-table-column min-width="120px" align="center" label="状态">
@@ -112,27 +97,27 @@
                 <el-table-column width="160px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div v-if="scope.row.status === 1" class="operator-btn-wrapper">
-                            <span class="btn-text" @click="submitGrowerHandler(scope.row.id)">提交</span>
-                            <span class="btn-text" @click="editGrowerHandler(scope.row.id)">编辑</span>
-                            <span class="btn-text text-danger" @click="deleteGrowerHandler(scope.row.id)">删除</span>
+                            <span class="btn-text" @click="submitClandHandler(scope.row.id)">提交</span>
+                            <span class="btn-text" @click="editClandHandler(scope.row.id)">编辑</span>
+                            <span class="btn-text text-danger" @click="deleteClandHandler(scope.row.id)">删除</span>
                         </div>
                         <div v-else class="operator-btn-wrapper">
-                            <span class="btn-text text-danger" @click="revokeGrowerHandler(scope.row.id)">撤销</span>
+                            <span class="btn-text text-danger" @click="revokeClandHandler(scope.row.id)">撤销</span>
                         </div>
                     </template>
                 </el-table-column>
             </el-table>
         </div>
-        <grower-dialog ref="growerDialog"></grower-dialog>
+        <cland-dialog ref="clandDialog"></cland-dialog>
     </div>
 </template>
 <script>
 import _ from 'lodash';
-import {growerList} from '@/mock/member';
-import GrowerDialog from './GrowerDialog';
+import {cLandList} from '@/mock/land';
+import ClandDialog from './ClandDialog';
 export default {
-    name: 'GrowerList',
-    components: {GrowerDialog},
+    name: 'ClandList',
+    components: {ClandDialog},
     data() {
         return {
             searchField: {
@@ -140,7 +125,7 @@ export default {
                 type: ''
             },
             list: {
-                data: growerList
+                data: cLandList
             }
         }
     },
@@ -155,10 +140,10 @@ export default {
         inputHandler(value, key) {
             _.set(this.searchField, key, value);
         },
-        createGrower() {
-            this.$refs.growerDialog.show();
+        createCland() {
+            this.$refs.clandDialog.show();
         },
-        async submitGrowerHandler() {
+        async submitClandHandler() {
             try {
                 await this.$confirm('你确定要提交吗, 是否继续?', '提示', {
                     confirmButtonText: '确定',
@@ -169,11 +154,7 @@ export default {
                 console.log(err);
             }
         },
-        editGrowerHandler(id) {
-            let grower = growerList.find((item) => item.id === id);
-            this.$refs.growerDialog.show(grower);
-        },
-        async revokeGrowerHandler() {
+        async revokeClandHandler() {
             try {
                 await this.$confirm('你确定要撤销吗, 是否继续?', '提示', {
                     confirmButtonText: '确定',
@@ -184,7 +165,11 @@ export default {
                 console.log(err);
             }
         },
-        async deleteGrowerHandler() {
+        editClandHandler(id) {
+            let cland = _.get(this.list.data, id);
+            this.$refs.clandDialog.show(cland);
+        },
+        async deleteClandHandler() {
             try {
                 await this.$confirm('你确定要删除吗, 是否继续?', '提示', {
                     confirmButtonText: '确定',
@@ -199,4 +184,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
 </style>

@@ -42,7 +42,51 @@
         </div>
         <div class="seperator-line"></div>
         <div class="tabel-field">
-            <h2 class="content-title">可视农场列表</h2>
+            <ul class="farm-visual-list">
+                <li class="farm-visual-item">
+                    <img src="../../assets/img/fv1.png" alt="">
+                    <p class="name">01 吉林市十月稻田生态农场</p>
+                </li>
+                <li class="farm-visual-item">
+                    <img src="../../assets/img/fv2.png" alt="">
+                    <p class="name">02 吉林市十月稻田生态农场</p>
+                </li>
+                <li class="farm-visual-item">
+                    <img src="../../assets/img/fv3.png" alt="">
+                    <p class="name">03 吉林市十月稻田生态农场</p>
+                </li>
+                <li class="farm-visual-item">
+                    <img src="../../assets/img/fv4.png" alt="">
+                    <p class="name">04 吉林市十月稻田生态农场</p>
+                </li>
+                <li class="farm-visual-item">
+                    <img src="../../assets/img/fv5.png" alt="">
+                    <p class="name">05 吉林市十月稻田生态农场</p>
+                </li>
+                <li class="farm-visual-item">
+                    <img src="../../assets/img/fv6.png" alt="">
+                    <p class="name">06 吉林市十月稻田生态农场</p>
+                </li>
+                <li class="farm-visual-item">
+                    <img src="../../assets/img/fv7.png" alt="">
+                    <p class="name">07 吉林市十月稻田生态农场</p>
+                </li>
+                <li class="farm-visual-item">
+                    <img src="../../assets/img/fv8.png" alt="">
+                    <p class="name">08 吉林市十月稻田生态农场</p>
+                </li>
+            </ul>
+            <div style="margin: 40px 0;" class="table-operator-field clearfix">
+                <div class="float-left">
+                </div>
+                <div class="float-right">
+                    <el-button
+                        class="btn-style-two contain-svg-icon">
+                        <svg-icon icon-class="add"/>
+                        添加
+                    </el-button>
+                </div>
+            </div>
         </div>
         <el-pagination
             @size-change="handlePaginationChange($event, 'pageSize')"
@@ -104,21 +148,20 @@ export default {
             });
             window.open(routeData.href, '_blank');
         },
-        editChannelHandler(id) {},
-        async deleteChannelHandler(id) {
+        editChannelHandler() {},
+        async deleteChannelHandler() {
             try {
-                let confirm = await this.$confirm('你确定要删除吗, 是否继续?', '提示', {
+                await this.$confirm('你确定要删除吗, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
                     type: 'warning'
                 });
-                if (confirm) {}
             } catch (err) {
                 console.log(err);
             }
 
         },
-        showCode(id) {},
+        showCode() {},
         gotoChannelStatistics(id) {
             this.$router.push({ name: 'ChannelStatistics', params: {id} });
         },
@@ -144,5 +187,36 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.farm-visual-container {}
+.farm-visual-container {
+    .farm-visual-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        .farm-visual-item {
+            width: 24.5508%;
+            height: 292px;
+            margin-left: 0.598%;
+            margin-bottom: 0.598%;
+            background: rgba(42,48,64,1);
+            border-radius: 12px;
+            cursor: pointer;
+            img {
+                width: 90%;
+                height: 192px;
+                margin-top: 20px;
+            }
+            p {
+                text-align: left;
+                margin-left: 20px;
+                margin-top: 30px;
+                font-size: 20px;
+                font-weight: 500;
+                color: rgba(154,196,239, 1);
+            }
+        }
+        .farm-visual-item:nth-of-type(4n + 1) {
+            margin-left: 0;
+        }
+    }
+}
 </style>

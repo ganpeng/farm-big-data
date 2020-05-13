@@ -351,6 +351,136 @@ const farmLevelOptions = [
     }
 ];
 
+const divideOptions = [
+    {
+        value: '农作物种植',
+        label: '农作物种植'
+    },
+    {
+        value: '水产养殖',
+        label: '水产养殖'
+    },
+    {
+        value: '菌类培植',
+        label: '菌类培植'
+    },
+    {
+        value: '运输',
+        label: '运输'
+    },
+    {
+        value: '加工',
+        label: '加工'
+    },
+    {
+        value: '其他',
+        label: '其他'
+    }
+];
+
+const wccOptions = [
+    {
+        value: '水田',
+        label: '水田'
+    },
+    {
+        value: '旱田',
+        label: '旱田'
+    },
+    {
+        value: '水浇地',
+        label: '水浇地'
+    }
+];
+
+const roamTypeOptions = [
+    {
+        value: '土地托管',
+        label: '土地托管'
+    },
+    {
+        value: '成员出资',
+        label: '成员出资'
+    }
+];
+
+const purposeOptions = [
+    {
+        value: '复垦',
+        label: '复垦'
+    },
+    {
+        value: '租住',
+        label: '租住'
+    },
+    {
+        value: '旅游',
+        label: '旅游'
+    }
+];
+
+const farmMachineTypeOptions = [
+    {
+        value: '耕耘和整地机械',
+        label: '耕耘和整地机械'
+    },
+    {
+        value: '种地和施肥机械',
+        label: '种地和施肥机械'
+    },
+    {
+        value: '田间管理和植保机械',
+        label: '田间管理和植保机械'
+    },
+    {
+        value: '收获机械',
+        label: '收获机械'
+    },
+    {
+        value: '脱粒，清洗，烘干和贮存机械',
+        label: '脱粒，清洗，烘干和贮存机械'
+    },
+    {
+        value: '农副产品产品加工机械',
+        label: '农副产品产品加工机械'
+    },
+    {
+        value: '运输机械',
+        label: '运输机械'
+    },
+    {
+        value: '排灌机械',
+        label: '排灌机械'
+    },
+    {
+        value: '畜牧机械',
+        label: '畜牧机械'
+    },
+    {
+        value: '其他机械',
+        label: '其他机械'
+    }
+];
+
+const farmMachineSourceOptions = [
+    {
+        value: '自购',
+        label: '自购'
+    },
+    {
+        value: '租借',
+        label: '租借'
+    },
+    {
+        value: '政府补贴',
+        label: '政府补贴'
+    },
+    {
+        value: '获赠',
+        label: '获赠'
+    }
+];
+
 const lonlatOptions = _.times(180, (i) => {
     return {
         value: i + 1,
@@ -387,5 +517,12 @@ export default {
     tracingAuthOptions,
     //  farm
     projectOptions,
-    farmLevelOptions
+    farmLevelOptions,
+    divideOptions,
+    wccOptions,
+    roamTypeOptions,
+    purposeOptions,
+    //  农机具
+    farmMachineTypeOptions,
+    farmMachineSourceOptions
 };

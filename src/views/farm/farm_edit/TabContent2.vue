@@ -26,10 +26,6 @@ export default {
     components: {ManagementList, GrowerList},
     data() {
         return {
-            growerSearchField: {
-                keyword: '',
-                type: ''
-            },
             tabBarList: [
                 {
                     title: '经营人员',
@@ -62,39 +58,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-</style>
-<style lang="scss">
-.sub-tab-bar-container {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    height: 68px;
-    padding: 0 40px;
-    background-color: #0F1623;
-    border-radius: 5px;
-    .sub-tab-bar-list {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 35px;
-        .sub-tab-bar-item {
-            padding: 0 18px;
-            height: 35px;
-            line-height: 35px;
-            font-size: 20px;
-            font-weight: 400;
-            color: #667799;
-            cursor: pointer;
-            border-radius: 26px;
-            background-color: transparent;
-            &.active {
-                color: #fff;
-                background-color: $mainColor;
-            }
-        }
-    }
-}
-.sub-tab-content {
-    padding-top: 100px;
-}
 </style>
