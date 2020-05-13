@@ -1,5 +1,5 @@
 <template>
-    <div class="tab-content-four">
+    <div class="government-projects-container">
         <div class="search-field">
             <div class="field-row">
                 <div class="search-field-item">
@@ -16,15 +16,15 @@
                     <svg-icon icon-class="search"/> 搜索
                 </el-button>
                 <div class="search-field-item">
-                    <label class="search-field-item-label">类型</label>
+                    <label class="search-field-item-label">级别</label>
                     <el-select
-                        :value="searchField.type"
+                        :value="searchField.level"
                         filterable
                         clearable
                         placeholder="全部"
-                        @input="inputHandler($event, 'type')">
+                        @input="inputHandler($event, 'level')">
                         <el-option
-                            v-for="(item, index) in farmMachineTypeOptions"
+                            v-for="(item, index) in governmentProjectLevelOptions"
                             :key="index"
                             :label="item.label"
                             :value="item.value">
@@ -32,15 +32,15 @@
                     </el-select>
                 </div>
                 <div class="search-field-item">
-                    <label class="search-field-item-label">来源</label>
+                    <label class="search-field-item-label">阶段</label>
                     <el-select
-                        :value="searchField.source"
+                        :value="searchField.step"
                         filterable
                         clearable
                         placeholder="全部"
-                        @input="inputHandler($event, 'source')">
+                        @input="inputHandler($event, 'step')">
                         <el-option
-                            v-for="(item, index) in farmMachineSourceOptions"
+                            v-for="(item, index) in governmentProjectStepOptions"
                             :key="index"
                             :label="item.label"
                             :value="item.value">
@@ -60,93 +60,87 @@
                 <div class="float-right">
                     <el-button
                         class="btn-style-two contain-svg-icon"
-                        @click="createFarmMachine">
+                        @click="createGovernmentProjects">
                         <svg-icon icon-class="add"/>
                         添加
                     </el-button>
                 </div>
             </div>
             <el-table header-row-class-name="common-table-header" class="my-table-style" :data="list.data" border>
-                <el-table-column align="center" min-width="120px" label="机械名称">
+                <el-table-column align="center" min-width="120px" label="项目名称">
                     <template slot-scope="scope">
                         <span class="ellipsis two name">
                             {{scope.row.name}}
                         </span>
                     </template>
                 </el-table-column>
-                <el-table-column align="center" min-width="120px" label="类型">
+                <el-table-column align="center" min-width="120px" label="项目部门">
                     <template slot-scope="scope">
-                        {{ scope.row.type}}
+                        {{ scope.row.department}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="100px" align="center" label="数量">
+                <el-table-column min-width="120px" align="center" label="级别">
                     <template slot-scope="scope">
-                        {{scope.row.count}}
+                        {{scope.row.level}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="180px" align="center" label="生产厂家">
+                <el-table-column min-width="100px" align="center" label="项目总额(元)">
                     <template slot-scope="scope">
-                        {{scope.row.factory}}
+                        {{scope.row.moneyInfo.totalMoney}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="80px" align="center" label="品牌">
+                <el-table-column min-width="100px" align="center" label="政府拨款(元)">
                     <template slot-scope="scope">
-                        {{scope.row.brand}}
+                        {{scope.row.moneyInfo.govPay}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="来源">
+                <el-table-column min-width="160px" align="center" label="负责人">
                     <template slot-scope="scope">
-                        {{scope.row.source}}
+                        {{scope.row.leader.name}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="购入价格(元)">
+                <el-table-column min-width="160px" align="center" label="负责人电话">
                     <template slot-scope="scope">
-                        {{scope.row.inPrice}}
+                        {{scope.row.leader.phone}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="状态">
+                <el-table-column min-width="120px" align="center" label="阶段">
                     <template slot-scope="scope">
-                        <span v-if="scope.row.status === 1" class="text-danger">未提交</span>
-                        <span v-else class="text-success">已提交</span>
+                        {{scope.row.step}}
                     </template>
                 </el-table-column>
                 <el-table-column width="160px" align="center" label="操作">
                     <template slot-scope="scope">
-                        <div v-if="scope.row.status === 1" class="operator-btn-wrapper">
-                            <span class="btn-text" @click="submitFarmMachineHandler(scope.row.id)">提交</span>
-                            <span class="btn-text" @click="editFarmMachineHandler(scope.row.id)">编辑</span>
-                            <span class="btn-text text-danger" @click="deleteFarmMachineHandler(scope.row.id)">删除</span>
-                        </div>
-                        <div v-else class="operator-btn-wrapper">
-                            <span class="btn-text text-danger" @click="revokeFarmMachineHandler(scope.row.id)">撤销</span>
+                        <div class="operator-btn-wrapper">
+                            <span class="btn-text" @click="editGovernmentProjectsHandler(scope.row.id)">编辑</span>
+                            <span class="btn-text text-danger" @click="deleteGovernmentProjectsHandler(scope.row.id)">删除</span>
                         </div>
                     </template>
                 </el-table-column>
             </el-table>
         </div>
-        <farm-machine-dialog ref="farmMachineDialog"></farm-machine-dialog>
+        <government-projects-dialog ref="governmentProjectsDialog"></government-projects-dialog>
     </div>
 </template>
 <script>
-import _ from 'lodash';
-import {farmMachineList} from '@/mock/farm_machine';
-import FarmMachineDialog from './components/FarmMachineDialog';
+import {governmentProjectsList} from '@/mock/business';
+import GovernmentProjectsDialog from './GovernmentProjectsDialog';
 export default {
-    name: 'TabContent4',
-    components: {FarmMachineDialog},
+    name: 'GovernmentProjectsList',
+    components: {GovernmentProjectsDialog},
     data() {
         return {
-            farmMachineTypeOptions: this.$util.farmMachineTypeOptions,
-            farmMachineSourceOptions: this.$util.farmMachineSourceOptions,
+            governmentProjectLevelOptions: this.$util.governmentProjectLevelOptions,
+            governmentProjectStepOptions: this.$util.governmentProjectStepOptions,
             searchField: {
                 keyword: '',
-                type: '',
-                source: ''
+                level: '',
+                step: ''
             },
             list: {
-                data: farmMachineList
+                data: governmentProjectsList
             }
-        }
+        };
     },
     methods: {
         searchHandler() {},
@@ -159,36 +153,14 @@ export default {
         inputHandler(value, key) {
             _.set(this.searchField, key, value);
         },
-        createFarmMachine() {
-            this.$refs.farmMachineDialog.show();
+        createGovernmentProjects() {
+            this.$refs.governmentProjectsDialog.show();
         },
-        async submitFarmMachineHandler() {
-            try {
-                await this.$confirm('你确定要提交吗, 是否继续?', '提示', {
-                    confirmButtonText: '确定',
-                    cancelButtonText: '取消',
-                    type: 'warning'
-                });
-            } catch (err) {
-                console.log(err);
-            }
+        editGovernmentProjectsHandler(id) {
+            let cland = _.get(this.list.data, id);
+            this.$refs.governmentProjectsDialog.show(cland);
         },
-        async revokeFarmMachineHandler() {
-            try {
-                await this.$confirm('你确定要撤销吗, 是否继续?', '提示', {
-                    confirmButtonText: '确定',
-                    cancelButtonText: '取消',
-                    type: 'warning'
-                });
-            } catch (err) {
-                console.log(err);
-            }
-        },
-        editFarmMachineHandler(id) {
-            let farmMachine = _.get(this.list.data, id);
-            this.$refs.farmMachineDialog.show(farmMachine);
-        },
-        async deleteFarmMachineHandler() {
+        async deleteGovernmentProjectsHandler() {
             try {
                 await this.$confirm('你确定要删除吗, 是否继续?', '提示', {
                     confirmButtonText: '确定',
@@ -203,4 +175,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.government-projects-container {}
 </style>

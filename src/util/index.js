@@ -481,6 +481,109 @@ const farmMachineSourceOptions = [
     }
 ];
 
+const governmentProjectLevelOptions = [
+    {
+        value: '乡级',
+        label: '乡级'
+    },
+    {
+        value: '县级',
+        label: '县级'
+    },
+    {
+        value: '市级',
+        label: '市级'
+    },
+    {
+        value: '省级',
+        label: '省级'
+    },
+    {
+        value: '国家级',
+        label: '国家级'
+    }
+];
+
+const governmentProjectStepOptions = [
+    {
+        value: '立项阶段',
+        label: '立项阶段'
+    },
+    {
+        value: '执行阶段',
+        label: '执行阶段'
+    },
+    {
+        value: '验收阶段',
+        label: '验收阶段'
+    }
+];
+
+const governmentProjectCostTypeOptions = [
+    {
+        value: '设备费',
+        label: '设备费'
+    },
+    {
+        value: '材料费',
+        label: '材料费'
+    },
+    {
+        value: '测试化验加工费',
+        label: '测试化验加工费'
+    },
+    {
+        value: '燃料动力费',
+        label: '燃料动力费'
+    },
+    {
+        value: '差旅费',
+        label: '差旅费'
+    },
+    {
+        value: '会议费',
+        label: '会议费'
+    }
+];
+
+const specialSubTypeOptions = [
+    {
+        value: '耕地地力保护补贴',
+        label: '耕地地力保护补贴'
+    },
+    {
+        value: '农机购置补贴',
+        label: '农机购置补贴'
+    },
+    {
+        value: '农机深松补贴',
+        label: '农机深松补贴'
+    },
+    {
+        vlaue: '农作物高质行动',
+        label: '农作物高质行动'
+    }
+];
+
+const specialSubStatusOptions = [
+    {
+        value: '申请中',
+        label: '申请中'
+    },
+    {
+        value: '已通过',
+        label: '已通过'
+    },
+    {
+        value: '款项到位',
+        label: '款项到位'
+    },
+    {
+        value: '未通过',
+        label: '未通过'
+    }
+];
+
 const lonlatOptions = _.times(180, (i) => {
     return {
         value: i + 1,
@@ -524,5 +627,11 @@ export default {
     purposeOptions,
     //  农机具
     farmMachineTypeOptions,
-    farmMachineSourceOptions
+    farmMachineSourceOptions,
+    //  经营管理
+    governmentProjectLevelOptions,
+    governmentProjectStepOptions,
+    governmentProjectCostTypeOptions,
+    specialSubTypeOptions,
+    specialSubStatusOptions
 };
