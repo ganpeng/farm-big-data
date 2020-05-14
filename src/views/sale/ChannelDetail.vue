@@ -1,5 +1,5 @@
 <template>
-    <div class="channel-detail-container">
+    <div class="channel-detail-container my-content-container">
         <h2 class="content-title">渠道详情</h2>
         <div class="seperator-line"></div>
         <div class="common-details">

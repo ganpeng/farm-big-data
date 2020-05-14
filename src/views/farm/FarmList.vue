@@ -1,5 +1,5 @@
 <template>
-    <div class="farm-list-container">
+    <div class="farm-list-container my-content-container">
         <bord></bord>
         <div class="table-container">
             <h2 class="content-title">搜索筛选</h2>

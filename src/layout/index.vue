@@ -18,57 +18,85 @@
                 :default-active="activeMenu"
                 class="aside-list">
                 <el-menu-item index="/dashboard">
-                    <i class="el-icon-menu"></i>
-                    <span slot="title">数据概览</span>
+                    <svg-icon class="default_svg" icon-class="aside1"/>
+                    <svg-icon class="active_svg" icon-class="aside1_active"/>
+                    <span class="title" slot="title">数据概览</span>
                 </el-menu-item>
                 <el-submenu index="2">
                     <template slot="title">
-                        <i class="el-icon-location"></i>
-                        <span>农场管理</span>
+                        <svg-icon class="default_svg" icon-class="aside2"/>
+                        <svg-icon class="active_svg" icon-class="aside2_active"/>
+                        <span class="title">农场管理</span>
                     </template>
                     <el-menu-item-group>
-                        <el-menu-item index="/farm/list">农场信息管理</el-menu-item>
-                        <el-menu-item index="/farm/visual">可视农场</el-menu-item>
+                        <el-menu-item index="/farm/list">
+                            <i class="point"></i>
+                            <span class="sub-title">农场信息管理</span>
+                        </el-menu-item>
+                        <el-menu-item index="/farm/visual">
+                            <i class="point"></i>
+                            <span class="sub-title">可视农场</span>
+                        </el-menu-item>
                     </el-menu-item-group>
                 </el-submenu>
                 <el-submenu index="3">
                     <template slot="title">
-                        <i class="el-icon-location"></i>
-                        <span>销售管理</span>
+                        <svg-icon class="default_svg" icon-class="aside3"/>
+                        <svg-icon class="active_svg" icon-class="aside3_active"/>
+                        <span class="title">销售管理</span>
                     </template>
                     <el-menu-item-group>
-                        <el-menu-item index="/sale/tracing">溯源农品</el-menu-item>
-                        <el-menu-item index="/sale/channel">渠道管理</el-menu-item>
+                        <el-menu-item index="/sale/tracing">
+                            <i class="point"></i>
+                            <span class="sub-title">溯源农品</span>
+                        </el-menu-item>
+                        <el-menu-item index="/sale/channel">
+                            <i class="point"></i>
+                            <span class="sub-title">渠道管理</span>
+                        </el-menu-item>
                     </el-menu-item-group>
                 </el-submenu>
                 <el-menu-item index="/pee/list">
-                    <i class="el-icon-menu"></i>
-                    <span slot="title">物环设备</span>
+                    <svg-icon class="default_svg" icon-class="aside4"/>
+                    <svg-icon class="active_svg" icon-class="aside4_active"/>
+                    <span class="title" slot="title">物环设备</span>
                 </el-menu-item>
                 <el-menu-item index="/base-station">
-                    <i class="el-icon-menu"></i>
-                    <span slot="title">基站管理</span>
+                    <svg-icon class="default_svg" icon-class="aside5"/>
+                    <svg-icon class="active_svg" icon-class="aside5_active"/>
+                    <span class="title" slot="title">基站管理</span>
                 </el-menu-item>
                 <el-menu-item index="/logistics">
-                    <i class="el-icon-menu"></i>
-                    <span slot="title">物流管理</span>
+                    <svg-icon class="default_svg" icon-class="aside6"/>
+                    <svg-icon class="active_svg" icon-class="aside6_active"/>
+                    <span class="title" slot="title">物流管理</span>
                 </el-menu-item>
                 <el-submenu index="7">
                     <template slot="title">
-                        <i class="el-icon-location"></i>
-                        <span>数据洞察</span>
+                        <svg-icon class="default_svg" icon-class="aside7"/>
+                        <svg-icon class="active_svg" icon-class="aside7_active"/>
+                        <span class="title">数据洞察</span>
                     </template>
                     <el-menu-item-group>
-                        <el-menu-item index="/data/statistics">数据统计</el-menu-item>
-                        <el-menu-item index="/data/alert">大数据预警</el-menu-item>
+                        <el-menu-item index="/data/statistics">
+                            <i class="point"></i>
+                            <span class="sub-title">数据统计</span>
+                        </el-menu-item>
+                        <el-menu-item index="/data/alert">
+                            <i class="point"></i>
+                            <span class="sub-title">大数据预警</span>
+                        </el-menu-item>
                     </el-menu-item-group>
                 </el-submenu>
             </el-menu>
         </div>
         <div :style="contentStyleStr()" id="global-content" class="content">
+            <!--
             <div class="content-wrapper" :style="`min-height: ${minHeight}px`">
                 <router-view></router-view>
             </div>
+            -->
+            <router-view></router-view>
         </div>
     </div>
 </template>
@@ -119,6 +147,7 @@ export default {
         position: relative;
         width: 100%;
         height: 100%;
+        overflow: hidden;
         .header {
             position: absolute;
             top: 0;
@@ -251,15 +280,13 @@ export default {
             left: 200px;
             right: 0px;
             bottom: 0px;
-            overflow: scroll;
+            overflow-y: scroll;
             background: $contentBg;
             .content-wrapper {
-                padding: 20px 20px 100px 20px;
+                // padding: 20px 20px 20px 20px;
             }
         }
     }
-
-
     .aside-list {
         .el-menu-item {
             display: flex;
@@ -268,7 +295,7 @@ export default {
             line-height: 50px;
             font-size: 20px;
             color: $navText;
-            padding-left: 30px !important;
+            padding-left: 24px !important;
             text-align: left;
             border-left: 4px solid transparent;
             background: transparent;
@@ -277,6 +304,12 @@ export default {
                 margin-right: 20px;
                 width: 30px;
                 height: 30px;
+                &.default_svg {
+                    display: block;
+                }
+                &.active_svg {
+                    display: none;
+                }
             }
             &:hover {
                 background: #0A1730 !important;
@@ -284,8 +317,17 @@ export default {
             &.is-active {
                 background: #0A1730 !important;
                 border-left: 4px solid $mainColor;
+                .title {
+                    color: #fff;
+                }
                 .svg-icon {
                     fill: $headerNavActiveText;
+                    &.default_svg {
+                        display: none;
+                    }
+                    &.active_svg {
+                        display: block;
+                    }
                 }
             }
         }
@@ -304,19 +346,67 @@ export default {
         }
         .el-submenu {
             .el-submenu__title {
-                padding-left: 34px!important;
+                display: flex;
+                align-items: center;
+                padding-left: 24px!important;
                 text-align: left;
                 span {
                     font-size: 20px;
                     color: $navText;
                 }
+                .el-submenu__icon-arrow {
+                    display: block;
+                    margin-left: 10px;
+                }
                 &:hover {
                     background: #0A1730 !important;
+                }
+                .svg-icon {
+                    margin-right: 20px;
+                    width: 30px;
+                    height: 30px;
+                    &.default_svg {
+                        display: block;
+                    }
+                    &.active_svg {
+                        display: none;
+                    }
                 }
             }
             .el-menu-item-group {
                 .el-menu-item-group__title {
                     padding: 0;
+                }
+                .el-menu-item {
+                    .point {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        border: 1px solid #667799;
+                        margin-left: 4px;
+                    }
+                    .sub-title {
+                        margin-left: 30px;
+                    }
+                    padding: 0;
+                }
+            }
+            &.is-active {
+                .el-submenu__title {
+                    .title {
+                        color: #fff;
+                    }
+                    .el-submenu__icon-arrow {
+                        color: #fff;
+                    }
+                    .svg-icon {
+                        &.default_svg {
+                            display: none;
+                        }
+                        &.active_svg {
+                            display: block;
+                        }
+                    }
                 }
             }
         }

@@ -1,5 +1,5 @@
 <template>
-    <div class="pee-create-container">
+    <div class="pee-create-container my-content-container">
         <h2 class="content-title">物环设备新增</h2>
         <div class="seperator-line"></div>
         <pee-form ref="peeFormComponent"></pee-form>

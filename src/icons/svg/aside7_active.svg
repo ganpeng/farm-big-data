@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="27px" viewBox="0 0 32 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>icon_data备份</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="00-数据概览" transform="translate(-24.000000, -922.000000)">
+            <g id="icon_data备份" transform="translate(25.061035, 923.000000)">
+                <circle id="椭圆形" stroke="#FFFFFF" stroke-width="1.8" cx="25.9389648" cy="4" r="4"></circle>
+                <circle id="椭圆形备份-4" fill="#FFFFFF" cx="18.9389648" cy="17" r="4"></circle>
+                <circle id="椭圆形备份-5" stroke="#FFFFFF" stroke-width="1.8" cx="6.93896484" cy="13" r="3"></circle>
+                <line x1="24.4694824" y1="8" x2="20.9267578" y2="14" id="路径-12" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></line>
+                <line x1="15.9389648" y1="16" x2="9.93896484" y2="14" id="路径-12备份" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></line>
+                <path d="M16.6792058,4 L2,4 C0.8954305,4 1.58519408e-14,4.8954305 1.59872116e-14,6 L1.59872116e-14,23 C1.61224823e-14,24.1045695 0.8954305,25 2,25 L23.9389648,25 C25.0435343,25 25.9389648,24.1045695 25.9389648,23 L25.9389648,13.9748737 L25.9389648,13.9748737" id="路径-13" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

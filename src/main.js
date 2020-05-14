@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import * as ElementUI from 'element-ui';
 
-import {VTree, VSelectTree} from 'vue-tree-halower';
-import 'vue-tree-halower/dist/halower-tree.min.css';
-
 //  导入elementUI的css样式
 import 'element-ui/lib/theme-chalk/index.css';
 
@@ -20,6 +17,7 @@ import App from './App.vue'
 
 //  初始化svg组件
 import './icons';
+require('@/util/rem');
 
 filterInit(Vue);
 

@@ -10,10 +10,12 @@
   "dependencies": {
     "axios": "^0.18.0",
     "better-scroll": "^1.15.2",
+    "echarts": "^4.7.0",
     "element-ui": "^2.8.2",
     "lodash": "^4.17.11",
     "nprogress": "^0.2.0",
     "tinytime": "^0.2.6",
+    "v-charts": "^1.19.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",
     "vue-tree-halower": "^1.8.0",

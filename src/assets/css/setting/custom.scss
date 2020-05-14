@@ -1,6 +1,7 @@
 // body全局样式
 html, body {
     color: #A8ABB3;
+    font-size: 14px;
 }
 
 // 文字左对齐
@@ -2130,4 +2131,9 @@ html, body {
 }
 .sub-tab-content {
     padding-top: 100px;
+}
+
+.my-content-container {
+    padding: 20px;
+    // overflow-y: scroll;
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="tracing-list-container">
+    <div class="tracing-list-container my-content-container">
         <tracing-bord></tracing-bord>
         <div class="table-container">
             <h2 class="content-title">搜索筛选</h2>

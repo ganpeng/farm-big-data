@@ -1,5 +1,5 @@
 <template>
-    <div class="channel-create-container">
+    <div class="channel-create-container my-content-container">
         <h2 class="content-title">新增渠道</h2>
         <div class="seperator-line"></div>
         <channel-form ref="channelFormComponent"></channel-form>

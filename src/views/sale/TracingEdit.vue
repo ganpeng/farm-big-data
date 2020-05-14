@@ -1,5 +1,5 @@
 <template>
-    <div class="tracing-edit-container">
+    <div class="tracing-edit-container my-content-container">
         <h2 class="content-title">溯源农品编辑</h2>
         <div class="seperator-line"></div>
         <tracing-form></tracing-form>

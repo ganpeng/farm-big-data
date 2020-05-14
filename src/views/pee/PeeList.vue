@@ -1,5 +1,5 @@
 <template>
-    <div class="pee-container">
+    <div class="pee-container my-content-container">
         <bord></bord>
         <div class="table-container">
             <h2 class="content-title">搜索筛选</h2>
@@ -161,7 +161,6 @@
 </template>
 <script>
 import {mapGetters, mapMutations} from 'vuex';
-import _ from 'lodash';
 import Bord from './Bord';
 export default {
     name: 'PeeList',
@@ -213,39 +212,35 @@ export default {
         editPeeHandler(id) {
             this.$router.push({ name: 'PeeEdit', params: {id} });
         },
-        async deletePeeHandler(id) {
+        async deletePeeHandler() {
             try {
-                let confirm = await this.$confirm('你确定要删除吗, 是否继续?', '提示', {
+                await this.$confirm('你确定要删除吗, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
                     type: 'warning'
                 });
-                if (confirm) {}
-            } catch (err) {
-                console.log(err);
-            }
-
-        },
-        async pausePeeHandler(id) {
-            try {
-                let confirm = await this.$confirm('你确定要暂停吗, 是否继续?', '提示', {
-                    confirmButtonText: '确定',
-                    cancelButtonText: '取消',
-                    type: 'warning'
-                });
-                if (confirm) {}
             } catch (err) {
                 console.log(err);
             }
         },
-        async restartPeeHandler(id) {
+        async pausePeeHandler() {
             try {
-                let confirm = await this.$confirm('你确定要重启吗, 是否继续?', '提示', {
+                await this.$confirm('你确定要暂停吗, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
                     type: 'warning'
                 });
-                if (confirm) {}
+            } catch (err) {
+                console.log(err);
+            }
+        },
+        async restartPeeHandler() {
+            try {
+                await this.$confirm('你确定要重启吗, 是否继续?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                });
             } catch (err) {
                 console.log(err);
             }

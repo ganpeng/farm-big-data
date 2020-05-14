@@ -1,5 +1,5 @@
 <template>
-    <div class="farm-edit-container">
+    <div class="farm-edit-container my-content-container">
         <div class="tab-bar-container">
             <ul class="tab-bar-list">
                 <li @click="changeTab(index)" v-for="(item, index) in tabBarList"
