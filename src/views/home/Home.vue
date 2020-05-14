@@ -9,6 +9,13 @@
                        </span>
                        <span class="top-title">农场统计 >></span>
                        <span class="top-count">20<i>个</i></span>
+                       <div class="charts-container">
+                            <ve-ring
+                                width="2.6rem"
+                                :data="chartData"
+                                :legend-visible="false"
+                                :settings="chartSettings"></ve-ring>
+                       </div>
                     </li>
                     <li class="top-field-item">
                        <span class="top-icon">
@@ -16,6 +23,13 @@
                        </span>
                        <span class="top-title">物环设备统计 >></span>
                        <span class="top-count">500<i>个</i></span>
+                       <div class="charts-container">
+                            <ve-ring
+                                width="2.6rem"
+                                :data="chartData2"
+                                :legend-visible="false"
+                                :settings="chartSettings"></ve-ring>
+                       </div>
                     </li>
                     <li class="top-field-item">
                        <span class="top-icon">
@@ -23,6 +37,13 @@
                        </span>
                        <span class="top-title">基站统计 >></span>
                        <span class="top-count">500<i>个</i></span>
+                       <div class="charts-container">
+                            <ve-ring
+                                width="2.6rem"
+                                :data="chartData3"
+                                :legend-visible="false"
+                                :settings="chartSettings"></ve-ring>
+                       </div>
                     </li>
                 </ul>
             </div>
@@ -153,7 +174,45 @@
 </template>
 <script>
 export default {
-    name: 'Home'
+    name: 'Home',
+    data() {
+        this.chartSettings = {
+            radius: [50, 100],
+            label: {
+                show: false
+            },
+            labelLine: {
+                show: false
+            }
+        };
+        return {
+            chartData: {
+                columns: ['日期', '访问用户'],
+                rows: [
+                    { '日期': '1/1', '访问用户': 1393 },
+                    { '日期': '1/2', '访问用户': 3530 },
+                    { '日期': '1/3', '访问用户': 2923 }
+                ]
+            },
+            chartData2: {
+                columns: ['日期', '访问用户'],
+                rows: [
+                    { '日期': '1/1', '访问用户': 1393 },
+                    { '日期': '1/2', '访问用户': 3530 },
+                    { '日期': '1/3', '访问用户': 2923 },
+                    { '日期': '1/4', '访问用户': 2923 },
+                    { '日期': '1/5', '访问用户': 2923 }
+                ]
+            },
+            chartData3: {
+                columns: ['日期', '访问用户'],
+                rows: [
+                    { '日期': '1/1', '访问用户': 1393 },
+                    { '日期': '1/2', '访问用户': 3530 }
+                ]
+            }
+        };
+    }
 };
 </script>
 <style lang="scss" scoped>
@@ -213,6 +272,14 @@ export default {
                         i {
                             font-size: 0.27rem;
                         }
+                    }
+                    .charts-container {
+                        position: absolute;
+                        top: 0.6rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        // width: 2.6rem;
+                        // height: 2.6rem;
                     }
                 }
                 .top-field-item + .top-field-item {

@@ -123,6 +123,7 @@
     </div>
 </template>
 <script>
+import _ from 'lodash';
 import {governmentProjectsList} from '@/mock/business';
 import GovernmentProjectsDialog from './GovernmentProjectsDialog';
 export default {

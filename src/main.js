@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import * as ElementUI from 'element-ui';
+import VCharts from 'v-charts';
 
 //  导入elementUI的css样式
 import 'element-ui/lib/theme-chalk/index.css';
@@ -25,6 +26,7 @@ Vue.prototype.$util = util;
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);
+Vue.use(VCharts);
 
 new Vue({
     router,
