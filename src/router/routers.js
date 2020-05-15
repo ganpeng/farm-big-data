@@ -94,7 +94,7 @@ export const constantRouterMap = [{
                 name: 'ChannelList',
                 component: () => import('@/views/sale/ChannelList'),
                 meta: {
-                    title: '渠道管理'
+                    title: '渠道管理',
                 }
             },
             {
@@ -102,7 +102,8 @@ export const constantRouterMap = [{
                 name: 'ChannelCreate',
                 component: () => import('@/views/sale/ChannelCreate'),
                 meta: {
-                    title: '渠道管理>新增'
+                    title: '渠道管理>新增',
+                    activeMenu: '/sale/channel'
                 }
             },
             {
@@ -110,7 +111,8 @@ export const constantRouterMap = [{
                 name: 'ChannelEdit',
                 component: () => import('@/views/sale/ChannelEdit'),
                 meta: {
-                    title: '渠道管理>编辑'
+                    title: '渠道管理>编辑',
+                    activeMenu: '/sale/channel'
                 }
             },
             {
@@ -118,7 +120,8 @@ export const constantRouterMap = [{
                 name: 'ChannelDetail',
                 component: () => import('@/views/sale/ChannelDetail'),
                 meta: {
-                    title: '渠道管理>详情'
+                    title: '渠道管理>详情',
+                    activeMenu: '/sale/channel'
                 }
             },
             {
