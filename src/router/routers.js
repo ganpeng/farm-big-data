@@ -19,6 +19,12 @@ export const constantRouterMap = [{
         hidden: true
     },
     {
+        path: '/farm/visual/detail',
+        name: 'FarmVisualDetail',
+        component: () => import('@/views/farm/VisualFarm'),
+        hidden: true
+    },
+    {
         path: '/',
         component: Layout,
         redirect: '/dashboard',
