@@ -161,6 +161,7 @@
 </template>
 <script>
 import {mapGetters, mapMutations} from 'vuex';
+import _ from 'lodash';
 import Bord from './Bord';
 export default {
     name: 'PeeList',
