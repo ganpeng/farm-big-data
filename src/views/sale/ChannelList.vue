@@ -183,7 +183,7 @@ export default {
             }
         },
         gotoChannelStatistics(id) {
-            this.$router.push({ name: 'ChannelStatistics', params: {id} });
+            this.$router.push({ name: 'ChannelStatistics', params: {id}, query: {id} });
         },
         gotoChannelDetail(id) {
             this.$router.push({ name: 'ChannelDetail', params: {id} });

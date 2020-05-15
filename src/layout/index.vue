@@ -1,7 +1,7 @@
 <template>
     <div class="app-container">
         <div class="header clearfix">
-            <div class="breadcrumb">{{breadcrumb}}</div>
+            <div class="breadcrumb">{{breadcrumb}}{{subTitle}}</div>
             <div class="user-info float-right clearfix">
                 <svg-icon icon-class="avatar_icon"/>
                 <label>李素琴</label>
@@ -127,6 +127,19 @@ export default {
         breadcrumb() {
             const {meta} = this.$route;
             return meta.title;
+        },
+        subTitle() {
+            let {id} = this.$route.query;
+            switch (id) {
+                case 1:
+                    return '>自营电商数据统计';
+                case 2:
+                    return '>淘宝旗舰店数据统计';
+                case 3:
+                    return '>欧亚商都数据统计';
+                default:
+                    return '';
+            }
         }
     },
     async created() {
