@@ -82,7 +82,7 @@
                 <el-table-column prop="sn" align="center" min-width="120px" label="设备SN"></el-table-column>
                 <el-table-column align="center" min-width="120px" label="传感器类型">
                     <template slot-scope="scope">
-                        {{ scope.row.type}}
+                        {{getTypeLabel(scope.row.type)}}
                     </template>
                 </el-table-column>
                 <el-table-column min-width="120px" align="center" label="地址">
@@ -97,7 +97,7 @@
                 </el-table-column>
                 <el-table-column min-width="120px" align="center" label="厂商名称">
                     <template slot-scope="scope">
-                        {{scope.row.firmName}}
+                        {{getFirmLabel(scope.row.firmName)}}
                     </template>
                 </el-table-column>
                 <el-table-column min-width="120px" align="center" label="所属农场">
@@ -128,7 +128,7 @@
                 </el-table-column>
                 <el-table-column min-width="80px" align="center" label="状态">
                     <template slot-scope="scope">
-                        {{scope.row.status}}
+                        {{getStatusLabel(scope.row.status)}}
                     </template>
                 </el-table-column>
                 <el-table-column min-width="120px" align="center" label="上线时间">
@@ -176,7 +176,25 @@ export default {
         ...mapGetters({
             list: 'pee/list',
             searchField: 'pee/searchField'
-        })
+        }),
+        getTypeLabel() {
+            return (value) => {
+                let option = this.$util.sensorTypeOptions.find((item) => item.value === value);
+                return _.get(option, 'label');
+            };
+        },
+        getFirmLabel() {
+            return (value) => {
+                let option = this.$util.peeFirmOptions.find((item) => item.value === value);
+                return _.get(option, 'label');
+            }
+        },
+        getStatusLabel() {
+            return (value) => {
+                let option = this.$util.peeStatusOptions.find((item) => item.value === value);
+                return _.get(option, 'label');
+            }
+        }
     },
     async created() {
         try {

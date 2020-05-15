@@ -153,8 +153,7 @@ export default {
             pee: 'pee/currentPee'
         }),
         status() {
-            let {id} = this.$route.params;
-            return (id % 2) === 0;
+            return this.pee.type === 5 || this.pee.type === 6;
         },
         getTypeLabel() {
             return (value) => {
