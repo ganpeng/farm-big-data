@@ -1,13 +1,19 @@
 <template>
     <div class="logistics-container">
-        物流管理
+        <building></building>
     </div>
 </template>
 <script>
+import Building from '@/components/Building';
 export default {
-    name: 'Logistics'
+    name: 'Logistics',
+    components: {Building}
 };
 </script>
 <style lang="scss" scoped>
-.logistics-container {}
+.logistics-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 </style>

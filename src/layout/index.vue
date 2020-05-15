@@ -1,18 +1,24 @@
 <template>
     <div class="app-container">
         <div class="header clearfix">
+            <div class="breadcrumb">{{breadcrumb}}</div>
             <div class="user-info float-right clearfix">
                 <svg-icon icon-class="avatar_icon"/>
-                <label>admin</label>
+                <label>李素琴</label>
                 <div class="logout" @click="logout">
                     <svg-icon icon-class="logout"/>
                 </div>
             </div>
         </div>
         <div class="aside">
-            <div class="logo">
-                <svg-icon icon-class="example"/>
+            <div @click="gotoHome" class="logo">
+                <svg-icon icon-class="logo"/>
+                <div class="name">
+                    <p>吉林省智慧农业</p>
+                    <p>管理系统</p>
+                </div>
             </div>
+            <div class="in-big-screen"><p>进入统计大屏</p></div>
             <el-menu
                 router
                 :default-active="activeMenu"
@@ -117,6 +123,10 @@ export default {
                 return meta.activeMenu;
             }
             return path
+        },
+        breadcrumb() {
+            const { meta, path } = this.$route;
+            return meta.title;
         }
     },
     async created() {
@@ -138,6 +148,9 @@ export default {
         logout() {
             localStorage.removeItem('token');
             this.$router.push({name: 'Login'});
+        },
+        gotoHome() {
+            this.$router.push({name: 'Dashboard'});
         }
     }
 };
@@ -156,24 +169,13 @@ export default {
             height: $headerHeight;
             background: $headerBg;
             color: $navText;
-            .nav-list {
-                line-height: $headerHeight;
-                padding-left: 60px;
-                .nav-item {
-                    float: left;
-                    min-width: 110px;
-                    text-align: center;
-                    cursor: pointer;
-                    font-size: 20px;
-                    color: $navText;
-                    &:hover {
-                        background: $headerNavHoverBg;
-                    }
-                    &.active {
-                        color: #fff;
-                        background: #0062C4;
-                    }
-                }
+            .breadcrumb {
+                float: left;
+                margin-left: 20px;
+                line-height: 60px;
+                font-size: 28px;
+                font-weight: 500;
+                color: #fff;
             }
             .user-info {
                 position: relative;
@@ -261,16 +263,50 @@ export default {
             width: 200px;
             background-image: linear-gradient(90deg, #152036 0%, #252F46 100%);
             .logo {
+                display: flex;
+                align-items: center;
                 width: 200px;
-                height: 110px;
+                height: 60px;
+                text-align: left;
+                padding: 0 6px;
+                // height: 110px;
                 background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 0%, #000000 100%);
+                cursor: pointer;
                 .svg-icon {
+                    width: 42px;
+                    height: 52px;
+                    margin-right: 10px;
+                }
+                p:nth-of-type(1) {
+                    font-size: 18px;
+                    line-height: 24px;
+                    font-weight: 500;
+                    color: rgba(153,216,255,1);
+                }
+                p:nth-of-type(2) {
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: rgba(153,216,255,1);
+                }
+            }
+            .in-big-screen {
+                position: relative;
+                width: 100%;
+                height: 100px;
+                margin-bottom: 20px;
+                background-image: url('../assets/img/inbigscreen.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                cursor: pointer;
+                p {
                     position: absolute;
+                    bottom: 4px;
                     left: 50%;
-                    top: 60px;
-                    transform: translate(-50%, -40px);
-                    width: 160px;
-                    height: 38px;
+                    transform: translateX(-50%);
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: rgba(91,176,255,1);
                 }
             }
         }

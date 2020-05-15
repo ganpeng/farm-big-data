@@ -27,7 +27,7 @@ export const constantRouterMap = [{
             component: () => import('@/views/home/Home'),
             name: 'Dashboard',
             meta: {
-                title: '首页',
+                title: '数据概览',
                 icon: 'index',
                 affix: true,
                 noCache: true
@@ -44,7 +44,7 @@ export const constantRouterMap = [{
                 name: 'FarmList',
                 component: () => import('@/views/farm/FarmList'),
                 meta: {
-                    title: '农场列表'
+                    title: '农场信息管理'
                 }
             },
             {
@@ -52,7 +52,7 @@ export const constantRouterMap = [{
                 name: 'FarmEdit',
                 component: () => import('@/views/farm/FarmEdit'),
                 meta: {
-                    title: '编辑农场',
+                    title: '农场信息管理>编辑',
                     activeMenu: '/farm/list'
                 }
             },
@@ -85,7 +85,7 @@ export const constantRouterMap = [{
                 name: 'TracingEdit',
                 component: () => import('@/views/sale/TracingEdit'),
                 meta: {
-                    title: '溯源农品编辑',
+                    title: '溯源农品>编辑',
                     activeMenu: '/sale/tracing'
                 }
             },
@@ -102,7 +102,7 @@ export const constantRouterMap = [{
                 name: 'ChannelCreate',
                 component: () => import('@/views/sale/ChannelCreate'),
                 meta: {
-                    title: '新增渠道'
+                    title: '渠道管理>新增'
                 }
             },
             {
@@ -110,7 +110,7 @@ export const constantRouterMap = [{
                 name: 'ChannelEdit',
                 component: () => import('@/views/sale/ChannelEdit'),
                 meta: {
-                    title: '编辑渠道'
+                    title: '渠道管理>编辑'
                 }
             },
             {
@@ -118,7 +118,7 @@ export const constantRouterMap = [{
                 name: 'ChannelDetail',
                 component: () => import('@/views/sale/ChannelDetail'),
                 meta: {
-                    title: '渠道详情'
+                    title: '渠道管理>详情'
                 }
             },
             {
@@ -142,7 +142,7 @@ export const constantRouterMap = [{
                 name: 'BaseStation',
                 component: () => import('@/views/base_station/BaseStation'),
                 meta: {
-                    title: '编辑农场'
+                    title: '基站管理'
                 }
             }
         ]
@@ -173,7 +173,7 @@ export const constantRouterMap = [{
                 name: 'PeeList',
                 component: () => import('@/views/pee/PeeList'),
                 meta: {
-                    title: '物环设备列表'
+                    title: '物环设备'
                 }
             },
             {
@@ -181,7 +181,7 @@ export const constantRouterMap = [{
                 name: 'PeeCreate',
                 component: () => import('@/views/pee/PeeCreate'),
                 meta: {
-                    title: '物环设备新增',
+                    title: '物环设备>新增',
                     activeMenu: '/pee/list'
                 }
             },
@@ -190,7 +190,7 @@ export const constantRouterMap = [{
                 name: 'PeeEdit',
                 component: () => import('@/views/pee/PeeEdit'),
                 meta: {
-                    title: '物环设备编辑',
+                    title: '物环设备>编辑',
                     activeMenu: '/pee/list'
                 }
             },
@@ -199,7 +199,7 @@ export const constantRouterMap = [{
                 name: 'PeeDetail',
                 component: () => import('@/views/pee/PeeDetail'),
                 meta: {
-                    title: '物环设备详情',
+                    title: '物环设备>详情',
                     activeMenu: '/pee/list'
                 }
             }
@@ -224,7 +224,7 @@ export const constantRouterMap = [{
                 name: 'DataAlert',
                 component: () => import('@/views/data/DataAlert'),
                 meta: {
-                    title: '数据预警'
+                    title: '大数据预警'
                 }
             }
         ]

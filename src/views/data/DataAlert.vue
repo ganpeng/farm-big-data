@@ -1,5 +1,5 @@
 <template>
-    <div class="data-alert-container">
+    <div class="data-alert-container my-content-container">
         <bord></bord>
         <div class="table-container">
             <h2 class="content-title">搜索筛选</h2>
@@ -12,8 +12,7 @@
                         placeholder="请输入关键字"
                         @input="inputHandler($event, 'keyword')"
                         clearable
-                        class="border-input"
-                    >
+                        class="border-input">
                     </el-input>
                 </div>
                 <el-button class="btn-style-one" @click="searchHandler" type="primary">
