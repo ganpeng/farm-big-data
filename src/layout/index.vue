@@ -125,7 +125,7 @@ export default {
             return path
         },
         breadcrumb() {
-            const { meta, path } = this.$route;
+            const {meta} = this.$route;
             return meta.title;
         }
     },

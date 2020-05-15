@@ -16,6 +16,7 @@
     "nprogress": "^0.2.0",
     "tinytime": "^0.2.6",
     "v-charts": "^1.19.0",
+    "video.js": "^7.7.6",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6",
     "vue-tree-halower": "^1.8.0",

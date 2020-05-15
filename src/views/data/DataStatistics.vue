@@ -443,7 +443,7 @@ export default {
         }
     },
     methods: {
-        tableRowClassName({row, rowIndex}) {
+        tableRowClassName({rowIndex}) {
             return (rowIndex % 2) === 0 ? 'bg-one' : 'bg-two';
         },
         changeTab(index) {

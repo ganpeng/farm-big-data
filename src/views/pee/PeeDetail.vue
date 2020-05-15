@@ -106,6 +106,12 @@
         <div class="seperator-line"></div>
         <div class="range-file-container">
             <h4 class="content-sub-title">设备数据</h4>
+            <div v-if="status" class="live-video">
+                <video-player :options="videoOptions"></video-player>
+            </div>
+            <div v-else class="my-echarts">
+                <monitoring-data></monitoring-data>
+            </div>
         </div>
         <div class="fixed-btn-container">
             <el-button class="btn-style-two" type="primary" @click="gotoPeeEdit">编辑</el-button>
@@ -116,8 +122,28 @@
 <script>
 import {mapGetters, mapMutations} from 'vuex';
 import _ from 'lodash';
+import VideoPlayer from '@/components/VideoPlayer';
+import MonitoringData from './MonitoringData';
 export default {
     name: 'PeeDetail',
+    components: {VideoPlayer, MonitoringData},
+    data() {
+        return {
+            videoOptions: {
+                autoplay: true,
+                controls: true,
+                liveui: true,
+                width: 640,
+                height: 320,
+                sources: [
+                    {
+                        src: "http://n.video.tianchimedia.net/live/34020000001320000001.m3u8?auth_key=1887345156-0-0-7a1e07618d0822cea368feceaeecbf09",
+                        type: "application/x-mpegURL"
+                    }
+                ]
+            }
+        }
+    },
     created() {
         let {id} = this.$route.params;
         this.setCurrentPeeById({id});
@@ -126,6 +152,10 @@ export default {
         ...mapGetters({
             pee: 'pee/currentPee'
         }),
+        status() {
+            let {id} = this.$route.params;
+            return (id % 2) === 0;
+        },
         getTypeLabel() {
             return (value) => {
                 let option = this.$util.sensorTypeOptions.find((item) => item.value === value);
@@ -154,5 +184,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-
+.pee-detail-container {
+    padding-bottom: 100px;
+    .my-echarts {
+        width: 6.4rem;
+        height: 3.2rem;
+    }
+}
 </style>
