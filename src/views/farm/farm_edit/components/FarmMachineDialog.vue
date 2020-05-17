@@ -253,7 +253,7 @@ export default {
         width: 200px;
         height: 300px;
         background-color: red;
-        border-radius: 8px;
+        border-radius: 4px;
     }
     .file-item + .file-item {
         margin-left: 10px;

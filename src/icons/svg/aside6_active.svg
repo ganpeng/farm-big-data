@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="24px" viewBox="0 0 32 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="25px" height="18px" viewBox="0 0 25 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
     <title>icon_transport备份</title>
     <desc>Created with Sketch.</desc>
     <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="00-数据概览" transform="translate(-24.000000, -873.000000)">
-            <g id="icon_transport备份" transform="translate(25.000000, 874.723633)">
-                <polyline id="路径-8" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" points="0.0610351563 3.05371094 2.61317823 3.05371094 5.1718094 1.77635684e-15 16.0327148 1.77635684e-15 19.0610352 3.05371094 19.0610352 16.2739258 12 16.2739258"></polyline>
-                <circle id="椭圆形" stroke="#FFFFFF" stroke-width="1.8" cx="8.5" cy="17.7763672" r="3.5"></circle>
-                <circle id="椭圆形备份-3" stroke="#FFFFFF" stroke-width="1.8" cx="23.5" cy="17.7763672" r="3.5"></circle>
-                <polyline id="路径-9" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" points="19.0610352 4.37646484 23.6049035 4.37646484 30 9.328125 30 16.2739258 26.5913086 16.2739258"></polyline>
-                <line x1="5.32104492" y1="16.2739258" x2="0.0610351563" y2="16.2739258" id="路径-10" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></line>
-                <line x1="20.3295898" y1="16.2739258" x2="19" y2="16.2739258" id="路径-10备份" stroke="#FFFFFF" stroke-width="1.8"></line>
-                <line x1="0.5" y1="7.77636719" x2="8.5" y2="7.77636719" id="直线" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></line>
-                <line x1="0.5" y1="11.2763672" x2="5" y2="11.2763672" id="直线备份" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></line>
-                <polygon id="路径-11" fill="#FFFFFF" points="22.084482 10.3251953 30 10.3251953 23.6049035 4.37646484 22.084482 4.37646484"></polygon>
+        <g id="00-首页NEW" transform="translate(-24.000000, -872.000000)">
+            <g id="icon_transport备份" transform="translate(25.000000, 873.000000)">
+                <polyline id="路径-8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" points="-2.66453526e-14 2.71574431 2.01484979 2.71574431 4.03482177 0.276367188 12.6092208 0.276367188 15 2.71574431 15 13.2763672 9.42549856 13.2763672"></polyline>
+                <circle id="椭圆形" stroke="#FFFFFF" stroke-width="1.5" cx="6.5" cy="13.7763672" r="2.5"></circle>
+                <circle id="椭圆形备份-3" stroke="#FFFFFF" stroke-width="1.5" cx="18.5" cy="13.7763672" r="2.5"></circle>
+                <polyline id="路径-9" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" points="15 3.27636719 18.3230701 3.27636719 23 7.02211947 23 12.2763672 20.5071196 12.2763672"></polyline>
+                <line x1="4" y1="12.7763672" x2="0" y2="12.7763672" id="路径-10" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"></line>
+                <line x1="16" y1="12.7763672" x2="15" y2="12.7763672" id="路径-10备份" stroke="#FFFFFF" stroke-width="1.5"></line>
+                <line x1="0.388888889" y1="5.77636719" x2="6.61111111" y2="5.77636719" id="直线" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"></line>
+                <line x1="1" y1="8.77636719" x2="4" y2="8.77636719" id="直线备份" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"></line>
+                <polygon id="路径-11" fill="#FFFFFF" points="17 8.27636719 23 8.27636719 18.1524867 3.27636719 17 3.27636719"></polygon>
             </g>
         </g>
     </g>

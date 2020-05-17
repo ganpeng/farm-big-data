@@ -62,7 +62,7 @@ export default {
             position: relative;
             width: 180px;
             height: 80px;
-            border-radius: 8px;
+            border-radius: 4px;
             background: #252C3D;
             margin-right: 12px;
             text-align: left;

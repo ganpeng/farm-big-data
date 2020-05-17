@@ -558,7 +558,7 @@
         align-items: flex-start;
         padding: 17px;
         background: rgba(41, 53, 80, 1);
-        border-radius: 8px;
+        border-radius: 4px;
         width: 503px;
         height: 407px;
         .title {
@@ -601,7 +601,7 @@
         align-items: flex-start;
         padding: 17px;
         background: rgba(15, 22, 35, 0.9);
-        border-radius: 8px;
+        border-radius: 4px;
         width: 947px;
         height: 407px;
         .title {
@@ -731,7 +731,7 @@
         width: 620px;
         height: 448px;
         background: rgba(15, 22, 35, 0.9);
-        border-radius: 8px;
+        border-radius: 4px;
         .title-block {
             width: 100%;
             display: flex;
@@ -783,7 +783,7 @@
         width: 437px;
         height: 405px;
         background: rgba(15, 22, 35, 0.9);
-        border-radius: 8px;
+        border-radius: 4px;
         .title {
             font-size: 18px;
             font-weight: 500;
@@ -851,7 +851,7 @@
         width: 597px;
         height: 522px;
         background: rgba(15, 22, 35, 0.9);
-        border-radius: 8px;
+        border-radius: 4px;
         .title {
             font-size: 18px;
             font-weight: 500;
@@ -1135,7 +1135,7 @@
         width: 354px;
         height: 216px;
         background: rgba(15, 22, 35, 0.9);
-        border-radius: 8px;
+        border-radius: 4px;
         .title {
             font-size: 18px;
             font-weight: 500;
@@ -1180,7 +1180,7 @@
 .el-popover {
     width: 246px !important;
     background: rgba(15, 22, 35, 0.9);
-    border-radius: 8px;
+    border-radius: 4px;
     border: none;
     padding-left: 14px;
     .popper__arrow {

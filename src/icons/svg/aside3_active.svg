@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="29px" height="26px" viewBox="0 0 29 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="24px" height="22px" viewBox="0 0 24 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
     <title>icon_cart备份</title>
     <desc>Created with Sketch.</desc>
     <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="00-数据概览" transform="translate(-20.000000, -722.000000)" stroke="#FFFFFF">
-            <g id="icon_cart备份" transform="translate(20.819031, 722.820995)">
-                <polyline id="路径-2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" points="0.180968949 0.179004558 7.0755551 1.73731485 10.7033231 17.1790046 27.1809689 14.2021761 27.1809689 4.7942879 7.92862369 3.14873521"></polyline>
-                <path d="M11.1809689,17.1790046 L11.9652827,18.6495928 C12.1390765,18.9754563 12.4783237,19.1790046 12.8476356,19.1790046 L27.1809689,19.1790046 L27.1809689,19.1790046" id="路径-3" stroke-width="1.8" stroke-linecap="round"></path>
-                <circle id="椭圆形" fill="#667799" cx="13.1809689" cy="23.1790046" r="1.5"></circle>
-                <circle id="椭圆形备份-2" fill="#667799" cx="26.1809689" cy="23.1790046" r="1.5"></circle>
-                <line x1="8.18096895" y1="7.69900456" x2="27.1809689" y2="7.65900456" id="路径-4"></line>
-                <line x1="10.1809689" y1="12.1790046" x2="27.1809689" y2="11.1790046" id="路径-5"></line>
-                <line x1="14.1809689" y1="3.17900456" x2="16.1809689" y2="15.1790046" id="路径-6"></line>
-                <line x1="20.3734689" y1="4.17900456" x2="20.9884689" y2="15.1790046" id="路径-7"></line>
+        <g id="00-首页NEW" transform="translate(-20.000000, -707.000000)">
+            <g id="icon_cart备份" transform="translate(20.819031, 708.000000)">
+                <polyline id="路径-2" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" points="0.180968949 0.179004558 5.54342485 1.46231892 8.36502218 14.1790046 21.1809689 11.7274988 21.1809689 3.97982613 6.20692263 2.6246651"></polyline>
+                <path d="M9.18096895,14.1790046 L9.78659884,15.576612 C9.94507298,15.9423216 10.3055851,16.1790046 10.7041545,16.1790046 L22.1809689,16.1790046 L22.1809689,16.1790046" id="路径-3" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"></path>
+                <circle id="椭圆形" fill="#FFFFFF" cx="10.6809689" cy="18.6790046" r="1.5"></circle>
+                <circle id="椭圆形备份-2" fill="#FFFFFF" cx="20.6809689" cy="18.6790046" r="1.5"></circle>
+                <line x1="6.18096895" y1="6.69900456" x2="21.1809689" y2="6.65900456" id="路径-4" stroke="#FFFFFF"></line>
+                <line x1="8.18096895" y1="10.1790046" x2="21.1809689" y2="9.17900456" id="路径-5" stroke="#FFFFFF"></line>
+                <line x1="11.1809689" y1="3.17900456" x2="13.1809689" y2="13.1790046" id="路径-6" stroke="#FFFFFF"></line>
+                <line x1="16.3734689" y1="3.17900456" x2="16.9884689" y2="12.1790046" id="路径-7" stroke="#FFFFFF"></line>
             </g>
         </g>
     </g>

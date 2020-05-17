@@ -4,8 +4,6 @@ import VCharts from 'v-charts';
 
 //  导入elementUI的css样式
 import 'element-ui/lib/theme-chalk/index.css';
-
-import '@/assets/css/global.less';
 import '@/assets/css/global.scss';
 
 //  获取service

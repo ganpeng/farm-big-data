@@ -217,7 +217,7 @@ export default {
         width: 140px;
         height: 220px;
         background-color: red;
-        border-radius: 8px;
+        border-radius: 4px;
         img {
         }
     }
