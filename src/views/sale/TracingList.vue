@@ -50,12 +50,14 @@
                             </el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
+                    <!--
                     <el-button
                         class="btn-style-two contain-svg-icon"
                         @click="createFarm">
                         <svg-icon icon-class="add"/>
                         添加
                     </el-button>
+                    -->
                 </div>
             </div>
         </div>
@@ -74,27 +76,27 @@
                         </span>
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="名称">
+                <el-table-column min-width="160px" label="名称">
                     <template slot-scope="scope">
                         {{ scope.row.name}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="种类">
+                <el-table-column min-width="60px" label="种类">
                     <template slot-scope="scope">
                         {{scope.row.type}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="160px" label="品种">
+                <el-table-column min-width="100px" label="品种">
                     <template slot-scope="scope">
                         {{scope.row.variety}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="规格">
+                <el-table-column min-width="100px" label="规格">
                     <template slot-scope="scope">
                         {{scope.row.specs}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="150px" label="认证">
+                <el-table-column min-width="120px" label="认证">
                     <template slot-scope="scope">
                         {{scope.row.auth}}
                     </template>
@@ -104,7 +106,7 @@
                         {{scope.row.farm}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="180px" label="累计销售额（元）">
+                <el-table-column min-width="160px" label="累计销售额（元）">
                     <template slot-scope="scope">
                         {{scope.row.salesVolume}}
                     </template>
