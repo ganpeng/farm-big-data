@@ -24,8 +24,10 @@
                 <div class="table-container">
                     <el-table
                         :data="tableData1"
-                        border
+                        header-row-class-name="common-table-header"
+                        size="small"
                         :row-class-name="tableRowClassName"
+                        class="my-table-style"
                         style="width: 100%">
                         <el-table-column align="center" prop="date" label="年份"></el-table-column>
                         <el-table-column align="center" prop="area1" label="耕地面积"></el-table-column>
@@ -51,8 +53,10 @@
                 <div class="table-container">
                     <el-table
                         :data="tableData2"
-                        border
+                        header-row-class-name="common-table-header"
+                        size="small"
                         :row-class-name="tableRowClassName"
+                        class="my-table-style"
                         style="width: 100%">
                         <el-table-column align="center" prop="date" label="年份"></el-table-column>
                         <el-table-column align="center" prop="area1" label="经营人员"></el-table-column>
@@ -78,8 +82,10 @@
                 <div class="table-container">
                     <el-table
                         :data="tableData3"
-                        border
+                        header-row-class-name="common-table-header"
+                        size="small"
                         :row-class-name="tableRowClassName"
+                        class="my-table-style"
                         style="width: 100%">
                         <el-table-column align="center" prop="date" label="年份"></el-table-column>
                         <el-table-column align="center" prop="area1" label="种植面积"></el-table-column>
@@ -105,8 +111,10 @@
                 <div class="table-container">
                     <el-table
                         :data="tableData4"
-                        border
+                        header-row-class-name="common-table-header"
+                        size="small"
                         :row-class-name="tableRowClassName"
+                        class="my-table-style"
                         style="width: 100%">
                         <el-table-column align="center" prop="date" label="年份"></el-table-column>
                         <el-table-column align="center" prop="area1" label="种植面积"></el-table-column>
@@ -133,8 +141,10 @@
                 <div class="table-container">
                     <el-table
                         :data="tableData5"
-                        border
+                        header-row-class-name="common-table-header"
+                        size="small"
                         :row-class-name="tableRowClassName"
+                        class="my-table-style"
                         style="width: 100%">
                         <el-table-column align="center" prop="date" label="年份"></el-table-column>
                         <el-table-column align="center" prop="area1" label="自营电商销售额"></el-table-column>
@@ -159,8 +169,10 @@
                 <div class="table-container">
                     <el-table
                         :data="tableData6"
-                        border
+                        header-row-class-name="common-table-header"
+                        size="small"
                         :row-class-name="tableRowClassName"
+                        class="my-table-style"
                         style="width: 100%">
                         <el-table-column align="center" prop="date" label="年份"></el-table-column>
                         <el-table-column align="center" prop="area1" label="服务营收"></el-table-column>
@@ -444,7 +456,11 @@ export default {
     },
     methods: {
         tableRowClassName({rowIndex}) {
-            return (rowIndex % 2) === 0 ? 'bg-one' : 'bg-two';
+            if ((rowIndex % 2) === 0) {
+                return 'warning-row';
+            } else {
+                return 'success-row';
+            }
         },
         changeTab(index) {
             this.tabBarList = this.tabBarList.map((item, _index) => {
@@ -481,7 +497,7 @@ export default {
                 .title {
                     display: inline-block;
                     font-size: 27px;
-                    font-weight: 400;
+                    // font-weight: 400;
                     color:#667799 ;
                     height: 52px;
                     line-height: 52px;
@@ -515,6 +531,7 @@ export default {
                     width: 7rem;
                     height: 0.8rem;
                     line-height: 0.8rem;
+                    text-align: center;
                     background-image: url('../../assets/img/data_statics_bg.png');
                     background-repeat: no-repeat;
                     background-position: center center;
