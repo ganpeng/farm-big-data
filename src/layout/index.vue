@@ -301,9 +301,9 @@ export default {
         }
         .in-big-screen {
             position: relative;
-            width: 240px;
-            height: 140px;
-            margin: 20px auto;
+            width: 250px;
+            height: 110px;
+            margin: 15px auto;
             background-image: url('../assets/img/inbigscreen.png');
             background-repeat: no-repeat;
             background-position: center;

@@ -1,174 +1,217 @@
 <template>
     <div class="home-container my-content-container">
-        <div class="field-wrapper">
-            <div class="top-field">
-                <ul class="top-field-list">
-                    <li class="top-field-item">
-                       <span class="top-icon">
-                            <svg-icon icon-class="home1"/>
-                       </span>
-                       <span class="top-title">农场统计 >></span>
-                       <span class="top-count">20<i>个</i></span>
-                       <div class="charts-container">
-                            <ve-ring
-                                width="2.6rem"
-                                :data="chartData"
-                                :legend-visible="false"
-                                :settings="chartSettings"></ve-ring>
-                       </div>
-                    </li>
-                    <li class="top-field-item">
-                       <span class="top-icon">
-                            <svg-icon icon-class="home2"/>
-                       </span>
-                       <span class="top-title">物环设备统计 >></span>
-                       <span class="top-count">500<i>个</i></span>
-                       <div class="charts-container">
-                            <ve-ring
-                                width="2.6rem"
-                                :data="chartData2"
-                                :legend-visible="false"
-                                :settings="chartSettings"></ve-ring>
-                       </div>
-                    </li>
-                    <li class="top-field-item">
-                       <span class="top-icon">
-                            <svg-icon icon-class="home3"/>
-                       </span>
-                       <span class="top-title">基站统计 >></span>
-                       <span class="top-count">500<i>个</i></span>
-                       <div class="charts-container">
-                            <ve-ring
-                                width="2.6rem"
-                                :data="chartData3"
-                                :legend-visible="false"
-                                :settings="chartSettings"></ve-ring>
-                       </div>
-                    </li>
-                </ul>
+        <div class="top-field">
+            <div class="my-bord-status">
+                <div class="status-item terminal-status-item total">
+                    <div class="left">
+                        <div class="line"></div>
+                        <div class="item_con">
+                            <p class="name-one">销售渠道</p>
+                            <p class="name-two">Sale Platform</p>
+                        </div>
+                    </div>
+                    <div class="count">
+                        <svg-icon icon-class="home_icon1"/>
+                        <span>3</span>
+                    </div>
+                </div>
+                <div class="status-item terminal-status-item total">
+                    <div class="left">
+                        <div class="line"></div>
+                        <div class="item_con">
+                            <p class="name-one">物流线路</p>
+                            <p class="name-two">Delivery</p>
+                        </div>
+                    </div>
+                    <div class="count">
+                        <svg-icon icon-class="home_icon2"/>
+                        <span>80</span>
+                    </div>
+                </div>
+                <div class="status-item terminal-status-item total">
+                    <div class="left">
+                        <div class="line"></div>
+                        <div class="item_con">
+                            <p class="name-one">运输车辆</p>
+                            <p class="name-two">Trucks</p>
+                        </div>
+                    </div>
+                    <div class="count">
+                        <svg-icon icon-class="home_icon3"/>
+                        <span>110</span>
+                    </div>
+                </div>
+                <div class="status-item terminal-status-item total">
+                    <div class="left">
+                        <div class="line"></div>
+                        <div class="item_con">
+                            <p class="name-one">基站统计</p>
+                            <p class="name-two">5G Towers</p>
+                        </div>
+                    </div>
+                    <div class="count">
+                        <svg-icon icon-class="home_icon4"/>
+                        <span>500</span>
+                    </div>
+                </div>
             </div>
-            <div class="seperator-line"></div>
-            <div class="middle-field">
-                <div class="middle-field-left">
-                    <div class="title">销售渠道统计 >></div>
-                    <span class="count">3<i>个</i></span>
-                    <ul class="left-list">
-                        <li class="left-item">
-                            <img src="../../assets/img/home_1.png" alt="">
-                            <div class="seperator-line"></div>
-                            <p class="name">自营电商</p>
-                        </li>
-                        <li class="left-item">
-                            <img src="../../assets/img/home_2.png" alt="">
-                            <div class="seperator-line"></div>
-                            <p class="name">天猫旗舰店</p>
-                        </li>
-                        <li class="left-item">
-                            <img src="../../assets/img/home_3.png" alt="">
-                            <div class="seperator-line"></div>
-                            <p class="name">欧亚商都线下体验店</p>
+        </div>
+        <div class="middle-field">
+            <div class="header">
+                <div class="header-left">
+                    <svg-icon class-name="svg-one" icon-class="home_icon5"/>
+                    <span class="title">预警趋势</span>
+                    <svg-icon class-name="arrow" icon-class="home_icon8"/>
+                </div>
+                <div class="header-right">
+                    <ul class="time-list">
+                        <li @click="changeTime(index)" v-for="(item, index) in times" :key="index"
+                            :class="['time-item', item.active && 'active']">
+                            {{item.title}}
                         </li>
                     </ul>
                 </div>
-                <div class="middle-field-right">
-                    <div class="title">物流统计 >></div>
-                    <div class="right-top-field">
-                        <div class="r_t_l_field">
-                            <span class="text">200公里以下路线</span>
-                            <span class="text">200公里以上路线</span>
-                        </div>
-                        <div class="r_t_r_field">
-                            <div class="top-bar-container">
-                                <div class="bar"></div>
-                                <span class="bar-text">55条</span>
-                            </div>
-                            <div class="bottom-bar-container">
-                                <div class="bar"></div>
-                                <span class="bar-text">15条</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right-bottom-field">
-                        <ul class="car-list">
-                            <li class="car-item">
-                                <div class="item-left">
-                                    <svg-icon icon-class="home_wuliu1"/>
-                                </div>
-                                <div class="item-right">
-                                    <p class="name">大型货车</p>
-                                    <p class="count">10<i>辆</i></p>
-                                </div>
-                            </li>
-                            <li class="car-item">
-                                <div class="item-left">
-                                    <svg-icon icon-class="home_wuliu2"/>
-                                </div>
-                                <div class="item-right">
-                                    <p class="name">中小型货车</p>
-                                    <p class="count">100<i>辆</i></p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
-            <div class="seperator-line"></div>
-            <div class="bottom-field">
-                <div class="title">未失效预警 >></div>
-                <ul class="bottom-field-list">
-                    <li class="bottom-field-item">
-                        <div class="item-top">
-                            <div class="left">
-                                <svg-icon icon-class="home_b_1"/>
-                            </div>
-                            <div class="middle">红色预警</div>
-                            <p class="count">1<i>条</i></p>
-                        </div>
-                        <div class="item-bottom">监测设备发现：稻瘟病的爆发系数为0.8，高于0.6。请及时除虫、预防。</div>
+            <div class="middle-content">
+                <ve-line
+                    :tooltip-visible="false"
+                    :legend-visible="false"
+                    :extend="chartExtend"
+                    :data="chartData">
+                </ve-line>
+                <ul class="legen-list">
+                    <li class="legen-item">
+                        <span class="icon"></span>
+                        <span class="text">红色预警</span>
                     </li>
-                    <li class="bottom-field-item">
-                        <div class="item-top">
-                            <div class="left">
-                                <svg-icon icon-class="home_b_2"/>
-                            </div>
-                            <div class="middle">橙色预警</div>
-                            <p class="count">1<i>条</i></p>
-                        </div>
-                        <div class="item-bottom">
-                            冰雹伴有大风降温，最大降幅为10度左右，请做好农作物保护工作。
-                        </div>
+                    <li class="legen-item">
+                        <span class="icon"></span>
+                        <span class="text">橙色预警</span>
                     </li>
-                    <li class="bottom-field-item">
-                        <div class="item-top">
-                            <div class="left">
-                                <svg-icon icon-class="home_b_3"/>
-                            </div>
-                            <div class="middle">黄色预警</div>
-                            <p class="count">1<i>条</i></p>
-                        </div>
-                        <div class="item-bottom">
-                            监测水稻的长势分析预判，今年水稻亩产可能减少0.5吨，请采取应…
-                        </div>
+                    <li class="legen-item">
+                        <span class="icon"></span>
+                        <span class="text">黄色预警</span>
                     </li>
-                    <li class="bottom-field-item">
-                        <div class="item-top">
-                            <div class="left">
-                                <svg-icon icon-class="home_b_4"/>
-                            </div>
-                            <div class="middle">蓝色预警</div>
-                            <p class="count">1<i>条</i></p>
-                        </div>
-                        <div class="item-bottom">
-                            根据农业部统计显示，大米今日收购价格低于去年最低值。
-                        </div>
+                    <li class="legen-item">
+                        <span class="icon"></span>
+                        <span class="text">蓝色预警</span>
                     </li>
                 </ul>
             </div>
-            <div class="seperator-line"></div>
-            <div class="footer">
-                <p class="name">吉林省智慧农业管理系统</p>
-                <p class="copyright">2020 © 吉林省智慧农业管理系统 版权所有</p>
+        </div>
+        <div class="bottom-field">
+            <div class="bottom-left">
+                <div class="header">
+                    <svg-icon class-name="svg-one" icon-class="home_icon6"/>
+                    <span class="title">农场统计</span>
+                    <svg-icon class-name="arrow" icon-class="home_icon8"/>
+                </div>
+                <div class="bottom-left-content">
+                    <div class="title-field">
+                        <p class="title">农场总数</p>
+                        <p class="count">
+                            20<i>个</i>
+                        </p>
+                    </div>
+                    <div class="legen-field">
+                        <ul class="legen-list">
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">农场1</span>
+                                <span class="text2">10</span>
+                                <span class="text3">50%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">农场2</span>
+                                <span class="text2">5</span>
+                                <span class="text3">25%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">农场3</span>
+                                <span class="text2">5</span>
+                                <span class="text3">25%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="echarts-field">
+                        <ve-pie
+                            width="260px"
+                            height="260px"
+                            :tooltip-visible="false"
+                            :legend-visible="false"
+                            :settings="chartSettings"
+                            :extend="peiExtend"
+                            :data="chartData2">
+                        </ve-pie>
+                    </div>
+                </div>
             </div>
+            <div class="bottom-right">
+                <div class="header">
+                    <svg-icon class-name="svg-one" icon-class="home_icon7"/>
+                    <span class="title">设备统计</span>
+                    <svg-icon class-name="arrow" icon-class="home_icon8"/>
+                </div>
+                <div class="bottom-right-content">
+                    <div class="title-field">
+                        <p class="title">设备总数</p>
+                        <p class="count">
+                            500<i>个</i>
+                        </p>
+                    </div>
+                    <div class="legen-field">
+                        <ul class="legen-list">
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">水质</span>
+                                <span class="text2">100</span>
+                                <span class="text3">20%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">土壤</span>
+                                <span class="text2">100</span>
+                                <span class="text3">20%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">气象</span>
+                                <span class="text2">50</span>
+                                <span class="text3">10%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">摄像头</span>
+                                <span class="text2">50</span>
+                                <span class="text3">10%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">风速</span>
+                                <span class="text2">200</span>
+                                <span class="text3">40%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="echarts-field">
+                        <ve-pie
+                            width="260px"
+                            height="260px"
+                            :tooltip-visible="false"
+                            :legend-visible="false"
+                            :settings="chartSettings"
+                            :extend="pei2Extend"
+                            :data="chartData3">
+                        </ve-pie>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p class="name">吉林省智慧农业管理系统</p>
+            <p class="copyright">2020 © 吉林省智慧农业管理系统 版权所有</p>
         </div>
     </div>
 </template>
@@ -177,7 +220,6 @@ export default {
     name: 'Home',
     data() {
         this.chartSettings = {
-            radius: [50, 100],
             label: {
                 show: false
             },
@@ -185,13 +227,40 @@ export default {
                 show: false
             }
         };
+        this.peiExtend = {
+            color: ["#74B8C2", "#008FC4", "#0062C4"],
+            'series.0.center': ['50%', '50%'],
+            'series.0.radius': ['0', '80%']
+        };
+
+        this.pei2Extend = {
+            color: ["#38A7E4", "#00C1EB", "#306BA7", "#00A2DE", "#50BEE7"],
+            'series.0.center': ['50%', '50%'],
+            'series.0.radius': ['0', '80%']
+        };
+        this.chartExtend = {
+            grid: {
+                top: 60,
+                bottom: 12
+            },
+            'xAxis.0.axisLabel': {color: '#667799'},
+            'yAxis.0.axisLabel': {color: '#667799'},
+            'yAxis.0.splitLine': {
+                lineStyle: {
+                    color: '#3E495E'
+                }
+            }
+        };
         return {
             chartData: {
-                columns: ['日期', '访问用户'],
+                columns: ['日期', '红色警报', '橙色警报', '黄色警报', '蓝色警报'],
                 rows: [
-                    { '日期': '1/1', '访问用户': 1393 },
-                    { '日期': '1/2', '访问用户': 3530 },
-                    { '日期': '1/3', '访问用户': 2923 }
+                    { '日期': '00:00', '红色警报': 4, '橙色警报': 1, '黄色警报': 3, '蓝色警报': 2},
+                    { '日期': '04:00', '红色警报': 3, '橙色警报': 2, '黄色警报': 5, '蓝色警报': 3},
+                    { '日期': '08:00', '红色警报': 1, '橙色警报': 4, '黄色警报': 2, '蓝色警报': 1},
+                    { '日期': '12:00', '红色警报': 3, '橙色警报': 2, '黄色警报': 1, '蓝色警报': 4},
+                    { '日期': '16:00', '红色警报': 2, '橙色警报': 4, '黄色警报': 5, '蓝色警报': 4},
+                    { '日期': '20:00', '红色警报': 1, '橙色警报': 3, '黄色警报': 3, '蓝色警报': 1},
                 ]
             },
             chartData2: {
@@ -200,356 +269,465 @@ export default {
                     { '日期': '1/1', '访问用户': 1393 },
                     { '日期': '1/2', '访问用户': 3530 },
                     { '日期': '1/3', '访问用户': 2923 },
-                    { '日期': '1/4', '访问用户': 2923 },
-                    { '日期': '1/5', '访问用户': 2923 }
                 ]
             },
             chartData3: {
-                columns: ['日期', '访问用户'],
+                columns: ['类型', '值'],
                 rows: [
-                    { '日期': '1/1', '访问用户': 1393 },
-                    { '日期': '1/2', '访问用户': 3530 }
+                    { '类型': '水质', '值': 100 },
+                    { '类型': '土壤', '值': 100 },
+                    { '类型': '气象', '值': 50 },
+                    { '类型': '摄像头', '值': 50 },
+                    { '类型': '风速', '值': 200 },
                 ]
-            }
+            },
+            times: [
+                {
+                    title: '72小时',
+                    active: true
+                },
+                {
+                    title: '48小时',
+                    active: false
+                },
+                {
+                    title: '24小时',
+                    active: false
+                }
+            ],
         };
+    },
+    methods: {
+        changeTime(index) {
+            this.times = this.times.map((item, _index) => {
+                if (index === _index) {
+                    item.active = true;
+                } else {
+                    item.active = false;
+                }
+                return item;
+            });
+        }
     }
-};
+}
 </script>
 <style lang="scss" scoped>
 .home-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    .field-wrapper {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        .top-field {
-            margin-bottom: 0.2rem;
-            .top-field-list {
-                display: flex;
-                height: 100%;
-                .top-field-item {
-                    position: relative;
-                    width: 33.33%;
-                    height: 4.42rem;
-                    background: linear-gradient(180deg,rgba(44,54,74,1) 0%,rgba(37,45,63,1) 100%);
-                    border-radius: 0.12rem;
-                    .top-icon {
-                        position: absolute;
-                        top: 0.12rem;
-                        left: 0.12rem;
-                        .svg-icon {
-                            width: 1.12rem;
-                            height: 1.12rem;
-                        }
-                    }
-                    .top-title {
-                        position: absolute;
-                        top: 0.12rem;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        font-size: 0.26rem;
-                        font-weight: 500;
-                        color: rgba(163,208,253,1);
-                        line-height: 0.38rem;
-                    }
-                    .top-count {
-                        position: absolute;
-                        top: 0.70rem;
-                        left: 50%;;
-                        transform: translateX(-50%);
-                        height: 0.52rem;
-                        font-size: 0.42rem;
-                        font-weight: 600;
-                        line-height: 0.52rem;
-                        color: #fff;
-                        padding: 0 0.08rem;
-                        background-color: #0062C4;
-                        border: 1px solid #64A4E5;
-                        border-radius: 0.05rem;
-                        i {
-                            font-size: 0.27rem;
-                        }
-                    }
-                    .charts-container {
-                        position: absolute;
-                        top: 0.6rem;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        // width: 2.6rem;
-                        // height: 2.6rem;
-                    }
-                }
-                .top-field-item + .top-field-item {
-                    margin-left: 0.574%;
-                }
-            }
-        }
-        .middle-field {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    .top-field {
+        height: 160px;
+        .my-bord-status {
             display: flex;
-            margin: 0.40rem 0;
-            .middle-field-left,
-            .middle-field-right {
-                text-align: left;
-                flex: 1;
-                .title {
-                    font-size: 0.27rem;
-                    line-height: 0.27rem;
-                    font-weight: 500;
-                    color: rgba(163,208,253,1);
-                }
+            width: 100%;
+            .status-item + .status-item {
+                margin-left: 10px;
             }
-            .middle-field-left {
-                border-right: 1px solid #252D3F;
-                padding-right: 0.20rem;
-                .count {
-                    display: inline-block;
-                    margin: 0.30rem 0;
-                    width: 1.20rem;
-                    height: 0.52rem;
-                    font-size: 0.42rem;
-                    font-weight: 600;
-                    line-height: 0.52rem;
-                    color: #fff;
-                    padding: 0 0.08rem;
-                    background-color: #0062C4;
-                    border: 1px solid #64A4E5;
-                    border-radius: 0.05rem;
-                    text-align: center;
-                    i {
-                        font-size: 0.27rem;
-                    }
-                }
-                .left-list {
-                    display: flex;
-                    justify-content: space-between;
-                    .left-item {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        width: 2.50rem;
-                        height: 2.50rem;
-                        padding: 0.08rem;
-                        background: linear-gradient(180deg,rgba(44,54,74,1) 0%,rgba(37,45,63,1) 100%);
-                        border-radius: 0.12rem;
-                        img {
-                            display: block;
-                            margin-top: 0.20rem;
-                            margin-bottom: 0.20rem;
-                        }
-                        .name {
-                            font-size: 0.20rem;
-                            line-height: 0.20rem;
-                            font-weight: 500;
-                            color: rgba(163,208,253,1);
-                            margin-top: 0.22rem;
-                        }
-                        &:nth-of-type(1) {
-                            img {
-                                width: 1.56rem;
-                                height: 1.03rem;
-                            }
-                        }
-                        &:nth-of-type(2) {
-                            img {
-                                width: 2.09rem;
-                                height: 1.13rem;
-                            }
-                        }
-                        &:nth-of-type(3) {
-                            img {
-                                width: 2.13rem;
-                                height: 1.08rem;
-                            }
-                        }
-                    }
-                }
-            }
-            .middle-field-right {
-                margin-left: 0.2rem;
-                .right-top-field {
-                    display: flex;
-                    height: 1.50rem;
-                    margin-top: 0.32rem;
-                    .r_t_l_field {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        padding-right: 0.12rem;
-                        border-right: 2px solid #252D3F;
-                        margin-left: 0.2rem;
-                        .text {
-                            font-size: 0.19rem;
-                            color: rgba(102,119,153,1);
-                            line-height: 0.32rem;
-                        }
-                    }
-                    .r_t_r_field {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        .top-bar-container {
-                            display: flex;
-                            .bar {
-                                width: 4.4rem;
-                                height: 0.32rem;
-                                background: linear-gradient(90deg,rgba(101,153,210,1) 0%,rgba(74,144,226,1) 100%);
-                            }
-                            .bar-text {
-                                font-size: 0.19rem;
-                                color: rgba(163,208,253,1);
-                                line-height: 0.32rem;
-                                margin-left: 0.2rem;
-                            }
-                        }
-                        .bottom-bar-container {
-                            display: flex;
-                            .bar {
-                                width: 1.2rem;
-                                height: 0.32rem;
-                                background: linear-gradient(90deg,rgba(101,181,210,1) 0%,rgba(74,184,226,1) 100%);
-                            }
-                            .bar-text {
-                                font-size: 0.19rem;
-                                color: rgba(163,208,253,1);
-                                line-height: 0.32rem;
-                                margin-left: 0.2rem;
-                            }
-                        }
-                    }
-                }
-                .right-bottom-field {
-                    margin-top: 0.5rem;
-                    .car-list {
-                        display: flex;
-                        justify-content: space-around;
-                        height: 1.08rem;
-                        .car-item {
-                            display: flex;
-                            align-items: center;
-                            .item-left {
-                                margin-right: 0.14rem;
-                                .svg-icon {
-                                    width: 1.10rem;
-                                    height: 1.10rem;
-                                }
-                            }
-                            .item-right {
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-around;
-                                .name {
-                                    font-size: 0.2rem;
-                                    line-height: 0.3rem;
-                                    font-weight: 500;
-                                    color:rgba(163,208,253,1);
-                                }
-                                .count {
-                                    display: inline-block;
-                                    width: 1.20rem;
-                                    height: 0.42rem;
-                                    font-size: 0.40rem;
-                                    font-weight: 600;
-                                    line-height: 0.42rem;
-                                    color: #fff;
-                                    padding: 0 0.08rem;
-                                    background-color: #0062C4;
-                                    border: 1px solid #64A4E5;
-                                    border-radius: 0.05rem;
-                                    text-align: center;
-                                    margin-top: 0.1rem;
-                                    i {
-                                        font-size: 0.27rem;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .bottom-field {
-            text-align: left;
-            padding: 0.24rem 0 0.14rem 0;
-            .title {
-                font-size: 0.27rem;
-                line-height: 0.27rem;
-                font-weight: 500;
-                color: rgba(163,208,253,1);
-            }
-            .bottom-field-list {
+            .status-item {
                 display: flex;
-                margin-top: 0.14rem;
-                .bottom-field-item {
-                    width: 2.64rem;
-                    margin-right: 1rem;
-                    .item-top {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        .left {
-                            .svg-icon {
-                                width: 0.64rem;
-                                height: 0.64rem;
-                            }
-                        }
-                        .middle {
-                            font-size: 0.20rem;
-                            font-weight: 500;
-                            line-height: 0.3rem;
-                        }
-                        .count {
-                            display: inline-block;
-                            width: 0.92rem;
-                            height: 0.42rem;
-                            font-size: 0.40rem;
-                            font-weight: 600;
-                            line-height: 0.42rem;
-                            color: #fff;
-                            padding: 0 0.08rem;
-                            background-color: #0062C4;
-                            border: 1px solid #64A4E5;
-                            border-radius: 0.05rem;
-                            text-align: center;
-                            margin-top: 0.1rem;
-                            i {
-                                font-size: 0.27rem;
-                                line-height: 0.42rem;
-                            }
+                align-items: center;
+                justify-content: space-between;
+                background-color: #272f44;
+                // width: 360px;
+                flex: 1;
+                height: 160px;
+                padding: 20px;
+                border-radius: 4px;
+                background: #272f44 no-repeat right 20px;
+                overflow: hidden;
+                color: #bdbec2;
+
+                &.total {
+                    background-position: 100% 100%;
+                    background-size: 78px 78px;
+                }
+                .line {
+                    width: 2px;
+                    height: 50px;
+                    float: left;
+                }
+                &:nth-of-type(1) {
+                    .line {
+                        background: #CEAA6F;
+                    }
+                    .count {
+                        .svg-icon {
+                            width: 156px;
+                            height: 137px;
                         }
                     }
-                    .item-bottom {
-                        font-size: 0.16rem;
-                        font-weight: 400;
-                        color: rgba(102,119,153,1);
-                        line-height: 0.24rem;
-                        background: rgba(34,42,58,1);
-                        border-radius: 0.06rem;
-                        padding: 0.05rem;
-                        margin-top: 0.14rem;
+                }
+                &:nth-of-type(2) {
+                    .line {
+                        background: #67C23A;
+                    }
+                    .count {
+                        .svg-icon {
+                            width: 123px;
+                            height: 123px;
+                        }
+                    }
+                }
+                &:nth-of-type(3) {
+                    .line {
+                        background: #00B8EE;
+                    }
+                    .count {
+                        .svg-icon {
+                            width: 171px;
+                            height: 123px;
+                        }
+                    }
+                }
+                &:nth-of-type(4) {
+                    .line {
+                        background: #7632B3;
+                    }
+                    .count {
+                        .svg-icon {
+                            width: 100px;
+                            height: 123px;
+                        }
+                    }
+                }
+                .item_con {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-around;
+                    height: 50px;
+                    margin-left: 10px;
+                    .name-one {
+                        font-size: 21px;
+                        line-height: 21px;
+                        color: rgba(99,116,151,1);
+                    }
+                    .name-two {
+                        font-size:21px;
+                        line-height: 21px;
+                        color:rgba(57,65,84,1);
+                    }
+                }
+                .count {
+                    position: relative;
+                    font-size: 53px;
+                    color: #A3D0FD;
+                    span {
+                        position: absolute;
+                        right: 30px;
+                        top: 50%;
+                        transform: translateY(-50%);
                     }
                 }
             }
         }
-        .footer {
+    }
+    .middle-field {
+        position: relative;
+        // flex: 1;
+        background-color: #252D3F;
+        height: 469px;
+        margin: 20px 0;
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            padding: 0 20px;
+            border-bottom: 1px solid #3A4763;
+            .header-left {
+                display: flex;
+                align-items: center;
+                .svg-one {
+                    width: 43px;
+                    height: 43px;
+                }
+                .title {
+                    font-size:21px;
+                    margin: 0 24px;
+                }
+                .arrow {
+                    width: 15px;
+                    height: 16px;
+                }
+            }
+            .header-right {
+                .time-list {
+                    display: flex;
+                    border-radius: 4px;
+                    .time-item {
+                        width: 80px;
+                        height: 32px;
+                        line-height: 32px;
+                        background-color: #0C1019;
+                        font-size: 16px;
+                        color: #394154;
+                        text-align: center;
+                        cursor: pointer;
+                        &.active {
+                            color: #fff;
+                            background-color: #0062C4;
+                        }
+                    }
+                }
+            }
+        }
+        .middle-content {
+            position: relative;
+            padding: 0 230px 0 80px;
+        }
+        .legen-list {
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            align-items: flex-end;
-            height: 1rem;
-            .name {
-                font-size: 0.24rem;
-                font-weight: 500;
-                color: rgba(62,73,94,1);
-                line-height: 0.34rem;
+            align-items: center;
+            position: absolute;
+            top: 60px;
+            right: 32px;
+            .legen-item {
+                display: flex;
+                align-items: center;
+                .icon {
+                    width: 13px;
+                    height: 13px;
+                    margin-right: 10px;
+                }
+                .text {
+                    font-size: 16px;
+                    color: #667799;
+                }
+                &:nth-of-type(1) {
+                    .icon {
+                        background-color: #C62C41;
+                    }
+                }
+                &:nth-of-type(2) {
+                    .icon {
+                        background-color: #FF7F00;
+                    }
+                }
+                &:nth-of-type(3) {
+                    .icon {
+                        background-color: #FFD145;
+                    }
+                }
+                &:nth-of-type(4) {
+                    .icon {
+                        background-color: #1478FE;
+                    }
+                }
             }
-            .copyright {
-                font-size: 0.16rem;
-                line-height: 0.24rem;
-                color: rgba(62,73,94,1);
+        }
+    }
+    .bottom-field {
+        display: flex;
+        // flex: 1;
+        height: 443px;
+        .header {
+            display: flex;
+            align-items: center;
+            height: 64px;
+            padding: 0 20px;
+            border-bottom: 1px solid #3A4763;
+            .svg-one {
+                width: 43px;
+                height: 43px;
             }
+            .title {
+                font-size:21px;
+                margin: 0 24px;
+            }
+            .arrow {
+                width: 15px;
+                height: 16px;
+            }
+        }
+        .bottom-left {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-right: 20px;
+            border-radius: 4px;
+            background-color: #252D3F;
+            .bottom-left-content {
+                position: relative;
+                flex: 1;
+                height: 376px;
+                .title-field {
+                    position: absolute;
+                    top: 60px;
+                    left: 48px;
+                    .title {
+                        font-size: 21px;
+                        color: rgba(163,208,253,1);
+                    }
+                    .count {
+                        font-size: 51px;
+                        color: rgba(91,173,255,1);
+                        i {
+                            font-size:21px;
+                        }
+                    }
+                }
+                .legen-field {
+                    position: absolute;
+                    bottom: 15px;
+                    left: 48px;;
+                    .legen-list {
+                        display: flex;
+                        flex-direction: column;
+                        .legen-item {
+                            display: flex;
+                            align-items: center;
+                            font-size: 16px;
+                            color: rgba(102,119,153,1);
+                            .text1 {
+                                margin-left: 10px;
+                            }
+                            .text2 {
+                                margin: 0 30px 0 20px;
+                            }
+                            .icon {
+                                width: 13px;
+                                height: 13px;
+                            }
+                            &:nth-of-type(1) {
+                                .icon {
+                                    background-color: #008FC4;
+                                }
+                            }
+                            &:nth-of-type(2) {
+                                .icon {
+                                    background-color: #0062C4;
+                                }
+                            }
+                            &:nth-of-type(3) {
+                                .icon {
+                                    background-color: #74B8C2;
+                                }
+                            }
+                        }
+                    }
+                }
+                .echarts-field {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    right: 40px;
+                    top: 60px;
+                    width: 240px;
+                    height: 240px;
+                }
+            }
+        }
+        .bottom-right {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            border-radius: 4px;
+            background-color: #252D3F;
+            .bottom-right-content {
+                position: relative;
+                flex: 1;
+                height: 376px;
+                .title-field {
+                    position: absolute;
+                    top: 60px;
+                    left: 48px;
+                    .title {
+                        font-size: 21px;
+                        color: rgba(163,208,253,1);
+                    }
+                    .count {
+                        font-size: 51px;
+                        color: rgba(91,173,255,1);
+                        i {
+                            font-size:21px;
+                        }
+                    }
+                }
+                .legen-field {
+                    position: absolute;
+                    bottom: 15px;
+                    left: 48px;;
+                    .legen-list {
+                        display: flex;
+                        flex-direction: column;
+                        .legen-item {
+                            display: flex;
+                            align-items: center;
+                            font-size: 16px;
+                            color: rgba(102,119,153,1);
+                            .text1 {
+                                width: 50px;
+                                margin-left: 10px;
+                            }
+                            .text2 {
+                                margin: 0 30px 0 20px;
+                            }
+                            .icon {
+                                width: 13px;
+                                height: 13px;
+                            }
+                            &:nth-of-type(1) {
+                                .icon {
+                                    background-color: #38A7E4;
+                                }
+                            }
+                            &:nth-of-type(2) {
+                                .icon {
+                                    background-color: #00C1EB;
+                                }
+                            }
+                            &:nth-of-type(3) {
+                                .icon {
+                                    background-color: #306BA7;
+                                }
+                            }
+                            &:nth-of-type(4) {
+                                .icon {
+                                    background-color: #00A2DE;
+                                }
+                            }
+                            &:nth-of-type(5) {
+                                .icon {
+                                    background-color: #50BEE7;
+                                }
+                            }
+                        }
+                    }
+                }
+                .echarts-field {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    right: 40px;
+                    top: 60px;
+                    width: 240px;
+                    height: 240px;
+                }
+            }
+        }
+    }
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;
+        height: 90px;
+        border-top: 1px solid #252D3F;
+        margin-top: 20px;
+        .name {
+            font-size: 24px;
+            color: rgba(62,73,94,1);
+            line-height: 34px;
+        }
+        .copyright {
+            font-size: 16px;
+            line-height: 24px;
+            color: rgba(62,73,94,1);
         }
     }
 }

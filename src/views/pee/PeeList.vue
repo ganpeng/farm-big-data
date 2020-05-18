@@ -1,68 +1,71 @@
 <template>
     <div class="pee-container my-content-container">
         <bord></bord>
-        <div class="table-container">
-            <h2 class="content-title">搜索筛选</h2>
-        </div>
         <div class="search-field">
             <div class="field-row">
-                <div class="search-field-item">
-                    <el-input
-                        :value="searchField.keyword"
-                        placeholder="请输入关键字"
-                        @input="inputHandler($event, 'keyword')"
-                        clearable
-                        class="border-input"
-                    >
-                    </el-input>
+                <div class="row-left">
+                    <div class="search-field-item">
+                        <el-input
+                            :value="searchField.keyword"
+                            placeholder="请输入关键字"
+                            @input="inputHandler($event, 'keyword')"
+                            clearable
+                            class="border-input"
+                        >
+                        </el-input>
+                    </div>
+                    <el-button class="btn-style-one" @click="searchHandler" type="primary">
+                        <svg-icon icon-class="search"/> 搜索
+                    </el-button>
+                    <div class="search-field-item">
+                        <label class="search-field-item-label">类型</label>
+                        <el-select
+                            :value="searchField.type"
+                            filterable
+                            clearable
+                            placeholder="全部"
+                            @input="inputHandler($event, 'type')">
+                            <el-option
+                                v-for="(item, index) in sensorTypeOptions"
+                                :key="index"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </div>
+                    <div class="search-field-item">
+                        <label class="search-field-item-label">厂商</label>
+                        <el-select
+                            :value="searchField.firm"
+                            filterable
+                            clearable
+                            placeholder="全部"
+                            @input="inputHandler($event, 'firm')">
+                            <el-option
+                                v-for="(item, index) in peeFirmOptions"
+                                :key="index"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </div>
                 </div>
-                <el-button class="btn-style-one" @click="searchHandler" type="primary">
-                    <svg-icon icon-class="search"/> 搜索
-                </el-button>
-                <div class="search-field-item">
-                    <label class="search-field-item-label">类型</label>
-                    <el-select
-                        :value="searchField.type"
-                        filterable
-                        clearable
-                        placeholder="全部"
-                        @input="inputHandler($event, 'type')">
-                        <el-option
-                            v-for="(item, index) in sensorTypeOptions"
-                            :key="index"
-                            :label="item.label"
-                            :value="item.value">
-                        </el-option>
-                    </el-select>
-                </div>
-                <div class="search-field-item">
-                    <label class="search-field-item-label">厂商</label>
-                    <el-select
-                        :value="searchField.firm"
-                        filterable
-                        clearable
-                        placeholder="全部"
-                        @input="inputHandler($event, 'firm')">
-                        <el-option
-                            v-for="(item, index) in peeFirmOptions"
-                            :key="index"
-                            :label="item.label"
-                            :value="item.value">
-                        </el-option>
-                    </el-select>
-                </div>
-                <el-button class="btn-style-one" @click="clearSearchField">
-                    <svg-icon icon-class="reset"/> 重置
-                </el-button>
-            </div>
-        </div>
-        <div class="seperator-line"></div>
-        <div class="tabel-field">
-            <h2 class="content-title">物环列表</h2>
-            <div class="table-operator-field clearfix">
-                <div class="float-left">
-                </div>
-                <div class="float-right">
+                <div class="row-right">
+                    <el-dropdown
+                        trigger="click"
+                        class="my-dropdown">
+                        <span class="el-dropdown-link">
+                            批量操作<i class="el-icon-arrow-down el-icon--right"></i>
+                        </span>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>
+                                <span>批量下架</span>
+                            </el-dropdown-item>
+                            <el-dropdown-item>
+                                <span>批量删除</span>
+                            </el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
                     <el-button
                         class="btn-style-two contain-svg-icon"
                         @click="createPee">
@@ -71,41 +74,49 @@
                     </el-button>
                 </div>
             </div>
-            <el-table header-row-class-name="common-table-header" class="my-table-style" :data="list.data" border>
-                <el-table-column align="center" min-width="120px" label="设备ID">
+        </div>
+        <div class="tabel-field">
+            <el-table
+                header-row-class-name="common-table-header"
+                size="small"
+                :row-class-name="tableRowClassName"
+                class="my-table-style"
+                :data="list.data">
+                <el-table-column type="selection" align="center" width="50"></el-table-column>
+                <el-table-column min-width="100px" label="设备ID">
                     <template slot-scope="scope">
                         <span @click="gotoPeeDetail(scope.row.id)" class="ellipsis two name">
                             {{scope.row.dId}}
                         </span>
                     </template>
                 </el-table-column>
-                <el-table-column prop="sn" align="center" min-width="120px" label="设备SN"></el-table-column>
-                <el-table-column align="center" min-width="120px" label="传感器类型">
+                <el-table-column prop="sn" min-width="100px" label="设备SN"></el-table-column>
+                <el-table-column min-width="100px" label="传感器类型">
                     <template slot-scope="scope">
                         {{getTypeLabel(scope.row.type)}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="地址">
+                <el-table-column min-width="200px" label="地址">
                     <template slot-scope="scope">
                         {{scope.row.address.city}}/{{scope.row.address.area}}/{{scope.row.address.detail}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="160px" align="center" label="经纬度">
+                <el-table-column min-width="160px" label="经纬度">
                     <template slot-scope="scope">
                         [{{scope.row.latitude}}, {{scope.row.longitude}}]
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="厂商名称">
+                <el-table-column min-width="80px" label="厂商名称">
                     <template slot-scope="scope">
                         {{getFirmLabel(scope.row.firmName)}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="所属农场">
+                <el-table-column min-width="140px" label="所属农场">
                     <template slot-scope="scope">
                         {{scope.row.farm}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="80px" align="center" label="负责人">
+                <el-table-column min-width="80px" label="负责人">
                     <template slot-scope="scope">
                         <el-popover
                             class="my-popover"
@@ -126,12 +137,12 @@
                         </el-popover>
                     </template>
                 </el-table-column>
-                <el-table-column min-width="80px" align="center" label="状态">
+                <el-table-column min-width="80px" label="状态">
                     <template slot-scope="scope">
                         {{getStatusLabel(scope.row.status)}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="上线时间">
+                <el-table-column min-width="120px" label="上线时间">
                     <template slot-scope="scope">
                         {{scope.row.createdAt}}
                     </template>
@@ -212,6 +223,13 @@ export default {
             resetSearchField: 'pee/resetSearchField',
             resetPagination: 'pee/resetPagination'
         }),
+        tableRowClassName({rowIndex}) {
+            if ((rowIndex % 2) === 0) {
+                return 'warning-row';
+            } else {
+                return 'success-row';
+            }
+        },
         inputHandler(value, key) {
             this.updateSearchField({key, value});
         },

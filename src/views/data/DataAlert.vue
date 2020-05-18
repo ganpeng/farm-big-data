@@ -1,123 +1,137 @@
 <template>
     <div class="data-alert-container my-content-container">
         <bord></bord>
-        <div class="table-container">
-            <h2 class="content-title">搜索筛选</h2>
-        </div>
         <div class="search-field">
             <div class="field-row">
-                <div class="search-field-item">
-                    <el-input
-                        :value="searchField.keyword"
-                        placeholder="请输入关键字"
-                        @input="inputHandler($event, 'keyword')"
-                        clearable
-                        class="border-input">
-                    </el-input>
+                <div class="row-left">
+                    <div class="search-field-item">
+                        <el-input
+                            :value="searchField.keyword"
+                            placeholder="请输入关键字"
+                            @input="inputHandler($event, 'keyword')"
+                            clearable
+                            class="border-input">
+                        </el-input>
+                    </div>
+                    <el-button class="btn-style-one" @click="searchHandler" type="primary">
+                        <svg-icon icon-class="search"/> 搜索
+                    </el-button>
+                    <div class="search-field-item">
+                        <label class="search-field-item-label">级别</label>
+                        <el-select
+                            :value="searchField.level"
+                            filterable
+                            clearable
+                            placeholder="全部"
+                            @input="inputHandler($event, 'level')">
+                            <el-option
+                                v-for="(item, index) in levelOptions"
+                                :key="index"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </div>
+                    <div class="search-field-item">
+                        <label class="search-field-item-label">类型</label>
+                        <el-select
+                            :value="searchField.type"
+                            filterable
+                            clearable
+                            placeholder="全部"
+                            @input="inputHandler($event, 'type')">
+                            <el-option
+                                v-for="(item, index) in dataAlertTypeOptions"
+                                :key="index"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </div>
+                    <div class="search-field-item">
+                        <label class="search-field-item-label">来源</label>
+                        <el-select
+                            :value="searchField.source"
+                            filterable
+                            clearable
+                            placeholder="全部"
+                            @input="inputHandler($event, 'source')">
+                            <el-option
+                                v-for="(item, index) in dataAlertSourceOptions"
+                                :key="index"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </div>
                 </div>
-                <el-button class="btn-style-one" @click="searchHandler" type="primary">
-                    <svg-icon icon-class="search"/> 搜索
-                </el-button>
-                <div class="search-field-item">
-                    <label class="search-field-item-label">级别</label>
-                    <el-select
-                        :value="searchField.level"
-                        filterable
-                        clearable
-                        placeholder="全部"
-                        @input="inputHandler($event, 'level')">
-                        <el-option
-                            v-for="(item, index) in levelOptions"
-                            :key="index"
-                            :label="item.label"
-                            :value="item.value">
-                        </el-option>
-                    </el-select>
+                <div class="row-right">
+                    <el-dropdown
+                        trigger="click"
+                        class="my-dropdown">
+                        <span class="el-dropdown-link">
+                            批量操作<i class="el-icon-arrow-down el-icon--right"></i>
+                        </span>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item>
+                                <span>批量下架</span>
+                            </el-dropdown-item>
+                            <el-dropdown-item>
+                                <span>批量删除</span>
+                            </el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
                 </div>
-                <div class="search-field-item">
-                    <label class="search-field-item-label">类型</label>
-                    <el-select
-                        :value="searchField.type"
-                        filterable
-                        clearable
-                        placeholder="全部"
-                        @input="inputHandler($event, 'type')">
-                        <el-option
-                            v-for="(item, index) in dataAlertTypeOptions"
-                            :key="index"
-                            :label="item.label"
-                            :value="item.value">
-                        </el-option>
-                    </el-select>
-                </div>
-                <div class="search-field-item">
-                    <label class="search-field-item-label">来源</label>
-                    <el-select
-                        :value="searchField.source"
-                        filterable
-                        clearable
-                        placeholder="全部"
-                        @input="inputHandler($event, 'source')">
-                        <el-option
-                            v-for="(item, index) in dataAlertSourceOptions"
-                            :key="index"
-                            :label="item.label"
-                            :value="item.value">
-                        </el-option>
-                    </el-select>
-                </div>
-                <el-button class="btn-style-one" @click="clearSearchField">
-                    <svg-icon icon-class="reset"/> 重置
-                </el-button>
             </div>
         </div>
-        <div class="seperator-line"></div>
         <div class="tabel-field">
-            <h2 class="content-title">预警列表</h2>
             <el-table
                 header-row-class-name="common-table-header"
+                size="small"
+                :row-class-name="tableRowClassName"
                 class="my-table-style"
-                :data="list.data" border>
-                <el-table-column prop="id" align="center" min-width="50px" label="编号"></el-table-column>
-                <el-table-column prop="level" align="center" min-width="80px" label="级别">
+                :data="list.data">
+                <el-table-column type="selection" align="center" width="50"></el-table-column>
+                <el-table-column prop="id" min-width="50px" label="编号"></el-table-column>
+                <el-table-column prop="level" min-width="80px" label="级别">
                     <template slot-scope="scope">
                         <span :class="levelClass(scope.row.level)">
                             {{levelLabel(scope.row.level)}}
                         </span>
                     </template>
                 </el-table-column>
-                <el-table-column prop="type" align="center" min-width="80px" label="类型">
+                <el-table-column prop="type" min-width="80px" label="类型">
                     <template slot-scope="scope">
                         <span class="">
                             {{typeLabel(scope.row.type)}}
                         </span>
                     </template>
                 </el-table-column>
-                <el-table-column prop="desc" align="center" min-width="280px" label="详情"></el-table-column>
-                <el-table-column prop="source" align="center" min-width="80px" label="来源">
+                <el-table-column prop="desc" min-width="300px" label="详情"></el-table-column>
+                <el-table-column prop="source" min-width="80px" label="来源">
                     <template slot-scope="scope">
                         <span class="">
                             {{sourceLabel(scope.row.source)}}
                         </span>
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="发生时间段">
+                <el-table-column min-width="120px" label="发生时间段">
                     <template slot-scope="scope">
                         {{scope.row.startAt}} - {{scope.row.endAt}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="80px" align="center" label="预警时间">
+                <el-table-column min-width="80px" label="预警时间">
                     <template slot-scope="scope">
                         {{scope.row.createdAt}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="60px" align="center" label="状态">
+                <el-table-column min-width="60px" label="状态">
                     <template slot-scope="scope">
                         <span v-if="scope.row.processingStatus === 1" class="text-danger">{{statusLabel(scope.row.processingStatus)}}</span>
                         <span v-else class="text-success">{{statusLabel(scope.row.processingStatus)}}</span>
                     </template>
                 </el-table-column>
-                <el-table-column width="120px" align="center" label="操作">
+                <el-table-column width="80px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
                             <span v-if="scope.row.processingStatus === 1"
@@ -235,6 +249,13 @@ export default {
             resetSearchField: 'data_alert/resetSearchField',
             resetPagination: 'data_alert/resetPagination'
         }),
+        tableRowClassName({rowIndex}) {
+            if ((rowIndex % 2) === 0) {
+                return 'warning-row';
+            } else {
+                return 'success-row';
+            }
+        },
         inputHandler(value, key) {
             this.updateSearchField({key, value});
         },

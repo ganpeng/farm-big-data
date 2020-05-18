@@ -26,7 +26,6 @@
                     </el-form-item>
                 </el-col>
             </el-row>
-            <div class="seperator-line"></div>
             <el-row>
                 <h4 class="content-sub-title">历史信息</h4>
                 <el-col :span="12">
@@ -46,7 +45,10 @@
             <el-row>
                 <el-table
                     :data="tableData"
-                    border
+                    header-row-class-name="common-table-header"
+                    size="small"
+                    :row-class-name="tableRowClassName"
+                    class="my-table-style"
                     style="width: 100%">
                     <el-table-column align="center" prop="date" label="年份"></el-table-column>
                     <el-table-column align="center" prop="area1" label="服务总营收"></el-table-column>
@@ -133,6 +135,15 @@ export default {
                 }
             ]
         };
+    },
+    methods: {
+        tableRowClassName({rowIndex}) {
+            if ((rowIndex % 2) === 0) {
+                return 'warning-row';
+            } else {
+                return 'success-row';
+            }
+        }
     }
 }
 </script>

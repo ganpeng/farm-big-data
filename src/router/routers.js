@@ -225,7 +225,17 @@ export const constantRouterMap = [{
                 name: 'DataStatistics',
                 component: () => import('@/views/data/DataStatistics'),
                 meta: {
-                    title: '数据统计'
+                    title: '数据统计',
+                    activeMenu: '/data/statistics'
+                }
+            },
+            {
+                path: 'detail',
+                name: 'DataStatisticsDetail',
+                component: () => import('@/views/data/DataStatisticsDetail'),
+                meta: {
+                    title: '数据统计',
+
                 }
             },
             {

@@ -3,36 +3,36 @@
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
-                总数
+                地块面积(公顷)
             </div>
-            <div class="count">20</div>
+            <div class="count">6357</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
-                农民专业合作社
+                从业人员(人)
             </div>
-            <div class="count">6</div>
+            <div class="count">2000</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
-                家庭农场
+                累计产量(万吨)
             </div>
-            <div class="count">10</div>
+            <div class="count">5000</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
-                农村集体经济组织
+                累计销售额(亿元)
             </div>
-            <div class="count">4</div>
+            <div class="count">2.3</div>
         </div>
     </div>
 </template>
 <script>
 export default {
-    name: 'Bord'
+    name: 'Bord2'
 };
 </script>
 <style lang="scss" scoped>
