@@ -94,29 +94,37 @@
                 <el-row>
                     <el-col :span="24">
                         <el-form-item label="封面图">
-                            <ul class="carousel-list">
-                                <li class="carousel-item">
-                                    <img
-                                        width="200"
-                                        height="200"
-                                        src="../../../../assets/img/详情页轮播图1-绿源东北大米新米稻花香米5kg.png"
-                                        alt="">
-                                </li>
-                                <li class="carousel-item">
-                                    <img
-                                        width="200"
-                                        height="200"
-                                        src="../../../../assets/img/详情页轮播图2-绿源东北大米新米稻花香米5kg.png"
-                                        alt="">
-                                </li>
-                                <li class="carousel-item">
-                                    <img
-                                        width="200"
-                                        height="200"
-                                        src="../../../../assets/img/详情页轮播图3-绿源东北大米新米稻花香米5kg.png"
-                                        alt="">
-                                </li>
-                            </ul>
+                            <div style="width: 200px;height:200px;" class="carousel-wrapper">
+                                <el-carousel arrow="never" indicator-position="none" :interval="5000">
+                                    <el-carousel-item>
+                                        <li class="carousel-item">
+                                            <img
+                                                width="200"
+                                                height="200"
+                                                src="../../../../assets/img/详情页轮播图1-绿源东北大米新米稻花香米5kg.png"
+                                                alt="">
+                                        </li>
+                                    </el-carousel-item>
+                                    <el-carousel-item>
+                                        <li class="carousel-item">
+                                            <img
+                                                width="200"
+                                                height="200"
+                                                src="../../../../assets/img/详情页轮播图2-绿源东北大米新米稻花香米5kg.png"
+                                                alt="">
+                                        </li>
+                                    </el-carousel-item>
+                                    <el-carousel-item>
+                                        <li class="carousel-item">
+                                            <img
+                                                width="200"
+                                                height="200"
+                                                src="../../../../assets/img/详情页轮播图3-绿源东北大米新米稻花香米5kg.png"
+                                                alt="">
+                                        </li>
+                                    </el-carousel-item>
+                                </el-carousel>
+                            </div>
                         </el-form-item>
                     </el-col>
                 </el-row>

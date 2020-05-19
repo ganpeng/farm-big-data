@@ -22,6 +22,12 @@ const defaultTracing = {
     visible: false,
     status: 1,
     createdAt: '', // 上线日期
+    step: {
+        oneName: '',
+        oneTime: '',
+        twoName: '',
+        twoTime: ''
+    }
 };
 
 const state = {

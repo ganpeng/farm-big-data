@@ -35,7 +35,7 @@
                         ></el-input>
                     </el-form-item>
                     <el-form-item label="封面图" prop="createdAt">
-                        <img width="100" height="100" src="" alt="">
+                            <img width="200" height="200" src="../../assets/img/封面图-绿源东北大米新米稻花香米5kg.png" alt="">
                     </el-form-item>
                 </el-col>
                 <el-col :span="8">
@@ -77,53 +77,117 @@
                         ></el-input>
                     </el-form-item>
                     <el-form-item label="商品详情图">
-                        <img width="100" height="100" src="" alt="">
+                            <img width="100" height="200" src="../../assets/img/绿源东北大米新米稻花香米.jpg" alt="">
                     </el-form-item>
                 </el-col>
             </el-row>
             <el-row>
                 <el-col :span="24">
                     <el-form-item label="封面图">
+                        <div style="width: 200px;height:200px;" class="carousel-wrapper">
+                            <el-carousel arrow="never" indicator-position="none" :interval="5000">
+                                <el-carousel-item>
+                                    <li class="carousel-item">
+                                        <img
+                                            width="200"
+                                            height="200"
+                                            src="../../assets/img/详情页轮播图1-绿源东北大米新米稻花香米5kg.png"
+                                            alt="">
+                                    </li>
+                                </el-carousel-item>
+                                <el-carousel-item>
+                                    <li class="carousel-item">
+                                        <img
+                                            width="200"
+                                            height="200"
+                                            src="../../assets/img/详情页轮播图2-绿源东北大米新米稻花香米5kg.png"
+                                            alt="">
+                                    </li>
+                                </el-carousel-item>
+                                <el-carousel-item>
+                                    <li class="carousel-item">
+                                        <img
+                                            width="200"
+                                            height="200"
+                                            src="../../assets/img/详情页轮播图3-绿源东北大米新米稻花香米5kg.png"
+                                            alt="">
+                                    </li>
+                                </el-carousel-item>
+                            </el-carousel>
+                        </div>
+                        <!--
                         <ul class="carousel-list">
                             <li class="carousel-item">
-                                <img width="100" height="100" src="" alt="">
+                                <img
+                                    width="200"
+                                    height="200"
+                                    src="../../assets/img/详情页轮播图1-绿源东北大米新米稻花香米5kg.png"
+                                    alt="">
                             </li>
                             <li class="carousel-item">
-                                <img width="100" height="100" src="" alt="">
+                                <img
+                                    width="200"
+                                    height="200"
+                                    src="../../assets/img/详情页轮播图2-绿源东北大米新米稻花香米5kg.png"
+                                    alt="">
                             </li>
                             <li class="carousel-item">
-                                <img width="100" height="100" src="" alt="">
-                            </li>
-                            <li class="carousel-item">
-                                <img width="100" height="100" src="" alt="">
+                                <img
+                                    width="200"
+                                    height="200"
+                                    src="../../assets/img/详情页轮播图3-绿源东北大米新米稻花香米5kg.png"
+                                    alt="">
                             </li>
                         </ul>
+                        -->
                     </el-form-item>
                 </el-col>
             </el-row>
             <div class="seperator-line"></div>
             <el-row>
                 <h4 class="content-sub-title">溯源信息</h4>
-                <el-timeline>
-                    <el-timeline-item timestamp="2020/4/12" placement="top">
-                        <el-col :span="8">
+                    <el-row>
+                        <h5 class="tr-title">01</h5>
+                        <el-col :span="10">
+                            <el-form-item label="步骤名称">
+                                <el-input v-model="step.oneName">
+                                </el-input>
+                            </el-form-item>
+                            <el-form-item label="图片">
+                                <img width="300px" height="200px" src="../../assets/img/02的副本.jpg" alt="">
+                            </el-form-item>
                         </el-col>
-                        <el-col :span="8">
+                        <el-col :span="10">
+                            <el-form-item label="时间">
+                                <el-input v-model="step.oneTime">
+                                </el-input>
+                            </el-form-item>
+                            <el-form-item label="视频">
+                                <video autoplay loop controls width="300px" height="200px" src="../../assets/img/Cam01的副本.mp4"></video>
+                            </el-form-item>
                         </el-col>
-                    </el-timeline-item>
-                    <el-timeline-item timestamp="2020/4/3" placement="top">
-                        <el-col :span="8">
+                    </el-row>
+                    <el-row>
+                        <h5 class="tr-title">02</h5>
+                        <el-col :span="10">
+                            <el-form-item label="步骤名称">
+                                <el-input v-model="step.twoName">
+                                </el-input>
+                            </el-form-item>
+                            <el-form-item label="图片">
+                                <img width="300px" height="200px" src="../../assets/img/02的副本.jpg" alt="">
+                            </el-form-item>
                         </el-col>
-                        <el-col :span="8">
+                        <el-col :span="10">
+                            <el-form-item label="时间">
+                                <el-input v-model="step.twoTime">
+                                </el-input>
+                            </el-form-item>
+                            <el-form-item label="视频">
+                                <video loop autoplay controls width="300px" height="200px" src="../../assets/img/Cam01的副本.mp4"></video>
+                            </el-form-item>
                         </el-col>
-                    </el-timeline-item>
-                    <el-timeline-item timestamp="2020/4/2" placement="top">
-                        <el-col :span="8">
-                        </el-col>
-                        <el-col :span="8">
-                        </el-col>
-                    </el-timeline-item>
-                </el-timeline>
+                    </el-row>
             </el-row>
         </el-form>
     </div>
@@ -135,7 +199,13 @@ export default {
     data() {
         return {
             tracingAuthOptions: this.$util.tracingAuthOptions,
-            tracingTypeOptions: this.$util.tracingTypeOptions
+            tracingTypeOptions: this.$util.tracingTypeOptions,
+            step: {
+                oneName: '',
+                oneTime: '',
+                twoName: '',
+                twoTime: ''
+            }
         };
     },
     computed: {
@@ -154,5 +224,21 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.tracing-form-container {}
+.tracing-form-container {
+    .carousel-list {
+        display: flex;
+        .carousel-item {
+            margin-right: 20px;
+        }
+    }
+    .tr-title  {
+        width: 60px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        background-color: $mainColor;
+    }
+}
 </style>
