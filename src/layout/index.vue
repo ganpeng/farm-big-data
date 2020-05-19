@@ -1,7 +1,13 @@
 <template>
     <div class="app-container">
         <div class="header clearfix">
-            <div class="breadcrumb">{{breadcrumb}}{{subTitle}}</div>
+            <div class="header-left">
+                <div class="breadcrumb">{{breadcrumb}}{{subTitle}}</div>
+                <div v-if="showEnterManageBtn" @click="gotoEnterManageBtn" class="enter-manage-btn">
+                    进入管理后台
+                    <svg-icon class-name="arrow" icon-class="home_icon8"/>
+                </div>
+            </div>
             <div class="user-info">
                 <svg-icon icon-class="avatar_icon"/>
                 <label>李素琴</label>
@@ -14,87 +20,142 @@
             <div @click="gotoHome" class="logo">
                 <svg-icon icon-class="logo"/>
                 <div class="name">
-                    <p>吉林省智慧农业</p>
+                    <p>吉视农业物联网大数据</p>
                     <p>管理系统</p>
                 </div>
             </div>
-            <div @click="gotoBigScreen" class="in-big-screen"><p>进入统计大屏</p></div>
-            <el-menu
-                router
-                :default-active="activeMenu"
-                class="aside-list">
-                <el-menu-item index="/dashboard">
-                    <svg-icon class="default_svg" icon-class="aside1"/>
-                    <svg-icon class="active_svg" icon-class="aside1_active"/>
-                    <span class="title" slot="title">数据概览</span>
-                </el-menu-item>
-                <el-submenu index="2">
-                    <template slot="title">
-                        <svg-icon class="default_svg" icon-class="aside2"/>
-                        <svg-icon class="active_svg" icon-class="aside2_active"/>
-                        <span class="title">农场管理</span>
-                    </template>
-                    <el-menu-item-group>
-                        <el-menu-item index="/farm/list">
-                            <i class="point"></i>
-                            <span class="sub-title">农场信息管理</span>
-                        </el-menu-item>
-                        <el-menu-item index="/farm/visual">
-                            <i class="point"></i>
-                            <span class="sub-title">可视农场</span>
-                        </el-menu-item>
-                    </el-menu-item-group>
-                </el-submenu>
-                <el-submenu index="3">
-                    <template slot="title">
-                        <svg-icon class="default_svg" icon-class="aside3"/>
-                        <svg-icon class="active_svg" icon-class="aside3_active"/>
-                        <span class="title">销售管理</span>
-                    </template>
-                    <el-menu-item-group>
-                        <el-menu-item index="/sale/tracing">
-                            <i class="point"></i>
-                            <span class="sub-title">溯源农品</span>
-                        </el-menu-item>
-                        <el-menu-item index="/sale/channel">
-                            <i class="point"></i>
-                            <span class="sub-title">渠道管理</span>
-                        </el-menu-item>
-                    </el-menu-item-group>
-                </el-submenu>
-                <el-menu-item index="/pee/list">
-                    <svg-icon class="default_svg" icon-class="aside4"/>
-                    <svg-icon class="active_svg" icon-class="aside4_active"/>
-                    <span class="title" slot="title">物环设备</span>
-                </el-menu-item>
-                <el-menu-item index="/base-station">
-                    <svg-icon class="default_svg" icon-class="aside5"/>
-                    <svg-icon class="active_svg" icon-class="aside5_active"/>
-                    <span class="title" slot="title">基站管理</span>
-                </el-menu-item>
-                <el-menu-item index="/logistics">
-                    <svg-icon class="default_svg" icon-class="aside6"/>
-                    <svg-icon class="active_svg" icon-class="aside6_active"/>
-                    <span class="title" slot="title">物流管理</span>
-                </el-menu-item>
-                <el-submenu index="7">
-                    <template slot="title">
-                        <svg-icon class="default_svg" icon-class="aside7"/>
-                        <svg-icon class="active_svg" icon-class="aside7_active"/>
-                        <span class="title">数据洞察</span>
-                    </template>
-                    <el-menu-item-group>
-                        <el-menu-item index="/data/statistics">
-                            <i class="point"></i>
-                            <span class="sub-title">数据统计</span>
-                        </el-menu-item>
-                        <el-menu-item index="/data/alert">
-                            <i class="point"></i>
-                            <span class="sub-title">大数据预警</span>
-                        </el-menu-item>
-                    </el-menu-item-group>
-                </el-submenu>
-            </el-menu>
+            <div @click="gotoBigScreen" class="in-big-screen"><p>实时统计</p></div>
+            <div class="aside-list-wrapper">
+                <el-menu
+                    router
+                    :default-active="activeMenu"
+                    class="aside-list">
+                    <el-menu-item index="/dashboard">
+                        <svg-icon class="default_svg" icon-class="aside1"/>
+                        <svg-icon class="active_svg" icon-class="aside1_active"/>
+                        <span class="title" slot="title">数据概览</span>
+                    </el-menu-item>
+                    <el-submenu index="2">
+                        <template slot="title">
+                            <svg-icon class="default_svg" icon-class="aside2"/>
+                            <svg-icon class="active_svg" icon-class="aside2_active"/>
+                            <span class="title">农场管理</span>
+                        </template>
+                        <el-menu-item-group>
+                            <el-menu-item index="/farm/list">
+                                <i class="point"></i>
+                                <span class="sub-title">农场信息管理</span>
+                            </el-menu-item>
+                            <el-menu-item index="/farm/visual">
+                                <i class="point"></i>
+                                <span class="sub-title">可视农场</span>
+                            </el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                    <el-submenu index="3">
+                        <template slot="title">
+                            <svg-icon class="default_svg" icon-class="aside3"/>
+                            <svg-icon class="active_svg" icon-class="aside3_active"/>
+                            <span class="title">销售管理</span>
+                        </template>
+                        <el-menu-item-group>
+                            <el-menu-item index="/sale/tracing">
+                                <i class="point"></i>
+                                <span class="sub-title">溯源农品</span>
+                            </el-menu-item>
+                            <el-menu-item index="/sale/channel">
+                                <i class="point"></i>
+                                <span class="sub-title">渠道管理</span>
+                            </el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                    <el-submenu index="4">
+                        <template slot="title">
+                            <svg-icon class="default_svg" icon-class="aside4"/>
+                            <svg-icon class="active_svg" icon-class="aside4_active"/>
+                            <span class="title">物环设备</span>
+                        </template>
+                        <el-menu-item-group>
+                            <el-menu-item index="/pee/list">
+                                <i class="point"></i>
+                                <span class="sub-title">设备管理</span>
+                            </el-menu-item>
+                            <el-menu-item index="/pee/group/list">
+                                <i class="point"></i>
+                                <span class="sub-title">设备分组</span>
+                            </el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                    <!--
+                    <el-menu-item index="/pee/list">
+                        <svg-icon class="default_svg" icon-class="aside4"/>
+                        <svg-icon class="active_svg" icon-class="aside4_active"/>
+                        <span class="title" slot="title">物环设备</span>
+                    </el-menu-item>
+                    <el-menu-item index="/base-station">
+                        <svg-icon class="default_svg" icon-class="aside5"/>
+                        <svg-icon class="active_svg" icon-class="aside5_active"/>
+                        <span class="title" slot="title">基站管理</span>
+                    </el-menu-item>
+                    <el-menu-item index="/logistics">
+                        <svg-icon class="default_svg" icon-class="aside6"/>
+                        <svg-icon class="active_svg" icon-class="aside6_active"/>
+                        <span class="title" slot="title">物流管理</span>
+                    </el-menu-item>
+                    -->
+                    <el-submenu index="5">
+                        <template slot="title">
+                            <svg-icon class="default_svg" icon-class="aside5"/>
+                            <svg-icon class="active_svg" icon-class="aside5_active"/>
+                            <span class="title">5G网络</span>
+                        </template>
+                        <el-menu-item-group>
+                            <el-menu-item index="/base-station">
+                                <i class="point"></i>
+                                <span class="sub-title">基站管理</span>
+                            </el-menu-item>
+                            <el-menu-item index="/internet/list">
+                                <i class="point"></i>
+                                <span class="sub-title">网络管理</span>
+                            </el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                    <el-submenu index="6">
+                        <template slot="title">
+                            <svg-icon class="default_svg" icon-class="aside6"/>
+                            <svg-icon class="active_svg" icon-class="aside6_active"/>
+                            <span class="title">仓储物流</span>
+                        </template>
+                        <el-menu-item-group>
+                            <el-menu-item index="/logistics">
+                                <i class="point"></i>
+                                <span class="sub-title">仓储管理</span>
+                            </el-menu-item>
+                            <el-menu-item index="/cars/list">
+                                <i class="point"></i>
+                                <span class="sub-title">车辆管理</span>
+                            </el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                    <el-submenu index="7">
+                        <template slot="title">
+                            <svg-icon class="default_svg" icon-class="aside7"/>
+                            <svg-icon class="active_svg" icon-class="aside7_active"/>
+                            <span class="title">数据洞察</span>
+                        </template>
+                        <el-menu-item-group>
+                            <el-menu-item index="/data/statistics">
+                                <i class="point"></i>
+                                <span class="sub-title">数据统计</span>
+                            </el-menu-item>
+                            <el-menu-item index="/data/alert">
+                                <i class="point"></i>
+                                <span class="sub-title">大数据预警</span>
+                            </el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                </el-menu>
+            </div>
         </div>
         <div :style="contentStyleStr()" id="global-content" class="content">
             <router-view></router-view>
@@ -122,6 +183,10 @@ export default {
         breadcrumb() {
             const {meta} = this.$route;
             return meta.title;
+        },
+        showEnterManageBtn() {
+            let {id} = this.$route.query;
+            return id === 1 || id === 2 || id === 3;
         },
         subTitle() {
             let {id} = this.$route.query;
@@ -161,7 +226,12 @@ export default {
             this.$router.push({name: 'Dashboard'});
         },
         gotoBigScreen() {
-            window.location.href = 'http://dev.n.tianchimedia.com/visual-farm-third-edition';
+            let href = 'http://dev.n.tianchimedia.com/home-third-edition/normal';
+            window.open(href, '_blank');
+        },
+        gotoEnterManageBtn() {
+            let href = 'https://ds.tianchimedia.com/admin';
+            window.open(href, '_blank');
         }
     }
 };
@@ -183,6 +253,10 @@ export default {
         height: $headerHeight;
         background: $headerBg;
         color: $navText;
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
         .breadcrumb {
             margin-left: 20px;
             height: 28px;
@@ -191,6 +265,24 @@ export default {
             color: #fff;
             border-left: 6px solid $mainColor;
             padding-left: 15px;
+        }
+        .enter-manage-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0062C4;
+            width: 162px;
+            height: 32px;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 16px;
+            margin-left: 120px;
+            cursor: pointer;
+            .svg-icon {
+                width: 11px;
+                height: 12px;
+                margin-left: 15px;
+            }
         }
         .user-info {
             position: relative;
@@ -271,6 +363,8 @@ export default {
         }
     }
     .aside {
+        display: flex;
+        flex-direction: column;
         position: absolute;
         top: 0;
         left: 0px;
@@ -304,9 +398,9 @@ export default {
         }
         .in-big-screen {
             position: relative;
-            width: 250px;
-            height: 110px;
-            margin: 15px auto;
+            width: 242px;
+            height: 80px;
+            margin: 18px auto;
             background-image: url('../assets/img/inbigscreen.png');
             background-repeat: no-repeat;
             background-position: center;
@@ -314,11 +408,11 @@ export default {
             cursor: pointer;
             p {
                 position: absolute;
-                bottom: 4px;
+                bottom: 2px;
                 left: 50%;
                 transform: translateX(-50%);
-                font-size: 16px;
-                color: rgba(91,176,255,1);
+                font-size: 14px;
+                color: #5BB0FF;
             }
         }
     }
@@ -335,6 +429,10 @@ export default {
             // padding: 20px 20px 20px 20px;
         }
     }
+}
+.aside-list-wrapper {
+    flex: 1;
+    overflow-y: scroll;
 }
 .aside-list {
     > .el-menu-item {
@@ -458,6 +556,7 @@ export default {
                         }
                         .point {
                             border-color: #fff;
+                            background-color: #fff;
                         }
                     }
                 }

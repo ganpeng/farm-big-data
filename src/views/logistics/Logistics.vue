@@ -15,6 +15,6 @@ export default {
     background-image: url('../../assets/img/my_bg_2.jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 </style>

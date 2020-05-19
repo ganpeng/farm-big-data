@@ -177,7 +177,9 @@ export default {
             }
         },
         gotoFarmVisualDetail() {
-            this.$router.push({ name: 'FarmVisualDetail' });
+            let href = 'http://dev.n.tianchimedia.com/visual-farm-third-edition';
+            window.open(href, '_blank');
+            // this.$router.push({ name: 'FarmVisualDetail' });
         }
     }
 };

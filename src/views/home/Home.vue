@@ -74,6 +74,7 @@
             </div>
             <div class="middle-content">
                 <ve-line
+                    height="280px"
                     :tooltip-visible="false"
                     :legend-visible="false"
                     :extend="chartExtend"
@@ -100,13 +101,13 @@
             </div>
         </div>
         <div class="bottom-field">
-            <div class="bottom-left">
+            <div class="bottom-left bottom-item">
                 <div class="header">
                     <svg-icon class-name="svg-one" icon-class="home_icon6"/>
                     <span class="title">农场统计</span>
                     <svg-icon class-name="arrow" icon-class="home_icon8"/>
                 </div>
-                <div class="bottom-left-content">
+                <div class="bottom-left-content bottom-item-content">
                     <div class="title-field">
                         <p class="title">农场总数</p>
                         <p class="count">
@@ -148,13 +149,13 @@
                     </div>
                 </div>
             </div>
-            <div class="bottom-right">
+            <div class="bottom-right bottom-item">
                 <div class="header">
                     <svg-icon class-name="svg-one" icon-class="home_icon7"/>
                     <span class="title">设备统计</span>
                     <svg-icon class-name="arrow" icon-class="home_icon8"/>
                 </div>
-                <div class="bottom-right-content">
+                <div class="bottom-right-content bottom-item-content">
                     <div class="title-field">
                         <p class="title">设备总数</p>
                         <p class="count">
@@ -239,8 +240,9 @@ export default {
             'series.0.radius': ['0', '80%']
         };
         this.chartExtend = {
+            color: ['#DD5567', '#FCB268', '#E3C97B', '#85B8FC'],
             grid: {
-                top: 60,
+                top: 40,
                 bottom: 12
             },
             'xAxis.0.axisLabel': {color: '#667799'},
@@ -317,7 +319,7 @@ export default {
     flex-direction: column;
     overflow-y: scroll;
     .top-field {
-        height: 160px;
+        height: 120px;
         .my-bord-status-two {
             display: flex;
             width: 100%;
@@ -329,9 +331,8 @@ export default {
                 align-items: center;
                 justify-content: space-between;
                 background-color: #272f44;
-                // width: 360px;
                 flex: 1;
-                height: 160px;
+                height: 120px;
                 padding: 20px;
                 border-radius: 4px;
                 background: #272f44 no-repeat right 20px;
@@ -355,8 +356,8 @@ export default {
                     }
                     .count {
                         .svg-icon {
-                            width: 156px;
-                            height: 137px;
+                            width: 117px;
+                            height: 103px;
                         }
                     }
                 }
@@ -366,8 +367,8 @@ export default {
                     }
                     .count {
                         .svg-icon {
-                            width: 123px;
-                            height: 123px;
+                            width: 92px;
+                            height: 92px;
                         }
                     }
                 }
@@ -377,8 +378,8 @@ export default {
                     }
                     .count {
                         .svg-icon {
-                            width: 171px;
-                            height: 123px;
+                            width: 128px;
+                            height: 92px;
                         }
                     }
                 }
@@ -388,8 +389,8 @@ export default {
                     }
                     .count {
                         .svg-icon {
-                            width: 100px;
-                            height: 123px;
+                            width: 74px;
+                            height: 92px;
                         }
                     }
                 }
@@ -401,19 +402,19 @@ export default {
                     height: 50px;
                     margin-left: 10px;
                     .name-one {
-                        font-size: 21px;
-                        line-height: 21px;
+                        font-size: 16px;
+                        line-height: 16px;
                         color: rgba(99,116,151,1);
                     }
                     .name-two {
-                        font-size:21px;
-                        line-height: 21px;
+                        font-size:16px;
+                        line-height: 16px;
                         color:rgba(57,65,84,1);
                     }
                 }
                 .count {
                     position: relative;
-                    font-size: 53px;
+                    font-size: 40px;
                     color: #A3D0FD;
                     span {
                         position: absolute;
@@ -427,31 +428,30 @@ export default {
     }
     .middle-field {
         position: relative;
-        // flex: 1;
         background-color: #252D3F;
-        height: 469px;
+        height: 352px;
         margin: 20px 0;
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 64px;
+            height: 48px;
             padding: 0 20px;
             border-bottom: 1px solid #3A4763;
             .header-left {
                 display: flex;
                 align-items: center;
                 .svg-one {
-                    width: 43px;
-                    height: 43px;
+                    width: 32px;
+                    height: 32px;
                 }
                 .title {
-                    font-size:21px;
-                    margin: 0 24px;
+                    font-size: 16px;
+                    margin: 0 18px;
                 }
                 .arrow {
-                    width: 15px;
-                    height: 16px;
+                    width: 11px;
+                    height: 12px;
                 }
             }
             .header-right {
@@ -459,11 +459,11 @@ export default {
                     display: flex;
                     border-radius: 4px;
                     .time-item {
-                        width: 80px;
-                        height: 32px;
-                        line-height: 32px;
+                        width: 60px;
+                        height: 24px;
+                        line-height: 24px;
                         background-color: #0C1019;
-                        font-size: 16px;
+                        font-size: 12px;
                         color: #394154;
                         text-align: center;
                         cursor: pointer;
@@ -490,32 +490,32 @@ export default {
                 display: flex;
                 align-items: center;
                 .icon {
-                    width: 13px;
-                    height: 13px;
+                    width: 10px;
+                    height: 10px;
                     margin-right: 10px;
                 }
                 .text {
-                    font-size: 16px;
+                    font-size: 12px;
                     color: #667799;
                 }
                 &:nth-of-type(1) {
                     .icon {
-                        background-color: #C62C41;
+                        background-color: #DD5567;
                     }
                 }
                 &:nth-of-type(2) {
                     .icon {
-                        background-color: #FF7F00;
+                        background-color: #FCB268;
                     }
                 }
                 &:nth-of-type(3) {
                     .icon {
-                        background-color: #FFD145;
+                        background-color: #E3C97B;
                     }
                 }
                 &:nth-of-type(4) {
                     .icon {
-                        background-color: #1478FE;
+                        background-color: #85B8FC;
                     }
                 }
             }
@@ -523,65 +523,107 @@ export default {
     }
     .bottom-field {
         display: flex;
-        // flex: 1;
-        height: 443px;
-        .header {
-            display: flex;
-            align-items: center;
-            height: 64px;
-            padding: 0 20px;
-            border-bottom: 1px solid #3A4763;
-            .svg-one {
-                width: 43px;
-                height: 43px;
-            }
-            .title {
-                font-size:21px;
-                margin: 0 24px;
-            }
-            .arrow {
-                width: 15px;
-                height: 16px;
+        height: 332px;
+        .bottom-left {
+            margin-right: 20px;
+        }
+        .bottom-right {
+            .bottom-right-content {
+                .legen-field {
+                    .legen-list {
+                        .legen-item {
+                            .text1 {
+                                width: 40px;
+                            }
+                            .text2 {
+                                width: 20px;
+                            }
+                            &:nth-of-type(1) {
+                                .icon {
+                                    background-color: #38A7E4;
+                                }
+                            }
+                            &:nth-of-type(2) {
+                                .icon {
+                                    background-color: #00C1EB;
+                                }
+                            }
+                            &:nth-of-type(3) {
+                                .icon {
+                                    background-color: #306BA7;
+                                }
+                            }
+                            &:nth-of-type(4) {
+                                .icon {
+                                    background-color: #00A2DE;
+                                }
+                            }
+                            &:nth-of-type(5) {
+                                .icon {
+                                    background-color: #50BEE7;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
-        .bottom-left {
+        .bottom-item {
             display: flex;
             flex-direction: column;
             flex: 1;
-            margin-right: 20px;
             border-radius: 4px;
             background-color: #252D3F;
-            .bottom-left-content {
+            .header {
+                display: flex;
+                align-items: center;
+                height: 48px;
+                padding: 0 20px;
+                border-bottom: 1px solid #3A4763;
+                .svg-one {
+                    width: 32px;
+                    height: 32px;
+                }
+                .title {
+                    font-size: 16px;
+                    margin: 0 18px;
+                }
+                .arrow {
+                    width: 11px;
+                    height: 12px;
+                }
+            }
+            .bottom-item-content {
                 position: relative;
                 flex: 1;
-                height: 376px;
+                height: 282px;
                 .title-field {
                     position: absolute;
-                    top: 60px;
-                    left: 48px;
+                    top: 40px;
+                    left: 36px;
                     .title {
-                        font-size: 21px;
+                        font-size: 16px;
                         color: rgba(163,208,253,1);
                     }
                     .count {
-                        font-size: 51px;
+                        font-size: 38px;
                         color: rgba(91,173,255,1);
                         i {
-                            font-size:21px;
+                            font-size: 16px;
                         }
                     }
                 }
                 .legen-field {
                     position: absolute;
-                    bottom: 15px;
-                    left: 48px;;
+                    bottom: 42px;
+                    left: 36px;;
                     .legen-list {
                         display: flex;
                         flex-direction: column;
                         .legen-item {
                             display: flex;
                             align-items: center;
-                            font-size: 16px;
+                            font-size: 12px;
                             color: rgba(102,119,153,1);
                             .text1 {
                                 margin-left: 10px;
@@ -616,119 +658,28 @@ export default {
                     justify-content: center;
                     align-items: center;
                     position: absolute;
-                    right: 40px;
-                    top: 60px;
-                    width: 240px;
-                    height: 240px;
-                }
-            }
-        }
-        .bottom-right {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            border-radius: 4px;
-            background-color: #252D3F;
-            .bottom-right-content {
-                position: relative;
-                flex: 1;
-                height: 376px;
-                .title-field {
-                    position: absolute;
-                    top: 60px;
-                    left: 48px;
-                    .title {
-                        font-size: 21px;
-                        color: rgba(163,208,253,1);
-                    }
-                    .count {
-                        font-size: 51px;
-                        color: rgba(91,173,255,1);
-                        i {
-                            font-size:21px;
-                        }
-                    }
-                }
-                .legen-field {
-                    position: absolute;
-                    bottom: 15px;
-                    left: 48px;;
-                    .legen-list {
-                        display: flex;
-                        flex-direction: column;
-                        .legen-item {
-                            display: flex;
-                            align-items: center;
-                            font-size: 16px;
-                            color: rgba(102,119,153,1);
-                            .text1 {
-                                width: 50px;
-                                margin-left: 10px;
-                            }
-                            .text2 {
-                                margin: 0 30px 0 20px;
-                            }
-                            .icon {
-                                width: 13px;
-                                height: 13px;
-                            }
-                            &:nth-of-type(1) {
-                                .icon {
-                                    background-color: #38A7E4;
-                                }
-                            }
-                            &:nth-of-type(2) {
-                                .icon {
-                                    background-color: #00C1EB;
-                                }
-                            }
-                            &:nth-of-type(3) {
-                                .icon {
-                                    background-color: #306BA7;
-                                }
-                            }
-                            &:nth-of-type(4) {
-                                .icon {
-                                    background-color: #00A2DE;
-                                }
-                            }
-                            &:nth-of-type(5) {
-                                .icon {
-                                    background-color: #50BEE7;
-                                }
-                            }
-                        }
-                    }
-                }
-                .echarts-field {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    position: absolute;
-                    right: 40px;
-                    top: 60px;
-                    width: 240px;
-                    height: 240px;
+                    right: 60px;
+                    top: 80px;
+                    width: 140px;
+                    height: 140px;
                 }
             }
         }
     }
     .footer {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-end;
-        height: 90px;
+        height: 106px;
         border-top: 1px solid #252D3F;
         margin-top: 20px;
+        padding-top: 12px;
+        text-align: right;
         .name {
-            font-size: 24px;
+            font-size: 18;
             color: rgba(62,73,94,1);
-            line-height: 34px;
+            line-height: 24px;
         }
         .copyright {
-            font-size: 16px;
-            line-height: 24px;
+            font-size: 12px;
+            line-height: 16px;
             color: rgba(62,73,94,1);
         }
     }

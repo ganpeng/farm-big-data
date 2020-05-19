@@ -168,7 +168,7 @@ export const constantRouterMap = [{
             }
         ]
     },
-    //  基站
+    //  5G网络
     {
         path: '/base-station',
         component: Layout,
@@ -178,12 +178,28 @@ export const constantRouterMap = [{
                 name: 'BaseStation',
                 component: () => import('@/views/base_station/BaseStation'),
                 meta: {
-                    title: '基站管理'
+                    title: '基站管理',
+                    activeMenu: '/base-station'
                 }
             }
         ]
     },
-    //  物流
+    {
+        path: '/internet',
+        component: Layout,
+        children: [
+            {
+                path: 'list',
+                name: 'InternetList',
+                component: () => import('@/views/base_station/InternetList'),
+                meta: {
+                    title: '网络管理',
+                    activeMenu: '/internet/list'
+                }
+            }
+        ]
+    },
+    //  仓储物流
     {
         path: '/logistics',
         component: Layout,
@@ -193,7 +209,23 @@ export const constantRouterMap = [{
                 name: 'Logistics',
                 component: () => import('@/views/logistics/Logistics'),
                 meta: {
-                    title: '物流管理'
+                    title: '仓储管理',
+                    activeMenu: '/logistics'
+                }
+            }
+        ]
+    },
+    {
+        path: '/cars',
+        component: Layout,
+        children: [
+            {
+                path: 'list',
+                name: 'CarsList',
+                component: () => import('@/views/logistics/CarsList'),
+                meta: {
+                    title: '车辆管理',
+                    activeMenu: '/cars/list'
                 }
             }
         ]
@@ -209,7 +241,7 @@ export const constantRouterMap = [{
                 name: 'PeeList',
                 component: () => import('@/views/pee/PeeList'),
                 meta: {
-                    title: '物环设备'
+                    title: '设备管理'
                 }
             },
             {
@@ -217,7 +249,7 @@ export const constantRouterMap = [{
                 name: 'PeeCreate',
                 component: () => import('@/views/pee/PeeCreate'),
                 meta: {
-                    title: '物环设备>新增',
+                    title: '设备管理>新增',
                     activeMenu: '/pee/list'
                 }
             },
@@ -226,7 +258,7 @@ export const constantRouterMap = [{
                 name: 'PeeEdit',
                 component: () => import('@/views/pee/PeeEdit'),
                 meta: {
-                    title: '物环设备>编辑',
+                    title: '设备管理>编辑',
                     activeMenu: '/pee/list'
                 }
             },
@@ -235,10 +267,20 @@ export const constantRouterMap = [{
                 name: 'PeeDetail',
                 component: () => import('@/views/pee/PeeDetail'),
                 meta: {
-                    title: '物环设备>详情',
+                    title: '设备管理>详情',
                     activeMenu: '/pee/list'
                 }
-            }
+            },
+            //  设备分组
+            {
+                path: 'group/list',
+                name: 'PeeGroupList',
+                component: () => import('@/views/pee/PeeGroupList'),
+                meta: {
+                    title: '设备分组',
+                    activeMenu: '/pee/group/list'
+                }
+            },
         ]
     },
     //  数据洞察

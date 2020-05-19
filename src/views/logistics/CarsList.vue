@@ -1,18 +1,18 @@
 <template>
-    <div class="base-station-container">
+    <div class="logistics-container">
     </div>
 </template>
 <script>
 export default {
-    name: 'BaseStation'
+    name: 'CarsList'
 };
 </script>
 <style lang="scss" scoped>
-.base-station-container {
+.logistics-container {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-image: url('../../assets/img/my_bg_1.jpg');
+    background-image: url('../../assets/img/my_bg_2.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
