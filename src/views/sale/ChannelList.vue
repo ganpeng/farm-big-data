@@ -69,7 +69,7 @@
                 <el-table-column type="selection" align="center" width="50"></el-table-column>
                 <el-table-column min-width="120px" label="渠道名称">
                     <template slot-scope="scope">
-                        <span @click="gotoChannelDetail(scope.row.id)" class="ellipsis two name">
+                        <span @click="gotoChannelStatistics(scope.row.id)" class="ellipsis two name">
                             {{scope.row.name}}
                         </span>
                     </template>
@@ -109,10 +109,10 @@
                         {{scope.row.createdAt}}
                     </template>
                 </el-table-column>
-                <el-table-column width="220px" align="center" label="操作">
+                <el-table-column min-width="120px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
-                            <span class="btn-text" @click="gotoChannelStatistics(scope.row.id)">统计</span>
+                            <!-- <span class="btn-text" @click="gotoChannelStatistics(scope.row.id)">统计</span> -->
                             <span class="btn-text" @click="editChannelHandler(scope.row.id)">编辑</span>
                             <span class="btn-text text-danger" @click="deleteChannelHandler(scope.row.id)">删除</span>
                         </div>

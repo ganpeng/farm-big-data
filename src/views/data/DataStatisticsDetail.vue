@@ -525,7 +525,7 @@ export default {
         }
     }
     .tab-content-container {
-        margin-top: 1rem;
+        // margin-top: 1rem;
         .tab-content-item {
             .title-container {
                 position: relative;

@@ -83,7 +83,7 @@
                 class="my-table-style"
                 :data="list.data">
                 <el-table-column type="selection" align="center" width="50"></el-table-column>
-                <el-table-column min-width="100px" label="设备ID">
+                <el-table-column min-width="120px" label="设备ID">
                     <template slot-scope="scope">
                         <span @click="gotoPeeDetail(scope.row.id)" class="ellipsis two name">
                             {{scope.row.dId}}
@@ -101,17 +101,19 @@
                         {{scope.row.address.city}}/{{scope.row.address.area}}/{{scope.row.address.detail}}
                     </template>
                 </el-table-column>
+                <!--
                 <el-table-column min-width="160px" label="经纬度">
                     <template slot-scope="scope">
                         [{{scope.row.latitude}}, {{scope.row.longitude}}]
                     </template>
                 </el-table-column>
+                -->
                 <el-table-column min-width="80px" label="厂商名称">
                     <template slot-scope="scope">
                         {{getFirmLabel(scope.row.firmName)}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="140px" label="所属农场">
+                <el-table-column min-width="160px" label="所属农场">
                     <template slot-scope="scope">
                         {{scope.row.farm}}
                     </template>
@@ -137,17 +139,17 @@
                         </el-popover>
                     </template>
                 </el-table-column>
-                <el-table-column min-width="80px" label="状态">
+                <el-table-column min-width="60px" label="状态">
                     <template slot-scope="scope">
                         {{getStatusLabel(scope.row.status)}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="上线时间">
+                <el-table-column min-width="100px" align="center" label="上线时间">
                     <template slot-scope="scope">
                         {{scope.row.createdAt}}
                     </template>
                 </el-table-column>
-                <el-table-column width="220px" align="center" label="操作">
+                <el-table-column min-width="180px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
                             <span class="btn-text text-danger" @click="pausePeeHandler(scope.row.id)">暂停</span>

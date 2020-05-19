@@ -86,6 +86,7 @@
                         {{scope.row.type}}
                     </template>
                 </el-table-column>
+                <!--
                 <el-table-column min-width="100px" label="品种">
                     <template slot-scope="scope">
                         {{scope.row.variety}}
@@ -96,12 +97,13 @@
                         {{scope.row.specs}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="认证">
+                -->
+                <el-table-column min-width="130px" label="认证">
                     <template slot-scope="scope">
                         {{scope.row.auth}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="150px" label="所属农场">
+                <el-table-column min-width="160px" label="所属农场">
                     <template slot-scope="scope">
                         {{scope.row.farm}}
                     </template>
@@ -122,12 +124,12 @@
                         <i v-else class="off-the-shelf">已下架</i>
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="创建时间">
+                <el-table-column min-width="100px" align="center" label="创建时间">
                     <template slot-scope="scope">
                         {{scope.row.createdAt}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="140px" align="center" label="操作">
+                <el-table-column min-width="160px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
                             <span class="btn-text" @click="showCode(scope.row.id)">二维码</span>

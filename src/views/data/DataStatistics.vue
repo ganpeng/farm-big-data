@@ -2,13 +2,13 @@
     <div class="data-statistics-container my-content-container">
         <bord2></bord2>
         <div class="bottom-field">
-            <div class="bottom-left">
+            <div class="bottom-left bottom-item">
                 <div @click="gotoDataDetail(0)" class="header">
-                    <svg-icon class-name="svg-one" icon-class="home_icon6"/>
+                    <svg-icon class-name="svg-one" icon-class="ds_icon1"/>
                     <span class="title">地块统计</span>
                     <svg-icon class-name="arrow" icon-class="home_icon8"/>
                 </div>
-                <div class="bottom-left-content">
+                <div class="bottom-left-content bottom-item-content">
                     <div class="title-field">
                         <p class="title">地块总面积</p>
                         <p class="count">
@@ -52,13 +52,13 @@
                     </div>
                 </div>
             </div>
-            <div class="bottom-right">
+            <div class="bottom-right bottom-item">
                 <div @click="gotoDataDetail(1)" class="header">
-                    <svg-icon class-name="svg-one" icon-class="home_icon7"/>
+                    <svg-icon class-name="svg-one" icon-class="ds_icon2"/>
                     <span class="title">从业人员统计</span>
                     <svg-icon class-name="arrow" icon-class="home_icon8"/>
                 </div>
-                <div class="bottom-right-content">
+                <div class="bottom-right-content bottom-item-content">
                     <div class="title-field">
                         <p class="title">从业人员总计</p>
                         <p class="count">
@@ -94,13 +94,13 @@
             </div>
         </div>
         <div class="bottom-field">
-            <div class="bottom-left">
+            <div class="bottom-left bottom-item">
                 <div @click="gotoDataDetail(2)" class="header">
-                    <svg-icon class-name="svg-one" icon-class="home_icon6"/>
+                    <svg-icon class-name="svg-one" icon-class="ds_icon3"/>
                     <span class="title">农作物种植统计</span>
                     <svg-icon class-name="arrow" icon-class="home_icon8"/>
                 </div>
-                <div class="bottom-left-content">
+                <div class="bottom-left-content bottom-item-content">
                     <div class="title-field">
                         <p class="title">种植总面积</p>
                         <p class="count">
@@ -149,13 +149,13 @@
                     </div>
                 </div>
             </div>
-            <div class="bottom-right">
+            <div class="bottom-right bottom-item">
                 <div @click="gotoDataDetail(3)" class="header">
-                    <svg-icon class-name="svg-one" icon-class="home_icon7"/>
+                    <svg-icon class-name="svg-one" icon-class="ds_icon4"/>
                     <span class="title">2020年投入品统计</span>
                     <svg-icon class-name="arrow" icon-class="home_icon8"/>
                 </div>
-                <div class="bottom-right-content">
+                <div class="bottom-right-content bottom-item-content">
                     <div class="title-field">
                         <p class="title">投入品总计</p>
                         <p class="count">
@@ -201,13 +201,13 @@
             </div>
         </div>
         <div class="bottom-field">
-            <div class="bottom-left">
+            <div class="bottom-left bottom-item">
                 <div @click="gotoDataDetail(4)" class="header">
-                    <svg-icon class-name="svg-one" icon-class="home_icon6"/>
+                    <svg-icon class-name="svg-one" icon-class="ds_icon5"/>
                     <span class="title">2020年销售额统计</span>
                     <svg-icon class-name="arrow" icon-class="home_icon8"/>
                 </div>
-                <div class="bottom-left-content">
+                <div class="bottom-left-content bottom-item-content">
                     <div class="title-field">
                         <p class="title">销售额</p>
                         <p class="count">
@@ -246,13 +246,13 @@
                     </div>
                 </div>
             </div>
-            <div class="bottom-right">
+            <div class="bottom-right bottom-item">
                 <div @click="gotoDataDetail(5)" class="header">
-                    <svg-icon class-name="svg-one" icon-class="home_icon7"/>
+                    <svg-icon class-name="svg-one" icon-class="ds_icon6"/>
                     <span class="title">农业社会化服务统计</span>
                     <svg-icon class-name="arrow" icon-class="home_icon8"/>
                 </div>
-                <div class="bottom-right-content">
+                <div class="bottom-right-content bottom-item-content">
                     <div class="title-field">
                         <p class="title">服务营收</p>
                         <p class="count">
@@ -347,166 +347,21 @@ export default {
 .data-statistics-container {
     .bottom-field {
         display: flex;
-        height: 443px;
+        height: 332px;
         margin-top: 20px;
-        .header {
-            display: flex;
-            align-items: center;
-            height: 64px;
-            padding: 0 20px;
-            border-bottom: 1px solid #3A4763;
-            cursor: pointer;
-            .svg-one {
-                width: 43px;
-                height: 43px;
-            }
-            .title {
-                font-size:21px;
-                margin: 0 24px;
-            }
-            .arrow {
-                width: 15px;
-                height: 16px;
-            }
-        }
         .bottom-left {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
             margin-right: 20px;
-            border-radius: 4px;
-            background-color: #252D3F;
-            .bottom-left-content {
-                position: relative;
-                flex: 1;
-                height: 376px;
-                .title-field {
-                    position: absolute;
-                    top: 60px;
-                    left: 48px;
-                    .title {
-                        font-size: 21px;
-                        color: rgba(163,208,253,1);
-                    }
-                    .count {
-                        font-size: 51px;
-                        color: rgba(91,173,255,1);
-                        i {
-                            font-size:21px;
-                        }
-                    }
-                }
-                .legen-field {
-                    position: absolute;
-                    bottom: 15px;
-                    left: 48px;;
-                    .legen-list {
-                        display: flex;
-                        flex-direction: column;
-                        .legen-item {
-                            display: flex;
-                            align-items: center;
-                            font-size: 16px;
-                            color: rgba(102,119,153,1);
-                            .text1 {
-                                width: 70px;
-                                margin: 0 30px 0 10px;
-                            }
-                            .text2 {
-                                margin: 0 30px 0 20px;
-                            }
-                            .icon {
-                                width: 13px;
-                                height: 13px;
-                            }
-                            &:nth-of-type(1) {
-                                .icon {
-                                    background-color: #008FC4;
-                                }
-                            }
-                            &:nth-of-type(2) {
-                                .icon {
-                                    background-color: #0062C4;
-                                }
-                            }
-                            &:nth-of-type(3) {
-                                .icon {
-                                    background-color: #74B8C2;
-                                }
-                            }
-                            &:nth-of-type(4) {
-                                .icon {
-                                    background-color: #00A2DE;
-                                }
-                            }
-                            &:nth-of-type(5) {
-                                .icon {
-                                    background-color: #50BEE7;
-                                }
-                            }
-                        }
-                    }
-                }
-                .echarts-field {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    position: absolute;
-                    right: 40px;
-                    top: 60px;
-                    width: 240px;
-                    height: 240px;
-                }
-            }
         }
-        .bottom-right {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            border-radius: 4px;
-            background-color: #252D3F;
-            .bottom-right-content {
-                position: relative;
-                flex: 1;
-                height: 376px;
-                .title-field {
-                    position: absolute;
-                    top: 60px;
-                    left: 48px;
-                    .title {
-                        font-size: 21px;
-                        color: rgba(163,208,253,1);
-                    }
-                    .count {
-                        font-size: 51px;
-                        color: rgba(91,173,255,1);
-                        i {
-                            font-size:21px;
-                        }
-                    }
-                }
+        .bottom-item {
+            .bottom-item-content {
                 .legen-field {
-                    position: absolute;
-                    bottom: 15px;
-                    left: 48px;;
                     .legen-list {
-                        display: flex;
-                        flex-direction: column;
                         .legen-item {
-                            display: flex;
-                            align-items: center;
-                            font-size: 16px;
-                            color: rgba(102,119,153,1);
                             .text1 {
-                                width: 70px;
-                                margin: 0 30px 0 10px;
+                                width: 80px;
                             }
                             .text2 {
-                                margin: 0 30px 0 20px;
-                            }
-                            .icon {
-                                width: 13px;
-                                height: 13px;
+                                width: 20px;
                             }
                             &:nth-of-type(1) {
                                 .icon {
@@ -536,15 +391,103 @@ export default {
                         }
                     }
                 }
+            }
+        }
+        .bottom-item {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            border-radius: 4px;
+            background-color: #252D3F;
+            .header {
+                display: flex;
+                align-items: center;
+                height: 48px;
+                padding: 0 20px;
+                border-bottom: 1px solid #3A4763;
+                cursor: pointer;
+                .svg-one {
+                    width: 32px;
+                    height: 32px;
+                }
+                .title {
+                    font-size: 16px;
+                    margin: 0 18px;
+                }
+                .arrow {
+                    width: 11px;
+                    height: 12px;
+                }
+            }
+            .bottom-item-content {
+                position: relative;
+                flex: 1;
+                height: 282px;
+                .title-field {
+                    position: absolute;
+                    top: 40px;
+                    left: 36px;
+                    .title {
+                        font-size: 16px;
+                        color: rgba(163,208,253,1);
+                    }
+                    .count {
+                        font-size: 38px;
+                        color: rgba(91,173,255,1);
+                        i {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .legen-field {
+                    position: absolute;
+                    bottom: 42px;
+                    left: 36px;;
+                    .legen-list {
+                        display: flex;
+                        flex-direction: column;
+                        .legen-item {
+                            display: flex;
+                            align-items: center;
+                            font-size: 12px;
+                            color: rgba(102,119,153,1);
+                            .text1 {
+                                margin-left: 10px;
+                            }
+                            .text2 {
+                                margin: 0 30px 0 20px;
+                            }
+                            .icon {
+                                width: 13px;
+                                height: 13px;
+                            }
+                            &:nth-of-type(1) {
+                                .icon {
+                                    background-color: #008FC4;
+                                }
+                            }
+                            &:nth-of-type(2) {
+                                .icon {
+                                    background-color: #0062C4;
+                                }
+                            }
+                            &:nth-of-type(3) {
+                                .icon {
+                                    background-color: #74B8C2;
+                                }
+                            }
+                        }
+                    }
+                }
                 .echarts-field {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     position: absolute;
-                    right: 40px;
-                    top: 60px;
-                    width: 240px;
-                    height: 240px;
+                    right: 60px;
+                    top: 80px;
+                    width: 140px;
+                    height: 140px;
                 }
             }
         }
