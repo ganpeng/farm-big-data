@@ -1,7 +1,5 @@
 <template>
     <div class="pee-detail-container my-content-container">
-        <h2 class="content-title">物环设备详情</h2>
-        <div class="seperator-line"></div>
         <div class="common-details">
             <div class="info-section">
                 <div class="title-wrapper">

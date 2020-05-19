@@ -50,7 +50,25 @@ export const constantRouterMap = [{
                 name: 'FarmList',
                 component: () => import('@/views/farm/FarmList'),
                 meta: {
-                    title: '农场信息管理'
+                    title: '农场信息'
+                }
+            },
+            {
+                path: 'manage/:id(\\d+)',
+                name: 'FarmManage',
+                component: () => import('@/views/farm/FarmManage'),
+                meta: {
+                    title: '农场信息>管理',
+                    activeMenu: '/farm/list'
+                }
+            },
+            {
+                path: 'detail/:id(\\d+)',
+                name: 'FarmDetail',
+                component: () => import('@/views/farm/FarmDetail'),
+                meta: {
+                    title: '农场信息>详情',
+                    activeMenu: '/farm/list'
                 }
             },
             {
@@ -58,7 +76,7 @@ export const constantRouterMap = [{
                 name: 'FarmEdit',
                 component: () => import('@/views/farm/FarmEdit'),
                 meta: {
-                    title: '农场信息管理>编辑',
+                    title: '农场信息>编辑',
                     activeMenu: '/farm/list'
                 }
             },

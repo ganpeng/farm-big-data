@@ -1588,6 +1588,7 @@ html, body {
             padding: 0;
             background: #1F2D4D;
             border-radius: 6px 8px 0px 0px;
+            text-align: center;
             .el-dialog__title {
                 font-size: 20px;
                 color: #909399;
@@ -2188,5 +2189,45 @@ html, body {
 
 .my-content-container {
     padding: 20px;
-    // overflow-y: scroll;
+}
+
+//  新状态模块样式
+.my-bord-status {
+    display: flex;
+    width: 100%;
+    .status-item + .status-item {
+        margin-left: 10px;
+    }
+    .status-item {
+        background-color: #272f44;
+        // width: 360px;
+        flex: 1;
+        height: 80px;
+        border-radius: 4px;
+        background: #272f44 no-repeat right 20px;
+        overflow: hidden;
+        color: #bdbec2;
+
+        &.total {
+            background-position: 100% 100%;
+            background-size: 78px 78px;
+        }
+        .line {
+            width: 2px;
+            height: 50px;
+            margin: 20px;
+            float: left;
+            background: #f96549;
+        }
+        .item_con {
+            float: left;
+            padding-top: 17px;
+        }
+        .count {
+            float: right;
+            margin-right: 30px;
+            font-size: 40px;
+            line-height: 80px;
+        }
+    }
 }

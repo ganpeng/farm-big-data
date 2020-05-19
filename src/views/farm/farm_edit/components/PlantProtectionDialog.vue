@@ -31,7 +31,7 @@
                         class="my-form">
                         <div v-if="activeIndex === 0" class="step-content-item">
                             <el-row>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="作物名称">
                                         <el-input v-model="model.p1"></el-input>
                                     </el-form-item>
@@ -49,7 +49,7 @@
                                         </el-date-picker>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="品种">
                                         <el-select v-model="model.p2">
                                             <el-option
@@ -68,7 +68,7 @@
                         </div>
                         <div v-if="activeIndex === 1" class="step-content-item">
                             <el-row>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="二级品种名称">
                                         <el-input v-model="model.p4"></el-input>
                                     </el-form-item>
@@ -86,7 +86,7 @@
                                         </el-date-picker>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="育种时间">
                                         <el-date-picker
                                             v-model="model.p5"
@@ -103,7 +103,7 @@
                         <div v-if="activeIndex === 2" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">投入品1</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="投入品类型">
                                         <el-select v-model="model.p9">
                                             <el-option
@@ -118,7 +118,7 @@
                                         <el-input v-model="model.p11"></el-input>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="投入时间">
                                         <el-date-picker
                                             v-model="model.p10"
@@ -143,7 +143,7 @@
                             </el-row>
                             <el-row>
                                 <h3 class="titl">投入品2</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="投入品类型">
                                         <el-select v-model="model.p9">
                                             <el-option
@@ -158,7 +158,7 @@
                                         <el-input v-model="model.p11"></el-input>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="投入时间">
                                         <el-date-picker
                                             v-model="model.p10"
@@ -185,7 +185,7 @@
                         <div v-if="activeIndex === 3" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">田间管理1</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="管理类型">
                                         <el-select v-model="model.p14">
                                             <el-option
@@ -207,7 +207,7 @@
                                         </el-select>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="管理时间">
                                         <el-date-picker
                                             v-model="model.p15"
@@ -218,7 +218,7 @@
                             </el-row>
                             <el-row>
                                 <h3 class="titl">田间管理2</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="管理类型">
                                         <el-select v-model="model.p14">
                                             <el-option
@@ -240,7 +240,7 @@
                                         </el-select>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="管理时间">
                                         <el-date-picker
                                             v-model="model.p15"
@@ -253,7 +253,7 @@
                         <div v-if="activeIndex === 4" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">采收管理1</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="管理类型">
                                         <el-select v-model="model.p17">
                                             <el-option
@@ -274,7 +274,7 @@
                                         </el-date-picker>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="采收方式">
                                         <el-select v-model="model.p18">
                                             <el-option
@@ -292,7 +292,7 @@
                             </el-row>
                             <el-row>
                                 <h3 class="titl">采收管理1</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="管理类型">
                                         <el-select v-model="model.p17">
                                             <el-option
@@ -313,7 +313,7 @@
                                         </el-date-picker>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="采收方式">
                                         <el-select v-model="model.p18">
                                             <el-option
@@ -333,7 +333,7 @@
                         <div v-if="activeIndex === 5" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">加工管理1</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="加工管理名称">
                                         <el-input v-model="model.p22"></el-input>
                                     </el-form-item>
@@ -347,7 +347,7 @@
                                         </el-date-picker>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="加工厂商证件号">
                                         <el-input v-model="model.p23"></el-input>
                                     </el-form-item>
@@ -358,7 +358,7 @@
                             </el-row>
                             <el-row>
                                 <h3 class="titl">加工管理2</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="加工管理名称">
                                         <el-input v-model="model.p22"></el-input>
                                     </el-form-item>
@@ -372,7 +372,7 @@
                                         </el-date-picker>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="加工厂商证件号">
                                         <el-input v-model="model.p23"></el-input>
                                     </el-form-item>
@@ -385,7 +385,7 @@
                         <div v-if="activeIndex === 6" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">仓储管理1</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="仓储类型">
                                         <el-select v-model="model.p27">
                                             <el-option
@@ -409,7 +409,7 @@
                                         <el-input v-model="model.p32"></el-input>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="仓库地址">
                                         <el-input v-model="model.p28"></el-input>
                                     </el-form-item>
@@ -423,7 +423,7 @@
                             </el-row>
                             <el-row>
                                 <h3 class="titl">仓储管理2</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="仓储类型">
                                         <el-select v-model="model.p27">
                                             <el-option
@@ -447,7 +447,7 @@
                                         <el-input v-model="model.p32"></el-input>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="仓库地址">
                                         <el-input v-model="model.p28"></el-input>
                                     </el-form-item>
@@ -463,7 +463,7 @@
                         <div v-if="activeIndex === 7" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">检测信息1</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="检测机构">
                                         <el-input v-model="model.p34"></el-input>
                                     </el-form-item>
@@ -479,7 +479,7 @@
                                     <el-form-item label="检验报告">
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="检测时间">
                                         <el-date-picker
                                             v-model="model.p35"
@@ -501,12 +501,12 @@
                         <div v-if="activeIndex === 8" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">自营电商</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="销售额 万元">
                                         <el-input v-model="model.p42"></el-input>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="利润 万元">
                                         <el-input v-model="model.p43"></el-input>
                                     </el-form-item>
@@ -514,12 +514,12 @@
                             </el-row>
                             <el-row>
                                 <h3 class="titl">合作电商</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="销售额 万元">
                                         <el-input v-model="model.p44"></el-input>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="利润 万元">
                                         <el-input v-model="model.p45"></el-input>
                                     </el-form-item>
@@ -527,12 +527,12 @@
                             </el-row>
                             <el-row>
                                 <h3 class="titl">线下渠道</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="销售额 万元">
                                         <el-input v-model="model.p46"></el-input>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="利润 万元">
                                         <el-input v-model="model.p47"></el-input>
                                     </el-form-item>
@@ -542,7 +542,7 @@
                         <div v-if="activeIndex === 9" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">受灾信息1</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="受灾类型">
                                         <el-select v-model="model.p48">
                                             <el-option
@@ -563,7 +563,7 @@
                                         <el-input v-model="model.p51"></el-input>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="受灾时间">
                                         <el-date-picker
                                             v-model="model.p52"
@@ -579,7 +579,7 @@
                         <div v-if="activeIndex === 10" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">农机具使用1</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="农机具类型">
                                         <el-select v-model="model.p54">
                                             <el-option
@@ -594,7 +594,7 @@
                                         <el-input v-model="model.p55"></el-input>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="使用时间">
                                         <el-date-picker
                                             v-model="model.p56"
@@ -608,7 +608,7 @@
                             </el-row>
                             <el-row>
                                 <h3 class="titl">农机具使用2</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="农机具类型">
                                         <el-select v-model="model.p54">
                                             <el-option
@@ -623,7 +623,7 @@
                                         <el-input v-model="model.p55"></el-input>
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="使用时间">
                                         <el-date-picker
                                             v-model="model.p56"
@@ -639,7 +639,7 @@
                         <div v-if="activeIndex === 11" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">证书1</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="证书类型">
                                         <el-select v-model="model.p58">
                                             <el-option
@@ -656,7 +656,7 @@
                                     <el-form-item label="证书文件">
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="证书编号">
                                         <el-input v-model="model.p60"></el-input>
                                     </el-form-item>
@@ -674,7 +674,7 @@
                             </el-row>
                             <el-row>
                                 <h3 class="titl">证书2</h3>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="证书类型">
                                         <el-select v-model="model.p58">
                                             <el-option
@@ -691,7 +691,7 @@
                                     <el-form-item label="证书文件">
                                     </el-form-item>
                                 </el-col>
-                                <el-col :span="8">
+                                <el-col :span="10">
                                     <el-form-item label="证书编号">
                                         <el-input v-model="model.p60"></el-input>
                                     </el-form-item>

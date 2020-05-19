@@ -1,93 +1,34 @@
 <template>
     <div class="farm-edit-container my-content-container">
-        <div class="tab-bar-container">
-            <ul class="tab-bar-list">
-                <li @click="changeTab(index)" v-for="(item, index) in tabBarList"
-                    :key="index" :class="['tab-bar-item', item.active && 'active']">
-                    <span class="title">{{item.title}}</span>
-                </li>
-            </ul>
-        </div>
-        <div class="tab-content">
-            <tab-content1 v-if="activeIndex === 0"></tab-content1>
-            <tab-content2 v-if="activeIndex === 1"></tab-content2>
-            <tab-content3 v-if="activeIndex === 2"></tab-content3>
-            <tab-content4 v-if="activeIndex === 3"></tab-content4>
-            <tab-content5 v-if="activeIndex === 4"></tab-content5>
-            <tab-content6 v-if="activeIndex === 5"></tab-content6>
+        <farm-form ref="farmFormComponent"></farm-form>
+        <div class="fixed-btn-container">
+            <el-button class="btn-style-two" type="primary" @click="farmEditHandler">保存</el-button>
+            <el-button class="btn-style-three" @click="gotoFarmList" plain>返回列表</el-button>
         </div>
     </div>
 </template>
 <script>
 import {mapMutations} from 'vuex';
-import TabContent1 from './farm_edit/TabContent1';
-import TabContent2 from './farm_edit/TabContent2';
-import TabContent3 from './farm_edit/TabContent3';
-import TabContent4 from './farm_edit/TabContent4';
-import TabContent5 from './farm_edit/TabContent5';
-import TabContent6 from './farm_edit/TabContent6';
+import FarmForm from './FarmForm';
 export default {
     name: 'FarmEdit',
-    components: {
-        TabContent1,
-        TabContent2,
-        TabContent3,
-        TabContent4,
-        TabContent5,
-        TabContent6
-    },
+    components: { FarmForm },
     data() {
-        return {
-            tabBarList: [
-                {
-                    title: '基本信息',
-                    active: true
-                },
-                {
-                    title: '成员管理',
-                    active: false
-                },
-                {
-                    title: '土地管理',
-                    active: false
-                },
-                {
-                    title: '农机具管理',
-                    active: false
-                },
-                {
-                    title: '经营管理',
-                    active: false
-                },
-                {
-                    title: '种植管理',
-                    active: false
-                }
-            ]
-        };
+        return {};
     },
     created() {
         let {id} = this.$route.params;
         this.setCurrentFarmById({id});
     },
-    computed: {
-        activeIndex() {
-            return this.tabBarList.findIndex((item) => item.active);
-        }
-    },
     methods: {
         ...mapMutations({
             setCurrentFarmById: 'farm/setCurrentFarmById'
         }),
-        changeTab(index) {
-            this.tabBarList = this.tabBarList.map((item, _index) => {
-                if (index === _index) {
-                    item.active = true;
-                } else {
-                    item.active = false;
-                }
-                return item;
-            });
+        farmEditHandler() {
+            this.gotoFarmList();
+        },
+        gotoFarmList() {
+            this.$router.push({name: 'FarmList'});
         }
     }
 };

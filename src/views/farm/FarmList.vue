@@ -135,6 +135,7 @@
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
                             <span class="btn-text" @click="editFarmHandler(scope.row.id)">编辑</span>
+                            <span class="btn-text" @click="manageFarmHandler(scope.row.id)">管理</span>
                             <span class="btn-text text-danger" @click="deleteFarmHandler(scope.row.id)">删除</span>
                         </div>
                     </template>
@@ -208,6 +209,9 @@ export default {
         },
         editFarmHandler(id) {
             this.$router.push({ name: 'FarmEdit', params: {id} });
+        },
+        manageFarmHandler(id) {
+            this.$router.push({ name: 'FarmManage', params: {id} });
         },
         async deleteFarmHandler() {
             try {

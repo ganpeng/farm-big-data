@@ -83,7 +83,7 @@
                         {{ scope.row.gender}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="地址">
+                <el-table-column min-width="180px" label="地址">
                     <template slot-scope="scope">
                         {{scope.row.address.city}}/{{scope.row.address.area}}/{{scope.row.address.detail}}
                     </template>
