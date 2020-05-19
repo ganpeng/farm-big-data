@@ -142,13 +142,7 @@
                     <h4 class="content-sub-title">文件</h4>
                     <ul class="file-list">
                         <li class="file-item">
-                            <img src="" alt="">
-                        </li>
-                        <li class="file-item">
-                            <img src="" alt="">
-                        </li>
-                        <li class="file-item">
-                            <img src="" alt="">
+                            <img src="../../../../assets/img/发票.jpeg" alt="">
                         </li>
                     </ul>
                 </el-row>
@@ -250,10 +244,12 @@ export default {
 .file-list {
     display: flex;
     .file-item {
-        width: 200px;
+        width: 300px;
         height: 300px;
-        background-color: red;
         border-radius: 4px;
+        img {
+            width: 300px;
+        }
     }
     .file-item + .file-item {
         margin-left: 10px;

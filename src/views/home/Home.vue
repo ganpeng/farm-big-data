@@ -1,7 +1,7 @@
 <template>
     <div class="home-container my-content-container">
         <div class="top-field">
-            <div class="my-bord-status">
+            <div class="my-bord-status-two">
                 <div class="status-item terminal-status-item total">
                     <div class="left">
                         <div class="line"></div>
@@ -318,7 +318,7 @@ export default {
     overflow-y: scroll;
     .top-field {
         height: 160px;
-        .my-bord-status {
+        .my-bord-status-two {
             display: flex;
             width: 100%;
             .status-item + .status-item {
@@ -337,15 +337,17 @@ export default {
                 background: #272f44 no-repeat right 20px;
                 overflow: hidden;
                 color: #bdbec2;
-
                 &.total {
                     background-position: 100% 100%;
                     background-size: 78px 78px;
                 }
+                .left {
+                    display: flex;
+                }
                 .line {
                     width: 2px;
                     height: 50px;
-                    float: left;
+                    // float: left;
                 }
                 &:nth-of-type(1) {
                     .line {

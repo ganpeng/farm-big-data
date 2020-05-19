@@ -205,7 +205,8 @@ export default {
             this.updatePagination({key, value});
         },
         createFarm() {
-            this.$refs.farmCreateDialog.show();
+            this.$router.push({ name: 'FarmCreate' });
+            // this.$refs.farmCreateDialog.show();
         },
         editFarmHandler(id) {
             this.$router.push({ name: 'FarmEdit', params: {id} });

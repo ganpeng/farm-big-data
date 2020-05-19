@@ -86,6 +86,7 @@
                             </el-select>
                         </el-form-item>
                         <el-form-item label="GIS图片">
+                            <img class="gis-img" src="../../../../assets/img/gis.png" alt="">
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -155,7 +156,7 @@
                                 <el-form-item label="发票">
                                     <ul class="invoice-list">
                                         <li class="invoice-item">
-                                            <img src="" alt="">
+                                            <img src="../../../../assets/img/发票2.jpeg" alt="">
                                         </li>
                                     </ul>
                                 </el-form-item>
@@ -288,11 +289,12 @@ export default {
 .invoice-list {
     display: flex;
     .invoice-item {
-        width: 140px;
-        height: 220px;
-        background-color: red;
+        // width: 140px;
+        // height: 220px;
         border-radius: 4px;
         img {
+            width: 300px;
+            height: 260px;
         }
     }
 }

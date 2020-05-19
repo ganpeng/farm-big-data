@@ -81,6 +81,15 @@ export const constantRouterMap = [{
                 }
             },
             {
+                path: 'create/',
+                name: 'FarmCreate',
+                component: () => import('@/views/farm/FarmCreate'),
+                meta: {
+                    title: '农场信息>新增',
+                    activeMenu: '/farm/list'
+                }
+            },
+            {
                 path: 'visual',
                 name: 'FarmVisual',
                 component: () => import('@/views/farm/FarmVisual'),

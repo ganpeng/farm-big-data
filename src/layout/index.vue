@@ -18,7 +18,7 @@
                     <p>管理系统</p>
                 </div>
             </div>
-            <div class="in-big-screen"><p>进入统计大屏</p></div>
+            <div @click="gotoBigScreen" class="in-big-screen"><p>进入统计大屏</p></div>
             <el-menu
                 router
                 :default-active="activeMenu"
@@ -159,6 +159,9 @@ export default {
         },
         gotoHome() {
             this.$router.push({name: 'Dashboard'});
+        },
+        gotoBigScreen() {
+            window.location.href = 'http://dev.n.tianchimedia.com/visual-farm-third-edition';
         }
     }
 };

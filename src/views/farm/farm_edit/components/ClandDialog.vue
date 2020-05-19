@@ -101,6 +101,7 @@
                             </el-select>
                         </el-form-item>
                         <el-form-item label="GIS图片">
+                            <img class="gis-img" src="../../../../assets/img/gis.png" alt="">
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -154,6 +155,9 @@
                 <div class="seperator-line"></div>
                 <el-row>
                     <h4 class="content-sub-title">合同</h4>
+                    <div class="contract-list">
+                        <img src="../../../../assets/img/承包合同.jpg" alt="">
+                    </div>
                 </el-row>
             </el-form>
         </div>
@@ -266,5 +270,3 @@ export default {
     }
 };
 </script>
-<style lang="scss" scoped>
-</style>

@@ -151,7 +151,7 @@
                                 <el-form-item label="发票">
                                     <ul class="invoice-list">
                                         <li class="invoice-item">
-                                            <img src="" alt="">
+                                            <img src="../../../../assets/img/发票2.jpeg" alt="">
                                         </li>
                                     </ul>
                                 </el-form-item>
@@ -288,11 +288,10 @@ export default {
 .invoice-list {
     display: flex;
     .invoice-item {
-        width: 140px;
-        height: 220px;
-        background-color: red;
         border-radius: 4px;
         img {
+            width: 300px;
+            height: 260px;
         }
     }
 }
