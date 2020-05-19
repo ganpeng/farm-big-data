@@ -230,7 +230,21 @@ export default {
             window.open(href, '_blank');
         },
         gotoEnterManageBtn() {
-            let href = 'https://ds.tianchimedia.com/admin';
+            let href = '';
+            let {id} = this.$route.query;
+            switch (id) {
+                case 1:
+                    href = 'https://ds.tianchimedia.com/admin';
+                    break;
+                case 2:
+                    href = 'https://login.taobao.com/member/login.jhtml?redirectURL=http%3A%2F%2Fopenshop.taobao.com%2Findex.htm';
+                    break;
+                case 3:
+                    href = 'http://www.oysd.cn/Default.aspx';
+                    break;
+                default:
+                    return '';
+            }
             window.open(href, '_blank');
         }
     }
