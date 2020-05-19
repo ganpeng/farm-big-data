@@ -253,7 +253,7 @@ export const constantRouterMap = [{
                 component: () => import('@/views/data/DataStatisticsDetail'),
                 meta: {
                     title: '数据统计',
-
+                    activeMenu: '/data/statistics'
                 }
             },
             {

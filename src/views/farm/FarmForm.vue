@@ -42,27 +42,12 @@
                             @input="inputHandler($event, 'area')"
                         ></el-input>
                     </el-form-item>
-                    <el-form-item label="主要特色" prop="feature">
+                    <el-form-item label="地址" prop="type">
                         <el-input
                             maxlength="20"
-                            :value="farm.feature"
-                            @input="inputHandler($event, 'feature')"
+                            :value="farm.address.city"
+                            @input="inputHandler($event, 'address.city')"
                         ></el-input>
-                    </el-form-item>
-                    <el-form-item label="地址" prop="type">
-                        <el-select
-                            :value="farm.type"
-                            clearable
-                            placeholder="请选择"
-                            @input="inputHandler($event, 'type')"
-                        >
-                            <el-option
-                                v-for="item in lonlatOptions"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value">
-                            </el-option>
-                        </el-select>
                     </el-form-item>
                     <el-form-item label="主要特色" prop="feature">
                         <el-input

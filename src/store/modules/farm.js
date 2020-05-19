@@ -13,6 +13,8 @@ const defaultFarm = {
     name: '', // 名称
     type: '', // 类型
     area: 0, // 地块面积
+    desc: '', // 详情
+    feature: '', // 特色
     address: { // 地址
         province: '',
         city: '',
