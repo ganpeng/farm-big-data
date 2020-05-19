@@ -1,13 +1,10 @@
 <template>
     <div class="logistics-container">
-        <!-- <building></building> -->
     </div>
 </template>
 <script>
-import Building from '@/components/Building';
 export default {
-    name: 'Logistics',
-    components: {Building}
+    name: 'Logistics'
 };
 </script>
 <style lang="scss" scoped>

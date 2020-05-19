@@ -1,13 +1,10 @@
 <template>
     <div class="base-station-container">
-        <!-- <building></building> -->
     </div>
 </template>
 <script>
-import Building from '@/components/Building';
 export default {
-    name: 'BaseStation',
-    components: {Building}
+    name: 'BaseStation'
 };
 </script>
 <style lang="scss" scoped>
