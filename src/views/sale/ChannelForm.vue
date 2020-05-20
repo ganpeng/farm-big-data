@@ -9,7 +9,7 @@
             class="my-form">
             <el-row>
                 <h4 class="content-sub-title">渠道信息</h4>
-                <el-col :span="8">
+                <el-col span="10">
                     <el-form-item label="渠道名称" prop="name">
                         <el-input
                             maxlength="20"
@@ -22,7 +22,7 @@
                         <span>{{channel.createdAt}}</span>
                     </el-form-item>
                 </el-col>
-                <el-col :span="8">
+                <el-col span="10">
                     <el-form-item label="渠道类型" prop="type">
                         <el-select
                             :value="channel.type"
@@ -46,7 +46,7 @@
             <div class="seperator-line"></div>
             <el-row>
                 <h4 class="content-sub-title">渠道联系人</h4>
-                <el-col :span="8">
+                <el-col span="10">
                     <el-form-item label="姓名">
                         <el-input
                             maxlength="20"
@@ -56,7 +56,7 @@
                         ></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col :span="8">
+                <el-col span="10">
                     <el-form-item label="联系电话">
                         <el-input
                             maxlength="20"
@@ -70,7 +70,7 @@
             <div class="seperator-line"></div>
             <el-row>
                 <h4 class="content-sub-title">内部联系人</h4>
-                <el-col :span="8">
+                <el-col span="10">
                     <el-form-item label="所属公司">
                         <el-select
                             :value="channel.innerContacts.company"
@@ -90,7 +90,7 @@
                         <span>{{channel.innerContacts.phone || '15893214936'}}</span>
                     </el-form-item>
                 </el-col>
-                <el-col :span="8">
+                <el-col span="10">
                     <el-form-item label="员工姓名">
                         <el-select
                             :value="channel.innerContacts.name"

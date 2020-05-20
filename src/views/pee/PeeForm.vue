@@ -9,7 +9,7 @@
             class="my-form">
             <el-row>
                 <h4 class="content-sub-title">设备信息</h4>
-                <el-col :span="8">
+                <el-col span="10">
                     <el-form-item label="设备ID" prop="dId">
                         <el-input
                             maxlength="20"
@@ -79,7 +79,7 @@
                         </el-select>
                     </el-form-item>
                 </el-col>
-                <el-col :span="8">
+                <el-col span="10">
                     <el-form-item label="设备SN" prop="sn">
                         <el-input
                             maxlength="20"
@@ -138,7 +138,7 @@
             <div class="seperator-line"></div>
             <el-row>
                 <h4 class="content-sub-title">运维负责人</h4>
-                <el-col :span="8">
+                <el-col span="10">
                     <el-form-item label="所属公司" prop="company">
                         <el-select
                             :value="pee.head.company"
@@ -158,7 +158,7 @@
                         <span>{{pee.head.phone || '15893214936'}}</span>
                     </el-form-item>
                 </el-col>
-                <el-col :span="8">
+                <el-col span="10">
                     <el-form-item label="员工姓名" prop="name">
                         <el-select
                             :value="pee.head.name"

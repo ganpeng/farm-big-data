@@ -19,13 +19,13 @@
                     <div class="left">
                         <div class="line"></div>
                         <div class="item_con">
-                            <p class="name-one">物流线路</p>
-                            <p class="name-two">Delivery</p>
+                            <p class="name-one">溯源农品</p>
+                            <p class="name-two">Products</p>
                         </div>
                     </div>
                     <div class="count">
                         <svg-icon icon-class="home_icon2"/>
-                        <span>80</span>
+                        <span>4</span>
                     </div>
                 </div>
                 <div class="status-item terminal-status-item total">
@@ -45,19 +45,19 @@
                     <div class="left">
                         <div class="line"></div>
                         <div class="item_con">
-                            <p class="name-one">基站统计</p>
+                            <p class="name-one">5G基站</p>
                             <p class="name-two">5G Towers</p>
                         </div>
                     </div>
                     <div class="count">
                         <svg-icon icon-class="home_icon4"/>
-                        <span>500</span>
+                        <span>24</span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="middle-field">
-            <div class="header">
+            <div @click="gotoPage(1)" class="header">
                 <div class="header-left">
                     <svg-icon class-name="svg-one" icon-class="home_icon5"/>
                     <span class="title">预警趋势</span>
@@ -78,31 +78,39 @@
                     :tooltip-visible="false"
                     :legend-visible="false"
                     :extend="chartExtend"
-                    :data="chartData">
+                    :data="lineData">
                 </ve-line>
                 <ul class="legen-list">
                     <li class="legen-item">
                         <span class="icon"></span>
-                        <span class="text">红色预警</span>
+                        <span class="text">气象灾害预警</span>
                     </li>
                     <li class="legen-item">
                         <span class="icon"></span>
-                        <span class="text">橙色预警</span>
+                        <span class="text">虫灾预警</span>
                     </li>
                     <li class="legen-item">
                         <span class="icon"></span>
-                        <span class="text">黄色预警</span>
+                        <span class="text">农产品价格波动</span>
                     </li>
                     <li class="legen-item">
                         <span class="icon"></span>
-                        <span class="text">蓝色预警</span>
+                        <span class="text">农产品产量异动</span>
+                    </li>
+                    <li class="legen-item">
+                        <span class="icon"></span>
+                        <span class="text">种植适合度</span>
+                    </li>
+                    <li class="legen-item">
+                        <span class="icon"></span>
+                        <span class="text">设备异常</span>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="bottom-field">
             <div class="bottom-left bottom-item">
-                <div class="header">
+                <div @click="gotoPage(2)" class="header">
                     <svg-icon class-name="svg-one" icon-class="home_icon6"/>
                     <span class="title">农场统计</span>
                     <svg-icon class-name="arrow" icon-class="home_icon8"/>
@@ -111,28 +119,34 @@
                     <div class="title-field">
                         <p class="title">农场总数</p>
                         <p class="count">
-                            20<i>个</i>
+                            24<i>个</i>
                         </p>
                     </div>
                     <div class="legen-field">
-                        <ul class="legen-list">
+                        <ul class="legen-list legen-list-one">
                             <li class="legen-item">
                                 <span class="icon"></span>
-                                <span class="text1">农场1</span>
-                                <span class="text2">10</span>
-                                <span class="text3">50%</span>
+                                <span class="text1">农名专业合作社</span>
+                                <span class="text2">4</span>
+                                <span class="text3">17%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
-                                <span class="text1">农场2</span>
-                                <span class="text2">5</span>
-                                <span class="text3">25%</span>
+                                <span class="text1">家庭农场</span>
+                                <span class="text2">4</span>
+                                <span class="text3">17%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
-                                <span class="text1">农场3</span>
-                                <span class="text2">5</span>
-                                <span class="text3">25%</span>
+                                <span class="text1">国有企业</span>
+                                <span class="text2">1</span>
+                                <span class="text3">4%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">个体企业</span>
+                                <span class="text2">15</span>
+                                <span class="text3">62%</span>
                             </li>
                         </ul>
                     </div>
@@ -150,7 +164,7 @@
                 </div>
             </div>
             <div class="bottom-right bottom-item">
-                <div class="header">
+                <div @click="gotoPage(3)" class="header">
                     <svg-icon class-name="svg-one" icon-class="home_icon7"/>
                     <span class="title">设备统计</span>
                     <svg-icon class-name="arrow" icon-class="home_icon8"/>
@@ -159,40 +173,46 @@
                     <div class="title-field">
                         <p class="title">设备总数</p>
                         <p class="count">
-                            500<i>个</i>
+                            642<i>个</i>
                         </p>
                     </div>
                     <div class="legen-field">
-                        <ul class="legen-list">
+                        <ul class="legen-list legen-list-two">
                             <li class="legen-item">
                                 <span class="icon"></span>
-                                <span class="text1">水质</span>
-                                <span class="text2">100</span>
-                                <span class="text3">20%</span>
+                                <span class="text1">气象传感器</span>
+                                <span class="text2">24</span>
+                                <span class="text3">4%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
-                                <span class="text1">土壤</span>
-                                <span class="text2">100</span>
-                                <span class="text3">20%</span>
+                                <span class="text1">虫情传感器</span>
+                                <span class="text2">120</span>
+                                <span class="text3">19%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
-                                <span class="text1">气象</span>
-                                <span class="text2">50</span>
-                                <span class="text3">10%</span>
+                                <span class="text1">土壤传感器</span>
+                                <span class="text2">24</span>
+                                <span class="text3">4%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
-                                <span class="text1">摄像头</span>
-                                <span class="text2">50</span>
-                                <span class="text3">10%</span>
+                                <span class="text1">水质传感器</span>
+                                <span class="text2">24</span>
+                                <span class="text3">4%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
-                                <span class="text1">风速</span>
-                                <span class="text2">200</span>
-                                <span class="text3">40%</span>
+                                <span class="text1">球机摄像头</span>
+                                <span class="text2">48</span>
+                                <span class="text3">8%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">枪机摄像头</span>
+                                <span class="text2">402</span>
+                                <span class="text3">61%</span>
                             </li>
                         </ul>
                     </div>
@@ -205,6 +225,110 @@
                             :settings="chartSettings"
                             :extend="pei2Extend"
                             :data="chartData3">
+                        </ve-pie>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-field">
+            <div class="bottom-left bottom-item">
+                <div @click="gotoPage(4)" class="header">
+                    <svg-icon class-name="svg-one" icon-class="home_icon10"/>
+                    <span class="title">基站统计</span>
+                    <svg-icon class-name="arrow" icon-class="home_icon8"/>
+                </div>
+                <div class="bottom-left-content bottom-item-content">
+                    <div class="title-field">
+                        <p class="title">基站总数</p>
+                        <p class="count">
+                            24<i>个</i>
+                        </p>
+                    </div>
+                    <div class="legen-field">
+                        <ul class="legen-list legen-list-three">
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">宏基站</span>
+                                <span class="text2">4</span>
+                                <span class="text3">17%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">微基站</span>
+                                <span class="text2">20</span>
+                                <span class="text3">83%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="echarts-field">
+                        <ve-pie
+                            width="260px"
+                            height="260px"
+                            :tooltip-visible="false"
+                            :legend-visible="false"
+                            :settings="chartSettings"
+                            :extend="peiExtend"
+                            :data="chartData4">
+                        </ve-pie>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-right bottom-item">
+                <div @click="gotoPage(5)" class="header">
+                    <svg-icon class-name="svg-one" icon-class="home_icon9"/>
+                    <span class="title">物流统计</span>
+                    <svg-icon class-name="arrow" icon-class="home_icon8"/>
+                </div>
+                <div class="bottom-right-content bottom-item-content">
+                    <div class="title-field">
+                        <p class="title">车辆总数</p>
+                        <p class="count">
+                            600<i>辆</i>
+                        </p>
+                    </div>
+                    <div class="legen-field">
+                        <ul class="legen-list">
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">小型卡车</span>
+                                <span class="text2">100</span>
+                                <span class="text3">15%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">中型卡车</span>
+                                <span class="text2">100</span>
+                                <span class="text3">15%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">重型卡车</span>
+                                <span class="text2">50</span>
+                                <span class="text3">10%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">厢式货车</span>
+                                <span class="text2">200</span>
+                                <span class="text3">31%</span>
+                            </li>
+                            <li class="legen-item">
+                                <span class="icon"></span>
+                                <span class="text1">电动三轮车</span>
+                                <span class="text2">150</span>
+                                <span class="text3">29%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="echarts-field">
+                        <ve-pie
+                            width="260px"
+                            height="260px"
+                            :tooltip-visible="false"
+                            :legend-visible="false"
+                            :settings="chartSettings"
+                            :extend="pei2Extend"
+                            :data="chartData5">
                         </ve-pie>
                     </div>
                 </div>
@@ -229,18 +353,17 @@ export default {
             }
         };
         this.peiExtend = {
-            color: ["#74B8C2", "#008FC4", "#0062C4"],
+            color: ["#74B8C2", "#008FC4", "#0062C4", '#50BEE7'],
             'series.0.center': ['50%', '50%'],
             'series.0.radius': ['0', '80%']
         };
-
         this.pei2Extend = {
-            color: ["#38A7E4", "#00C1EB", "#306BA7", "#00A2DE", "#50BEE7"],
+            color: ["#38A7E4", "#00C1EB", "#306BA7", "#00A2DE", "#50BEE7", "#008FC4"],
             'series.0.center': ['50%', '50%'],
             'series.0.radius': ['0', '80%']
         };
         this.chartExtend = {
-            color: ['#DD5567', '#FCB268', '#E3C97B', '#85B8FC'],
+            color: ['#DD5567', '#FCB268', '#E3C97B', '#85B8FC', '#B8E986', '#BA69CB'],
             grid: {
                 top: 40,
                 bottom: 12
@@ -254,39 +377,81 @@ export default {
             }
         };
         return {
+            lineData: {},
             chartData: {
-                columns: ['日期', '红色警报', '橙色警报', '黄色警报', '蓝色警报'],
+                columns: ['日期', '气象灾害预警', '虫灾预警', '农产品价格波动', '农产品产量异动', '种植适合度', '设备异常'],
                 rows: [
-                    { '日期': '00:00', '红色警报': 4, '橙色警报': 1, '黄色警报': 3, '蓝色警报': 2},
-                    { '日期': '04:00', '红色警报': 3, '橙色警报': 2, '黄色警报': 5, '蓝色警报': 3},
-                    { '日期': '08:00', '红色警报': 1, '橙色警报': 4, '黄色警报': 2, '蓝色警报': 1},
-                    { '日期': '12:00', '红色警报': 3, '橙色警报': 2, '黄色警报': 1, '蓝色警报': 4},
-                    { '日期': '16:00', '红色警报': 2, '橙色警报': 4, '黄色警报': 5, '蓝色警报': 4},
-                    { '日期': '20:00', '红色警报': 1, '橙色警报': 3, '黄色警报': 3, '蓝色警报': 1},
+                    { '日期': '00:00', '气象灾害预警': 4, '虫灾预警': 1, '农产品价格波动': 3, '农产品产量异动': 2, '种植适合度': 3, '设备异常': 2},
+                    { '日期': '04:00', '气象灾害预警': 3, '虫灾预警': 2, '农产品价格波动': 5, '农产品产量异动': 3, '种植适合度': 1, '设备异常': 4},
+                    { '日期': '08:00', '气象灾害预警': 1, '虫灾预警': 4, '农产品价格波动': 2, '农产品产量异动': 1, '种植适合度': 2, '设备异常': 1},
+                    { '日期': '12:00', '气象灾害预警': 3, '虫灾预警': 2, '农产品价格波动': 1, '农产品产量异动': 4, '种植适合度': 4, '设备异常': 3},
+                    { '日期': '16:00', '气象灾害预警': 2, '虫灾预警': 4, '农产品价格波动': 5, '农产品产量异动': 4, '种植适合度': 1, '设备异常': 4},
+                    { '日期': '20:00', '气象灾害预警': 1, '虫灾预警': 3, '农产品价格波动': 3, '农产品产量异动': 1, '种植适合度': 2, '设备异常': 2},
+                ]
+            },
+            chartDataTwo: {
+                columns: ['日期', '气象灾害预警', '虫灾预警', '农产品价格波动', '农产品产量异动', '种植适合度', '设备异常'],
+                rows: [
+                    { '日期': '00:00', '气象灾害预警': 4, '虫灾预警': 1, '农产品价格波动': 3, '农产品产量异动': 2, '种植适合度': 3, '设备异常': 2},
+                    { '日期': '08:00', '气象灾害预警': 3, '虫灾预警': 2, '农产品价格波动': 5, '农产品产量异动': 3, '种植适合度': 1, '设备异常': 4},
+                    { '日期': '16:00', '气象灾害预警': 1, '虫灾预警': 4, '农产品价格波动': 2, '农产品产量异动': 1, '种植适合度': 2, '设备异常': 1},
+                    { '日期': '24:00', '气象灾害预警': 3, '虫灾预警': 2, '农产品价格波动': 1, '农产品产量异动': 4, '种植适合度': 4, '设备异常': 3},
+                    { '日期': '08:00', '气象灾害预警': 2, '虫灾预警': 4, '农产品价格波动': 5, '农产品产量异动': 4, '种植适合度': 1, '设备异常': 4},
+                    { '日期': '16:00', '气象灾害预警': 1, '虫灾预警': 3, '农产品价格波动': 3, '农产品产量异动': 1, '种植适合度': 2, '设备异常': 2},
+                ]
+            },
+            chartDataThree: {
+                columns: ['日期', '气象灾害预警', '虫灾预警', '农产品价格波动', '农产品产量异动', '种植适合度', '设备异常'],
+                rows: [
+                    { '日期': '00:00', '气象灾害预警': 4, '虫灾预警': 1, '农产品价格波动': 3, '农产品产量异动': 2, '种植适合度': 3, '设备异常': 2},
+                    { '日期': '12:00', '气象灾害预警': 3, '虫灾预警': 2, '农产品价格波动': 5, '农产品产量异动': 3, '种植适合度': 1, '设备异常': 4},
+                    { '日期': '24:00', '气象灾害预警': 1, '虫灾预警': 4, '农产品价格波动': 2, '农产品产量异动': 1, '种植适合度': 2, '设备异常': 1},
+                    { '日期': '12:00', '气象灾害预警': 3, '虫灾预警': 2, '农产品价格波动': 1, '农产品产量异动': 4, '种植适合度': 4, '设备异常': 3},
+                    { '日期': '24:00', '气象灾害预警': 2, '虫灾预警': 4, '农产品价格波动': 5, '农产品产量异动': 4, '种植适合度': 1, '设备异常': 4},
+                    { '日期': '12:00', '气象灾害预警': 1, '虫灾预警': 3, '农产品价格波动': 3, '农产品产量异动': 1, '种植适合度': 2, '设备异常': 2},
                 ]
             },
             chartData2: {
-                columns: ['日期', '访问用户'],
+                columns: ['类型', '数值'],
                 rows: [
-                    { '日期': '1/1', '访问用户': 1393 },
-                    { '日期': '1/2', '访问用户': 3530 },
-                    { '日期': '1/3', '访问用户': 2923 },
+                    { '类型': '农名专业合作社', '数值': 4 },
+                    { '类型': '家庭农场', '数值': 4 },
+                    { '类型': '国有企业', '数值': 1 },
+                    { '类型': '个体企业', '数值': 15 }
                 ]
             },
             chartData3: {
                 columns: ['类型', '值'],
                 rows: [
-                    { '类型': '水质', '值': 100 },
-                    { '类型': '土壤', '值': 100 },
-                    { '类型': '气象', '值': 50 },
-                    { '类型': '摄像头', '值': 50 },
-                    { '类型': '风速', '值': 200 },
+                    { '类型': '气象传感器', '值': 24 },
+                    { '类型': '虫情传感器', '值': 120 },
+                    { '类型': '土壤传感器', '值': 24 },
+                    { '类型': '水质传感器', '值': 24 },
+                    { '类型': '球机摄像头', '值': 48 },
+                    { '类型': '枪机摄像头', '值': 402 }
+                ]
+            },
+            chartData4: {
+                columns: ['类型', '值'],
+                rows: [
+                    { '类型': '宏基站', '值': 4 },
+                    { '类型': '微基站', '值': 20 }
+                ]
+            },
+            chartData5: {
+                columns: ['类型', '值'],
+                rows: [
+                    { '类型': '小型卡车', '值': 100 },
+                    { '类型': '中型卡车', '值': 100 },
+                    { '类型': '重型卡车', '值': 50 },
+                    { '类型': '厢式货车', '值': 200 },
+                    { '类型': '电动三轮车', '值': 150 }
                 ]
             },
             times: [
                 {
                     title: '72小时',
-                    active: true
+                    active: false
                 },
                 {
                     title: '48小时',
@@ -294,10 +459,18 @@ export default {
                 },
                 {
                     title: '24小时',
-                    active: false
+                    active: true
                 }
             ],
         };
+    },
+    async created() {
+        try {
+            await this.$nextTick();
+            this.lineData = this.chartData;
+        } catch (err) {
+            console.log(err);
+        }
     },
     methods: {
         changeTime(index) {
@@ -309,6 +482,34 @@ export default {
                 }
                 return item;
             });
+            if (index === 0) {
+                this.lineData = this.chartDataThree;
+            } else if (index === 1) {
+                this.lineData = this.chartDataTwo;
+            } else {
+                this.lineData = this.chartData;
+            }
+        },
+        gotoPage(index) {
+            let routeName = '';
+            switch (index) {
+                case 1:
+                    routeName = 'DataAlert';
+                    break;
+                case 2:
+                    routeName = 'FarmList';
+                    break;
+                case 3:
+                    routeName = 'PeeList';
+                    break;
+                case 4:
+                    routeName = 'BaseStation'
+                    break;
+                case 5:
+                    routeName = 'Logistics'
+                    break;
+            }
+            this.$router.push({ name: routeName });
         }
     }
 }
@@ -430,7 +631,7 @@ export default {
         position: relative;
         background-color: #252D3F;
         height: 352px;
-        margin: 20px 0;
+        margin-top: 20px;
         .header {
             display: flex;
             align-items: center;
@@ -438,6 +639,7 @@ export default {
             height: 48px;
             padding: 0 20px;
             border-bottom: 1px solid #3A4763;
+            cursor: pointer;
             .header-left {
                 display: flex;
                 align-items: center;
@@ -482,7 +684,7 @@ export default {
         .legen-list {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             position: absolute;
             top: 60px;
             right: 32px;
@@ -518,55 +720,25 @@ export default {
                         background-color: #85B8FC;
                     }
                 }
+                &:nth-of-type(5) {
+                    .icon {
+                        background-color: #B8E986;
+                    }
+                }
+                &:nth-of-type(6) {
+                    .icon {
+                        background-color: #BA69CB;
+                    }
+                }
             }
         }
     }
     .bottom-field {
         display: flex;
         height: 332px;
+        margin-top: 20px;
         .bottom-left {
             margin-right: 20px;
-        }
-        .bottom-right {
-            .bottom-right-content {
-                .legen-field {
-                    .legen-list {
-                        .legen-item {
-                            .text1 {
-                                width: 40px;
-                            }
-                            .text2 {
-                                width: 20px;
-                            }
-                            &:nth-of-type(1) {
-                                .icon {
-                                    background-color: #38A7E4;
-                                }
-                            }
-                            &:nth-of-type(2) {
-                                .icon {
-                                    background-color: #00C1EB;
-                                }
-                            }
-                            &:nth-of-type(3) {
-                                .icon {
-                                    background-color: #306BA7;
-                                }
-                            }
-                            &:nth-of-type(4) {
-                                .icon {
-                                    background-color: #00A2DE;
-                                }
-                            }
-                            &:nth-of-type(5) {
-                                .icon {
-                                    background-color: #50BEE7;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
         .bottom-item {
             display: flex;
@@ -580,6 +752,7 @@ export default {
                 height: 48px;
                 padding: 0 20px;
                 border-bottom: 1px solid #3A4763;
+                cursor: pointer;
                 .svg-one {
                     width: 32px;
                     height: 32px;
@@ -629,7 +802,7 @@ export default {
                                 margin-left: 10px;
                             }
                             .text2 {
-                                margin: 0 30px 0 20px;
+                                margin: 0 10px 0 10px;
                             }
                             .icon {
                                 width: 13px;
@@ -637,18 +810,38 @@ export default {
                             }
                             &:nth-of-type(1) {
                                 .icon {
-                                    background-color: #008FC4;
+                                    background-color: #74B8C2;
                                 }
                             }
                             &:nth-of-type(2) {
                                 .icon {
-                                    background-color: #0062C4;
+                                    background-color: #008FC4;
                                 }
                             }
                             &:nth-of-type(3) {
                                 .icon {
-                                    background-color: #74B8C2;
+                                    background-color: #0062C4;
                                 }
+                            }
+                            &:nth-of-type(4) {
+                                .icon {
+                                    background-color: #50BEE7;
+                                }
+                            }
+                        }
+                        &.legen-list-one {
+                            .legen-item {
+                                .text1 {
+                                    width: 86px;
+                                }
+                                .text2 {
+                                    width: 20px;
+                                }
+                            }
+                        }
+                        &.legen-list-three {
+                            .text2 {
+                                width: 20px;
                             }
                         }
                     }
@@ -662,6 +855,48 @@ export default {
                     top: 80px;
                     width: 140px;
                     height: 140px;
+                }
+                &.bottom-right-content {
+                    .legen-list {
+                        .legen-item {
+                            &:nth-of-type(1) {
+                                .icon {
+                                    background-color: #38A7E4;
+                                }
+                            }
+                            &:nth-of-type(2) {
+                                .icon {
+                                    background-color: #00C1EB;
+                                }
+                            }
+                            &:nth-of-type(3) {
+                                .icon {
+                                    background-color: #306BA7;
+                                }
+                            }
+                            &:nth-of-type(4) {
+                                .icon {
+                                    background-color: #00A2DE;
+                                }
+                            }
+                            &:nth-of-type(5) {
+                                .icon {
+                                    background-color: #50BEE7;
+                                }
+                            }
+                            &:nth-of-type(6) {
+                                .icon {
+                                    background-color: #008FC4;
+                                }
+                            }
+                            .text1 {
+                                width: 66px;
+                            }
+                            .text2 {
+                                width: 30px;
+                            }
+                        }
+                    }
                 }
             }
         }

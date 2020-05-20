@@ -17,15 +17,29 @@
                         <svg-icon icon-class="search"/> 搜索
                     </el-button>
                     <div class="search-field-item">
-                        <label class="search-field-item-label">类型</label>
+                        <label class="search-field-item-label">用途</label>
                         <el-select
-                            :value="searchField.type"
+                            v-model="searchField.use"
                             filterable
                             clearable
-                            placeholder="全部"
-                            @input="inputHandler($event, 'type')">
+                            placeholder="全部">
                             <el-option
-                                v-for="(item, index) in []"
+                                v-for="(item, index) in options1"
+                                :key="index"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </div>
+                    <div class="search-field-item">
+                        <label class="search-field-item-label">来源</label>
+                        <el-select
+                            v-model="searchField.source"
+                            filterable
+                            clearable
+                            placeholder="全部">
+                            <el-option
+                                v-for="(item, index) in options2"
                                 :key="index"
                                 :label="item.label"
                                 :value="item.value">
@@ -137,8 +151,33 @@ export default {
         return {
             searchField: {
                 keyword: '',
-                type: ''
+                use: '',
+                source: ''
             },
+            options1: [
+                {
+                    value: '复垦',
+                    label: '复垦'
+                },
+                {
+                    value: '租住',
+                    label: '租住'
+                },
+                {
+                    value: '旅游',
+                    label: '旅游'
+                }
+            ],
+            options2: [
+                {
+                    value: '成员出资',
+                    label: '成员出资'
+                },
+                {
+                    value: '土地托管',
+                    label: '土地托管'
+                }
+            ],
             list: {
                 data: hLandList
             }

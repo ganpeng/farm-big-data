@@ -4,12 +4,12 @@
             :model="farm"
             status-icon
             ref="peeForm"
-            label-width="100px"
+            label-width="140px"
             @submit.native.prevent
             class="my-form">
             <el-row>
                 <h4 class="content-sub-title">基础信息</h4>
-                <el-col :span="12">
+                <el-col span="10">
                     <el-form-item label="农场名称" prop="name">
                         <el-input
                             maxlength="20"
@@ -18,7 +18,10 @@
                         ></el-input>
                     </el-form-item>
                     <el-form-item label="成立日期" prop="createdAt">
-                        <span>{{farm.createdAt}}</span>
+                        <el-input
+                            :value="farm.createdAt"
+                            @input="inputHandler($event, 'createdAt')"
+                        ></el-input>
                     </el-form-item>
                     <el-form-item label="经度" prop="latitude">
                         <el-select
@@ -65,7 +68,7 @@
                         ></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col :span="12">
+                <el-col span="10">
                     <el-form-item label="农场类型" prop="type">
                         <el-select
                             :value="farm.type"
@@ -137,7 +140,7 @@
             <div class="seperator-line"></div>
             <el-row>
                 <h4 class="content-sub-title">法人信息</h4>
-                <el-col :span="12">
+                <el-col span="10">
                     <el-form-item label="姓名">
                         <el-input
                             maxlength="20"
@@ -153,7 +156,7 @@
                         ></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col :span="12">
+                <el-col span="10">
                     <el-form-item label="联系电话">
                         <el-input
                             maxlength="20"
@@ -173,7 +176,7 @@
             <div class="seperator-line"></div>
             <el-row>
                 <h4 class="content-sub-title">常务联系人</h4>
-                <el-col :span="12">
+                <el-col span="10">
                     <el-form-item label="姓名">
                         <el-input
                             maxlength="20"
@@ -182,7 +185,7 @@
                         ></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col :span="12">
+                <el-col span="10">
                     <el-form-item label="联系电话">
                         <el-input
                             maxlength="20"
@@ -195,13 +198,14 @@
             <div class="seperator-line"></div>
             <el-row>
                 <h4 class="content-sub-title">党组信息</h4>
-                <el-col :span="12">
+                <el-col span="10">
                     <el-form-item label="成立党组织">
-                        是
+                        <el-radio @input="inputHandler(true, 'isPart')" :value="farm.isPart" :label="true">是</el-radio>
+                        <el-radio @input="inputHandler(false, 'isPart')" :value="farm.isPart" :label="false">否</el-radio>
                     </el-form-item>
                 </el-col>
-                <el-col :span="12">
-                    <el-form-item label="人数">
+                <el-col span="10">
+                    <el-form-item v-if="farm.isPart" label="人数">
                         <el-input
                             :value="farm.partCount"
                             @input="inputHandler($event, 'partCount')"
@@ -241,5 +245,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.farm-form-container {}
+.farm-form-container {
+    padding-bottom: 100px;
+}
 </style>

@@ -276,16 +276,16 @@ export default {
 <style lang="scss" scoped>
 .data-alert-container {
     .text-level1 {
-        color: red;
+        color: #DD5567;
     }
     .text-level2 {
-        color: yellow;
+        color: #E3C97B;
     }
     .text-level3 {
-        color: orange;
+        color: #FCB268;
     }
     .text-level4 {
-        color: blue;
+        color: #85B8FC;
     }
 }
 </style>

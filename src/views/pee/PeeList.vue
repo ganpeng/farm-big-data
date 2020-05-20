@@ -90,17 +90,19 @@
                         </span>
                     </template>
                 </el-table-column>
-                <el-table-column prop="sn" min-width="100px" label="设备SN"></el-table-column>
+                <!-- <el-table-column prop="sn" min-width="100px" label="设备SN"></el-table-column> -->
                 <el-table-column min-width="100px" label="传感器类型">
                     <template slot-scope="scope">
                         {{getTypeLabel(scope.row.type)}}
                     </template>
                 </el-table-column>
+                <!--
                 <el-table-column min-width="200px" label="地址">
                     <template slot-scope="scope">
                         {{scope.row.address.city}}/{{scope.row.address.area}}/{{scope.row.address.detail}}
                     </template>
                 </el-table-column>
+                -->
                 <!--
                 <el-table-column min-width="160px" label="经纬度">
                     <template slot-scope="scope">

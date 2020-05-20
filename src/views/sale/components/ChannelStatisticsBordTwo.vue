@@ -21,6 +21,7 @@
             </div>
             <div class="count">567</div>
         </div>
+        <!--
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
@@ -28,6 +29,7 @@
             </div>
             <div class="count">289</div>
         </div>
+        -->
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">

@@ -78,11 +78,13 @@
                         {{ scope.row.type}}
                     </template>
                 </el-table-column>
+                <!--
                 <el-table-column min-width="60px" label="性别">
                     <template slot-scope="scope">
                         {{ scope.row.gender}}
                     </template>
                 </el-table-column>
+                -->
                 <el-table-column min-width="200px" label="地址">
                     <template slot-scope="scope">
                         {{scope.row.address.city}}/{{scope.row.address.area}}/{{scope.row.address.detail}}
@@ -93,11 +95,13 @@
                         {{scope.row.phone}}
                     </template>
                 </el-table-column>
+                <!--
                 <el-table-column min-width="160px" label="身份证号">
                     <template slot-scope="scope">
                         {{scope.row.cId}}
                     </template>
                 </el-table-column>
+                -->
                 <el-table-column min-width="120px" label="培训时长(小时)">
                     <template slot-scope="scope">
                         {{scope.row.trainHour}}

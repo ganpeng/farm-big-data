@@ -82,6 +82,7 @@
                 class="my-table-style"
                 :data="list.data">
                 <el-table-column type="selection" align="center" width="50"></el-table-column>
+                <!--
                 <el-table-column min-width="140px" label="补贴文件编号">
                     <template slot-scope="scope">
                         <span class="ellipsis two name">
@@ -89,6 +90,7 @@
                         </span>
                     </template>
                 </el-table-column>
+                -->
                 <el-table-column min-width="160px" label="补贴类型">
                     <template slot-scope="scope">
                         {{ scope.row.type}}

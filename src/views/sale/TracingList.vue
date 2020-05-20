@@ -103,11 +103,13 @@
                         {{scope.row.auth}}
                     </template>
                 </el-table-column>
+                <!--
                 <el-table-column min-width="160px" label="所属农场">
                     <template slot-scope="scope">
                         {{scope.row.farm}}
                     </template>
                 </el-table-column>
+                -->
                 <el-table-column min-width="160px" label="累计销售额（元）">
                     <template slot-scope="scope">
                         {{scope.row.salesVolume}}

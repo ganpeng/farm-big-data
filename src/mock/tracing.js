@@ -11,7 +11,13 @@ const tracingList = [
         salesVolume: 34233,
         createdAt: '2020-03-03',
         visible: false,
-        status: 1
+        status: 1,
+        step: {
+            oneName: '',
+            oneTime: '',
+            twoName: '',
+            twoTime: ''
+        }
     },
     {
         id: 2,
@@ -25,7 +31,13 @@ const tracingList = [
         salesVolume: 13343,
         createdAt: '2020-03-03',
         visible: true,
-        status: 1
+        status: 1,
+        step: {
+            oneName: '',
+            oneTime: '',
+            twoName: '',
+            twoTime: ''
+        }
     },
     {
         id: 3,
@@ -39,7 +51,13 @@ const tracingList = [
         salesVolume: 34233,
         createdAt: '2020-03-03',
         visible: true,
-        status: 1
+        status: 1,
+        step: {
+            oneName: '',
+            oneTime: '',
+            twoName: '',
+            twoTime: ''
+        }
     },
     {
         id: 4,
@@ -53,7 +71,13 @@ const tracingList = [
         salesVolume: 13343,
         createdAt: '2020-03-03',
         visible: false,
-        status: 1
+        status: 1,
+        step: {
+            oneName: '',
+            oneTime: '',
+            twoName: '',
+            twoTime: ''
+        }
     },
     {
         id: 5,
@@ -67,7 +91,13 @@ const tracingList = [
         salesVolume: 34233,
         createdAt: '2020-03-03',
         visible: true,
-        status: 1
+        status: 1,
+        step: {
+            oneName: '',
+            oneTime: '',
+            twoName: '',
+            twoTime: ''
+        }
     },
     {
         id: 6,
@@ -81,7 +111,13 @@ const tracingList = [
         salesVolume: 13343,
         createdAt: '2020-03-03',
         visible: true,
-        status: 1
+        status: 1,
+        step: {
+            oneName: '',
+            oneTime: '',
+            twoName: '',
+            twoTime: ''
+        }
     },
     {
         id: 7,
@@ -95,7 +131,13 @@ const tracingList = [
         salesVolume: 34233,
         createdAt: '2020-03-03',
         visible: false,
-        status: 1
+        status: 1,
+        step: {
+            oneName: '',
+            oneTime: '',
+            twoName: '',
+            twoTime: ''
+        }
     },
     {
         id: 8,
@@ -109,7 +151,13 @@ const tracingList = [
         salesVolume: 13343,
         createdAt: '2020-03-03',
         visible: false,
-        status: 1
+        status: 1,
+        step: {
+            oneName: '',
+            oneTime: '',
+            twoName: '',
+            twoTime: ''
+        }
     },
     {
         id: 9,
@@ -123,7 +171,13 @@ const tracingList = [
         salesVolume: 34233,
         createdAt: '2020-03-03',
         visible: true,
-        status: 1
+        status: 1,
+        step: {
+            oneName: '',
+            oneTime: '',
+            twoName: '',
+            twoTime: ''
+        }
     },
     {
         id: 10,
@@ -137,7 +191,13 @@ const tracingList = [
         salesVolume: 13343,
         createdAt: '2020-03-03',
         visible: false,
-        status: 1
+        status: 1,
+        step: {
+            oneName: '',
+            oneTime: '',
+            twoName: '',
+            twoTime: ''
+        }
     }
 ];
 

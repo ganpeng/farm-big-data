@@ -2157,24 +2157,23 @@ html, body {
     position: absolute;
     display: flex;
     align-items: center;
-    height: 68px;
-    padding: 0 40px;
+    height: 50px;
+    padding: 0 30px;
     background-color: #0F1623;
-    border-radius: 5px;
+    border-radius: 4px;
     .sub-tab-bar-list {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 35px;
+        height: 26px;
         .sub-tab-bar-item {
             padding: 0 18px;
-            height: 35px;
-            line-height: 35px;
-            font-size: 20px;
-            font-weight: 400;
+            height: 26px;
+            line-height: 26px;
+            font-size: 14px;
             color: #667799;
             cursor: pointer;
-            border-radius: 26px;
+            border-radius: 20px;
             background-color: transparent;
             &.active {
                 color: #fff;
@@ -2184,7 +2183,7 @@ html, body {
     }
 }
 .sub-tab-content {
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 .my-content-container {
@@ -2243,4 +2242,22 @@ html, body {
         width: 200px;
         height: 260px;
     }
+}
+
+.my-plus {
+    font-size: 40px;
+    color: #fff;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 30px;
+    cursor: pointer;
+}
+
+.add-step-btn {
+    padding: 6px 10px;
+    border-radius: 24px;
+    background-color: $mainColor;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
 }

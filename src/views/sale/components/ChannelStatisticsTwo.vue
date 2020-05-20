@@ -6,28 +6,28 @@
             <el-row>
                 <el-col :span="12">
                     <div class="line-charts-container">
-                        <ve-line :extend="chartExtend" :data="chartData"></ve-line>
                         <p>累计销售额 元 <i>42,383,398</i></p>
+                        <ve-line :extend="chartExtend" :data="chartData"></ve-line>
                     </div>
                 </el-col>
                 <el-col :span="12">
                     <div class="line-charts-container">
+                        <p>累计有效订单 <i>383,398</i>个</p>
                         <ve-line :extend="chartExtend" :data="chartData"></ve-line>
-                        <p>累计有效订单 个 <i>383,398</i></p>
                     </div>
                 </el-col>
             </el-row>
             <el-row>
                 <el-col :span="12">
                     <div class="line-charts-container">
+                        <p>累计会员 <i>83,398</i>个</p>
                         <ve-line :extend="chartExtend" :data="chartData"></ve-line>
-                        <p>累计会员 个 <i>83,398</i></p>
                     </div>
                 </el-col>
                 <el-col :span="12">
                     <div class="line-charts-container">
+                        <p>累计推广费用 <i>3,398</i>元</p>
                         <ve-line :extend="chartExtend" :data="chartData"></ve-line>
-                        <p>累计推广费用 元 <i>3,398</i></p>
                     </div>
                 </el-col>
             </el-row>
@@ -41,6 +41,13 @@ export default {
     components: {ChannelStatisticsBordTwo},
     data() {
         this.chartExtend = {
+            legend: {
+                bottom: 10,
+                textStyle: {
+                    color: '#fff',
+
+                }
+            },
             'xAxis.0.axisLabel': {color: 'rgb(255,255,255)'},
             'yAxis.0.axisLabel': {color: 'rgb(255,255,255)'}
         };

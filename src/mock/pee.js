@@ -2,7 +2,7 @@
 const peeList = [
     {
         id: 1,
-        dId: 'qx233rt4t23r32',
+        dId: 'qx233rt4t23r32', // 设备ID
         sn: 'd3f34f43t54', // 设备sn
         type: 1, // 传感器类型
         address: {

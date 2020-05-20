@@ -1,6 +1,6 @@
 <template>
     <el-dialog
-        title="农机具信息"
+        title="种植管理信息"
         class="my-dialog"
         width="70%"
         :visible.sync="visible"
@@ -477,6 +477,7 @@
                                         <el-input v-model="model.p40"></el-input>
                                     </el-form-item>
                                     <el-form-item label="检验报告">
+                                        <img width="200px" height="300px" src="../../../../assets/img/检测报告.jpeg" alt="">
                                     </el-form-item>
                                 </el-col>
                                 <el-col :span="10">
@@ -560,7 +561,7 @@
                                         <el-input v-model="model.p50"></el-input>
                                     </el-form-item>
                                     <el-form-item label="受灾图片">
-                                        <el-input v-model="model.p51"></el-input>
+                                        <img width="300px" height="189px" src="../../../../assets/img/水稻受灾照片.jpg" alt="">
                                     </el-form-item>
                                 </el-col>
                                 <el-col :span="10">
@@ -654,6 +655,7 @@
                                         <el-input v-model="model.p59"></el-input>
                                     </el-form-item>
                                     <el-form-item label="证书文件">
+                                        <img width="200px" height="300px" src="../../../../assets/img/12步-证书.jpg" alt="">
                                     </el-form-item>
                                 </el-col>
                                 <el-col :span="10">
@@ -689,6 +691,7 @@
                                         <el-input v-model="model.p59"></el-input>
                                     </el-form-item>
                                     <el-form-item label="证书文件">
+                                        <img width="200px" height="300px" src="../../../../assets/img/12步--证书1.jpg" alt="">
                                     </el-form-item>
                                 </el-col>
                                 <el-col :span="10">
@@ -978,7 +981,7 @@ export default {
         }
     },
     methods: {
-        show(cland) {
+        show() {
             this.visible = true;
         },
         hide() {

@@ -20,7 +20,7 @@
             <div @click="gotoHome" class="logo">
                 <svg-icon icon-class="logo"/>
                 <div class="name">
-                    <p>吉视农业物联网大数据</p>
+                    <p>吉视农业物联网大数据平台</p>
                     <p>管理系统</p>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                                 <i class="point"></i>
                                 <span class="sub-title">设备管理</span>
                             </el-menu-item>
-                            <el-menu-item index="/pee/group/list">
+                            <el-menu-item>
                                 <i class="point"></i>
                                 <span class="sub-title">设备分组</span>
                             </el-menu-item>
@@ -572,6 +572,17 @@ export default {
                             border-color: #fff;
                             background-color: #fff;
                         }
+                    }
+                }
+                .el-submenu__title {
+                    span {
+                        color: #fff;
+                    }
+                    .default_svg {
+                        display: none;
+                    }
+                    .active_svg {
+                        display: block;
                     }
                 }
             }

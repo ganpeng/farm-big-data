@@ -46,6 +46,7 @@
                         </el-form-item>
                         <el-form-item label="封面图" prop="createdAt">
                             <img width="200" height="200" src="../../../../assets/img/封面图-绿源东北大米新米稻花香米5kg.png" alt="">
+                            <i class="my-plus el-icon-plus"></i>
                         </el-form-item>
                     </el-col>
                     <el-col :span="10">
@@ -87,7 +88,9 @@
                             ></el-input>
                         </el-form-item>
                         <el-form-item label="商品详情图">
-                            <img width="100" height="200" src="../../../../assets/img/绿源东北大米新米稻花香米.jpg" alt="">
+                            <div class="tf-img"></div>
+                            <i class="my-plus el-icon-plus"></i>
+                            <!-- <img width="100" height="200" src="../../../../assets/img/绿源东北大米新米稻花香米.jpg" alt=""> -->
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -125,6 +128,7 @@
                                     </el-carousel-item>
                                 </el-carousel>
                             </div>
+                            <i class="my-plus el-icon-plus"></i>
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -140,6 +144,7 @@
                             </el-form-item>
                             <el-form-item label="图片">
                                 <img width="300px" height="200px" src="../../../../assets/img/02的副本.jpg" alt="">
+                                <i class="my-plus el-icon-plus"></i>
                             </el-form-item>
                         </el-col>
                         <el-col :span="10">
@@ -149,6 +154,7 @@
                             </el-form-item>
                             <el-form-item label="视频">
                                 <video autoplay loop controls width="300px" height="200px" src="../../../../assets/img/Cam01的副本.mp4"></video>
+                                <i class="my-plus el-icon-plus"></i>
                             </el-form-item>
                         </el-col>
                     </el-row>
@@ -161,6 +167,10 @@
                             </el-form-item>
                             <el-form-item label="图片">
                                 <img width="300px" height="200px" src="../../../../assets/img/02的副本.jpg" alt="">
+                                <i class="my-plus el-icon-plus"></i>
+                            </el-form-item>
+                            <el-form-item label="图片">
+                                <span class="add-step-btn">添加步骤</span>
                             </el-form-item>
                         </el-col>
                         <el-col :span="10">
@@ -170,6 +180,7 @@
                             </el-form-item>
                             <el-form-item label="视频">
                                 <video loop autoplay controls width="300px" height="200px" src="../../../../assets/img/Cam01的副本.mp4"></video>
+                                <i class="my-plus el-icon-plus"></i>
                             </el-form-item>
                         </el-col>
                     </el-row>
@@ -276,5 +287,17 @@ export default {
     color: #fff;
     font-size: 18px;
     background-color: $mainColor;
+}
+
+.tf-img {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    // background-image: url('../../assets/img/绿源东北大米新米稻花香米.jpg');
+    background-image: url('../../../../assets/img/绿源东北大米新米稻花香米.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
 }
 </style>

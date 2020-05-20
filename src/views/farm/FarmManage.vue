@@ -97,38 +97,39 @@ export default {
         .tab-bar-list {
             display: flex;
             align-items: center;
-            justify-content: center;
-            height: 80px;
+            justify-content: flex-start;
+            // justify-content: center;
+            height: 50px;
             .tab-bar-item {
                 display: flex;
                 align-items: center;
-                height: 80px;
-                line-height: 80px;
+                height: 50px;
+                line-height: 50px;
                 .title {
                     display: inline-block;
-                    font-size: 27px;
+                    font-size: 16px;
                     font-weight: lighter;
                     color:#667799 ;
-                    height: 52px;
-                    line-height: 52px;
-                    padding: 0 28px;
+                    height: 32px;
+                    line-height: 32px;
+                    padding: 0 24px;
                     cursor: pointer;
                 }
                 &.active {
                     .title {
                         color: #fff;
                         background-color: $mainColor;
-                        border-radius: 27px;
+                        border-radius: 20px;
                     }
                 }
             }
-            .tab-bar-item + .tab-bar-item {
+            .tab-bar-item {
                 margin-left: 20px;
             }
         }
     }
     .tab-content {
-        margin-top: 80px;
+        margin-top: 40px;
     }
 }
 </style>

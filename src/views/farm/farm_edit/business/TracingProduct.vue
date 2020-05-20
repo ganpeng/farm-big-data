@@ -83,6 +83,7 @@
                         {{scope.row.type}}
                     </template>
                 </el-table-column>
+                <!--
                 <el-table-column min-width="120px" label="品种">
                     <template slot-scope="scope">
                         {{scope.row.variety}}
@@ -93,6 +94,7 @@
                         {{scope.row.specs}}
                     </template>
                 </el-table-column>
+                -->
                 <el-table-column min-width="150px" label="认证">
                     <template slot-scope="scope">
                         {{scope.row.auth}}

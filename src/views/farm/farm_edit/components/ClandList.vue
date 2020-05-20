@@ -17,15 +17,44 @@
                         <svg-icon icon-class="search"/> 搜索
                     </el-button>
                     <div class="search-field-item">
-                        <label class="search-field-item-label">类型</label>
+                        <label class="search-field-item-label">状态</label>
                         <el-select
-                            :value="searchField.type"
+                            v-model="searchField.status"
                             filterable
                             clearable
-                            placeholder="全部"
-                            @input="inputHandler($event, 'type')">
+                            placeholder="全部">
                             <el-option
-                                v-for="(item, index) in []"
+                                v-for="(item, index) in options1"
+                                :key="index"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </div>
+                    <div class="search-field-item">
+                        <label class="search-field-item-label">来源</label>
+                        <el-select
+                            v-model="searchField.source"
+                            filterable
+                            clearable
+                            placeholder="全部">
+                            <el-option
+                                v-for="(item, index) in options2"
+                                :key="index"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </div>
+                    <div class="search-field-item">
+                        <label class="search-field-item-label">水利条件</label>
+                        <el-select
+                            v-model="searchField.condition"
+                            filterable
+                            clearable
+                            placeholder="全部">
+                            <el-option
+                                v-for="(item, index) in options3"
                                 :key="index"
                                 :label="item.label"
                                 :value="item.value">
@@ -137,8 +166,44 @@ export default {
         return {
             searchField: {
                 keyword: '',
-                type: ''
+                status: '',
+                source: '',
+                condition: ''
             },
+            options1: [
+                {
+                    value: '已提交',
+                    label: '已提交'
+                },
+                {
+                    value: '未提交',
+                    label: '未提交'
+                }
+            ],
+            options2: [
+                {
+                    value: '成员出资',
+                    label: '成员出资'
+                },
+                {
+                    value: '土地托管',
+                    label: '土地托管'
+                }
+            ],
+            options3: [
+                {
+                    value: '旱田',
+                    label: '旱田'
+                },
+                {
+                    value: '水田',
+                    label: '水田'
+                },
+                {
+                    value: '水浇地',
+                    label: '水浇地'
+                }
+            ],
             list: {
                 data: cLandList
             }

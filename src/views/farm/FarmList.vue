@@ -69,7 +69,7 @@
                 <el-table-column type="selection" align="center" width="50"></el-table-column>
                 <el-table-column min-width="140px" label="主体名称">
                     <template slot-scope="scope">
-                        <span @click="gotoFarmDetail(scope.row.id)" class="ellipsis two name">
+                        <span class="ellipsis two">
                             {{scope.row.name}}
                         </span>
                     </template>
@@ -84,11 +84,13 @@
                         {{ scope.row.area}}
                     </template>
                 </el-table-column>
+                <!--
                 <el-table-column min-width="180px" label="地址">
                     <template slot-scope="scope">
                         {{scope.row.address.city}}/{{scope.row.address.area}}/{{scope.row.address.detail}}
                     </template>
                 </el-table-column>
+                -->
                 <!--
                 <el-table-column min-width="120px" label="经纬度">
                     <template slot-scope="scope">
@@ -116,13 +118,13 @@
                             width="300" trigger="hover">
                             <div class="pop-content">
                                 <div class="title">
-                                    {{scope.row.legal.name}}
+                                    {{scope.row.standing.name}}
                                 </div>
                                 <div class="date-time">
-                                    电话：{{scope.row.legal.phone}}
+                                    电话：{{scope.row.standing.phone}}
                                 </div>
                             </div>
-                            <span class="text-success pointer" slot="reference">{{scope.row.legal.name}}</span>
+                            <span class="text-success pointer" slot="reference">{{scope.row.standing.name}}</span>
                         </el-popover>
                     </template>
                 </el-table-column>
@@ -134,8 +136,8 @@
                 <el-table-column min-width="120px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
-                            <span class="btn-text" @click="editFarmHandler(scope.row.id)">编辑</span>
                             <span class="btn-text" @click="manageFarmHandler(scope.row.id)">管理</span>
+                            <span class="btn-text" @click="editFarmHandler(scope.row.id)">编辑</span>
                             <span class="btn-text text-danger" @click="deleteFarmHandler(scope.row.id)">删除</span>
                         </div>
                     </template>
