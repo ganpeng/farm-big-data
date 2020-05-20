@@ -57,8 +57,8 @@
             </div>
         </div>
         <div class="middle-field">
-            <div @click="gotoPage(1)" class="header">
-                <div class="header-left">
+            <div class="header">
+                <div @click="gotoPage(1)" class="header-left">
                     <svg-icon class-name="svg-one" icon-class="home_icon5"/>
                     <span class="title">预警趋势</span>
                     <svg-icon class-name="arrow" icon-class="home_icon8"/>
@@ -173,7 +173,7 @@
                     <div class="title-field">
                         <p class="title">设备总数</p>
                         <p class="count">
-                            642<i>个</i>
+                            22<i>个</i>
                         </p>
                     </div>
                     <div class="legen-field">
@@ -181,38 +181,38 @@
                             <li class="legen-item">
                                 <span class="icon"></span>
                                 <span class="text1">气象传感器</span>
-                                <span class="text2">24</span>
-                                <span class="text3">4%</span>
+                                <span class="text2">1</span>
+                                <span class="text3">2.6%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
                                 <span class="text1">虫情传感器</span>
-                                <span class="text2">120</span>
-                                <span class="text3">19%</span>
+                                <span class="text2">1</span>
+                                <span class="text3">2.6%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
                                 <span class="text1">土壤传感器</span>
-                                <span class="text2">24</span>
-                                <span class="text3">4%</span>
+                                <span class="text2">1</span>
+                                <span class="text3">2.6%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
                                 <span class="text1">水质传感器</span>
-                                <span class="text2">24</span>
-                                <span class="text3">4%</span>
+                                <span class="text2">1</span>
+                                <span class="text3">2.6%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
                                 <span class="text1">球机摄像头</span>
-                                <span class="text2">48</span>
-                                <span class="text3">8%</span>
+                                <span class="text2">1</span>
+                                <span class="text3">2.6%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
                                 <span class="text1">枪机摄像头</span>
-                                <span class="text2">402</span>
-                                <span class="text3">61%</span>
+                                <span class="text2">17</span>
+                                <span class="text3">77%</span>
                             </li>
                         </ul>
                     </div>
@@ -423,12 +423,12 @@ export default {
             chartData3: {
                 columns: ['类型', '值'],
                 rows: [
-                    { '类型': '气象传感器', '值': 24 },
-                    { '类型': '虫情传感器', '值': 120 },
-                    { '类型': '土壤传感器', '值': 24 },
-                    { '类型': '水质传感器', '值': 24 },
-                    { '类型': '球机摄像头', '值': 48 },
-                    { '类型': '枪机摄像头', '值': 402 }
+                    { '类型': '气象传感器', '值': 1 },
+                    { '类型': '虫情传感器', '值': 1 },
+                    { '类型': '土壤传感器', '值': 1 },
+                    { '类型': '水质传感器', '值': 1 },
+                    { '类型': '球机摄像头', '值': 1 },
+                    { '类型': '枪机摄像头', '值': 17 }
                 ]
             },
             chartData4: {
