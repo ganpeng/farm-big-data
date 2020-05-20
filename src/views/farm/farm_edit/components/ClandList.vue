@@ -107,7 +107,7 @@
                         {{ scope.row.roam.type}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="180px" label="地址">
+                <el-table-column min-width="280px" label="地址">
                     <template slot-scope="scope">
                         {{scope.row.roam.address.city}}/{{scope.row.roam.address.area}}/{{scope.row.roam.address.detail}}
                     </template>
@@ -122,7 +122,7 @@
                         {{scope.row.code}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="合同编号">
+                <el-table-column min-width="140px" label="合同编号">
                     <template slot-scope="scope">
                         {{scope.row.cCode}}
                     </template>
@@ -132,7 +132,7 @@
                         {{scope.row.areaThree}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="状态">
+                <el-table-column min-width="80px" label="状态">
                     <template slot-scope="scope">
                         <span v-if="scope.row.status === 1" class="text-danger">未提交</span>
                         <span v-else class="text-success">已提交</span>

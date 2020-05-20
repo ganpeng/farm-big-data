@@ -368,6 +368,7 @@ export default {
                 top: 40,
                 bottom: 12
             },
+            smooth: 0,
             'xAxis.0.axisLabel': {color: '#667799'},
             'yAxis.0.axisLabel': {color: '#667799'},
             'yAxis.0.splitLine': {

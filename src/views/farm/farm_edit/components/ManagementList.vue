@@ -66,7 +66,7 @@
                 class="my-table-style"
                 :data="list.data">
                 <el-table-column type="selection" align="center" width="50"></el-table-column>
-                <el-table-column min-width="120px" label="姓名">
+                <el-table-column min-width="100px" label="姓名">
                     <template slot-scope="scope">
                         <span class="ellipsis two name">
                             {{scope.row.name}}
@@ -78,12 +78,14 @@
                         {{ scope.row.type}}
                     </template>
                 </el-table-column>
+                <!--
                 <el-table-column min-width="60px" label="性别">
                     <template slot-scope="scope">
                         {{ scope.row.gender}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="180px" label="地址">
+                -->
+                <el-table-column min-width="280px" label="地址">
                     <template slot-scope="scope">
                         {{scope.row.address.city}}/{{scope.row.address.area}}/{{scope.row.address.detail}}
                     </template>
@@ -93,11 +95,13 @@
                         {{scope.row.phone}}
                     </template>
                 </el-table-column>
+                <!--
                 <el-table-column min-width="160px" label="身份证号">
                     <template slot-scope="scope">
                         {{scope.row.cId}}
                     </template>
                 </el-table-column>
+                -->
                 <el-table-column min-width="120px" label="培训时长(小时)">
                     <template slot-scope="scope">
                         {{scope.row.trainHour}}
@@ -113,7 +117,7 @@
                         {{scope.row.contribution}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" align="center" label="状态">
+                <el-table-column min-width="80px" align="center" label="状态">
                     <template slot-scope="scope">
                         <span v-if="scope.row.status === 1" class="text-danger">未提交</span>
                         <span v-else class="text-success">已提交</span>

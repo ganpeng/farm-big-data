@@ -91,7 +91,7 @@
                     </template>
                 </el-table-column>
                 -->
-                <el-table-column min-width="160px" label="补贴类型">
+                <el-table-column min-width="180px" label="补贴类型">
                     <template slot-scope="scope">
                         {{ scope.row.type}}
                     </template>
@@ -136,7 +136,7 @@
                         {{scope.row.leaderTwo.phone}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="60px" label="状态">
+                <el-table-column min-width="80px" label="状态">
                     <template slot-scope="scope">
                         {{scope.row.subStatus}}
                     </template>

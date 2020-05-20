@@ -66,7 +66,7 @@
                 class="my-table-style"
                 :data="list.data">
                 <el-table-column type="selection" align="center" width="50"></el-table-column>
-                <el-table-column min-width="120px" label="姓名">
+                <el-table-column min-width="100px" label="姓名">
                     <template slot-scope="scope">
                         <span class="ellipsis two name">
                             {{scope.row.name}}
@@ -85,7 +85,7 @@
                     </template>
                 </el-table-column>
                 -->
-                <el-table-column min-width="200px" label="地址">
+                <el-table-column min-width="280px" label="地址">
                     <template slot-scope="scope">
                         {{scope.row.address.city}}/{{scope.row.address.area}}/{{scope.row.address.detail}}
                     </template>
@@ -122,7 +122,7 @@
                         {{scope.row.divide}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="状态">
+                <el-table-column min-width="80px" label="状态">
                     <template slot-scope="scope">
                         <span v-if="scope.row.status === 1" class="text-danger">未提交</span>
                         <span v-else class="text-success">已提交</span>

@@ -82,7 +82,7 @@
                 class="my-table-style"
                 :data="list.data">
                 <el-table-column type="selection" align="center" width="50"></el-table-column>
-                <el-table-column min-width="120px" label="项目名称">
+                <el-table-column min-width="200px" label="项目名称">
                     <template slot-scope="scope">
                         <span class="ellipsis two name">
                             {{scope.row.name}}
@@ -109,7 +109,7 @@
                         {{scope.row.moneyInfo.govPay}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="160px" label="负责人">
+                <el-table-column min-width="80px" label="负责人">
                     <template slot-scope="scope">
                         {{scope.row.leader.name}}
                     </template>
