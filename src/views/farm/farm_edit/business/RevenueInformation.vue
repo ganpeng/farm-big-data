@@ -97,59 +97,57 @@
                 </el-table-column>
             </el-table>
         </div>
-
-    <el-dialog
-        title="营收信息"
-        class="my-dialog"
-        width="60%"
-        :visible.sync="visible"
-        :show-close="true"
-        :before-close="beforeCloseHandler"
-        :close-on-click-modal="false"
-        :close-on-press-escape="false">
-        <div class="dialog-body">
-            <el-form
-                :model="specialSub"
-                class="my-form"
-                label-width="180px"
-                @submit.native.prevent>
-                <el-row>
-                    <h4 class="content-sub-title">基本信息</h4>
-                    <el-col :span="12">
-                        <el-form-item label="选择年份">
-                            <el-date-picker
-                                v-model="revenueInformation.one"
-                                type="date">
-                            </el-date-picker>
-                        </el-form-item>
-                        <el-form-item label="当年营收 元">
-                            <el-input v-model="revenueInformation.two"></el-input>
-                        </el-form-item>
-                        <el-form-item label="当年缴税 元">
-                            <el-input v-model="revenueInformation.four"></el-input>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :span="12">
-                        <el-form-item label="当年盈余 元">
-                            <el-input v-model="revenueInformation.three"></el-input>
-                        </el-form-item>
-                        <el-form-item label="当年分红 元">
-                            <el-input v-model="revenueInformation.five"></el-input>
-                        </el-form-item>
-                    </el-col>
-                </el-row>
-            </el-form>
-        </div>
-        <div slot="footer" class="dialog-footer">
-            <el-button size="medium" @click="cancelHandler">取 消</el-button>
-            <el-button type="primary" @click="enterHandler">确 定</el-button>
-        </div>
-    </el-dialog>
-
-
+        <el-dialog
+            title="营收信息"
+            class="my-dialog"
+            width="60%"
+            :visible.sync="visible"
+            :show-close="true"
+            :before-close="beforeCloseHandler"
+            :close-on-click-modal="false"
+            :close-on-press-escape="false">
+            <div class="dialog-body">
+                <el-form
+                    :model="specialSub"
+                    class="my-form"
+                    label-width="180px"
+                    @submit.native.prevent>
+                    <el-row>
+                        <h4 class="content-sub-title">基本信息</h4>
+                        <el-col :span="12">
+                            <el-form-item label="选择年份">
+                                <el-date-picker
+                                    v-model="revenueInformation.one"
+                                    type="year">
+                                </el-date-picker>
+                            </el-form-item>
+                            <el-form-item label="当年营收 元">
+                                <el-input v-model="revenueInformation.two"></el-input>
+                            </el-form-item>
+                            <el-form-item label="当年缴税 元">
+                                <el-input v-model="revenueInformation.four"></el-input>
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="12">
+                            <el-form-item label="当年盈余 元">
+                                <el-input v-model="revenueInformation.three"></el-input>
+                            </el-form-item>
+                            <el-form-item label="当年分红 元">
+                                <el-input v-model="revenueInformation.five"></el-input>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                </el-form>
+            </div>
+            <div slot="footer" class="dialog-footer">
+                <el-button size="medium" @click="cancelHandler">取 消</el-button>
+                <el-button type="primary" @click="enterHandler">确 定</el-button>
+            </div>
+        </el-dialog>
     </div>
 </template>
 <script>
+import _ from 'lodash';
 export default {
     name: 'RevenueInformation',
     data() {
@@ -199,7 +197,7 @@ export default {
         },
         editRevenueInformationHandler(id) {
             this.visible = true;
-            this.revenueInformation = this.list.data.find((item) => item.id === id);
+            this.revenueInformation = _.cloneDeep(this.list.data.find((item) => item.id === id));
         },
         beforeCloseHandler() {
             this.cancelHandler();

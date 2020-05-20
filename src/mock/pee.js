@@ -1,235 +1,289 @@
-
-const peeList = [
-    {
-        id: 1,
-        dId: 'qx233rt4t23r32', // 设备ID
-        sn: 'd3f34f43t54', // 设备sn
-        type: 1, // 传感器类型
-        address: {
-            province: '吉林省',
-            city: '吉林市',
-            area: '磐石市',
-            detail: '取柴河镇/大桥村'
-        }, // 地址
-        latitude: '123.3432', // 经度
-        longitude: '43.3423', // 纬度
-        firmName: 1, // 厂商名称
-        farm: '吉林市十月稻田生态农场', // 所属农场
-        head: {
-            name: '王进',
-            phone: '1584757335',
-            company: '吉视传媒磐石市分公司运维部'
-        }, // 负责人
-        createdAt: '2020-04-02', // 上线日期
-        status: 1 // 状态
-    },
-    {
-        id: 2,
-        dId: 'cq233rt4t23r32',
-        sn: 'd3f34f43t53', // 设备sn
-        type: 2, // 传感器类型
-        address: {
-            province: '吉林省',
-            city: '吉林市',
-            area: '磐石市',
-            detail: '取柴河镇/大桥村'
-        }, // 地址
-        latitude: '123.3432', // 经度
-        longitude: '43.3423', // 纬度
-        firmName: 1, // 厂商名称
-        farm: '吉林市十月稻田生态农场', // 所属农场
-        head: {
-            name: '王进',
-            phone: '1584757335',
-            company: '吉视传媒磐石市分公司运维部'
-        }, // 负责人
-        createdAt: '2020-04-02', // 上线日期
-        status: 1 // 状态
-    },
-    {
-        id: 3,
-        dId: 'tr233rt4t23r32',
-        sn: 'd3f34f43t52', // 设备sn
-        type: 3, // 传感器类型
-        address: {
-            province: '吉林省',
-            city: '吉林市',
-            area: '磐石市',
-            detail: '取柴河镇/大桥村'
-        }, // 地址
-        latitude: '123.3432', // 经度
-        longitude: '43.3423', // 纬度
-        firmName: 1, // 厂商名称
-        farm: '吉林市十月稻田生态农场', // 所属农场
-        head: {
-            name: '王进',
-            phone: '1584757335',
-            company: '吉视传媒磐石市分公司运维部'
-        }, // 负责人
-        createdAt: '2020-04-02', // 上线日期
-        status: 1 // 状态
-    },
-    {
-        id: 4,
-        dId: 'qj233rt4t23r32',
-        sn: 'd3f34f43t51', // 设备sn
-        type: 6, // 传感器类型
-        address: {
-            province: '吉林省',
-            city: '吉林市',
-            area: '磐石市',
-            detail: '取柴河镇/大桥村'
-        }, // 地址
-        latitude: '123.3432', // 经度
-        longitude: '43.3423', // 纬度
-        firmName: 3, // 厂商名称
-        farm: '吉林市十月稻田生态农场', // 所属农场
-        head: {
-            name: '李德农',
-            phone: '1584757335',
-            company: '吉视传媒磐石市分公司运维部'
-        }, // 负责人
-        createdAt: '2020-04-02', // 上线日期
-        status: 1 // 状态
-    },
-    {
-        id: 5,
-        dId: 'qs233rt4t23r32',
-        sn: 'd3f34f43t50', // 设备sn
-        type: 5, // 传感器类型
-        address: {
-            province: '吉林省',
-            city: '吉林市',
-            area: '磐石市',
-            detail: '取柴河镇/大桥村'
-        }, // 地址
-        latitude: '123.3432', // 经度
-        longitude: '43.3423', // 纬度
-        firmName: 3, // 厂商名称
-        farm: '吉林市十月稻田生态农场', // 所属农场
-        head: {
-            name: '李德农',
-            phone: '1584757335',
-            company: '吉视传媒磐石市分公司运维部'
-        }, // 负责人
-        createdAt: '2020-04-02', // 上线日期
-        status: 1 // 状态
-    },
-    {
-        id: 6,
-        dId: 'qx233rt4t23r10',
-        sn: '223-def-34-err', // 设备sn
-        type: 1, // 传感器类型
-        address: {
-            province: '吉林省',
-            city: '吉林市',
-            area: '磐石市',
-            detail: '取柴河镇/四道村'
-        }, // 地址
-        latitude: '123.3432', // 经度
-        longitude: '43.3423', // 纬度
-        firmName: 1, // 厂商名称
-        farm: '吉林市意禾田生态农场', // 所属农场
-        head: {
-            name: '王进',
-            phone: '1584757335',
-            company: '吉视传媒磐石市分公司运维部'
-        }, // 负责人
-        createdAt: '2020-04-02', // 上线日期
-        status: 1 // 状态
-    },
-    {
-        id: 7,
-        dId: 'cq233rt4t23r10',
-        sn: '224-def-34-err', // 设备sn
-        type: 2, // 传感器类型
-        address: {
-            province: '吉林省',
-            city: '吉林市',
-            area: '磐石市',
-            detail: '取柴河镇/四道村'
-        }, // 地址
-        latitude: '123.3432', // 经度
-        longitude: '43.3423', // 纬度
-        firmName: 1, // 厂商名称
-        farm: '吉林市意禾田生态农场', // 所属农场
-        head: {
-            name: '王进',
-            phone: '1584757335',
-            company: '吉视传媒磐石市分公司运维部'
-        }, // 负责人
-        createdAt: '2020-04-02', // 上线日期
-        status: 1 // 状态
-    },
-    {
-        id: 8,
-        dId: 'tr233rt4t23r10',
-        sn: '225-def-34-err', // 设备sn
-        type: 3, // 传感器类型
-        address: {
-            province: '吉林省',
-            city: '吉林市',
-            area: '磐石市',
-            detail: '取柴河镇/四道村'
-        }, // 地址
-        latitude: '123.3432', // 经度
-        longitude: '43.3423', // 纬度
-        firmName: 1, // 厂商名称
-        farm: '吉林市意禾田生态农场', // 所属农场
-        head: {
-            name: '王进',
-            phone: '1584757335',
-            company: '吉视传媒磐石市分公司运维部'
-        }, // 负责人
-        createdAt: '2020-04-02', // 上线日期
-        status: 1 // 状态
-    },
-    {
-        id: 9,
-        dId: 'qj233rt4t23r10',
-        sn: '226-def-34-err', // 设备sn
-        type: 6, // 传感器类型
-        address: {
-            province: '吉林省',
-            city: '吉林市',
-            area: '磐石市',
-            detail: '取柴河镇/四道村'
-        }, // 地址
-        latitude: '123.3432', // 经度
-        longitude: '43.3423', // 纬度
-        firmName: 3, // 厂商名称
-        farm: '吉林市意禾田生态农场', // 所属农场
-        head: {
-            name: '李德农',
-            phone: '1584757335',
-            company: '吉视传媒磐石市分公司运维部'
-        }, // 负责人
-        createdAt: '2020-04-02', // 上线日期
-        status: 1 // 状态
-    },
-    {
-        id: 10,
-        dId: 'qs233rt4t23r10',
-        sn: '227-def-34-err', // 设备sn
-        type: 6, // 传感器类型
-        address: {
-            province: '吉林省',
-            city: '吉林市',
-            area: '磐石市',
-            detail: '取柴河镇/四道村'
-        }, // 地址
-        latitude: '123.3432', // 经度
-        longitude: '43.3423', // 纬度
-        firmName: 3, // 厂商名称
-        farm: '吉林市意禾田生态农场', // 所属农场
-        head: {
-            name: '李德农',
-            phone: '1584757335',
-            company: '吉视传媒磐石市分公司运维部'
-        }, // 负责人
-        createdAt: '2020-04-02', // 上线日期
-        status: 1 // 状态
-    }
-];
+const peeList = [{
+    "id": 1,
+    "dId": "qx233rt4t23r32",
+    "type": 1,
+    "firmName": 1,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "王进", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 2,
+    "dId": "cq233rt4t23r32",
+    "type": 2,
+    "firmName": 1,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "王进", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 3,
+    "dId": "szwrerf445634",
+    "type": 4,
+    "firmName": 1,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "王进", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 4,
+    "dId": "tr233rt4t23r32",
+    "type": 3,
+    "firmName": 1,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "王进", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 5,
+    "dId": "qj233rt4t23r32",
+    "type": 6,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 6,
+    "dId": "qs446547566",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 7,
+    "dId": "qs233rt4t23r68",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 8,
+    "dId": "qs233rt4t23r69",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 9,
+    "dId": "qs233rt4t23r70",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 10,
+    "dId": "qs233rt4t23r71",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 11,
+    "dId": "qs233rt4t23r72",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 12,
+    "dId": "qs233rt4t23r73",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 13,
+    "dId": "qs233rt4t23r74",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 14,
+    "dId": "qs233rt4t23r75",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 15,
+    "dId": "qs233rt4t23r76",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 16,
+    "dId": "qs233rt4t23r77",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 17,
+    "dId": "qs233rt4t23r78",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 18,
+    "dId": "qs233rt4t23r79",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 19,
+    "dId": "qs233rt4t23r80",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 20,
+    "dId": "qs233rt4t23r81",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 21,
+    "dId": "qs233rt4t23r82",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}, {
+    "id": 22,
+    "dId": "qs233rt4t23r83",
+    "type": 5,
+    "firmName": 3,
+    "farm": "聚成现代农业发展专业合作社",
+    "head": {"name": "李德农", "phone": "1584757335", "company": "吉视传媒磐石市分公司运维部"},
+    "createdAt": "2020-04-02",
+    "status": 1,
+    "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
+    "sn": "d3f34f43t54",
+    "latitude": "123.3432",
+    "longitude": "43.3423"
+}];
 
 export default peeList;

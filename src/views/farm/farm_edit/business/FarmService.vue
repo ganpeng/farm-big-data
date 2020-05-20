@@ -147,6 +147,7 @@
     </div>
 </template>
 <script>
+import _ from 'lodash';
 export default {
     name: 'FarmService',
     data() {
@@ -197,7 +198,7 @@ export default {
         },
         editFarmServiceHandler(id) {
             this.visible = true;
-            this.farmService = this.list.data.find((item) => item.id === id);
+            this.farmService = _.cloneDeep(this.list.data.find((item) => item.id === id));
         },
         beforeCloseHandler() {
             this.cancelHandler();
