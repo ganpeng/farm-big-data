@@ -6,15 +6,15 @@ export const managementList = [
         gender: '男',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/四道村'
         },
-        phone: '18399594935',
+        phone: '13786478564',
         cId: '110333198009098888',
-        trainHour: '62',
-        certi: 4,
-        contribution: 1003983,
+        trainHour: '58',
+        certi: 2,
+        contribution: 59903,
         status: 1,
         isMoney: true,
         money: '344.339',
@@ -45,20 +45,20 @@ export const managementList = [
     },
     {
         id: 2,
-        name: '张德金',
+        name: '王进',
         type: '经营人员',
         gender: '男',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/四道村'
         },
         phone: '13786478564',
         cId: '110333198009098888',
         trainHour: '58',
-        certi: 2,
-        contribution: 59903,
+        certi: 0,
+        contribution: 109383,
         status: 2,
         isMoney: true,
         money: '344.339',
@@ -89,18 +89,18 @@ export const managementList = [
     },
     {
         id: 3,
-        name: '王宏',
+        name: '王进',
         type: '经营人员',
         gender: '男',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/四道村'
         },
-        phone: '18948394855',
+        phone: '13786478564',
         cId: '110333198009098888',
-        trainHour: '39',
+        trainHour: '58',
         certi: 4,
         contribution: 1003983,
         status: 1,
@@ -133,19 +133,19 @@ export const managementList = [
     },
     {
         id: 4,
-        name: '李农',
+        name: '李德农',
         type: '经营人员',
         gender: '男',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/四道村'
         },
-        phone: '18948394855',
+        phone: '13786478564',
         cId: '110333198009098888',
-        trainHour: '72',
-        certi: 4,
+        trainHour: '58',
+        certi: 3,
         contribution: 59903,
         status: 1,
         isMoney: true,
@@ -175,6 +175,270 @@ export const managementList = [
         ],
         createdAt: '2020-04-20'
     },
+    {
+        id: 5,
+        name: '李德农',
+        type: '经营人员',
+        gender: '男',
+        address: { // 地址
+            province: '吉林省',
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/四道村'
+        },
+        phone: '13786478564',
+        cId: '110333198009098888',
+        trainHour: '58',
+        certi: 4,
+        contribution: 1003983,
+        status: 2,
+        isMoney: true,
+        money: '344.339',
+        isLand: true,
+        land: '344.335',
+        isOther: true,
+        other: '344.335',
+        totalMoney: '1.123.879',
+        otherDesc: '技术出资形式',
+        trainHour2: '20',
+        trainHour3: '10.5',
+        trainHour4: '18',
+        certiList: [
+            {
+                name: '农艺师',
+                level: '一级',
+                time: '2018-03-04',
+                year: 3
+            },
+            {
+                name: '农作物植保员',
+                level: '二级',
+                time: '2018-03-04',
+                year: 2
+            }
+        ],
+        createdAt: '2020-04-20'
+    },
+    {
+        id: 6,
+        name: '王进',
+        type: '经营人员',
+        gender: '男',
+        address: { // 地址
+            province: '吉林省',
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/大桥村'
+        },
+        phone: '13786478564',
+        cId: '110333198009098888',
+        trainHour: '58',
+        certi: 5,
+        contribution: 59903,
+        status: 1,
+        isMoney: true,
+        money: '344.339',
+        isLand: true,
+        land: '344.335',
+        isOther: true,
+        other: '344.335',
+        totalMoney: '1.123.879',
+        otherDesc: '技术出资形式',
+        trainHour2: '20',
+        trainHour3: '10.5',
+        trainHour4: '18',
+        certiList: [
+            {
+                name: '农艺师',
+                level: '一级',
+                time: '2018-03-04',
+                year: 3
+            },
+            {
+                name: '农作物植保员',
+                level: '二级',
+                time: '2018-03-04',
+                year: 2
+            }
+        ],
+        createdAt: '2020-04-20'
+    },
+    {
+        id: 7,
+        name: '王进',
+        type: '经营人员',
+        gender: '男',
+        address: { // 地址
+            province: '吉林省',
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/大桥村'
+        },
+        phone: '13786478564',
+        cId: '110333198009098888',
+        trainHour: '58',
+        certi: 5,
+        contribution: 103983,
+        status: 2,
+        isMoney: true,
+        money: '344.339',
+        isLand: true,
+        land: '344.335',
+        isOther: true,
+        other: '344.335',
+        totalMoney: '1.123.879',
+        otherDesc: '技术出资形式',
+        trainHour2: '20',
+        trainHour3: '10.5',
+        trainHour4: '18',
+        certiList: [
+            {
+                name: '农艺师',
+                level: '一级',
+                time: '2018-03-04',
+                year: 3
+            },
+            {
+                name: '农作物植保员',
+                level: '二级',
+                time: '2018-03-04',
+                year: 2
+            }
+        ],
+        createdAt: '2020-04-20'
+    },
+    {
+        id: 8,
+        name: '王进',
+        type: '经营人员',
+        gender: '男',
+        address: { // 地址
+            province: '吉林省',
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/大桥村'
+        },
+        phone: '13786478564',
+        cId: '110333198009098888',
+        trainHour: '58',
+        certi: 5,
+        contribution: 59903,
+        status: 1,
+        isMoney: true,
+        money: '344.339',
+        isLand: true,
+        land: '344.335',
+        isOther: true,
+        other: '344.335',
+        totalMoney: '1.123.879',
+        otherDesc: '技术出资形式',
+        trainHour2: '20',
+        trainHour3: '10.5',
+        trainHour4: '18',
+        certiList: [
+            {
+                name: '农艺师',
+                level: '一级',
+                time: '2018-03-04',
+                year: 3
+            },
+            {
+                name: '农作物植保员',
+                level: '二级',
+                time: '2018-03-04',
+                year: 2
+            }
+        ],
+        createdAt: '2020-04-20'
+    },
+    {
+        id: 9,
+        name: '李德农',
+        type: '经营人员',
+        gender: '男',
+        address: { // 地址
+            province: '吉林省',
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/大桥村'
+        },
+        phone: '13786478564',
+        cId: '110333198009098888',
+        trainHour: '58',
+        certi: 3,
+        contribution: 59903,
+        status: 1,
+        isMoney: true,
+        money: '344.339',
+        isLand: true,
+        land: '344.335',
+        isOther: true,
+        other: '344.335',
+        totalMoney: '1.123.879',
+        otherDesc: '技术出资形式',
+        trainHour2: '20',
+        trainHour3: '10.5',
+        trainHour4: '18',
+        certiList: [
+            {
+                name: '农艺师',
+                level: '一级',
+                time: '2018-03-04',
+                year: 3
+            },
+            {
+                name: '农作物植保员',
+                level: '二级',
+                time: '2018-03-04',
+                year: 2
+            }
+        ],
+        createdAt: '2020-04-20'
+    },
+    {
+        id: 10,
+        name: '李德农',
+        type: '经营人员',
+        gender: '男',
+        address: { // 地址
+            province: '吉林省',
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/大桥村'
+        },
+        phone: '13786478564',
+        cId: '110333198009098888',
+        trainHour: '58',
+        certi: 3,
+        contribution: 1003983,
+        status: 2,
+        isMoney: true,
+        money: '344.339',
+        isLand: true,
+        land: '344.335',
+        isOther: true,
+        other: '344.335',
+        totalMoney: '1.123.879',
+        otherDesc: '技术出资形式',
+        trainHour2: '20',
+        trainHour3: '10.5',
+        trainHour4: '18',
+        certiList: [
+            {
+                name: '农艺师',
+                level: '一级',
+                time: '2018-03-04',
+                year: 3
+            },
+            {
+                name: '农作物植保员',
+                level: '二级',
+                time: '2018-03-04',
+                year: 2
+            }
+        ],
+        createdAt: '2020-04-20'
+    }
 ];
 
 export const growerList = [
@@ -185,13 +449,13 @@ export const growerList = [
         gender: '女',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/四道村'
         },
         phone: '13786478564',
         cId: '110333198009098888',
-        trainHour: '34',
+        trainHour: '58',
         certi: 2,
         contribution: 59903,
         isPoor: true,
@@ -223,13 +487,13 @@ export const growerList = [
         gender: '女',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/四道村'
         },
-        phone: '18948394855',
+        phone: '13786478564',
         cId: '110333198009098888',
-        trainHour: '45',
+        trainHour: '58',
         certi: 0,
         contribution: 109383,
         isPoor: false,
@@ -261,11 +525,11 @@ export const growerList = [
         gender: '男',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/四道村'
         },
-        phone: '18399594935',
+        phone: '13786478564',
         cId: '110333198009098888',
         trainHour: '58',
         certi: 4,
@@ -299,11 +563,11 @@ export const growerList = [
         gender: '男',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/四道村'
         },
-        phone: '13539584959',
+        phone: '13786478564',
         cId: '110333198009098888',
         trainHour: '58',
         certi: 3,
@@ -337,9 +601,9 @@ export const growerList = [
         gender: '男',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/四道村'
         },
         phone: '13786478564',
         cId: '110333198009098888',
@@ -370,18 +634,18 @@ export const growerList = [
     },
     {
         id: 6,
-        name: '韩江江',
+        name: '李雪娟',
         type: '种植人员',
         gender: '女',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/大桥村'
         },
         phone: '13786478564',
         cId: '110333198009098888',
-        trainHour: '61',
+        trainHour: '58',
         certi: 5,
         contribution: 59903,
         isPoor: false,
@@ -408,18 +672,18 @@ export const growerList = [
     },
     {
         id: 7,
-        name: '李雪',
+        name: '张冬梅',
         type: '种植人员',
         gender: '女',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/大桥村'
         },
-        phone: '18948394855',
+        phone: '13786478564',
         cId: '110333198009098888',
-        trainHour: '76',
+        trainHour: '58',
         certi: 5,
         contribution: 103983,
         isPoor: true,
@@ -446,18 +710,18 @@ export const growerList = [
     },
     {
         id: 8,
-        name: '王娟',
+        name: '李雪娟',
         type: '种植人员',
         gender: '女',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/大桥村'
         },
-        phone: '18399594935',
+        phone: '13786478564',
         cId: '110333198009098888',
-        trainHour: '34',
+        trainHour: '58',
         certi: 5,
         contribution: 59903,
         isPoor: false,
@@ -484,18 +748,18 @@ export const growerList = [
     },
     {
         id: 9,
-        name: '张辽',
+        name: '沙宝俊',
         type: '种植人员',
         gender: '男',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/大桥村'
         },
-        phone: '13539584959',
+        phone: '13786478564',
         cId: '110333198009098888',
-        trainHour: '55',
+        trainHour: '58',
         certi: 3,
         contribution: 59903,
         isPoor: true,
@@ -522,18 +786,18 @@ export const growerList = [
     },
     {
         id: 10,
-        name: '张立冬',
+        name: '李德农',
         type: '种植人员',
         gender: '男',
         address: { // 地址
             province: '吉林省',
-            city: '四平市',
-            area: '伊通满族自治县',
-            detail: '伊通镇兴隆村'
+            city: '吉林市',
+            area: '磐石市',
+            detail: '取柴河镇/大桥村'
         },
         phone: '13786478564',
         cId: '110333198009098888',
-        trainHour: '66',
+        trainHour: '58',
         certi: 3,
         contribution: 1003983,
         isPoor: false,
