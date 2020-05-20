@@ -182,9 +182,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .pee-detail-container {
-    padding-bottom: 100px;
+    padding-bottom: 120px;
     .my-echarts {
-        width: 6.4rem;
+        width: 70%;
         height: 3.2rem;
     }
 }

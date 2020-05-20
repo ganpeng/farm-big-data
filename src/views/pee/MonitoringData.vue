@@ -1,5 +1,13 @@
 <template>
     <div class="monitoring-data-container">
+        <ul class="legend-list">
+            <li class="legend-item">
+                <i></i> 温度
+            </li>
+            <li class="legend-item">
+                <i></i> 湿度
+            </li>
+        </ul>
         <div width="100%" height="100%" id="monitoring-data-line-chart" class="monitoring-data-line-chart"></div>
     </div>
 </template>
@@ -21,12 +29,7 @@ export default {
                     name: '温度',
                     type: 'line',
                     yAxisIndex: 1,
-                    data: [29, 31, 30, 32, 36, 30, 38]
-                },
-                {
-                    name: '盐分',
-                    type: 'line',
-                    data: [12, 15, 26, 36, 25, 18, 16]
+                    data: [29, 31, 30, 32, 29, 30, 33]
                 }
             ]
         }
@@ -84,18 +87,18 @@ export default {
                         color: '#fff',
                         fontSize: 12
                     },
-                    data: [ '2016-01', '2016-02', '2016-03', '2016-04', '2016-05',
-                            '2016-06', '2016-07']
+                    data: [ '00:00', '04:00', '08:00', '12:00', '16:00',
+                            '20:00', '24:00']
                 } ],
                 yAxis: [ {
                     type: 'value',
-                    name: '土壤湿度',
+                    name: '湿度',
                     min: 0,
                     max: 80,
                     position: 'left',
                     axisLine: {
                         lineStyle: {
-                            color: this.colors[2]
+                            color: this.colors[0]
                         }
                     },
                     axisLabel: {
@@ -105,27 +108,12 @@ export default {
                     type: 'value',
                     name: '温度',
                     min: 0,
-                    max: 40,
+                    max: 35,
                     position: 'left',
                     offset: 60,
                     axisLine: {
                         lineStyle: {
                             color: this.colors[1]
-                        }
-                    },
-                    axisLabel: {
-                        formatter: '{value}℃'
-                    }
-                }, {
-                    type: 'value',
-                    name: '盐分',
-                    min: 0,
-                    max: 40,
-                    position: 'left',
-                    offset: 120,
-                    axisLine: {
-                        lineStyle: {
-                            color: this.colors[0]
                         }
                     },
                     axisLabel: {
@@ -140,8 +128,38 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.legend-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    .legend-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        margin-right: 20px;
+        i {
+            display: block;
+            width: 12px;
+            height: 12px;
+            margin-right: 6px;
+        }
+        &:nth-of-type(1) {
+            i {
+                background-color: #6ED800;
+            }
+        }
+        &:nth-of-type(2) {
+            i {
+                background-color: #FF6D00;
+            }
+        }
+    }
+
+}
 .monitoring-data-line-chart {
-    width: 6.4rem;
+    width: 100%;
     height: 3.2rem;
 }
 </style>

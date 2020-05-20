@@ -1014,6 +1014,7 @@ export default {
 .plant-protection-detail-container {
     .steps {
         width: 100%;
+        margin-top: 20px;
         .step-list {
             display: flex;
             .step-item {

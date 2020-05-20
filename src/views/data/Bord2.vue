@@ -5,14 +5,14 @@
             <div class="item_con">
                 地块面积(公顷)
             </div>
-            <div class="count">6357</div>
+            <div class="count">1357</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 从业人员(人)
             </div>
-            <div class="count">2000</div>
+            <div class="count">698</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
@@ -24,9 +24,9 @@
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
-                累计销售额(亿元)
+                累计销售额(万元)
             </div>
-            <div class="count">2.3</div>
+            <div class="count">608</div>
         </div>
     </div>
 </template>

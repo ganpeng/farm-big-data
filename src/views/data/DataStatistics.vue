@@ -12,7 +12,7 @@
                     <div class="title-field">
                         <p class="title">地块总面积</p>
                         <p class="count">
-                            1357<i>个</i>
+                            1357<i>公顷</i>
                         </p>
                     </div>
                     <div class="legen-field">
@@ -211,7 +211,7 @@
                     <div class="title-field">
                         <p class="title">销售额</p>
                         <p class="count">
-                            45608<i>万元</i>
+                            608<i>万元</i>
                         </p>
                     </div>
                     <div class="legen-field">
