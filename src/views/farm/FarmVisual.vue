@@ -49,8 +49,9 @@
             <ul class="farm-visual-list">
                 <li @click="gotoFarmVisualDetail" class="farm-visual-item">
                     <img src="../../assets/img/fv1.png" alt="">
-                    <p class="name">01 吉林市十月稻田生态农场</p>
+                    <p class="name">聚成现代农业发展专业合作社</p>
                 </li>
+                <!--
                 <li @click="gotoFarmVisualDetail" class="farm-visual-item">
                     <img src="../../assets/img/fv2.png" alt="">
                     <p class="name">02 吉林市十月稻田生态农场</p>
@@ -79,8 +80,10 @@
                     <img src="../../assets/img/fv8.png" alt="">
                     <p class="name">08 吉林市十月稻田生态农场</p>
                 </li>
+                -->
             </ul>
         </div>
+        <!--
         <el-pagination
             @size-change="handlePaginationChange($event, 'pageSize')"
             @current-change="handlePaginationChange($event, 'pageNum')"
@@ -90,6 +93,7 @@
             layout="total, sizes, prev, pager, next, jumper"
             :total="list.pagination.total">
         </el-pagination>
+        -->
     </div>
 </template>
 <script>
