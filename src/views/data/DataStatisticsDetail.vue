@@ -1,6 +1,5 @@
 <template>
     <div class="data-statistics-container my-content-container">
-        <!--
         <div class="tab-bar-container">
             <ul class="tab-bar-list">
                 <li @click="changeTab(index)" v-for="(item, index) in tabBarList"
@@ -9,20 +8,8 @@
                 </li>
             </ul>
         </div>
-        -->
         <div class="tab-content-container">
             <div v-if="activeIndex === 0" class="tab-content-item tab-content-one">
-                <div class="title-container">
-                    <h3 class="title">吉林智慧农业系统地块统计</h3>
-                    <div class="download-img">
-                        <svg-icon icon-class="d_img"/>
-                        <span>下载图片</span>
-                    </div>
-                    <div class="download-excel">
-                        <svg-icon icon-class="d_excel"/>
-                        <span>下载excel文件</span>
-                    </div>
-                </div>
                 <div class="table-container">
                     <el-table
                         :data="tableData1"
@@ -39,10 +26,8 @@
                         <el-table-column align="center" prop="area5" label="水浇地面积"></el-table-column>
                     </el-table>
                 </div>
-            </div>
-            <div v-if="activeIndex === 1" class="tab-content-item tab-content-two">
                 <div class="title-container">
-                    <h3 class="title">吉林智慧农业系统从业人员统计</h3>
+                    <!-- <h3 class="title">吉林智慧农业系统地块统计</h3> -->
                     <div class="download-img">
                         <svg-icon icon-class="d_img"/>
                         <span>下载图片</span>
@@ -52,6 +37,8 @@
                         <span>下载excel文件</span>
                     </div>
                 </div>
+            </div>
+            <div v-if="activeIndex === 1" class="tab-content-item tab-content-two">
                 <div class="table-container">
                     <el-table
                         :data="tableData2"
@@ -68,10 +55,8 @@
                         <el-table-column align="center" prop="area5" label="贫困户成员"></el-table-column>
                     </el-table>
                 </div>
-            </div>
-            <div v-if="activeIndex === 2" class="tab-content-item tab-content-three">
                 <div class="title-container">
-                    <h3 class="title">吉林智慧农业系统农作物统计</h3>
+                    <!-- <h3 class="title">吉林智慧农业系统从业人员统计</h3> -->
                     <div class="download-img">
                         <svg-icon icon-class="d_img"/>
                         <span>下载图片</span>
@@ -81,6 +66,8 @@
                         <span>下载excel文件</span>
                     </div>
                 </div>
+            </div>
+            <div v-if="activeIndex === 2" class="tab-content-item tab-content-three">
                 <div class="table-container">
                     <el-table
                         :data="tableData3"
@@ -97,10 +84,8 @@
                         <el-table-column align="center" prop="area5" label="人均产值"></el-table-column>
                     </el-table>
                 </div>
-            </div>
-            <div v-if="activeIndex === 3" class="tab-content-item tab-content-four">
                 <div class="title-container">
-                    <h3 class="title">吉林智慧农业系统投入品统计</h3>
+                    <!-- <h3 class="title">吉林智慧农业系统农作物统计</h3> -->
                     <div class="download-img">
                         <svg-icon icon-class="d_img"/>
                         <span>下载图片</span>
@@ -110,6 +95,8 @@
                         <span>下载excel文件</span>
                     </div>
                 </div>
+            </div>
+            <div v-if="activeIndex === 3" class="tab-content-item tab-content-four">
                 <div class="table-container">
                     <el-table
                         :data="tableData4"
@@ -127,10 +114,8 @@
                         <el-table-column align="center" prop="area5" label="总计"></el-table-column>
                     </el-table>
                 </div>
-            </div>
-            <div v-if="activeIndex === 4" class="tab-content-item tab-content-five">
                 <div class="title-container">
-                    <h3 class="title">吉林智慧农业系统销售统计</h3>
+                    <!-- <h3 class="title">吉林智慧农业系统投入品统计</h3> -->
                     <div class="download-img">
                         <svg-icon icon-class="d_img"/>
                         <span>下载图片</span>
@@ -140,6 +125,8 @@
                         <span>下载excel文件</span>
                     </div>
                 </div>
+            </div>
+            <div v-if="activeIndex === 4" class="tab-content-item tab-content-five">
                 <div class="table-container">
                     <el-table
                         :data="tableData5"
@@ -155,10 +142,8 @@
                         <el-table-column align="center" prop="area4" label="总计"></el-table-column>
                     </el-table>
                 </div>
-            </div>
-            <div v-if="activeIndex === 5" class="tab-content-item tab-content-five">
                 <div class="title-container">
-                    <h3 class="title">吉林智慧农业系统农业社会化服务统计</h3>
+                    <!-- <h3 class="title">吉林智慧农业系统销售统计</h3> -->
                     <div class="download-img">
                         <svg-icon icon-class="d_img"/>
                         <span>下载图片</span>
@@ -168,6 +153,8 @@
                         <span>下载excel文件</span>
                     </div>
                 </div>
+            </div>
+            <div v-if="activeIndex === 5" class="tab-content-item tab-content-five">
                 <div class="table-container">
                     <el-table
                         :data="tableData6"
@@ -183,6 +170,17 @@
                         <el-table-column align="center" prop="area4" label="其中服务小农户个数"></el-table-column>
                     </el-table>
                 </div>
+                <div class="title-container">
+                    <!-- <h3 class="title">吉林智慧农业系统农业社会化服务统计</h3> -->
+                    <div class="download-img">
+                        <svg-icon icon-class="d_img"/>
+                        <span>下载图片</span>
+                    </div>
+                    <div class="download-excel">
+                        <svg-icon icon-class="d_excel"/>
+                        <span>下载excel文件</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -192,7 +190,7 @@ export default {
     name: 'DataStatisticsDetail',
     data() {
         return {
-            activeIndex: 0,
+            // activeIndex: 0,
             tabBarList: [
                 {
                     title: '地块统计',
@@ -453,13 +451,13 @@ export default {
         };
     },
     created() {
-        let {index} = this.$route.query;
-        this.activeIndex = parseInt(index);
+        // let {index} = this.$route.query;
+        // this.activeIndex = parseInt(index);
     },
     computed: {
-        // activeIndex() {
-        //     return this.tabBarList.findIndex((item) => item.active);
-        // }
+        activeIndex() {
+            return this.tabBarList.findIndex((item) => item.active);
+        }
     },
     methods: {
         tableRowClassName({rowIndex}) {
@@ -494,35 +492,39 @@ export default {
         .tab-bar-list {
             display: flex;
             align-items: center;
-            justify-content: center;
-            height: 80px;
+            justify-content: flex-start;
+            // justify-content: center;
+            height: 50px;
             .tab-bar-item {
                 display: flex;
                 align-items: center;
-                height: 80px;
-                line-height: 80px;
+                height: 50px;
+                line-height: 50px;
                 .title {
                     display: inline-block;
-                    font-size: 27px;
-                    // font-weight: 400;
+                    font-size: 16px;
+                    font-weight: lighter;
                     color:#667799 ;
-                    height: 52px;
-                    line-height: 52px;
-                    padding: 0 28px;
+                    height: 32px;
+                    line-height: 32px;
+                    padding: 0 24px;
                     cursor: pointer;
                 }
                 &.active {
                     .title {
                         color: #fff;
                         background-color: $mainColor;
-                        border-radius: 27px;
+                        border-radius: 20px;
                     }
                 }
             }
-            .tab-bar-item + .tab-bar-item {
+            .tab-bar-item {
                 margin-left: 20px;
             }
         }
+    }
+    .tab-content {
+        margin-top: 40px;
     }
     .tab-content-container {
         // margin-top: 1rem;

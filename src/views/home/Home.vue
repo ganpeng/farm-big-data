@@ -341,6 +341,7 @@
     </div>
 </template>
 <script>
+import _ from 'lodash';
 export default {
     name: 'Home',
     data() {
@@ -545,14 +546,14 @@ export default {
             for (let i = 0; i < 7; i++) {
                 dateList.push(this.getDate(0 - i));
             }
-            return dateList;
+            return _.reverse(dateList);
         },
         get15DaysNearByToday() {
             let dateList = [];
             for (let i = 0; i < 15; i++) {
                 dateList.push(this.getDate(0 - i));
             }
-            return dateList;
+            return _.reverse(dateList);
         },
         get24HoursByToday() {
             let dateList = [];

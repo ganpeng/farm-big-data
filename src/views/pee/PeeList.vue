@@ -245,10 +245,7 @@ export default {
             this.updatePagination({key, value});
         },
         createPee() {
-            let routeData = this.$router.resolve({
-                name: 'PeeCreate'
-            });
-            window.open(routeData.href, '_blank');
+            this.$router.push({ name: 'PeeCreate' });
         },
         editPeeHandler(id) {
             this.$router.push({ name: 'PeeEdit', params: {id} });

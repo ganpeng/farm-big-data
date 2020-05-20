@@ -113,7 +113,6 @@
                     label-width="180px"
                     @submit.native.prevent>
                     <el-row>
-                        <h4 class="content-sub-title">基本信息</h4>
                         <el-col :span="12">
                             <el-form-item label="选择年份">
                                 <el-date-picker

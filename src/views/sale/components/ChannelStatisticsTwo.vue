@@ -6,7 +6,7 @@
             <el-row>
                 <el-col :span="12">
                     <div class="line-charts-container">
-                        <p>累计销售额 元 <i>42,383,398</i></p>
+                        <p>累计销售额 <i>42,383,398</i>元</p>
                         <ve-line :extend="chartExtend" :data="chartData"></ve-line>
                     </div>
                 </el-col>

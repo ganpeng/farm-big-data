@@ -181,10 +181,7 @@ export default {
             this.updatePagination({key, value});
         },
         createChannel() {
-            let routeData = this.$router.resolve({
-                name: 'ChannelCreate'
-            });
-            window.open(routeData.href, '_blank');
+            this.$router.push({ name: 'ChannelCreate' });
         },
         editChannelHandler(id) {
             this.$router.push({ name: 'ChannelEdit', params: {id} });

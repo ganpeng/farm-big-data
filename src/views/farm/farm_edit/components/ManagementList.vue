@@ -16,22 +16,6 @@
                     <el-button class="btn-style-one" @click="searchHandler" type="primary">
                         <svg-icon icon-class="search"/> 搜索
                     </el-button>
-                    <div class="search-field-item">
-                        <label class="search-field-item-label">类型</label>
-                        <el-select
-                            :value="searchField.type"
-                            filterable
-                            clearable
-                            placeholder="全部"
-                            @input="inputHandler($event, 'type')">
-                            <el-option
-                                v-for="(item, index) in []"
-                                :key="index"
-                                :label="item.label"
-                                :value="item.value">
-                            </el-option>
-                        </el-select>
-                    </div>
                 </div>
                 <div class="row-right">
                     <el-dropdown
