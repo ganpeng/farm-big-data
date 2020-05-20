@@ -451,11 +451,11 @@ export default {
             },
             times: [
                 {
-                    title: '72小时',
+                    title: '近15天',
                     active: false
                 },
                 {
-                    title: '48小时',
+                    title: '近7天',
                     active: false
                 },
                 {
@@ -468,12 +468,111 @@ export default {
     async created() {
         try {
             await this.$nextTick();
-            this.lineData = this.chartData;
+            // this.lineData = this.chartData;
+            this.lineData = this.generator24Hourdata();
         } catch (err) {
             console.log(err);
         }
     },
     methods: {
+        generator24Hourdata() {
+            let rows = this.get24HoursByToday().map((item) => {
+                return {
+                    '日期': item,
+                    '气象灾害预警': this.randomFrom(1, 5),
+                    '虫灾预警': this.randomFrom(1, 5),
+                    '农产品价格波动': this.randomFrom(1, 5),
+                    '农产品产量异动': this.randomFrom(1, 5),
+                    '种植适合度': this.randomFrom(1, 5),
+                    '设备异常': this.randomFrom(1, 5)
+                };
+            });
+
+            return {
+                columns: ['日期', '气象灾害预警', '虫灾预警', '农产品价格波动', '农产品产量异动', '种植适合度', '设备异常'],
+                rows
+            };
+        },
+        generator7Daysdata() {
+            let rows = this.get7DaysNearByToday().map((item) => {
+                return {
+                    '日期': item,
+                    '气象灾害预警': this.randomFrom(1, 5),
+                    '虫灾预警': this.randomFrom(1, 5),
+                    '农产品价格波动': this.randomFrom(1, 5),
+                    '农产品产量异动': this.randomFrom(1, 5),
+                    '种植适合度': this.randomFrom(1, 5),
+                    '设备异常': this.randomFrom(1, 5)
+                };
+            });
+
+            return {
+                columns: ['日期', '气象灾害预警', '虫灾预警', '农产品价格波动', '农产品产量异动', '种植适合度', '设备异常'],
+                rows
+            };
+        },
+        generator15Daysdata() {
+            let rows = this.get15DaysNearByToday().map((item) => {
+                return {
+                    '日期': item,
+                    '气象灾害预警': this.randomFrom(1, 5),
+                    '虫灾预警': this.randomFrom(1, 5),
+                    '农产品价格波动': this.randomFrom(1, 5),
+                    '农产品产量异动': this.randomFrom(1, 5),
+                    '种植适合度': this.randomFrom(1, 5),
+                    '设备异常': this.randomFrom(1, 5)
+                };
+            });
+
+            return {
+                columns: ['日期', '气象灾害预警', '虫灾预警', '农产品价格波动', '农产品产量异动', '种植适合度', '设备异常'],
+                rows
+            };
+        },
+
+        getDate(AddDayCount) {
+            let dd = new Date();
+            dd.setDate(dd.getDate() + AddDayCount); //获取AddDayCount天后的日期
+            var y = dd.getFullYear();
+            var m = dd.getMonth() + 1; //获取当前月份的日期
+            var d = dd.getDate();
+            m = m <= 9 ? '0' + m : m;
+            d = d <= 9 ? '0' + d : d;
+            return y + "/" + m + "/" + d;
+        },
+        get7DaysNearByToday() {
+            let dateList = [];
+            for (let i = 0; i < 7; i++) {
+                dateList.push(this.getDate(0 - i));
+            }
+            return dateList;
+        },
+        get15DaysNearByToday() {
+            let dateList = [];
+            for (let i = 0; i < 15; i++) {
+                dateList.push(this.getDate(0 - i));
+            }
+            return dateList;
+        },
+        get24HoursByToday() {
+            let dateList = [];
+            for (let i = 0; i < 24; i++) {
+                let date = '';
+                if (i < 9) {
+                    date += '0' + i + ':00';
+                } else {
+                    date += '' + i + ':00';
+                }
+                dateList.push(date);
+            }
+            return dateList;
+        },
+        randomFrom(lowerValue, upperValue) {
+            return Math.floor(Math.random() * (upperValue - lowerValue + 1) + lowerValue);
+        },
+        generatorData() {
+
+        },
         changeTime(index) {
             this.times = this.times.map((item, _index) => {
                 if (index === _index) {
@@ -484,11 +583,11 @@ export default {
                 return item;
             });
             if (index === 0) {
-                this.lineData = this.chartDataThree;
+                this.lineData = this.generator15Daysdata();
             } else if (index === 1) {
-                this.lineData = this.chartDataTwo;
+                this.lineData = this.generator7Daysdata();
             } else {
-                this.lineData = this.chartData;
+                this.lineData = this.generator24Hourdata();
             }
         },
         gotoPage(index) {
