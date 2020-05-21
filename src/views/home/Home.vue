@@ -126,27 +126,21 @@
                         <ul class="legen-list legen-list-one">
                             <li class="legen-item">
                                 <span class="icon"></span>
-                                <span class="text1">农名专业合作社</span>
+                                <span class="text1">农民专业合作社</span>
                                 <span class="text2">4</span>
                                 <span class="text3">17%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
-                                <span class="text1">家庭农场</span>
-                                <span class="text2">4</span>
-                                <span class="text3">17%</span>
+                                <span class="text1">个体企业</span>
+                                <span class="text2">19</span>
+                                <span class="text3">79%</span>
                             </li>
                             <li class="legen-item">
                                 <span class="icon"></span>
                                 <span class="text1">国有企业</span>
                                 <span class="text2">1</span>
                                 <span class="text3">4%</span>
-                            </li>
-                            <li class="legen-item">
-                                <span class="icon"></span>
-                                <span class="text1">个体企业</span>
-                                <span class="text2">15</span>
-                                <span class="text3">62%</span>
                             </li>
                         </ul>
                     </div>
@@ -369,7 +363,10 @@ export default {
                 top: 40,
                 bottom: 12
             },
-            smooth: 0,
+            series: {
+                type: 'line'
+                // smooth: 0
+            },
             'xAxis.0.axisLabel': {color: '#667799'},
             'yAxis.0.axisLabel': {color: '#667799'},
             'yAxis.0.splitLine': {
@@ -416,10 +413,9 @@ export default {
             chartData2: {
                 columns: ['类型', '数值'],
                 rows: [
-                    { '类型': '农名专业合作社', '数值': 4 },
-                    { '类型': '家庭农场', '数值': 4 },
-                    { '类型': '国有企业', '数值': 1 },
-                    { '类型': '个体企业', '数值': 15 }
+                    { '类型': '农民专业合作社', '数值': 4 },
+                    { '类型': '个体企业', '数值': 19 },
+                    { '类型': '国有企业', '数值': 1 }
                 ]
             },
             chartData3: {
@@ -775,7 +771,7 @@ export default {
                         line-height: 24px;
                         background-color: #0C1019;
                         font-size: 12px;
-                        color: #394154;
+                        color: #9FA8B8;
                         text-align: center;
                         cursor: pointer;
                         &.active {

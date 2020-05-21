@@ -56,7 +56,7 @@
                         <li class="left-item">
                             <img src="../../assets/img/home_1.png" alt="">
                             <div class="seperator-line"></div>
-                            <p class="name">自营电商</p>
+                            <p class="name">吉视农业电商平台</p>
                         </li>
                         <li class="left-item">
                             <img src="../../assets/img/home_2.png" alt="">

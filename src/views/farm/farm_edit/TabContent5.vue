@@ -32,7 +32,7 @@
 <script>
 import FarmService from './business/FarmService';
 import GovernmentProjectsList from './business/GovernmentProjectsList';
-import RevenueInformation from './business/RevenueInformation';
+// import RevenueInformation from './business/RevenueInformation';
 import SpecialSubList from './business/SpecialSubList';
 import TracingProduct from './business/TracingProduct';
 export default {
@@ -40,7 +40,7 @@ export default {
     components: {
         FarmService,
         GovernmentProjectsList,
-        RevenueInformation,
+        // RevenueInformation,
         SpecialSubList,
         TracingProduct
     },

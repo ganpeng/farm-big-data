@@ -218,7 +218,7 @@
                         <ul class="legen-list">
                             <li class="legen-item">
                                 <span class="icon"></span>
-                                <span class="text1">自营电商</span>
+                                <span class="text1">吉视农业电商平台</span>
                                 <span class="text3">50%</span>
                             </li>
                             <li class="legen-item">
@@ -348,7 +348,7 @@ export default {
             chartData5: {
                 columns: ['类型', '数据'],
                 rows: [
-                    { '类型': '自营电商', '数据': 50 },
+                    { '类型': '吉视农业电商平台', '数据': 50 },
                     { '类型': '合作电商', '数据': 20 },
                     { '类型': '线下渠道', '数据': 30 }
                 ]

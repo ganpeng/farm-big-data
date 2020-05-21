@@ -276,10 +276,10 @@ const farmVisualTypeOptions = [
         value: '农民专业合作社',
         label: '农民专业合作社'
     },
-    {
-        value: '家庭农场',
-        label: '家庭农场'
-    },
+    // {
+    //     value: '家庭农场',
+    //     label: '家庭农场'
+    // },
     {
         value: '国有企业',
         label: '国有企业'

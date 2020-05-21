@@ -5,7 +5,7 @@ html, body {
     color: #A8ABB3;
     font-size: 14px;
     font-family: MicrosoftYaHei;
-    font-weight: lighter;
+    // font-weight: lighter;
 }
 
 // 文字左对齐
@@ -380,6 +380,7 @@ html, body {
     z-index: 100;
     .el-button {
         margin-right: 20px;
+        font-weight: 400;
     }
 }
 
@@ -898,21 +899,24 @@ html, body {
                 }
                 .search-field-item-label {
                     font-size: 12px;
-                    font-weight: lighter;
                     color: #6F7480;
                     margin-right: 10px;
                 }
                 .el-date-editor, .el-input__inner {
-                    color: #A3D0FD;
+                    // color: #A3D0FD;
+                    color: #9FA8B8;
+                    font-weight: 400;
                     height: 34px;
                 }
                 .el-select {
                     .el-input {
                         height: 34px;
+                        color: #9FA8B8;
                         .el-input__icon {
                             height: 34px;
                             line-height: 34px;
-                            color: #6F7480;
+                            // color: #6F7480;
+                            color: #9FA8B8;
                         }
                         .el-input__inner {
                             height: 34px;
@@ -920,9 +924,6 @@ html, body {
                     }
                 }
             }
-        }
-        .row-right {
-
         }
         .el-button {
             min-width: 80px;
@@ -1592,6 +1593,7 @@ html, body {
             .el-dialog__title {
                 font-size: 20px;
                 color: #A8ABB3;
+                font-weight: normal;
             }
             .el-dialog__headerbtn {
                 top: 50%;
@@ -1836,6 +1838,7 @@ html, body {
     text-align: left;
     margin-top: 20px;
     overflow: hidden;
+    font-weight: normal;
     .el-input,
     .el-select,
     .el-date-editor,
@@ -1850,7 +1853,6 @@ html, body {
             height: 34px;
         }
     }
-
     .el-textarea {
         width: 300px;
         .el-textarea__inner {
@@ -2140,6 +2142,7 @@ html, body {
 {
     width: 4px;
     height: 4px;
+    // display: none;
 }
 /*滑动轨道*/
 ::-webkit-scrollbar-track
@@ -2204,6 +2207,7 @@ html, body {
 .my-bord-status {
     display: flex;
     width: 100%;
+    font-weight: lighter;
     .status-item + .status-item {
         margin-left: 10px;
     }

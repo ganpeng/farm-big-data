@@ -17,13 +17,6 @@
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
-                家庭农场
-            </div>
-            <div class="count">4</div>
-        </div>
-        <div class="status-item terminal-status-item total">
-            <div class="line"></div>
-            <div class="item_con">
                 国有企业
             </div>
             <div class="count">1</div>
@@ -33,7 +26,7 @@
             <div class="item_con">
                 个体企业
             </div>
-            <div class="count">15</div>
+            <div class="count">19</div>
         </div>
     </div>
 </template>

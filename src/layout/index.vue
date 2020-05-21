@@ -24,7 +24,9 @@
                     <p>管理系统</p>
                 </div>
             </div>
-            <div @click="gotoBigScreen" class="in-big-screen"><p>实时统计</p></div>
+            <div @click="gotoBigScreen" class="in-big-screen">
+                <!-- <p>实时统计</p> -->
+            </div>
             <div class="aside-list-wrapper">
                 <el-menu
                     router
@@ -54,6 +56,23 @@
                     </el-submenu>
                     <el-submenu index="3">
                         <template slot="title">
+                            <svg-icon class="default_svg" icon-class="aside4"/>
+                            <svg-icon class="active_svg" icon-class="aside4_active"/>
+                            <span class="title">物环设备</span>
+                        </template>
+                        <el-menu-item-group>
+                            <el-menu-item index="/pee/list">
+                                <i class="point"></i>
+                                <span class="sub-title">设备管理</span>
+                            </el-menu-item>
+                            <el-menu-item>
+                                <i class="point"></i>
+                                <span class="sub-title">设备分组(待开发)</span>
+                            </el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+                    <el-submenu index="4">
+                        <template slot="title">
                             <svg-icon class="default_svg" icon-class="aside3"/>
                             <svg-icon class="active_svg" icon-class="aside3_active"/>
                             <span class="title">销售管理</span>
@@ -66,23 +85,6 @@
                             <el-menu-item index="/sale/channel">
                                 <i class="point"></i>
                                 <span class="sub-title">渠道管理</span>
-                            </el-menu-item>
-                        </el-menu-item-group>
-                    </el-submenu>
-                    <el-submenu index="4">
-                        <template slot="title">
-                            <svg-icon class="default_svg" icon-class="aside4"/>
-                            <svg-icon class="active_svg" icon-class="aside4_active"/>
-                            <span class="title">物环设备</span>
-                        </template>
-                        <el-menu-item-group>
-                            <el-menu-item index="/pee/list">
-                                <i class="point"></i>
-                                <span class="sub-title">设备管理</span>
-                            </el-menu-item>
-                            <el-menu-item>
-                                <i class="point"></i>
-                                <span class="sub-title">设备分组</span>
                             </el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
@@ -112,11 +114,11 @@
                         <el-menu-item-group>
                             <el-menu-item index="/base-station">
                                 <i class="point"></i>
-                                <span class="sub-title">基站管理</span>
+                                <span class="sub-title">基站管理(待开发)</span>
                             </el-menu-item>
                             <el-menu-item index="/internet/list">
                                 <i class="point"></i>
-                                <span class="sub-title">网络管理</span>
+                                <span class="sub-title">网络管理(待开发)</span>
                             </el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
@@ -129,11 +131,11 @@
                         <el-menu-item-group>
                             <el-menu-item index="/logistics">
                                 <i class="point"></i>
-                                <span class="sub-title">仓储管理</span>
+                                <span class="sub-title">仓储管理(待开发)</span>
                             </el-menu-item>
                             <el-menu-item index="/cars/list">
                                 <i class="point"></i>
-                                <span class="sub-title">车辆管理</span>
+                                <span class="sub-title">车辆管理(待开发)</span>
                             </el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
@@ -192,7 +194,7 @@ export default {
             let {id} = this.$route.query;
             switch (id) {
                 case 1:
-                    return '>自营电商数据统计';
+                    return '>吉视农业电商平台数据统计';
                 case 2:
                     return '>淘宝旗舰店数据统计';
                 case 3:
@@ -276,6 +278,7 @@ export default {
             height: 28px;
             line-height: 28px;
             font-size: 28px;
+            font-weight: lighter;
             color: #fff;
             border-left: 6px solid $mainColor;
             padding-left: 15px;
@@ -384,7 +387,8 @@ export default {
         left: 0px;
         bottom: 0px;
         width: 280px;
-        background-image: linear-gradient(90deg, #152036 0%, #252F46 100%);
+        // background-image: linear-gradient(90deg, #152036 0%, #252F46 100%);
+        background: #272F44;
         .logo {
             display: flex;
             align-items: center;
@@ -413,7 +417,7 @@ export default {
         .in-big-screen {
             position: relative;
             width: 242px;
-            height: 80px;
+            height: 82px;
             margin: 18px auto;
             background-image: url('../assets/img/inbigscreen.png');
             background-repeat: no-repeat;
@@ -449,6 +453,7 @@ export default {
     overflow-y: scroll;
 }
 .aside-list {
+    font-weight: lighter;
     > .el-menu-item {
         margin: 10px 0;
     }
@@ -461,10 +466,10 @@ export default {
         height: 50px;
         line-height: 50px;
         font-size: 16px;
-        color: #667799;
+        color: #9FA8B8;
         padding-left: 24px !important;
         text-align: left;
-        border-left: 2px solid transparent;
+        // border-left: 2px solid transparent;
         background: transparent;
         .svg-icon {
             // fill: $navText;
@@ -483,7 +488,7 @@ export default {
         }
         &.is-active {
             // background: #0A1730 !important;
-            border-left-color: $mainColor;
+            // border-left-color: $mainColor;
             .title {
                 color: #fff;
             }
@@ -509,24 +514,30 @@ export default {
         .el-submenu {
             &.is-opened {
                 .el-submenu__title {
-                    background: #0A1730;
+                    // background: #0A1730;
+                    background: #1D2333;
                 }
                 .el-menu-item {
-                    background: #111D36;
+                    // background: #111D36;
+                    background: #21283B;
                 }
             }
             .el-submenu__title {
                 display: flex;
                 align-items: center;
+                justify-content: flex-start;
                 padding-left: 24px!important;
+                height: 32px!important;
                 text-align: left;
-                span {
+                span.title {
+                    width: 140px;
                     font-size: 16px;
-                    color: #667799;
+                    color: #9FA8B8;
                 }
                 .el-submenu__icon-arrow {
+                    position: static!important;
+                    margin-top: 0;
                     display: block;
-                    margin-left: 10px;
                 }
                 &:hover {
                     background: #0A1730 !important;

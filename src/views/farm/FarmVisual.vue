@@ -48,6 +48,26 @@
         <div class="tabel-field">
             <ul class="farm-visual-list">
                 <li @click="gotoFarmVisualDetail" class="farm-visual-item">
+                    <ul class="icon-list">
+                        <li class="icon-item">
+                            <svg-icon icon-class="list_icon1"/>
+                        </li>
+                        <li class="icon-item">
+                            <svg-icon icon-class="list_icon2"/>
+                        </li>
+                        <li class="icon-item">
+                            <svg-icon icon-class="list_icon3"/>
+                        </li>
+                        <li class="icon-item">
+                            <svg-icon icon-class="list_icon4"/>
+                        </li>
+                        <li class="icon-item">
+                            <svg-icon icon-class="list_icon5"/>
+                        </li>
+                        <li class="icon-item">
+                            <svg-icon icon-class="list_icon6"/>
+                        </li>
+                    </ul>
                     <img src="../../assets/img/fv1.png" alt="">
                     <p class="name">聚成现代农业发展专业合作社</p>
                 </li>
@@ -194,26 +214,42 @@ export default {
         display: flex;
         flex-wrap: wrap;
         margin-top: 20px;
+        .icon-list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height:30px;
+            padding: 4px 10px;
+            background:rgba(32,39,56,1);
+            border-radius:2px;
+            .icon-item {
+                .svg-icon {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+        }
         .farm-visual-item {
             width: 24.5508%;
-            height: 292px;
+            height: 250px;
             margin-left: 0.598%;
             margin-bottom: 0.598%;
-            padding: 20px;
+            padding: 12px;
             background: rgba(42,48,64,1);
-            border-radius: 12px;
+            border-radius: 4px;
             cursor: pointer;
             img {
                 width: 100%;
-                height: 192px;
-                margin-top: 20px;
+                height: 144px;
+                margin-top: 12px;
             }
             p {
                 text-align: center;
-                margin-left: 20px;
-                margin-top: 20px;
-                font-size: 18px;
-                font-weight: lighter;
+                // margin-left: 20px;
+                margin-top: 12px;
+                font-size: 16px;
+                line-height: 16px;
+                font-weight: 400;
                 color: rgba(154,196,239, 1);
             }
         }

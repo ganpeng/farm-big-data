@@ -1,7 +1,5 @@
 <template>
     <div class="tracing-edit-container my-content-container">
-        <h2 class="content-title">溯源农品编辑</h2>
-        <div class="seperator-line"></div>
         <tracing-form></tracing-form>
         <div class="fixed-btn-container">
             <el-button class="btn-style-two" type="primary" @click="tracingEditHandler">保存</el-button>

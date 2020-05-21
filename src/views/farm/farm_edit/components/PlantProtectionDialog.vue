@@ -499,6 +499,7 @@
                                 </el-col>
                             </el-row>
                         </div>
+                        <!--
                         <div v-if="activeIndex === 8" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">自营电商</h3>
@@ -540,7 +541,8 @@
                                 </el-col>
                             </el-row>
                         </div>
-                        <div v-if="activeIndex === 9" class="step-content-item">
+                        -->
+                        <div v-if="activeIndex === 8" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">受灾信息1</h3>
                                 <el-col :span="10">
@@ -577,7 +579,7 @@
                                 </el-col>
                             </el-row>
                         </div>
-                        <div v-if="activeIndex === 10" class="step-content-item">
+                        <div v-if="activeIndex === 9" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">农机具使用1</h3>
                                 <el-col :span="10">
@@ -637,7 +639,7 @@
                                 </el-col>
                             </el-row>
                         </div>
-                        <div v-if="activeIndex === 11" class="step-content-item">
+                        <div v-if="activeIndex === 10" class="step-content-item">
                             <el-row>
                                 <h3 class="titl">证书1</h3>
                                 <el-col :span="10">
@@ -955,10 +957,10 @@ export default {
                     title: '检测信息',
                     active: false
                 },
-                {
-                    title: '销售信息',
-                    active: false
-                },
+                // {
+                //     title: '销售信息',
+                //     active: false
+                // },
                 {
                     title: '受灾信息',
                     active: false
@@ -1022,6 +1024,7 @@ export default {
                 flex-direction: column;
                 align-items: center;
                 flex: 1;
+                font-weight: 400;
                 cursor: pointer;
                 .count {
                     display: flex;

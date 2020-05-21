@@ -9,7 +9,7 @@
             class="my-form">
             <el-row>
                 <h4 class="content-sub-title">基本信息</h4>
-                <el-col span="10">
+                <el-col :span="10">
                     <el-form-item label="商品名称" prop="name">
                         <el-input
                             maxlength="20"
@@ -39,7 +39,7 @@
                         <i class="my-plus el-icon-plus"></i>
                     </el-form-item>
                 </el-col>
-                <el-col span="10">
+                <el-col :span="10">
                     <el-form-item label="上架品类" prop="type">
                         <el-select
                             :value="tracing.type"

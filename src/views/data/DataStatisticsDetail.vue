@@ -135,7 +135,7 @@
                         :row-class-name="tableRowClassName"
                         class="my-table-style">
                         <el-table-column align="center" prop="date" label="年份"></el-table-column>
-                        <el-table-column align="center" prop="area1" label="自营电商销售额"></el-table-column>
+                        <el-table-column align="center" prop="area1" label="吉视农业电商平台销售额"></el-table-column>
                         <el-table-column align="center" prop="area2" label="合作电商销售额"></el-table-column>
                         <el-table-column align="center" prop="area3" label="线下渠道销售额"></el-table-column>
                         <el-table-column align="center" prop="area4" label="总计"></el-table-column>
@@ -502,7 +502,6 @@ export default {
                 .title {
                     display: inline-block;
                     font-size: 16px;
-                    font-weight: lighter;
                     color:#667799 ;
                     height: 32px;
                     line-height: 32px;

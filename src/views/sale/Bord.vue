@@ -10,7 +10,7 @@
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
-                自营电商
+                吉视农业电商平台
             </div>
             <div class="count">1</div>
         </div>

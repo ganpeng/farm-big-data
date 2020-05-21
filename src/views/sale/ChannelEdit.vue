@@ -1,7 +1,5 @@
 <template>
     <div class="channel-edit-container my-content-container">
-        <h2 class="content-title">渠道编辑</h2>
-        <div class="seperator-line"></div>
         <channel-form ref="channelFormComponent"></channel-form>
         <div class="fixed-btn-container">
             <el-button class="btn-style-two" type="primary" @click="channelEditHandler">保存</el-button>

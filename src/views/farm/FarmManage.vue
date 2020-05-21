@@ -108,7 +108,6 @@ export default {
                 .title {
                     display: inline-block;
                     font-size: 16px;
-                    font-weight: lighter;
                     color:#667799 ;
                     height: 32px;
                     line-height: 32px;
