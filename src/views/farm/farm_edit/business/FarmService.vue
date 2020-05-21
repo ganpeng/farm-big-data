@@ -129,18 +129,18 @@
                                     type="date">
                                 </el-date-picker>
                             </el-form-item>
-                            <el-form-item label="当年营收 元">
+                            <el-form-item label="服务总营收 元">
                                 <el-input v-model="farmService.two"></el-input>
                             </el-form-item>
-                            <el-form-item label="当年缴税 元">
+                            <el-form-item label="服务对象个数">
                                 <el-input v-model="farmService.four"></el-input>
                             </el-form-item>
                         </el-col>
                         <el-col :span="12">
-                            <el-form-item label="当年盈余 元">
+                            <el-form-item label="服务小农户营收 元">
                                 <el-input v-model="farmService.three"></el-input>
                             </el-form-item>
-                            <el-form-item label="当年分红 元">
+                            <el-form-item label="服务小农户个数">
                                 <el-input v-model="farmService.five"></el-input>
                             </el-form-item>
                         </el-col>
@@ -177,10 +177,10 @@ export default {
                 data: [{
                     id: 1,
                     one: '2020',
-                    two: '6,500,000',
-                    three: '3,500,000',
-                    four: '20,000',
-                    five: '300,000'
+                    two: '500,000',
+                    three: '200,000',
+                    four: '50',
+                    five: '10'
                 }],
                 pagination: {
                     total: 1,
