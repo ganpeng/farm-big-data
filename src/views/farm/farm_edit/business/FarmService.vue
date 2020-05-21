@@ -68,22 +68,22 @@
                         {{ scope.row.one}}
                     </template>
                 </el-table-column>
-                <el-table-column label="营收">
+                <el-table-column label="服务总营收">
                     <template slot-scope="scope">
                         {{scope.row.two}}
                     </template>
                 </el-table-column>
-                <el-table-column label="盈余">
+                <el-table-column label="服务小农户营收">
                     <template slot-scope="scope">
                         {{scope.row.three}}
                     </template>
                 </el-table-column>
-                <el-table-column label="缴税">
+                <el-table-column label="服务对象个数">
                     <template slot-scope="scope">
                         {{scope.row.four}}
                     </template>
                 </el-table-column>
-                <el-table-column label="分红">
+                <el-table-column label="服务小农户个数">
                     <template slot-scope="scope">
                         {{scope.row.five}}
                     </template>

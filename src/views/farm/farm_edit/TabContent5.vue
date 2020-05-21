@@ -15,13 +15,15 @@
             <div v-if="activeIndex === 1" class="content-two">
                 <special-sub-list></special-sub-list>
             </div>
+            <!--
             <div v-if="activeIndex === 2" class="content-three">
                 <revenue-information></revenue-information>
             </div>
-            <div v-if="activeIndex === 3" class="content-four">
+            -->
+            <div v-if="activeIndex === 2" class="content-four">
                 <tracing-product></tracing-product>
             </div>
-            <div v-if="activeIndex === 4" class="content-five">
+            <div v-if="activeIndex === 3" class="content-five">
                 <farm-service></farm-service>
             </div>
         </div>
@@ -53,10 +55,10 @@ export default {
                     title: '专项补贴',
                     active: false
                 },
-                {
-                    title: '营收信息',
-                    active: false
-                },
+                // {
+                //     title: '营收信息',
+                //     active: false
+                // },
                 {
                     title: '溯源农品',
                     active: false
