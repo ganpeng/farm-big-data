@@ -139,6 +139,15 @@
                 </el-table-column>
             </el-table>
         </div>
+        <el-pagination
+            @size-change="() => {}"
+            @current-change="() => {}"
+            :current-page="list.pagination.pageNum"
+            :page-sizes="[10, 20, 50,100, 200, 500]"
+            :page-size="list.pagination.pageSize"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="list.pagination.total">
+        </el-pagination>
         <farm-machine-dialog ref="farmMachineDialog"></farm-machine-dialog>
     </div>
 </template>
@@ -159,7 +168,12 @@ export default {
                 source: ''
             },
             list: {
-                data: farmMachineList
+                data: farmMachineList,
+                pagination: {
+                    total: 4,
+                    pageSize: 10,
+                    pageNum: 1
+                }
             }
         }
     },

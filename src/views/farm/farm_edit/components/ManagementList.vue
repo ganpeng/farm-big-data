@@ -121,6 +121,15 @@
                 </el-table-column>
             </el-table>
         </div>
+        <el-pagination
+            @size-change="() => {}"
+            @current-change="() => {}"
+            :current-page="list.pagination.pageNum"
+            :page-sizes="[10, 20, 50,100, 200, 500]"
+            :page-size="list.pagination.pageSize"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="list.pagination.total">
+        </el-pagination>
         <management-dialog ref="managementDialog"></management-dialog>
     </div>
 </template>
@@ -138,7 +147,12 @@ export default {
                 type: ''
             },
             list: {
-                data: managementList
+                data: managementList,
+                pagination: {
+                    total: 4,
+                    pageSize: 10,
+                    pageNum: 1
+                }
             }
         }
     },

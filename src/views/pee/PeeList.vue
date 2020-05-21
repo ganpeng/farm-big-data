@@ -166,11 +166,11 @@
         <el-pagination
             @size-change="handlePaginationChange($event, 'pageSize')"
             @current-change="handlePaginationChange($event, 'pageNum')"
-            :current-page="list.pagination.pageNum"
-            :page-sizes="[10, 20, 50,100, 200, 500]"
-            :page-size="list.pagination.pageSize"
+            :current-page="pagination.pageNum"
+            :page-sizes="[10, 22, 50,100, 200, 500]"
+            :page-size="pagination.pageSize"
             layout="total, sizes, prev, pager, next, jumper"
-            :total="list.pagination.total">
+            :total="pagination.total">
         </el-pagination>
     </div>
 </template>
@@ -185,7 +185,12 @@ export default {
         return {
             sensorTypeOptions: this.$util.sensorTypeOptions,
             peeStatusOptions: this.$util.peeStatusOptions,
-            peeFirmOptions: this.$util.peeFirmOptions
+            peeFirmOptions: this.$util.peeFirmOptions,
+            pagination: {
+                total: 22,
+                pageSize: 22,
+                pageNum: 1
+            }
         }
     },
     computed: {

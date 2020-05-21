@@ -162,11 +162,11 @@
         <el-pagination
             @size-change="handlePaginationChange($event, 'pageSize')"
             @current-change="handlePaginationChange($event, 'pageNum')"
-            :current-page="list.pagination.pageNum"
+            :current-page="pagination.pageNum"
             :page-sizes="[10, 20, 50,100, 200, 500]"
-            :page-size="list.pagination.pageSize"
+            :page-size="pagination.pageSize"
             layout="total, sizes, prev, pager, next, jumper"
-            :total="list.pagination.total">
+            :total="pagination.total">
         </el-pagination>
         <processing-dialog ref="processingDialog"></processing-dialog>
     </div>
@@ -183,7 +183,12 @@ export default {
             levelOptions: this.$util.levelOptions,
             dataAlertTypeOptions: this.$util.dataAlertTypeOptions,
             dataAlertSourceOptions: this.$util.dataAlertSourceOptions,
-            processingStatusOptions: this.$util.processingStatusOptions
+            processingStatusOptions: this.$util.processingStatusOptions,
+            pagination: {
+                total: 10,
+                pageSize: 10,
+                pageNum: 1
+            }
         }
     },
     computed: {

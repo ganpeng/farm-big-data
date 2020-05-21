@@ -123,11 +123,11 @@
         <el-pagination
             @size-change="handlePaginationChange($event, 'pageSize')"
             @current-change="handlePaginationChange($event, 'pageNum')"
-            :current-page="list.pagination.pageNum"
+            :current-page="pagination.pageNum"
             :page-sizes="[10, 20, 50,100, 200, 500]"
-            :page-size="list.pagination.pageSize"
+            :page-size="pagination.pageSize"
             layout="total, sizes, prev, pager, next, jumper"
-            :total="list.pagination.total">
+            :total="pagination.total">
         </el-pagination>
     </div>
 </template>
@@ -139,7 +139,12 @@ export default {
     components: {Bord},
     data() {
         return {
-            channelTypeOptions: this.$util.channelTypeOptions
+            channelTypeOptions: this.$util.channelTypeOptions,
+            pagination: {
+                total: 3,
+                pageSize: 10,
+                pageNum: 1
+            }
         }
     },
     computed: {

@@ -137,6 +137,15 @@
                 </el-table-column>
             </el-table>
         </div>
+        <el-pagination
+            @size-change="() => {}"
+            @current-change="() => {}"
+            :current-page="list.pagination.pageNum"
+            :page-sizes="[10, 20, 50,100, 200, 500]"
+            :page-size="list.pagination.pageSize"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="list.pagination.total">
+        </el-pagination>
         <tracing-product-dialog ref="tracingProductDialog"></tracing-product-dialog>
     </div>
 </template>
@@ -156,7 +165,12 @@ export default {
                 type: '' // 类型
             },
             list: {
-                data: tracingList.filter((item, index) => index < 2)
+                data: tracingList.filter((item, index) => index < 2),
+                pagination: {
+                    total: 2,
+                    pageSize: 10,
+                    pageNum: 1
+                }
             }
         }
     },

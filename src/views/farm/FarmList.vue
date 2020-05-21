@@ -147,11 +147,11 @@
         <el-pagination
             @size-change="handlePaginationChange($event, 'pageSize')"
             @current-change="handlePaginationChange($event, 'pageNum')"
-            :current-page="list.pagination.pageNum"
+            :current-page="pagination.pageNum"
             :page-sizes="[10, 20, 50,100, 200, 500]"
-            :page-size="list.pagination.pageSize"
+            :page-size="pagination.pageSize"
             layout="total, sizes, prev, pager, next, jumper"
-            :total="list.pagination.total">
+            :total="pagination.total">
         </el-pagination>
         <farm-create-dialog ref="farmCreateDialog"></farm-create-dialog>
     </div>
@@ -165,7 +165,12 @@ export default {
     components: {Bord, FarmCreateDialog},
     data() {
         return {
-            farmVisualTypeOptions: this.$util.farmVisualTypeOptions
+            farmVisualTypeOptions: this.$util.farmVisualTypeOptions,
+            pagination: {
+                total: 24,
+                pageSize: 50,
+                pageNum: 1
+            }
         }
     },
     computed: {

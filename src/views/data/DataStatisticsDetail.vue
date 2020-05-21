@@ -133,8 +133,7 @@
                         header-row-class-name="common-table-header"
                         size="small"
                         :row-class-name="tableRowClassName"
-                        class="my-table-style"
-                        style="width: 100%">
+                        class="my-table-style">
                         <el-table-column align="center" prop="date" label="年份"></el-table-column>
                         <el-table-column align="center" prop="area1" label="自营电商销售额"></el-table-column>
                         <el-table-column align="center" prop="area2" label="合作电商销售额"></el-table-column>
@@ -451,8 +450,8 @@ export default {
         };
     },
     created() {
-        // let {index} = this.$route.query;
-        // this.activeIndex = parseInt(index);
+        let {index} = this.$route.query;
+        this.changeTab(index);
     },
     computed: {
         activeIndex() {

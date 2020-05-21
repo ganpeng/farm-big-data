@@ -126,6 +126,15 @@
                 </el-table-column>
             </el-table>
         </div>
+        <el-pagination
+            @size-change="() => {}"
+            @current-change="() => {}"
+            :current-page="list.pagination.pageNum"
+            :page-sizes="[10, 20, 50,100, 200, 500]"
+            :page-size="list.pagination.pageSize"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="list.pagination.total">
+        </el-pagination>
         <grower-dialog ref="growerDialog"></grower-dialog>
     </div>
 </template>
@@ -143,7 +152,12 @@ export default {
                 type: ''
             },
             list: {
-                data: growerList
+                data: growerList,
+                pagination: {
+                    total: 10,
+                    pageSize: 10,
+                    pageNum: 1
+                }
             }
         }
     },

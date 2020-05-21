@@ -97,6 +97,15 @@
                 </el-table-column>
             </el-table>
         </div>
+        <el-pagination
+            @size-change="() => {}"
+            @current-change="() => {}"
+            :current-page="list.pagination.pageNum"
+            :page-sizes="[10, 20, 50,100, 200, 500]"
+            :page-size="list.pagination.pageSize"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="list.pagination.total">
+        </el-pagination>
         <el-dialog
             title="农业社会化服务"
             class="my-dialog"
@@ -172,7 +181,12 @@ export default {
                     three: '3,500,000',
                     four: '20,000',
                     five: '300,000'
-                }]
+                }],
+                pagination: {
+                    total: 1,
+                    pageSize: 10,
+                    pageNum: 1
+                }
             },
             options: [
                 {
