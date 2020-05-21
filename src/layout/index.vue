@@ -527,7 +527,7 @@ export default {
                 align-items: center;
                 justify-content: flex-start;
                 padding-left: 24px!important;
-                height: 32px!important;
+                // height: 32px!important;
                 text-align: left;
                 span.title {
                     width: 140px;
