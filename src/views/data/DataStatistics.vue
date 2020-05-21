@@ -47,7 +47,7 @@
                             :legend-visible="false"
                             :settings="chartSettings"
                             :extend="peiExtend"
-                            :data="chartData2">
+                            :data="chartData1">
                         </ve-pie>
                     </div>
                 </div>
@@ -86,8 +86,8 @@
                             :tooltip-visible="false"
                             :legend-visible="false"
                             :settings="chartSettings"
-                            :extend="pei2Extend"
-                            :data="chartData3">
+                            :extend="peiExtend"
+                            :data="chartData2">
                         </ve-pie>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
                             :legend-visible="false"
                             :settings="chartSettings"
                             :extend="peiExtend"
-                            :data="chartData2">
+                            :data="chartData3">
                         </ve-pie>
                     </div>
                 </div>
@@ -193,8 +193,8 @@
                             :tooltip-visible="false"
                             :legend-visible="false"
                             :settings="chartSettings"
-                            :extend="pei2Extend"
-                            :data="chartData3">
+                            :extend="peiExtend"
+                            :data="chartData4">
                         </ve-pie>
                     </div>
                 </div>
@@ -241,7 +241,7 @@
                             :legend-visible="false"
                             :settings="chartSettings"
                             :extend="peiExtend"
-                            :data="chartData2">
+                            :data="chartData5">
                         </ve-pie>
                     </div>
                 </div>
@@ -280,8 +280,8 @@
                             :tooltip-visible="false"
                             :legend-visible="false"
                             :settings="chartSettings"
-                            :extend="pei2Extend"
-                            :data="chartData3">
+                            :extend="peiExtend"
+                            :data="chartData6">
                         </ve-pie>
                     </div>
                 </div>
@@ -304,34 +304,60 @@ export default {
             }
         };
         this.peiExtend = {
-            color: ["#74B8C2", "#008FC4", "#0062C4"],
-            'series.0.center': ['50%', '50%'],
-            'series.0.radius': ['0', '80%']
-        };
-
-        this.pei2Extend = {
-            color: ["#38A7E4", "#00C1EB", "#306BA7", "#00A2DE", "#50BEE7"],
+            color: ["#008FC4", "#0062C4", "#74B8C2", "#00A2DE", "#50BEE7"],
             'series.0.center': ['50%', '50%'],
             'series.0.radius': ['0', '80%']
         };
 
         return {
-            chartData2: {
-                columns: ['日期', '访问用户'],
+            chartData1: {
+                columns: ['类型', '数据'],
                 rows: [
-                    { '日期': '1/1', '访问用户': 1393 },
-                    { '日期': '1/2', '访问用户': 3530 },
-                    { '日期': '1/3', '访问用户': 2923 },
+                    { '类型': '水田', '数据': 50 },
+                    { '类型': '旱田', '数据': 10 },
+                    { '类型': '水浇地', '数据': 35 },
+                    { '类型': '宅基地', '数据': 5 }
+                ]
+            },
+            chartData2: {
+                columns: ['类型', '数据'],
+                rows: [
+                    { '类型': '经营人员', '数据': 75 },
+                    { '类型': '种植人员', '数据': 25 }
                 ]
             },
             chartData3: {
-                columns: ['类型', '值'],
+                columns: ['类型', '数据'],
                 rows: [
-                    { '类型': '水质', '值': 100 },
-                    { '类型': '土壤', '值': 100 },
-                    { '类型': '气象', '值': 50 },
-                    { '类型': '摄像头', '值': 50 },
-                    { '类型': '风速', '值': 200 },
+                    { '类型': '水稻', '数据': 30 },
+                    { '类型': '杂粮', '数据': 40 },
+                    { '类型': '果蔬', '数据': 10 },
+                    { '类型': '菌类', '数据': 10 },
+                    { '类型': '其他', '数据': 10 }
+                ]
+            },
+            chartData4: {
+                columns: ['类型', '数据'],
+                rows: [
+                    { '类型': '有机肥', '数据': 40 },
+                    { '类型': '无机肥', '数据': 20 },
+                    { '类型': '农药', '数据': 20 },
+                    { '类型': '其他', '数据': 20 }
+                ]
+            },
+            chartData5: {
+                columns: ['类型', '数据'],
+                rows: [
+                    { '类型': '自营电商', '数据': 50 },
+                    { '类型': '合作电商', '数据': 20 },
+                    { '类型': '线下渠道', '数据': 30 }
+                ]
+            },
+            chartData6: {
+                columns: ['类型', '数据'],
+                rows: [
+                    { '类型': '服务中小农户', '数据': 60 },
+                    { '类型': '服务其他农户', '数据': 40 }
                 ]
             }
         };
