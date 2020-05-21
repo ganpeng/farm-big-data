@@ -477,15 +477,23 @@ export default {
     },
     methods: {
         generator24Hourdata() {
-            let rows = this.get24HoursByToday().map((item) => {
+            let rows = this.get24HoursByToday().map((item, index) => {
+                let dataObj = {
+                        '气象灾害预警': [5, 4, 3, 5, 6, 7, 2, 3, 1, 2, 4, 5],
+                        '虫灾预警': [2, 1, 1, 4, 6, 2, 1, 2, 6, 4, 4, 2],
+                        '农产品价格波动': [4, 2, 5, 6, 7, 8, 9, 5, 2, 4, 5, 5],
+                        '农产品产量异动': [2, 4, 5, 2, 1, 5, 6, 3, 6, 7, 5, 6],
+                        '种植适合度': [1, 2, 4, 4, 5, 3, 2, 1, 4, 6, 7, 8],
+                        '设备异常': [3, 8, 5, 6, 3, 2, 1, 4, 5, 6, 6, 7]
+                    };
                 return {
                     '日期': item,
-                    '气象灾害预警': this.randomFrom(1, 5),
-                    '虫灾预警': this.randomFrom(1, 5),
-                    '农产品价格波动': this.randomFrom(1, 5),
-                    '农产品产量异动': this.randomFrom(1, 5),
-                    '种植适合度': this.randomFrom(1, 5),
-                    '设备异常': this.randomFrom(1, 5)
+                    '气象灾害预警': _.get(dataObj, `气象灾害预警.${index}`),
+                    '虫灾预警': _.get(dataObj, `虫灾预警.${index}`),
+                    '农产品价格波动': _.get(dataObj, `农产品价格波动.${index}`),
+                    '农产品产量异动': _.get(dataObj, `农产品产量异动.${index}`),
+                    '种植适合度': _.get(dataObj, `种植适合度.${index}`),
+                    '设备异常': _.get(dataObj, `设备异常.${index}`)
                 };
             });
 
@@ -557,12 +565,12 @@ export default {
         },
         get24HoursByToday() {
             let dateList = [];
-            for (let i = 0; i < 24; i++) {
+            for (let i = 0; i < 12; i++) {
                 let date = '';
-                if (i < 9) {
-                    date += '0' + i + ':00';
+                if ((i * 2) < 9) {
+                    date += '0' + (i * 2) + ':00';
                 } else {
-                    date += '' + i + ':00';
+                    date += '' + (i * 2) + ':00';
                 }
                 dateList.push(date);
             }

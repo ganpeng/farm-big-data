@@ -277,12 +277,16 @@ const farmVisualTypeOptions = [
         label: '农名专业合作社'
     },
     {
-        value: '农村集体经济组织',
-        label: '农村集体经济组织'
-    },
-    {
         value: '家庭农场',
         label: '家庭农场'
+    },
+    {
+        value: '国有企业',
+        label: '国有企业'
+    },
+    {
+        value: '个体企业',
+        label: '个体企业'
     }
 ];
 

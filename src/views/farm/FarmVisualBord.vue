@@ -5,28 +5,35 @@
             <div class="item_con">
                 总数
             </div>
-            <div class="count">20</div>
+            <div class="count">1</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 农民专业合作社
             </div>
-            <div class="count">6</div>
+            <div class="count">1</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 家庭农场
             </div>
-            <div class="count">10</div>
+            <div class="count">0</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
-                农村集体经济组织
+                国有企业
             </div>
-            <div class="count">4</div>
+            <div class="count">0</div>
+        </div>
+        <div class="status-item terminal-status-item total">
+            <div class="line"></div>
+            <div class="item_con">
+                个体企业
+            </div>
+            <div class="count">0</div>
         </div>
     </div>
 </template>

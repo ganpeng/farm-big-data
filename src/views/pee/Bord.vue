@@ -5,42 +5,42 @@
             <div class="item_con">
                 总数
             </div>
-            <div class="count">3398</div>
+            <div class="count">22</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 环境气象
             </div>
-            <div class="count">567</div>
+            <div class="count">1</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 土壤
             </div>
-            <div class="count">567</div>
+            <div class="count">1</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 水质
             </div>
-            <div class="count">289</div>
+            <div class="count">1</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 虫情
             </div>
-            <div class="count">673</div>
+            <div class="count">1</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 摄像头
             </div>
-            <div class="count">1239</div>
+            <div class="count">18</div>
         </div>
     </div>
 </template>

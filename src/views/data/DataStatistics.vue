@@ -62,7 +62,7 @@
                     <div class="title-field">
                         <p class="title">从业人员总计</p>
                         <p class="count">
-                            2000<i>人</i>
+                            698<i>人</i>
                         </p>
                     </div>
                     <div class="legen-field">

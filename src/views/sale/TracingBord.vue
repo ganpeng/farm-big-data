@@ -5,42 +5,42 @@
             <div class="item_con">
                 总数
             </div>
-            <div class="count">150</div>
+            <div class="count">4</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 稻米
             </div>
-            <div class="count">30</div>
+            <div class="count">1</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 杂粮
             </div>
-            <div class="count">20</div>
+            <div class="count">2</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 果蔬
             </div>
-            <div class="count">24</div>
+            <div class="count">0</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 菌类
             </div>
-            <div class="count">35</div>
+            <div class="count">1</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 其他
             </div>
-            <div class="count">11</div>
+            <div class="count">0</div>
         </div>
     </div>
     <!--
