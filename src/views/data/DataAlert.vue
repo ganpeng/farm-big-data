@@ -163,7 +163,7 @@
             @size-change="handlePaginationChange($event, 'pageSize')"
             @current-change="handlePaginationChange($event, 'pageNum')"
             :current-page="pagination.pageNum"
-            :page-sizes="[10, 20, 50,100, 200, 500]"
+            :page-sizes="[10, 30, 50,100, 200, 500]"
             :page-size="pagination.pageSize"
             layout="total, sizes, prev, pager, next, jumper"
             :total="pagination.total">
@@ -186,7 +186,7 @@ export default {
             processingStatusOptions: this.$util.processingStatusOptions,
             pagination: {
                 total: 10,
-                pageSize: 10,
+                pageSize: 30,
                 pageNum: 1
             }
         }

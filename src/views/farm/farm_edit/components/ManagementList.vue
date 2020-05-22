@@ -125,7 +125,7 @@
             @size-change="() => {}"
             @current-change="() => {}"
             :current-page="list.pagination.pageNum"
-            :page-sizes="[10, 20, 50,100, 200, 500]"
+            :page-sizes="[10, 30, 50,100, 200, 500]"
             :page-size="list.pagination.pageSize"
             layout="total, sizes, prev, pager, next, jumper"
             :total="list.pagination.total">
@@ -150,7 +150,7 @@ export default {
                 data: managementList,
                 pagination: {
                     total: 4,
-                    pageSize: 10,
+                    pageSize: 30,
                     pageNum: 1
                 }
             }

@@ -76,6 +76,21 @@
                         {{scope.row.four}}
                     </template>
                 </el-table-column>
+                <el-table-column min-width="100px" label="本年度产量(吨)">
+                    <template slot-scope="scope">
+                        {{scope.row.seven}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="100px" label="本年度产值(万元)">
+                    <template slot-scope="scope">
+                        {{scope.row.eight}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="100px" label="负责人">
+                    <template slot-scope="scope">
+                        {{scope.row.nine}}
+                    </template>
+                </el-table-column>
                 <el-table-column min-width="180px" label="地块编码">
                     <template slot-scope="scope">
                         {{scope.row.five}}
@@ -157,7 +172,7 @@
         </div>
         <el-pagination
             :current-page="list.pagination.pageNum"
-            :page-sizes="[10, 20, 50,100, 200, 500]"
+            :page-sizes="[10, 30, 50,100, 200, 500]"
             :page-size="list.pagination.pageSize"
             layout="total, sizes, prev, pager, next, jumper"
             :total="list.pagination.total">
@@ -203,7 +218,10 @@ export default {
                         three: '水田',
                         four: '水稻',
                         five: '2202841122020100075',
-                        six: '10'
+                        six: '10',
+                        seven: '90',
+                        eight: '54',
+                        nine: '李雪娟、张冬梅'
                     },
                     {
                         id: 2,
@@ -212,7 +230,10 @@ export default {
                         three: '水田',
                         four: '黄米',
                         five: '2202841122020100075',
-                        six: '9'
+                        six: '9',
+                        seven: '73',
+                        eight: '41',
+                        nine: '沙宝俊、李德农'
                     },
                     {
                         id: 3,
@@ -221,7 +242,10 @@ export default {
                         three: '水浇地',
                         four: '大豆',
                         five: '2202841122020100075',
-                        six: '11'
+                        six: '11',
+                        seven: '89',
+                        eight: '53',
+                        nine: '韩江江、张辽'
                     },
                     {
                         id: 4,
@@ -230,7 +254,10 @@ export default {
                         three: '水浇地',
                         four: '冬菇',
                         five: '2202841122020100075',
-                        six: '20'
+                        six: '20',
+                        seven: '220',
+                        eight: '96',
+                        nine: '张立冬、李雪'
                     }
                 ],
                 pagination: {

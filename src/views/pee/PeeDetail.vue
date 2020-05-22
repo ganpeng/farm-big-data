@@ -104,10 +104,13 @@
         <div class="seperator-line"></div>
         <div class="range-file-container">
             <h4 class="content-sub-title">设备数据</h4>
-            <div v-if="status" class="live-video">
+            <div v-if="pee.type === 5" class="live-video">
                 <video-player :options="videoOptions"></video-player>
             </div>
-            <div v-else class="my-echarts">
+            <div v-if="pee.type === 6" class="live-video">
+                <video-player :options="video2Options"></video-player>
+            </div>
+            <div v-if="pee.type !== 5 && pee.type !== 6" class="my-echarts">
                 <monitoring-data></monitoring-data>
             </div>
         </div>
@@ -139,12 +142,26 @@ export default {
                         type: "application/x-mpegURL"
                     }
                 ]
+            },
+            video2Options: {
+                autoplay: true,
+                controls: true,
+                liveui: true,
+                width: 640,
+                height: 320,
+                sources: [
+                    {
+                        src: "http://n.video.tianchimedia.net/live/34020000001320000004.m3u8?auth_key=1887345171-0-0-29ab1884a19a51a0d647b906cc99f9ff",
+                        type: "application/x-mpegURL"
+                    }
+                ]
             }
         }
     },
     created() {
         let {id} = this.$route.params;
         this.setCurrentPeeById({id});
+        // this.setVideoSrc();
     },
     computed: {
         ...mapGetters({
@@ -170,6 +187,29 @@ export default {
         ...mapMutations({
             setCurrentPeeById: 'pee/setCurrentPeeById'
         }),
+        setVideoSrc() {
+            let {type} = this.pee;
+            if (type === 5) {
+                this.videoOptions = {
+                    sources: [
+                        {
+                            src: "http://n.video.tianchimedia.net/live/34020000001320000001.m3u8?auth_key=1887345156-0-0-7a1e07618d0822cea368feceaeecbf09",
+                            type: "application/x-mpegURL"
+                        }
+                    ]
+                };
+            }
+            if (type === 6) {
+                this.videoOptions = {
+                    sources: [
+                        {
+                            src: "http://n.video.tianchimedia.net/live/34020000001320000004.m3u8?auth_key=1887345171-0-0-29ab1884a19a51a0d647b906cc99f9ff",
+                            type: "application/x-mpegURL"
+                        }
+                    ]
+                };
+            }
+        },
         gotoPeeList() {
             this.$router.push({name: 'PeeList'});
         },

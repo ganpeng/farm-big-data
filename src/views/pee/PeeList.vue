@@ -85,7 +85,7 @@
                 <el-table-column type="selection" align="center" width="50"></el-table-column>
                 <el-table-column min-width="120px" label="设备ID">
                     <template slot-scope="scope">
-                        <span @click="gotoPeeDetail(scope.row.id)" class="ellipsis two name">
+                        <span @click="gotoPeeDetail(scope.row.id)" class="pointer ellipsis two name">
                             {{scope.row.dId}}
                         </span>
                     </template>
@@ -167,7 +167,7 @@
             @size-change="handlePaginationChange($event, 'pageSize')"
             @current-change="handlePaginationChange($event, 'pageNum')"
             :current-page="pagination.pageNum"
-            :page-sizes="[10, 22, 50,100, 200, 500]"
+            :page-sizes="[10, 30, 50,100, 200, 500]"
             :page-size="pagination.pageSize"
             layout="total, sizes, prev, pager, next, jumper"
             :total="pagination.total">
@@ -188,7 +188,7 @@ export default {
             peeFirmOptions: this.$util.peeFirmOptions,
             pagination: {
                 total: 22,
-                pageSize: 22,
+                pageSize: 30,
                 pageNum: 1
             }
         }
