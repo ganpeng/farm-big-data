@@ -63,7 +63,7 @@ const dataAlertList = [
             dateTime: '90分钟前',
             desc: '对农作物进行了防护，并通知了有关负责人'
         },
-        createdAt: '2020-05-18'
+        createdAt: '2020-05-18 09:12'
     },
     {
         id: 6,
@@ -80,7 +80,7 @@ const dataAlertList = [
             dateTime: '90分钟前',
             desc: '对农作物进行了防护，并通知了有关负责人'
         },
-        createdAt: '2020-05-16'
+        createdAt: '2020-05-16 11:32'
     },
     {
         id: 7,
@@ -97,7 +97,7 @@ const dataAlertList = [
             dateTime: '90分钟前',
             desc: '对农作物进行了防护，并通知了有关负责人'
         },
-        createdAt: '2020-05-14'
+        createdAt: '2020-05-14 14:22'
     },
     {
         id: 8,
@@ -114,7 +114,7 @@ const dataAlertList = [
             dateTime: '90分钟前',
             desc: '对农作物进行了防护，并通知了有关负责人'
         },
-        createdAt: '2020-05-12'
+        createdAt: '2020-05-12 15:19'
     },
     {
         id: 9,
@@ -131,7 +131,7 @@ const dataAlertList = [
             dateTime: '90分钟前',
             desc: '对农作物进行了防护，并通知了有关负责人'
         },
-        createdAt: '2020-05-10'
+        createdAt: '2020-05-10 12:42'
     },
     {
         id: 10,
@@ -148,7 +148,7 @@ const dataAlertList = [
             dateTime: '90分钟前',
             desc: '对农作物进行了防护，并通知了有关负责人'
         },
-        createdAt: '2020-05-09'
+        createdAt: '2020-05-09 08:52'
     }
 ];
 
