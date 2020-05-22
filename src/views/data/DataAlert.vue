@@ -115,12 +115,12 @@
                         </span>
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="发生时间段">
+                <el-table-column min-width="100px" label="发生时间段">
                     <template slot-scope="scope">
-                        {{scope.row.startAt}} - {{scope.row.endAt}}
+                        {{scope.row.startAt}}-<br>{{scope.row.endAt}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="80px" label="预警时间">
+                <el-table-column min-width="120px" label="预警时间">
                     <template slot-scope="scope">
                         {{scope.row.createdAt}}
                     </template>
