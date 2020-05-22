@@ -13,23 +13,8 @@ export default {
     name: 'ChannelStatistics',
     components: {ChannelStatisticsOne, ChannelStatisticsTwo, ChannelStatisticsThree},
     data() {
-        this.chartExtend = {
-            'xAxis.0.axisLabel': {color: 'rgb(255,255,255)'},
-            'yAxis.0.axisLabel': {color: 'rgb(255,255,255)'}
-        };
         return {
-            flag: 1,
-            chartData: {
-                columns: ['日期', '营收', '盈余'],
-                rows: [
-                    { '日期': '20200509', '营收': 4593, '盈余': 4293, },
-                    { '日期': '20200510', '营收': 3792, '盈余': 3492, },
-                    { '日期': '20200511', '营收': 1393, '盈余': 1093, },
-                    { '日期': '20200512', '营收': 3530, '盈余': 3230, },
-                    { '日期': '20200513', '营收': 2923, '盈余': 2623, },
-                    { '日期': '20200514', '营收': 1723, '盈余': 1423, },
-                ]
-            }
+            flag: 1
         };
     },
     created() {

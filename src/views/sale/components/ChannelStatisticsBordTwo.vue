@@ -3,16 +3,16 @@
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
-                今日销售额(元)
+                今日销售额(万元)
             </div>
-            <div class="count">83398</div>
+            <div class="count">14</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
             <div class="item_con">
                 今日订单量(个)
             </div>
-            <div class="count">3567</div>
+            <div class="count">110</div>
         </div>
         <div class="status-item terminal-status-item total">
             <div class="line"></div>
