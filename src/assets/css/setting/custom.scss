@@ -205,9 +205,9 @@ html, body {
             }
             span.name {
                 &:hover {
-                    color: $mainColor;
-                    text-decoration: underline;
-                    cursor: pointer;
+                    // color: $mainColor;
+                    // text-decoration: underline;
+                    // cursor: pointer;
                 }
             }
         }
@@ -388,7 +388,6 @@ html, body {
     min-width: 100px;
     padding: 0;
     font-size: 16px;
-    font-weight: lighter;
     border-radius: 20px;
     //  按钮样式一
     &.btn-style-one {
@@ -601,7 +600,7 @@ html, body {
     &::-webkit-input-placeholder {
         color: #6F7480;
         font-size: 12px;
-        font-weight: lighter;
+        // font-weight: lighter;
     }
 }
 
@@ -747,7 +746,7 @@ html, body {
     input {
         color: #fff;
         font-size: 12px;
-        font-weight: lighter;
+        // font-weight: lighter;
         border: 1px solid #3E495E;
         &[disabled] {
             &::-webkit-input-placeholder {

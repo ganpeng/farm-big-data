@@ -67,7 +67,7 @@
                             </el-menu-item>
                             <el-menu-item>
                                 <i class="point"></i>
-                                <span class="sub-title">设备分组(待开发)</span>
+                                <span class="sub-title">设备分组 (待开发)</span>
                             </el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
@@ -114,11 +114,11 @@
                         <el-menu-item-group>
                             <el-menu-item index="/base-station">
                                 <i class="point"></i>
-                                <span class="sub-title">基站管理(待开发)</span>
+                                <span class="sub-title">基站管理 (待开发)</span>
                             </el-menu-item>
                             <el-menu-item index="/internet/list">
                                 <i class="point"></i>
-                                <span class="sub-title">网络管理(待开发)</span>
+                                <span class="sub-title">网络管理 (待开发)</span>
                             </el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
@@ -131,11 +131,11 @@
                         <el-menu-item-group>
                             <el-menu-item index="/logistics">
                                 <i class="point"></i>
-                                <span class="sub-title">仓储管理(待开发)</span>
+                                <span class="sub-title">仓储管理 (待开发)</span>
                             </el-menu-item>
                             <el-menu-item index="/cars/list">
                                 <i class="point"></i>
-                                <span class="sub-title">车辆管理(待开发)</span>
+                                <span class="sub-title">车辆管理 (待开发)</span>
                             </el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
@@ -469,7 +469,7 @@ export default {
         color: #9FA8B8;
         padding-left: 24px !important;
         text-align: left;
-        // border-left: 2px solid transparent;
+        border-left: 2px solid transparent;
         background: transparent;
         .svg-icon {
             // fill: $navText;
@@ -488,7 +488,7 @@ export default {
         }
         &.is-active {
             // background: #0A1730 !important;
-            // border-left-color: $mainColor;
+            border-left-color: $mainColor;
             .title {
                 color: #fff;
             }

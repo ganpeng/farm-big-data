@@ -215,7 +215,7 @@
                         </p>
                     </div>
                     <div class="legen-field">
-                        <ul class="legen-list">
+                        <ul class="legen-list legen-list-five">
                             <li class="legen-item">
                                 <span class="icon"></span>
                                 <span class="text1">吉视农业电商平台</span>
@@ -412,6 +412,13 @@ export default {
                             &:nth-of-type(5) {
                                 .icon {
                                     background-color: #50BEE7;
+                                }
+                            }
+                        }
+                        &.legen-list-five {
+                            .legen-item {
+                                .text1 {
+                                    width: 110px;
                                 }
                             }
                         }

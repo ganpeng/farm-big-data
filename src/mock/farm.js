@@ -258,7 +258,7 @@ const farmList = [
     {
         id: 9,
         name: '榆树市青影家庭农场', // 名称
-        type: '家庭农场', // 类型
+        type: '个体企业', // 类型
         area: 38, // 地块面积
         standing: { // 常务
             name: '王秋生',
@@ -450,7 +450,7 @@ const farmList = [
     {
         id: 15,
         name: '绿河谷家庭农场有限公司', // 名称
-        type: '家庭农场', // 类型
+        type: '个体企业', // 类型
         area: 77, // 地块面积
         standing: { // 常务
             name: '张强',
@@ -546,7 +546,7 @@ const farmList = [
     {
         id: 18,
         name: '先鹏种植业家庭农场', // 名称
-        type: '家庭农场', // 类型
+        type: '个体企业', // 类型
         area: 37, // 地块面积
         standing: { // 常务
             name: '白梅花',
@@ -578,7 +578,7 @@ const farmList = [
     {
         id: 19,
         name: '德惠市岔路口镇长义家庭农场', // 名称
-        type: '家庭农场', // 类型
+        type: '个体企业', // 类型
         area: 45, // 地块面积
         standing: { // 常务
             name: '李世成',

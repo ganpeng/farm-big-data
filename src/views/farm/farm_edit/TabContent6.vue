@@ -235,7 +235,7 @@ export default {
                 ],
                 pagination: {
                     total: 4,
-                    pageSize: 10,
+                    pageSize: 30,
                     pageNum: 1
                 }
             }

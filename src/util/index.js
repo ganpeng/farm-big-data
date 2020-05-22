@@ -235,8 +235,8 @@ const staffOptions = [
 
 const channelTypeOptions = [
     {
-        value: '自营电商',
-        label: '自营电商'
+        value: '吉视农业电商平台',
+        label: '吉视农业电商平台'
     },
     {
         value: '合作渠道',

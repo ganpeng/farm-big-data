@@ -141,6 +141,7 @@
                                     </el-form-item>
                                 </el-col>
                             </el-row>
+                            <div class="seperator-line"></div>
                             <el-row>
                                 <h3 class="titl">投入品2</h3>
                                 <el-col :span="10">
@@ -216,6 +217,7 @@
                                     </el-form-item>
                                 </el-col>
                             </el-row>
+                            <div class="seperator-line"></div>
                             <el-row>
                                 <h3 class="titl">田间管理2</h3>
                                 <el-col :span="10">
@@ -290,6 +292,7 @@
                                     </el-form-item>
                                 </el-col>
                             </el-row>
+                            <div class="seperator-line"></div>
                             <el-row>
                                 <h3 class="titl">采收管理1</h3>
                                 <el-col :span="10">
@@ -356,6 +359,7 @@
                                     </el-form-item>
                                 </el-col>
                             </el-row>
+                            <div class="seperator-line"></div>
                             <el-row>
                                 <h3 class="titl">加工管理2</h3>
                                 <el-col :span="10">
@@ -421,6 +425,7 @@
                                     </el-form-item>
                                 </el-col>
                             </el-row>
+                            <div class="seperator-line"></div>
                             <el-row>
                                 <h3 class="titl">仓储管理2</h3>
                                 <el-col :span="10">
@@ -609,6 +614,7 @@
                                     </el-form-item>
                                 </el-col>
                             </el-row>
+                            <div class="seperator-line"></div>
                             <el-row>
                                 <h3 class="titl">农机具使用2</h3>
                                 <el-col :span="10">
@@ -676,6 +682,7 @@
                                     </el-form-item>
                                 </el-col>
                             </el-row>
+                            <div class="seperator-line"></div>
                             <el-row>
                                 <h3 class="titl">证书2</h3>
                                 <el-col :span="10">
@@ -1054,6 +1061,9 @@ export default {
     }
     .steps-content {
         margin-top: 40px;
+    }
+    .seperator-line {
+        margin-bottom: 20px;
     }
 }
 </style>

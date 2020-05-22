@@ -1,6 +1,6 @@
 <template>
     <div class="farm-visual-container my-content-container">
-        <farm-visual-bord></farm-visual-bord>
+        <bord></bord>
         <div class="search-field">
             <div class="field-row">
                 <div class="row-left">
@@ -118,10 +118,10 @@
 </template>
 <script>
 import {mapGetters, mapMutations} from 'vuex';
-import FarmVisualBord from './FarmVisualBord';
+import Bord from './Bord';
 export default {
     name: 'FarmVisual',
-    components: {FarmVisualBord},
+    components: {Bord},
     data() {
         return {
             farmVisualTypeOptions: this.$util.farmVisualTypeOptions
