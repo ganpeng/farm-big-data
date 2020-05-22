@@ -2274,3 +2274,32 @@ html, body {
     font-size: 14px;
     cursor: pointer;
 }
+
+.step-icon {
+    width: 64px;
+    height: 26px;
+    line-height: 26px;
+    margin-left: 30px;
+    color: #fff;
+    font-size: 18px;
+    padding-left: 12px;
+    background-image: url('../../assets/img/icon_step.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.carousel-wrapper {
+    display: flex;
+    .el-carousel.el-carousel--horizontal {
+        width: 100px;
+        height: 100px;
+        border-radius: 4px;
+    }
+    .carousel-list {
+        display: flex;
+        .carousel-item {
+            margin-right: 20px;
+        }
+    }
+}

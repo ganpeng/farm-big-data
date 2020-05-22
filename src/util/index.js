@@ -588,6 +588,19 @@ const specialSubStatusOptions = [
     }
 ];
 
+const sourceObj = {
+    qCodeUrl: [
+        // 有机大豆
+        require('../assets/img/qCodeUrl1.png'),
+        // 冬菇
+        require('../assets/img/qCodeUrl2.png'),
+        // 稻花香大米
+        require('../assets/img/qCodeUrl3.png'),
+        // 大黄米
+        require('../assets/img/qCodeUrl4.png')
+    ]
+};
+
 const lonlatOptions = _.times(180, (i) => {
     return {
         value: i + 1,
@@ -637,5 +650,7 @@ export default {
     governmentProjectStepOptions,
     governmentProjectCostTypeOptions,
     specialSubTypeOptions,
-    specialSubStatusOptions
+    specialSubStatusOptions,
+    // 图片资源
+    sourceObj
 };

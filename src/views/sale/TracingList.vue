@@ -151,6 +151,14 @@
             layout="total, sizes, prev, pager, next, jumper"
             :total="pagination.total">
         </el-pagination>
+        <div :class="['qcode-dialog', qCodeVisible && 'visible']">
+            <div class="title">查看二维码</div>
+            <img :src="qCodeUrl" alt="">
+            <div @click="qCodeVisible = false" class="delete-btn">
+                <svg-icon className="hover_icon" icon-class="remove_image_hover"></svg-icon>
+                <svg-icon className="defatul_icon" icon-class="remove_image_default"></svg-icon>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -166,7 +174,9 @@ export default {
                 total: 4,
                 pageSize: 10,
                 pageNum: 1
-            }
+            },
+            qCodeVisible: false,
+            qCodeUrl: this.$util.sourceObj.qCodeUrl[0]
         }
     },
     computed: {
@@ -229,7 +239,10 @@ export default {
             }
 
         },
-        showCode() {},
+        showCode(id) {
+            this.qCodeVisible = true;
+            this.qCodeUrl = this.$util.sourceObj.qCodeUrl[(id - 1)];
+        },
         gotoChannelStatistics(id) {
             this.$router.push({ name: 'ChannelStatistics', params: {id} });
         },
@@ -255,5 +268,56 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.tracing-list-container {}
+.tracing-list-container {
+    .qcode-dialog {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 432px;
+        height: 390px;
+        background: rgba(12,16,25,0.9);
+        box-shadow: 2px 4px 10px 0px rgba(0,0,0,0.3);
+        border-radius: 4px;
+        padding: 34px;
+        text-align: center;
+        z-index: 30;
+        &.visible {
+            display: block;
+        }
+        .title {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 14px;
+            color: rgba(168,171,179,1);
+            margin-bottom: 34px;
+            text-align: center;
+        }
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            .svg-icon {
+                width: 28px;
+                height: 28px;
+            }
+            .hover_icon {
+                display: none;
+            }
+            .defatul_icon {
+                display: block;
+            }
+            &:hover {
+                .hover_icon {
+                    display: block;
+                }
+                .defatul_icon {
+                    display: none;
+                }
+            }
+        }
+    }
+}
 </style>

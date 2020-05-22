@@ -45,8 +45,7 @@
                             ></el-input>
                         </el-form-item>
                         <el-form-item label="封面图" prop="createdAt">
-                            <img width="200" height="200" src="../../../../assets/img/封面图-绿源东北大米新米稻花香米5kg.png" alt="">
-                            <i class="my-plus el-icon-plus"></i>
+                            <bg-image :uri="image1"></bg-image>
                         </el-form-item>
                     </el-col>
                     <el-col :span="10">
@@ -88,22 +87,20 @@
                             ></el-input>
                         </el-form-item>
                         <el-form-item label="商品详情图">
-                            <div class="tf-img"></div>
-                            <i class="my-plus el-icon-plus"></i>
-                            <!-- <img width="100" height="200" src="../../../../assets/img/绿源东北大米新米稻花香米.jpg" alt=""> -->
+                            <bg-image :uri="image2"></bg-image>
                         </el-form-item>
                     </el-col>
                 </el-row>
                 <el-row>
                     <el-col :span="24">
                         <el-form-item label="封面图">
-                            <div style="width: 200px;height:200px;" class="carousel-wrapper">
+                            <div class="carousel-wrapper">
                                 <el-carousel arrow="never" indicator-position="none" :interval="5000">
                                     <el-carousel-item>
                                         <li class="carousel-item">
                                             <img
-                                                width="200"
-                                                height="200"
+                                                width="100"
+                                                height="100"
                                                 src="../../../../assets/img/详情页轮播图1-绿源东北大米新米稻花香米5kg.png"
                                                 alt="">
                                         </li>
@@ -111,8 +108,8 @@
                                     <el-carousel-item>
                                         <li class="carousel-item">
                                             <img
-                                                width="200"
-                                                height="200"
+                                                width="100"
+                                                height="100"
                                                 src="../../../../assets/img/详情页轮播图2-绿源东北大米新米稻花香米5kg.png"
                                                 alt="">
                                         </li>
@@ -120,15 +117,15 @@
                                     <el-carousel-item>
                                         <li class="carousel-item">
                                             <img
-                                                width="200"
-                                                height="200"
+                                                width="100"
+                                                height="100"
                                                 src="../../../../assets/img/详情页轮播图3-绿源东北大米新米稻花香米5kg.png"
                                                 alt="">
                                         </li>
                                     </el-carousel-item>
                                 </el-carousel>
+                                <bg-image></bg-image>
                             </div>
-                            <i class="my-plus el-icon-plus"></i>
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -136,15 +133,14 @@
                 <el-row>
                     <h4 class="content-sub-title">溯源信息</h4>
                     <el-row>
-                        <h5 class="tr-title">01</h5>
+                        <div class="step-icon">01</div>
                         <el-col :span="10">
                             <el-form-item label="步骤名称">
                                 <el-input v-model="tracingProduct.step.oneName">
                                 </el-input>
                             </el-form-item>
                             <el-form-item label="图片">
-                                <img width="300px" height="200px" src="../../../../assets/img/02的副本.jpg" alt="">
-                                <i class="my-plus el-icon-plus"></i>
+                                <bg-image myStyle="style2" :uri="image3"></bg-image>
                             </el-form-item>
                         </el-col>
                         <el-col :span="10">
@@ -153,24 +149,19 @@
                                 </el-input>
                             </el-form-item>
                             <el-form-item label="视频">
-                                <video autoplay loop controls width="300px" height="200px" src="../../../../assets/img/Cam01的副本.mp4"></video>
-                                <i class="my-plus el-icon-plus"></i>
+                                <video autoplay loop controls width="170px" height="100px" src="http://dev.n.tianchimedia.com/video/time-lapse.mp4"></video>
                             </el-form-item>
                         </el-col>
                     </el-row>
                     <el-row>
-                        <h5 class="tr-title">02</h5>
+                        <div class="step-icon">02</div>
                         <el-col :span="10">
                             <el-form-item label="步骤名称">
                                 <el-input v-model="tracingProduct.step.twoName">
                                 </el-input>
                             </el-form-item>
                             <el-form-item label="图片">
-                                <img width="300px" height="200px" src="../../../../assets/img/02的副本.jpg" alt="">
-                                <i class="my-plus el-icon-plus"></i>
-                            </el-form-item>
-                            <el-form-item label="图片">
-                                <span class="add-step-btn">添加步骤</span>
+                                <bg-image myStyle="style2" :uri="image3"></bg-image>
                             </el-form-item>
                         </el-col>
                         <el-col :span="10">
@@ -179,10 +170,14 @@
                                 </el-input>
                             </el-form-item>
                             <el-form-item label="视频">
-                                <video loop autoplay controls width="300px" height="200px" src="../../../../assets/img/Cam01的副本.mp4"></video>
-                                <i class="my-plus el-icon-plus"></i>
+                                <video autoplay loop controls width="170px" height="100px" src="http://dev.n.tianchimedia.com/video/time-lapse.mp4"></video>
                             </el-form-item>
                         </el-col>
+                    </el-row>
+                    <el-row>
+                        <el-button class="btn-style-two">
+                            添加步骤
+                        </el-button>
                     </el-row>
                 </el-row>
             </el-form>
@@ -195,8 +190,10 @@
 </template>
 <script>
 import _ from 'lodash';
+import BgImage from '@/components/BgImage';
 export default {
     name: 'TracingProductDialog',
+    components: {BgImage},
     data() {
         return {
             visible: false,
@@ -222,7 +219,13 @@ export default {
                     twoName: '',
                     twoTime: ''
                 }
-            }
+            },
+            // 封面图
+            image1: require('../../../../assets/img/封面图-绿源东北大米新米稻花香米5kg.png'),
+            // 商品详情图
+            image2: require('../../../../assets/img/绿源东北大米新米稻花香米.jpg'),
+            // 溯源步骤
+            image3: require('../../../../assets/img/02的副本.jpg')
         };
     },
     methods: {
@@ -273,31 +276,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.carousel-list {
-    display: flex;
-    .carousel-item {
-        margin-right: 20px;
-    }
-}
-.tr-title  {
-    width: 60px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
+.btn-style-two {
+    height: 32px;
+    line-height: 32px;
     color: #fff;
-    font-size: 18px;
-    background-color: $mainColor;
-}
-
-.tf-img {
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    background-color: rgba(0, 0, 0, 0.5);
-    // background-image: url('../../assets/img/绿源东北大米新米稻花香米.jpg');
-    background-image: url('../../../../assets/img/绿源东北大米新米稻花香米.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
+    font-size: 16px;
+    margin-left: 30px;
 }
 </style>
