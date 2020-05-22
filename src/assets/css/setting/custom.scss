@@ -598,7 +598,7 @@ html, body {
     border: 1px solid #3E495E;
     background-color: transparent;
     &::-webkit-input-placeholder {
-        color: #6F7480;
+        color: #9FA8B8;
         font-size: 12px;
         // font-weight: lighter;
     }
@@ -625,7 +625,7 @@ html, body {
     }
     .el-range-input {
         &::-webkit-input-placeholder {
-            color: #6F7480;
+            color: #9FA8B8;
         }
     }
     .el-range-separator {
@@ -750,11 +750,11 @@ html, body {
         border: 1px solid #3E495E;
         &[disabled] {
             &::-webkit-input-placeholder {
-                color: #6F7480 !important;
+                color: #9FA8B8 !important;
             }
         }
         &::-webkit-input-placeholder {
-            color: #6F7480;
+            color: #9FA8B8;
         }
     }
     // 自定义下边框输入框
@@ -772,7 +772,7 @@ html, body {
                 border-bottom: 1px solid #1989FA;
             }
             &::-webkit-input-placeholder {
-                color: #3E495E;
+                color: #9FA8B8;
             }
         }
     }
@@ -898,7 +898,7 @@ html, body {
                 }
                 .search-field-item-label {
                     font-size: 12px;
-                    color: #6F7480;
+                    color: #9FA8B8;
                     margin-right: 10px;
                 }
                 .el-date-editor, .el-input__inner {
@@ -933,7 +933,7 @@ html, body {
         }
         .el-dropdown-link {
             font-size: 12px;
-            color: #6F7480;
+            color: #9FA8B8;
             min-width: 80px;
             margin-left: 20px;
             cursor: pointer;
@@ -976,7 +976,7 @@ html, body {
         height: 28px;
         line-height: 28px;
         font-size: 12px;
-        color: #6F7480;
+        color: #9FA8B8;
         border: 1px solid #3E495E;
         border-radius: 4px;
         cursor: pointer;
@@ -1424,7 +1424,7 @@ html, body {
         }
         .el-dropdown-link {
             font-size: 12px;
-            color: #6F7480;
+            color: #9FA8B8;
             min-width: 80px;
             margin-left: 20px;
             cursor: pointer;
@@ -2301,5 +2301,26 @@ html, body {
         .carousel-item {
             margin-right: 20px;
         }
+    }
+}
+
+.video-wrapper {
+    display: flex;
+    .add-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 170px;
+        height: 100px;
+        font-size: 20px;
+        color: #3E495E;
+        border: 1px solid #3E495E;
+        border-radius: 4px;
+        margin-left: 20px;
+        cursor: pointer;
+        &:hover {
+            color: $mainColor;
+            border-color: $mainColor;
+        };
     }
 }

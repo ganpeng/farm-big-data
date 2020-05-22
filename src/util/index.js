@@ -598,7 +598,11 @@ const sourceObj = {
         require('../assets/img/qCodeUrl3.png'),
         // 大黄米
         require('../assets/img/qCodeUrl4.png')
-    ]
+    ],
+    //  溯源轮播
+    image3: require('../assets/img/详情页轮播图3-绿源东北大米新米稻花香米5kg.png'),
+    image4: require('../assets/img/育苗.jpg'),
+    image5: require('../assets/img/插秧.jpg')
 };
 
 const lonlatOptions = _.times(180, (i) => {

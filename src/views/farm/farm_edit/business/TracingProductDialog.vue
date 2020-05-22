@@ -94,6 +94,8 @@
                 <el-row>
                     <el-col :span="24">
                         <el-form-item label="封面图">
+                            <bg-image :uri="image3"></bg-image>
+                            <!--
                             <div class="carousel-wrapper">
                                 <el-carousel arrow="never" indicator-position="none" :interval="5000">
                                     <el-carousel-item>
@@ -126,6 +128,7 @@
                                 </el-carousel>
                                 <bg-image></bg-image>
                             </div>
+                            -->
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -140,7 +143,7 @@
                                 </el-input>
                             </el-form-item>
                             <el-form-item label="图片">
-                                <bg-image myStyle="style2" :uri="image3"></bg-image>
+                                <bg-image myStyle="style2" :uri="image4"></bg-image>
                             </el-form-item>
                         </el-col>
                         <el-col :span="10">
@@ -149,7 +152,12 @@
                                 </el-input>
                             </el-form-item>
                             <el-form-item label="视频">
-                                <video autoplay loop controls width="170px" height="100px" src="http://dev.n.tianchimedia.com/video/time-lapse.mp4"></video>
+                                <div class="video-wrapper">
+                                    <video autoplay loop controls width="170px" height="100px" src="http://dev.n.tianchimedia.com/video/time-lapse.mp4"></video>
+                                    <div class="add-btn">
+                                        <i class="el-icon-plus"></i>
+                                    </div>
+                                </div>
                             </el-form-item>
                         </el-col>
                     </el-row>
@@ -161,7 +169,7 @@
                                 </el-input>
                             </el-form-item>
                             <el-form-item label="图片">
-                                <bg-image myStyle="style2" :uri="image3"></bg-image>
+                                <bg-image myStyle="style2" :uri="image5"></bg-image>
                             </el-form-item>
                         </el-col>
                         <el-col :span="10">
@@ -170,7 +178,11 @@
                                 </el-input>
                             </el-form-item>
                             <el-form-item label="视频">
-                                <video autoplay loop controls width="170px" height="100px" src="http://dev.n.tianchimedia.com/video/time-lapse.mp4"></video>
+                                <div class="video-wrapper">
+                                    <div style="margin-left: 0;" class="add-btn">
+                                        <i class="el-icon-plus"></i>
+                                    </div>
+                                </div>
                             </el-form-item>
                         </el-col>
                     </el-row>
@@ -214,10 +226,10 @@ export default {
                 status: 1,
                 createdAt: '', // 上线日期
                 step: {
-                    oneName: '',
-                    oneTime: '',
-                    twoName: '',
-                    twoTime: ''
+                    oneName: '育苗',
+                    oneTime: '2020-3-01',
+                    twoName: '插秧',
+                    twoTime: '2020-05-04'
                 }
             },
             // 封面图
@@ -225,7 +237,9 @@ export default {
             // 商品详情图
             image2: require('../../../../assets/img/绿源东北大米新米稻花香米.jpg'),
             // 溯源步骤
-            image3: require('../../../../assets/img/02的副本.jpg')
+            image3: this.$util.sourceObj.image3,
+            image4: this.$util.sourceObj.image4,
+            image5: this.$util.sourceObj.image5
         };
     },
     methods: {
@@ -262,10 +276,10 @@ export default {
                 status: 1,
                 createdAt: '', // 上线日期
                 step: {
-                    oneName: '',
-                    oneTime: '',
-                    twoName: '',
-                    twoTime: ''
+                    oneName: '育苗',
+                    oneTime: '2020-3-01',
+                    twoName: '插秧',
+                    twoTime: '2020-05-04'
                 }
             };
         },

@@ -13,10 +13,10 @@ const tracingList = [
         visible: false,
         status: 1,
         step: {
-            oneName: '',
-            oneTime: '',
-            twoName: '',
-            twoTime: ''
+            oneName: '育苗',
+            oneTime: '2020-3-01',
+            twoName: '插秧',
+            twoTime: '2020-05-04'
         }
     },
     {
@@ -33,10 +33,10 @@ const tracingList = [
         visible: true,
         status: 1,
         step: {
-            oneName: '',
-            oneTime: '',
-            twoName: '',
-            twoTime: ''
+            oneName: '育苗',
+            oneTime: '2020-3-01',
+            twoName: '插秧',
+            twoTime: '2020-05-04'
         }
     },
     {
@@ -53,10 +53,10 @@ const tracingList = [
         visible: true,
         status: 1,
         step: {
-            oneName: '',
-            oneTime: '',
-            twoName: '',
-            twoTime: ''
+            oneName: '育苗',
+            oneTime: '2020-3-01',
+            twoName: '插秧',
+            twoTime: '2020-05-04'
         }
     },
     {
@@ -73,10 +73,10 @@ const tracingList = [
         visible: false,
         status: 1,
         step: {
-            oneName: '',
-            oneTime: '',
-            twoName: '',
-            twoTime: ''
+            oneName: '育苗',
+            oneTime: '2020-3-01',
+            twoName: '插秧',
+            twoTime: '2020-05-04'
         }
     }
 ];
