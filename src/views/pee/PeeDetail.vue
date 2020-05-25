@@ -111,7 +111,7 @@
                 <video-player :options="video2Options"></video-player>
             </div>
             <div v-if="pee.type !== 5 && pee.type !== 6" class="my-echarts">
-                <monitoring-data></monitoring-data>
+                <monitoring-data :type="pee.type"></monitoring-data>
             </div>
         </div>
         <div class="fixed-btn-container">

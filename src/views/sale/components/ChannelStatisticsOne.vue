@@ -39,6 +39,7 @@
     </div>
 </template>
 <script>
+import _ from 'lodash';
 import ChannelStatisticsBord from './ChannelStatisticsBord';
 export default {
     name: 'ChannelStatisticsOne',

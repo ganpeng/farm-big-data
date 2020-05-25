@@ -1,12 +1,14 @@
 <template>
     <div class="monitoring-data-container">
         <ul class="legend-list">
-            <li class="legend-item">
-                <i></i> 温度
+            <li v-for="(item, index) in legendData" :key="index" class="legend-item">
+                <i></i> {{item}}
             </li>
+            <!--
             <li class="legend-item">
                 <i></i> 湿度
             </li>
+            -->
         </ul>
         <div width="100%" height="100%" id="monitoring-data-line-chart" class="monitoring-data-line-chart"></div>
     </div>
@@ -15,43 +17,18 @@
 import echarts from 'echarts';
 export default {
     name: 'MonitoringData',
+    props: {
+        type: {
+            type: Number,
+            default: 1
+        }
+    },
     data() {
         return {
             monitoringDataLineChart: null,
-            colors: ['#FF6D00', '#6ED800', '#FEF895'],
-            monitoringDataList: [
-                {
-                    name: '土壤湿度',
-                    type: 'line',
-                    data: [80, 60, 40, 50, 60, 50, 60]
-                },
-                {
-                    name: '温度',
-                    type: 'line',
-                    yAxisIndex: 1,
-                    data: [29, 31, 30, 32, 29, 30, 33]
-                }
-            ]
-        }
-    },
-    async mounted() {
-        try {
-            await this.$nextTick();
-            this.initMonitoringDataLineChart();
-        } catch (err) {
-            console.log(err);
-        }
-    },
-    methods: {
-        initMonitoringDataLineChart() {
-            let myChart = echarts.init(document.getElementById('monitoring-data-line-chart'));
-            // 绘制图表
-            myChart.setOption(this.lineOption());
-            this.monitoringDataLineChart = myChart;
-        },
-        lineOption() {
-            let option = {
-                color: this.colors,
+            legendData: [],
+            commonOption: {
+                color: ['#6ED800', '#FF6D00'],
                 tooltip: {
                     trigger: 'axis'
                 },
@@ -87,9 +64,110 @@ export default {
                         color: '#fff',
                         fontSize: 12
                     },
-                    data: [ '00:00', '04:00', '08:00', '12:00', '16:00',
-                            '20:00', '24:00']
+                    data: [ '00:00', '02:00', '04:00', '06:00', '08:00',
+                            '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00']
                 } ],
+            },
+            // colors: ['#FF6D00', '#6ED800', '#FEF895'],
+            colors: ['#6ED800', '#FF6D00'],
+            dataOne: [
+                {
+                    name: '土壤湿度',
+                    type: 'line',
+                    data: [80, 60, 40, 50, 60, 50, 60, 55, 62, 72, 63, 74]
+                },
+                {
+                    name: '温度',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    data: [29, 31, 30, 32, 29, 30, 33, 28, 30, 31, 29, 32]
+                }
+            ],
+            dataTwo: [
+                {
+                    name: '捕虫量',
+                    type: 'line',
+                    data: [34, 46, 67, 34, 45, 45, 67, 88, 99, 76, 87, 73]
+                }
+            ],
+            dataThree: [
+                {
+                    name: '浊度',
+                    type: 'line',
+                    data: [3, 2, 1, 3, 4, 5, 4, 4, 4, 3, 2, 2]
+                }
+            ],
+            dataFour: [
+
+                {
+                    name: '土壤湿度',
+                    type: 'line',
+                    data: [9, 13, 14, 11, 13, 14, 12, 11, 9, 9, 8, 7]
+                },
+                {
+                    name: '土壤温度',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    data: [22, 23, 24, 23, 21, 22, 24, 26, 25, 24, 21, 22]
+                }
+            ]
+        }
+    },
+    async mounted() {
+        try {
+            await this.$nextTick();
+            this.init();
+        } catch (err) {
+            console.log(err);
+        }
+    },
+    methods: {
+        init() {
+            switch (this.type) {
+                case 1:
+                    this.initdataLineChartOne();
+                    this.legendData = ['温度', '湿度'];
+                    break;
+                case 2:
+                    this.initdataLineChartTwo();
+                    this.legendData = ['捕虫量'];
+                    break;
+                case 3:
+                    this.initdataLineChartFour();
+                    this.legendData = ['土壤温度', '土壤湿度'];
+                    break;
+                case 4:
+                    this.initdataLineChartThree();
+                    this.legendData = ['浊度'];
+                    break;
+            }
+        },
+        initdataLineChartOne() {
+            let myChart = echarts.init(document.getElementById('monitoring-data-line-chart'));
+            // 绘制图表
+            myChart.setOption(this.lineOptionOne(this.dataOne));
+            this.monitoringDataLineChart = myChart;
+        },
+        initdataLineChartTwo() {
+            let myChart = echarts.init(document.getElementById('monitoring-data-line-chart'));
+            // 绘制图表
+            myChart.setOption(this.lineOptionTwo(this.dataTwo));
+            this.monitoringDataLineChart = myChart;
+        },
+        initdataLineChartThree() {
+            let myChart = echarts.init(document.getElementById('monitoring-data-line-chart'));
+            // 绘制图表
+            myChart.setOption(this.lineOptionThree(this.dataThree));
+            this.monitoringDataLineChart = myChart;
+        },
+        initdataLineChartFour() {
+            let myChart = echarts.init(document.getElementById('monitoring-data-line-chart'));
+            // 绘制图表
+            myChart.setOption(this.lineOptionFour(this.dataFour));
+            this.monitoringDataLineChart = myChart;
+        },
+        lineOptionOne(data) {
+            let option = {
                 yAxis: [ {
                     type: 'value',
                     name: '湿度',
@@ -98,7 +176,7 @@ export default {
                     position: 'left',
                     axisLine: {
                         lineStyle: {
-                            color: this.colors[0]
+                            color: this.colors[1]
                         }
                     },
                     axisLabel: {
@@ -113,16 +191,98 @@ export default {
                     offset: 60,
                     axisLine: {
                         lineStyle: {
-                            color: this.colors[1]
+                            color: this.colors[0]
                         }
                     },
                     axisLabel: {
                         formatter: '{value}℃'
                     }
                 }],
-                series: this.monitoringDataList
+                series: data
             };
-            return option;
+            return Object.assign({}, this.commonOption, option);
+        },
+        lineOptionTwo(data) {
+            let option = {
+                yAxis: [
+                {
+                    type: 'value',
+                    name: '捕虫量',
+                    min: 20,
+                    max: 100,
+                    position: 'left',
+                    offset: 60,
+                    axisLine: {
+                        lineStyle: {
+                            color: this.colors[0]
+                        }
+                    },
+                    axisLabel: {
+                        formatter: '{value}个'
+                    }
+                }],
+                series: data
+            };
+            return Object.assign({}, this.commonOption, option);
+        },
+        lineOptionThree(data) {
+            let option = {
+                yAxis: [
+                {
+                    type: 'value',
+                    name: '浊度',
+                    min: 0,
+                    max: 5,
+                    position: 'left',
+                    offset: 60,
+                    axisLine: {
+                        lineStyle: {
+                            color: this.colors[0]
+                        }
+                    },
+                    axisLabel: {
+                        formatter: '{value}JTU'
+                    }
+                }],
+                series: data
+            };
+            return Object.assign({}, this.commonOption, option);
+        },
+        lineOptionFour(data) {
+            let option = {
+                yAxis: [ {
+                    type: 'value',
+                    name: '土壤湿度',
+                    min: 5,
+                    max: 15,
+                    position: 'left',
+                    axisLine: {
+                        lineStyle: {
+                            color: this.colors[1]
+                        }
+                    },
+                    axisLabel: {
+                        formatter: '{value}%'
+                    }
+                }, {
+                    type: 'value',
+                    name: '土壤温度',
+                    min: 20,
+                    max: 30,
+                    position: 'left',
+                    offset: 60,
+                    axisLine: {
+                        lineStyle: {
+                            color: this.colors[0]
+                        }
+                    },
+                    axisLabel: {
+                        formatter: '{value}℃'
+                    }
+                }],
+                series: data
+            };
+            return Object.assign({}, this.commonOption, option);
         }
     }
 }
