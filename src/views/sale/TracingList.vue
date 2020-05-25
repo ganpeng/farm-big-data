@@ -151,7 +151,7 @@
                         {{scope.row.createdAt}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="140px" align="center" label="操作">
+                <el-table-column min-width="160px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
                             <span class="btn-text" @click="showCode(scope.row.id)">二维码</span>

@@ -95,22 +95,44 @@
                     </template>
                 </el-table-column>
                 -->
-                <el-table-column min-width="150px" label="认证">
+                <el-table-column min-width="130px" label="认证">
                     <template slot-scope="scope">
                         {{scope.row.auth}}
                     </template>
                 </el-table-column>
+                <!--
                 <el-table-column min-width="150px" label="所属农场">
                     <template slot-scope="scope">
                         {{scope.row.farm}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="180px" label="累计销售额（元）">
+                -->
+                <el-table-column min-width="120px" label="累计销售额（元）">
                     <template slot-scope="scope">
                         {{scope.row.salesVolume}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="100px" label="上下架">
+                <el-table-column min-width="80px" label="种植追溯">
+                    <template slot-scope="scope">
+                        {{scope.row.one}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="80px" label="物流追溯">
+                    <template slot-scope="scope">
+                        {{scope.row.two}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="80px" label="现场视频">
+                    <template slot-scope="scope">
+                        {{scope.row.three}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="80px" label="延时摄影">
+                    <template slot-scope="scope">
+                        {{scope.row.four}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="60px" label="上下架">
                     <template slot-scope="scope">
                         <input
                             class="my-switch switch-anim"
@@ -121,12 +143,12 @@
                         <i v-else class="off-the-shelf">已下架</i>
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="创建时间">
+                <el-table-column min-width="100px" label="创建时间">
                     <template slot-scope="scope">
                         {{scope.row.createdAt}}
                     </template>
                 </el-table-column>
-                <el-table-column width="220px" align="center" label="操作">
+                <el-table-column width="160px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
                             <span class="btn-text" @click="showCode(scope.row.id)">二维码</span>
@@ -147,6 +169,14 @@
             :total="list.pagination.total">
         </el-pagination>
         <tracing-product-dialog ref="tracingProductDialog"></tracing-product-dialog>
+        <div :class="['qcode-dialog', qCodeVisible && 'visible']">
+            <div class="title">查看二维码</div>
+            <img :src="qCodeUrl" alt="">
+            <div @click="qCodeVisible = false" class="delete-btn">
+                <svg-icon className="hover_icon" icon-class="remove_image_hover"></svg-icon>
+                <svg-icon className="defatul_icon" icon-class="remove_image_default"></svg-icon>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -165,13 +195,15 @@ export default {
                 type: '' // 类型
             },
             list: {
-                data: tracingList.filter((item, index) => index < 2),
+                data: tracingList,
                 pagination: {
                     total: 2,
                     pageSize: 30,
                     pageNum: 1
                 }
-            }
+            },
+            qCodeVisible: false,
+            qCodeUrl: this.$util.sourceObj.qCodeUrl[0]
         }
     },
     methods: {
@@ -214,7 +246,10 @@ export default {
             }
 
         },
-        showCode() {},
+        showCode(id) {
+            this.qCodeVisible = true;
+            this.qCodeUrl = this.$util.sourceObj.qCodeUrl[(id - 1)];
+        },
         toggleVisibleById(id) {
             this.list.data = this.list.data.map((item) => {
                 if (item.id === id) {
