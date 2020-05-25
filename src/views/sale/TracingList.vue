@@ -288,56 +288,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.tracing-list-container {
-    .qcode-dialog {
-        display: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 432px;
-        height: 390px;
-        background: rgba(12,16,25,0.9);
-        box-shadow: 2px 4px 10px 0px rgba(0,0,0,0.3);
-        border-radius: 4px;
-        padding: 34px;
-        text-align: center;
-        z-index: 30;
-        &.visible {
-            display: block;
-        }
-        .title {
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 14px;
-            color: rgba(168,171,179,1);
-            margin-bottom: 34px;
-            text-align: center;
-        }
-        .delete-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            .svg-icon {
-                width: 28px;
-                height: 28px;
-            }
-            .hover_icon {
-                display: none;
-            }
-            .defatul_icon {
-                display: block;
-            }
-            &:hover {
-                .hover_icon {
-                    display: block;
-                }
-                .defatul_icon {
-                    display: none;
-                }
-            }
-        }
-    }
-}
+.tracing-list-container {}
 </style>

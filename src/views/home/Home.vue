@@ -534,7 +534,6 @@ export default {
                 rows
             };
         },
-
         getDate(AddDayCount) {
             let dd = new Date();
             dd.setDate(dd.getDate() + AddDayCount); //获取AddDayCount天后的日期
@@ -721,6 +720,7 @@ export default {
                 .count {
                     position: relative;
                     font-size: 40px;
+                    font-weight: lighter;
                     color: #A3D0FD;
                     span {
                         position: absolute;
