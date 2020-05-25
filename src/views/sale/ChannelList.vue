@@ -79,37 +79,52 @@
                         {{ scope.row.type}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="渠道联系人">
+                <el-table-column min-width="100px" label="渠道联系人">
                     <template slot-scope="scope">
                         {{scope.row.contacts.name}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="160px" label="渠道联系人电话">
+                <el-table-column min-width="120px" label="渠道联系人电话">
                     <template slot-scope="scope">
                         {{scope.row.contacts.phone}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="内部联系人">
+                <el-table-column min-width="100px" label="内部联系人">
                     <template slot-scope="scope">
                         {{scope.row.innerContacts.name}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="150px" label="内部联系人电话">
+                <el-table-column min-width="120px" label="内部联系人电话">
                     <template slot-scope="scope">
                         {{scope.row.innerContacts.phone}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="150px" label="累计销售额（元）">
+                <el-table-column min-width="80px" label="入驻店铺">
+                    <template slot-scope="scope">
+                        {{scope.row.one}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="80px" label="注册用户">
+                    <template slot-scope="scope">
+                        {{scope.row.two}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="80px" label="上架商品">
+                    <template slot-scope="scope">
+                        {{scope.row.three}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="150px" label="累计销售额(万元)">
                     <template slot-scope="scope">
                         {{scope.row.salesVolume}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="120px" label="创建时间">
+                <el-table-column min-width="100px" label="创建时间">
                     <template slot-scope="scope">
                         {{scope.row.createdAt}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="160px" align="center" label="操作">
+                <el-table-column min-width="140px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
                             <span class="btn-text" @click="gotoChannelStatistics(scope.row.id)">管理</span>

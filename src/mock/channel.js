@@ -1,8 +1,8 @@
 const channelList = [
     {
         id: 1,
-        name: '自营电商',
-        type: '自营电商',
+        name: '吉视农业电商平台',
+        type: '吉视农业电商平台',
         contacts: {
             name: '张雪',
             phone: '15878934355'
@@ -12,7 +12,10 @@ const channelList = [
             phone: '13565657455',
             company: '吉视传媒磐石市分公司运维部'
         },
-        salesVolume: 2334233,
+        salesVolume: 368,
+        one: 398,
+        two: 3398,
+        three: 120,
         createdAt: '2020-03-03'
     },
     {
@@ -28,7 +31,10 @@ const channelList = [
             phone: '18989786655',
             company: '吉视传媒磐石市分公司运维部'
         },
-        salesVolume: 1343343,
+        salesVolume: 150,
+        one: '/',
+        two: 2344,
+        three: 67,
         createdAt: '2020-04-05'
     },
     {
@@ -44,7 +50,10 @@ const channelList = [
             phone: '1568799977',
             company: '吉视传媒磐石市分公司运维部'
         },
-        salesVolume: 233323,
+        salesVolume: 137,
+        one: '/',
+        two: 1395,
+        three: 65,
         createdAt: '2020-05-08'
     }
 ];

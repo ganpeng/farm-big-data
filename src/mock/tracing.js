@@ -12,6 +12,10 @@ const tracingList = [
         createdAt: '2020-03-03',
         visible: false,
         status: 1,
+        one: '是',
+        two: '是',
+        three: '是',
+        four: '是',
         step: {
             oneName: '育苗',
             oneTime: '2020-3-01',
@@ -32,6 +36,10 @@ const tracingList = [
         createdAt: '2020-03-03',
         visible: true,
         status: 1,
+        one: '是',
+        two: '是',
+        three: '是',
+        four: '是',
         step: {
             oneName: '育苗',
             oneTime: '2020-3-01',
@@ -52,6 +60,10 @@ const tracingList = [
         createdAt: '2020-03-03',
         visible: true,
         status: 1,
+        one: '是',
+        two: '是',
+        three: '否',
+        four: '否',
         step: {
             oneName: '育苗',
             oneTime: '2020-3-01',
@@ -72,6 +84,10 @@ const tracingList = [
         createdAt: '2020-03-03',
         visible: false,
         status: 1,
+        one: '是',
+        two: '是',
+        three: '是',
+        four: '是',
         step: {
             oneName: '育苗',
             oneTime: '2020-3-01',

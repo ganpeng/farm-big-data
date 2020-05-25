@@ -110,12 +110,32 @@
                     </template>
                 </el-table-column>
                 -->
-                <el-table-column min-width="160px" label="累计销售额（元）">
+                <el-table-column min-width="120px" label="累计销售额(元)">
                     <template slot-scope="scope">
                         {{scope.row.salesVolume}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="100px" label="上下架">
+                <el-table-column min-width="80px" label="种植追溯">
+                    <template slot-scope="scope">
+                        {{scope.row.one}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="80px" label="物流追溯">
+                    <template slot-scope="scope">
+                        {{scope.row.two}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="80px" label="现场视频">
+                    <template slot-scope="scope">
+                        {{scope.row.three}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="80px" label="延时摄影">
+                    <template slot-scope="scope">
+                        {{scope.row.four}}
+                    </template>
+                </el-table-column>
+                <el-table-column min-width="60px" label="上下架">
                     <template slot-scope="scope">
                         <input
                             class="my-switch switch-anim"
@@ -131,7 +151,7 @@
                         {{scope.row.createdAt}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="160px" align="center" label="操作">
+                <el-table-column min-width="140px" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="operator-btn-wrapper">
                             <span class="btn-text" @click="showCode(scope.row.id)">二维码</span>
