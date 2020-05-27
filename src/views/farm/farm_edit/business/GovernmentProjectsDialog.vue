@@ -2,7 +2,7 @@
     <el-dialog
         title="项目信息"
         class="my-dialog"
-        width="60%"
+        width="70%"
         :visible.sync="visible"
         :show-close="true"
         @open="openDialogHandler"
@@ -85,9 +85,11 @@
                                 </el-option>
                             </el-select>
                         </el-form-item>
+                        <!--
                         <el-form-item label="GIS图片">
                             <img class="gis-img" src="../../../../assets/img/gis.png" alt="">
                         </el-form-item>
+                        -->
                     </el-col>
                 </el-row>
                 <div class="seperator-line"></div>

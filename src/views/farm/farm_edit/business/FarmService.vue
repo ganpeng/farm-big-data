@@ -109,7 +109,7 @@
         <el-dialog
             title="农业社会化服务"
             class="my-dialog"
-            width="60%"
+            width="70%"
             :visible.sync="visible"
             :show-close="true"
             :before-close="beforeCloseHandler"

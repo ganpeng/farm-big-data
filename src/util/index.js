@@ -597,7 +597,9 @@ const sourceObj = {
         // 稻花香大米
         require('../assets/img/qCodeUrl3.png'),
         // 大黄米
-        require('../assets/img/qCodeUrl4.png')
+        require('../assets/img/qCodeUrl4.png'),
+        // 新改的二维码
+        require('../assets/img/qCodeUrl6.jpeg')
     ],
     //  溯源轮播
     image3: require('../assets/img/详情页轮播图3-绿源东北大米新米稻花香米5kg.png'),

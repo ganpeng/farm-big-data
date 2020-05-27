@@ -135,7 +135,7 @@
                         {{scope.row.four}}
                     </template>
                 </el-table-column>
-                <el-table-column min-width="60px" label="上下架">
+                <el-table-column min-width="70px" label="上下架">
                     <template slot-scope="scope">
                         <input
                             class="my-switch switch-anim"
@@ -196,7 +196,7 @@ export default {
                 pageNum: 1
             },
             qCodeVisible: false,
-            qCodeUrl: this.$util.sourceObj.qCodeUrl[0]
+            qCodeUrl: this.$util.sourceObj.qCodeUrl[4]
         }
     },
     computed: {
@@ -259,9 +259,9 @@ export default {
             }
 
         },
-        showCode(id) {
+        showCode() {
             this.qCodeVisible = true;
-            this.qCodeUrl = this.$util.sourceObj.qCodeUrl[(id - 1)];
+            // this.qCodeUrl = this.$util.sourceObj.qCodeUrl[(id - 1)];
         },
         gotoChannelStatistics(id) {
             this.$router.push({ name: 'ChannelStatistics', params: {id} });

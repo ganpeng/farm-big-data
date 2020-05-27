@@ -256,7 +256,9 @@
                             <el-row>
                                 <h3 class="titl">采收管理1</h3>
                                 <el-col :span="10">
-                                    <el-form-item label="管理类型">
+                                    <el-form-item label="采收面积 公顷">
+                                        <el-input type="number" v-model="model.p17"></el-input>
+                                        <!--
                                         <el-select v-model="model.p17">
                                             <el-option
                                                 v-for="item in options4"
@@ -265,6 +267,7 @@
                                                 :value="item.value">
                                             </el-option>
                                         </el-select>
+                                        -->
                                     </el-form-item>
                                     <el-form-item label="采收产量 公斤">
                                         <el-input v-model="model.p19"></el-input>
@@ -294,9 +297,11 @@
                             </el-row>
                             <div class="seperator-line"></div>
                             <el-row>
-                                <h3 class="titl">采收管理1</h3>
+                                <h3 class="titl">采收管理2</h3>
                                 <el-col :span="10">
                                     <el-form-item label="管理类型">
+                                        <el-input type="number" v-model="model.p17"></el-input>
+                                        <!--
                                         <el-select v-model="model.p17">
                                             <el-option
                                                 v-for="item in options4"
@@ -305,6 +310,7 @@
                                                 :value="item.value">
                                             </el-option>
                                         </el-select>
+                                        -->
                                     </el-form-item>
                                     <el-form-item label="采收产量 公斤">
                                         <el-input v-model="model.p19"></el-input>
@@ -337,7 +343,7 @@
                             <el-row>
                                 <h3 class="titl">加工管理1</h3>
                                 <el-col :span="10">
-                                    <el-form-item label="加工管理名称">
+                                    <el-form-item label="加工方名称">
                                         <el-input v-model="model.p22"></el-input>
                                     </el-form-item>
                                     <el-form-item label="加工批次">
@@ -762,7 +768,7 @@ export default {
                 p20: '250',
                 p21: '2020-03-12',
                 // 6
-                p22: '',
+                p22: '吉林好作坊粮食加工有限公司',
                 p23: 'ss123110293',
                 p24: '20200404938',
                 p25: '250',
@@ -770,15 +776,15 @@ export default {
                 // 7
                 p27: '分批次仓储',
                 p28: '',
-                p29: '20200404938',
+                p29: '345287',
                 p30: '250',
                 p31: '2020-03-03',
                 p32: '33℃',
-                p33: '32℃',
+                p33: '14%',
                 // 8
                 p34: '',
                 p35: '2020-03-03',
-                p36: '20200404938',
+                p36: '20',
                 p37: '',
                 p38: '',
                 p39: '',
@@ -906,16 +912,17 @@ export default {
                 }
             ],
             // 11
-            options8: [
-                {
-                    value: '收获机械',
-                    label: '收获机械'
-                },
-                {
-                    value: '运输机械',
-                    label: '运输机械'
-                }
-            ],
+            options8: this.$util.farmMachineTypeOptions,
+            // options8: [
+            //     {
+            //         value: '收获机械',
+            //         label: '收获机械'
+            //     },
+            //     {
+            //         value: '运输机械',
+            //         label: '运输机械'
+            //     }
+            // ],
             // 12
             options9: [
                 {

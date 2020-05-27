@@ -34,6 +34,13 @@
                         </el-select>
                     </el-form-item>
                     <el-form-item label="地址" prop="type">
+                        <el-input
+                            maxlength="20"
+                            :value="pee.address.province"
+                            @input="inputHandler($event, 'address.province')"
+                            placeholder="请输入设备ID"
+                        ></el-input>
+                        <!--
                         <el-select
                             :value="pee.type"
                             clearable
@@ -47,6 +54,7 @@
                                 :value="item.value">
                             </el-option>
                         </el-select>
+                        -->
                     </el-form-item>
                     <el-form-item label="经度" prop="latitude">
                         <el-select

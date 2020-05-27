@@ -163,17 +163,18 @@ export default {
         },
         generatorChartData4() {
             let pcDatas = [1233, 345, 424, 453, 545, 667, 467];
-            let appDatas = [3435, 2324, 4344, 3455, 7845, 722];
+            // let appDatas = [3435, 2324, 4344, 3455, 7845, 722];
             let dateList = this.get7DaysNearByToday();
             let rows = dateList.map((item, index) => {
                 return {
                     '日期': item,
-                    'PC端': pcDatas[index],
-                    'app端': appDatas[index]
+                    '推广费': pcDatas[index],
+                    // 'app端': appDatas[index]
                 };
             });
             return {
-                columns: ['日期', 'PC端', 'APP端'],
+                // columns: ['日期', 'PC端', 'APP端'],
+                columns: ['日期', '推广费'],
                 rows
             };
         },

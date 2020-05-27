@@ -93,7 +93,7 @@ const farmList = [
         partCount: 7,
         project: '', // 经营项目
         level: '', // 专业级别
-        createdAt: '201-9-14' // 成立时间
+        createdAt: '2018-01-18' // 成立时间
     },
     {
         id: 4,

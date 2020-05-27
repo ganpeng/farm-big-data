@@ -9,6 +9,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -22,6 +23,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -35,6 +37,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -48,6 +51,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -61,6 +65,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000012.m3u8?auth_key=1890223645-0-0-2267784839874acbe9c40b26ef39da07",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -74,6 +79,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000012.m3u8?auth_key=1890223645-0-0-2267784839874acbe9c40b26ef39da07",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -87,6 +93,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000017.m3u8?auth_key=1890232909-0-0-520dce7c389896d6f4bdb3c0ce514bd5",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -100,6 +107,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000009.m3u8?auth_key=1890219140-0-0-d91c9d63e0e33ba498447ce8ec25a2ce",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -113,6 +121,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000010.m3u8?auth_key=1890223486-0-0-bca64fdf2e1560014804f5fa3d8b3e92",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -126,6 +135,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000011.m3u8?auth_key=1890230648-0-0-e918ebf9e1ed5cd045274c502db4cfa2",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -139,6 +149,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000012.m3u8?auth_key=1890223645-0-0-2267784839874acbe9c40b26ef39da07",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -152,6 +163,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000013.m3u8?auth_key=1890223769-0-0-32c14e1270afa76ae1f5758a767992a4",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -165,6 +177,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000014.m3u8?auth_key=1890223858-0-0-df3ccece62fa97b564e8e9bbfb2ee8c4",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -178,6 +191,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000015.m3u8?auth_key=1890224671-0-0-668de47685e260ed7f6a1b31c683f30c",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -191,6 +205,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000016.m3u8?auth_key=1890230758-0-0-f270112b0b2bda8d34ec3eecb9071bae",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -204,6 +219,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000017.m3u8?auth_key=1890232909-0-0-520dce7c389896d6f4bdb3c0ce514bd5",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -217,6 +233,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000012.m3u8?auth_key=1890223645-0-0-2267784839874acbe9c40b26ef39da07",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -230,6 +247,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000017.m3u8?auth_key=1890232909-0-0-520dce7c389896d6f4bdb3c0ce514bd5",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -243,6 +261,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000009.m3u8?auth_key=1890219140-0-0-d91c9d63e0e33ba498447ce8ec25a2ce",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -256,6 +275,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000010.m3u8?auth_key=1890223486-0-0-bca64fdf2e1560014804f5fa3d8b3e92",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -269,6 +289,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000011.m3u8?auth_key=1890230648-0-0-e918ebf9e1ed5cd045274c502db4cfa2",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }, {
@@ -282,6 +303,7 @@ const peeList = [{
     "status": 1,
     "address": {"province": "吉林省", "city": "吉林市", "area": "磐石市", "detail": "取柴河镇/大桥村"},
     "sn": "d3f34f43t54",
+    "videoUrl": "http://n.video.tianchimedia.net/live/34020000001320000012.m3u8?auth_key=1890223645-0-0-2267784839874acbe9c40b26ef39da07",
     "latitude": "123.3432",
     "longitude": "43.3423"
 }];

@@ -83,7 +83,7 @@
             </el-row>
             <el-row>
                 <el-col :span="24">
-                    <el-form-item label="封面图">
+                    <el-form-item label="轮播图">
                         <bg-image :uri="image3"></bg-image>
                         <!--
                         <div class="carousel-wrapper">

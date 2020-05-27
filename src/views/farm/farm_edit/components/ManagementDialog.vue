@@ -2,7 +2,7 @@
     <el-dialog
         title="处理详情"
         class="my-dialog"
-        width="60%"
+        width="70%"
         :visible.sync="visible"
         :show-close="true"
         @open="openDialogHandler"

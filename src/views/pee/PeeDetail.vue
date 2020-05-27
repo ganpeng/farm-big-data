@@ -108,7 +108,8 @@
                 <video-player :options="videoOptions"></video-player>
             </div>
             <div v-if="pee.type === 6" class="live-video">
-                <video-player :options="video2Options"></video-player>
+                <video-player :options="videoOptions"></video-player>
+                <!-- <video-player :options="video2Options"></video-player> -->
             </div>
             <div v-if="pee.type !== 5 && pee.type !== 6" class="my-echarts">
                 <monitoring-data :type="pee.type"></monitoring-data>
@@ -130,19 +131,19 @@ export default {
     components: {VideoPlayer, MonitoringData},
     data() {
         return {
-            videoOptions: {
-                autoplay: true,
-                controls: true,
-                liveui: true,
-                width: 640,
-                height: 320,
-                sources: [
-                    {
-                        src: "http://n.video.tianchimedia.net/live/34020000001320000001.m3u8?auth_key=1887345156-0-0-7a1e07618d0822cea368feceaeecbf09",
-                        type: "application/x-mpegURL"
-                    }
-                ]
-            },
+            // videoOptions: {
+            //     autoplay: true,
+            //     controls: true,
+            //     liveui: true,
+            //     width: 640,
+            //     height: 320,
+            //     sources: [
+            //         {
+            //             src: "http://n.video.tianchimedia.net/live/34020000001320000001.m3u8?auth_key=1887345156-0-0-7a1e07618d0822cea368feceaeecbf09",
+            //             type: "application/x-mpegURL"
+            //         }
+            //     ]
+            // },
             video2Options: {
                 autoplay: true,
                 controls: true,
@@ -167,6 +168,22 @@ export default {
         ...mapGetters({
             pee: 'pee/currentPee'
         }),
+        videoOptions() {
+            let {videoUrl} = this.pee;
+            return {
+                autoplay: true,
+                controls: true,
+                liveui: true,
+                width: 640,
+                height: 320,
+                sources: [
+                    {
+                        src: videoUrl,
+                        type: "application/x-mpegURL"
+                    }
+                ]                
+            }
+        },
         status() {
             return this.pee.type === 5 || this.pee.type === 6;
         },
