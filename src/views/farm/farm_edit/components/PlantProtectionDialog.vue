@@ -849,6 +849,41 @@ export default {
                     label: '其他'
                 }
             ],
+            options2_1: [
+                {
+                    value: '分批次仓储',
+                    label: '分批次仓储'
+                },
+                {
+                    value: '分布式分批次仓储',
+                    label: '分布式分批次仓储'
+                },
+                {
+                    value: '平房型仓储',
+                    label: '平房型仓储'
+                },
+                {
+                    value: '二层楼房型仓储',
+                    label: '二层楼房型仓储'
+                },
+                {
+                    value: '多层楼房型仓储',
+                    label: '多层楼房型仓储'
+                },
+
+                {
+                    value: '地下仓储',
+                    label: '地下仓储'
+                },
+                {
+                    value: '立体仓储',
+                    label: '立体仓储'
+                },
+                {
+                    value: '简易仓储',
+                    label: '简易仓储'
+                }
+            ],
             option3: [
                 {
                     value: '人工',

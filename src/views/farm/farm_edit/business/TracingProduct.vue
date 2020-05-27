@@ -203,7 +203,7 @@ export default {
                 }
             },
             qCodeVisible: false,
-            qCodeUrl: this.$util.sourceObj.qCodeUrl[0]
+            qCodeUrl: this.$util.sourceObj.qCodeUrl[4]
         }
     },
     methods: {
@@ -246,9 +246,9 @@ export default {
             }
 
         },
-        showCode(id) {
+        showCode() {
             this.qCodeVisible = true;
-            this.qCodeUrl = this.$util.sourceObj.qCodeUrl[(id - 1)];
+            // this.qCodeUrl = this.$util.sourceObj.qCodeUrl[(id - 1)];
         },
         toggleVisibleById(id) {
             this.list.data = this.list.data.map((item) => {
