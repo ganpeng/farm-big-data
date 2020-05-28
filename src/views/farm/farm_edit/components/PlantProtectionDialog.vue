@@ -399,7 +399,7 @@
                                     <el-form-item label="仓储类型">
                                         <el-select v-model="model.p27">
                                             <el-option
-                                                v-for="item in options2"
+                                                v-for="item in options2_1"
                                                 :key="item.value"
                                                 :label="item.label"
                                                 :value="item.value">
@@ -438,7 +438,7 @@
                                     <el-form-item label="仓储类型">
                                         <el-select v-model="model.p27">
                                             <el-option
-                                                v-for="item in options2"
+                                                v-for="item in options2_1"
                                                 :key="item.value"
                                                 :label="item.label"
                                                 :value="item.value">
