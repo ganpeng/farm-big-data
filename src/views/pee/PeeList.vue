@@ -1,6 +1,6 @@
 <template>
     <div class="pee-container my-content-container">
-        <bord></bord>
+        <my-bord :bordList="bordList"></my-bord>
         <div class="search-field">
             <div class="field-row">
                 <div class="row-left">
@@ -177,12 +177,14 @@
 <script>
 import {mapGetters, mapMutations} from 'vuex';
 import _ from 'lodash';
-import Bord from './Bord';
+import MyBord from '@/components/MyBord';
+import bords from '@/util/bords';
 export default {
     name: 'PeeList',
-    components: {Bord},
+    components: {MyBord},
     data() {
         return {
+            bordList: bords.PEE_BORD_LIST,
             sensorTypeOptions: this.$util.sensorTypeOptions,
             peeStatusOptions: this.$util.peeStatusOptions,
             peeFirmOptions: this.$util.peeFirmOptions,

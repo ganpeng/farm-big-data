@@ -1,6 +1,6 @@
 <template>
     <div class="farm-list-container my-content-container">
-        <bord></bord>
+        <my-bord :bordList="bordList"></my-bord>
         <div class="search-field">
             <div class="field-row">
                 <div class="row-left">
@@ -158,14 +158,16 @@
 </template>
 <script>
 import {mapGetters, mapMutations} from 'vuex';
-import Bord from './Bord';
+import MyBord from '@/components/MyBord';
+import bords from '@/util/bords';
 import FarmCreateDialog from './FarmCreateDialog';
 export default {
     name: 'FarmList',
-    components: {Bord, FarmCreateDialog},
+    components: {MyBord, FarmCreateDialog},
     data() {
         return {
             farmVisualTypeOptions: this.$util.farmVisualTypeOptions,
+            bordList: bords.FARM_BORD_LIST,
             pagination: {
                 total: 24,
                 pageSize: 30,

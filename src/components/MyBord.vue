@@ -1,39 +1,54 @@
 <template>
     <div class="my-bord-status">
+        <div v-for="(bord, index) in bordList" :key="index" class="status-item">
+            <div class="line"></div>
+            <div class="item_con">
+                {{bord.title}}
+            </div>
+            <div class="count">{{bord.count}}</div>
+        </div>
+        <!--
         <div class="status-item">
             <div class="line"></div>
             <div class="item_con">
-                今日销售额(万元)
+                总数
             </div>
-            <div class="count">120</div>
+            <div class="count">3</div>
         </div>
         <div class="status-item">
             <div class="line"></div>
             <div class="item_con">
-                今日订单量(个)
+                吉视农业电商平台
             </div>
-            <div class="count">6234</div>
+            <div class="count">1</div>
         </div>
         <div class="status-item">
             <div class="line"></div>
             <div class="item_con">
-                今日新增用户(个)
+                合作渠道
             </div>
-            <div class="count">541</div>
+            <div class="count">1</div>
         </div>
         <div class="status-item">
             <div class="line"></div>
             <div class="item_con">
-                今日下载APP(次)
+                线下渠道
             </div>
-            <div class="count">289</div>
+            <div class="count">1</div>
         </div>
+        -->
     </div>
 </template>
 <script>
 export default {
-    name: 'ChannelStatisticsBord'
-};
+    name: 'MyBord',
+    props: {
+        bordList: {
+            type: Array,
+            default: () => []
+        }
+    }
+}
 </script>
 <style lang="scss" scoped>
 </style>

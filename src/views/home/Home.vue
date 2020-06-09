@@ -2,7 +2,7 @@
     <div class="home-container my-content-container">
         <div class="top-field">
             <div class="my-bord-status-two">
-                <div class="status-item terminal-status-item total">
+                <div class="status-item">
                     <div class="left">
                         <div class="line"></div>
                         <div class="item_con">
@@ -15,7 +15,7 @@
                         <span>3</span>
                     </div>
                 </div>
-                <div class="status-item terminal-status-item total">
+                <div class="status-item">
                     <div class="left">
                         <div class="line"></div>
                         <div class="item_con">
@@ -28,7 +28,7 @@
                         <span>4</span>
                     </div>
                 </div>
-                <div class="status-item terminal-status-item total">
+                <div class="status-item">
                     <div class="left">
                         <div class="line"></div>
                         <div class="item_con">
@@ -41,7 +41,7 @@
                         <span>110</span>
                     </div>
                 </div>
-                <div class="status-item terminal-status-item total">
+                <div class="status-item">
                     <div class="left">
                         <div class="line"></div>
                         <div class="item_con">

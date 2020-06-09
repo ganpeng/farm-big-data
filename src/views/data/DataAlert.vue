@@ -1,6 +1,6 @@
 <template>
     <div class="data-alert-container my-content-container">
-        <bord></bord>
+        <my-bord :bordList="bordList"></my-bord>
         <div class="search-field">
             <div class="field-row">
                 <div class="row-left">
@@ -174,12 +174,14 @@
 <script>
 import {mapGetters, mapMutations} from 'vuex';
 import ProcessingDialog from './ProcessingDialog';
-import Bord from './Bord';
+import MyBord from '@/components/MyBord';
+import bords from '@/util/bords';
 export default {
     name: 'DataAlert',
-    components: {ProcessingDialog, Bord},
+    components: {ProcessingDialog, MyBord},
     data() {
         return {
+            bordList: bords.DATA_ALERT_BORD_LIST,
             levelOptions: this.$util.levelOptions,
             dataAlertTypeOptions: this.$util.dataAlertTypeOptions,
             dataAlertSourceOptions: this.$util.dataAlertSourceOptions,

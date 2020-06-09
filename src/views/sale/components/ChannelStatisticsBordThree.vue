@@ -1,27 +1,27 @@
 <template>
     <div class="my-bord-status">
-        <div class="status-item terminal-status-item total">
+        <div class="status-item">
             <div class="line"></div>
             <div class="item_con">
                 今日销售额(万元)
             </div>
             <div class="count">9</div>
         </div>
-        <div class="status-item terminal-status-item total">
+        <div class="status-item">
             <div class="line"></div>
             <div class="item_con">
                 今日订单量(个)
             </div>
             <div class="count">146</div>
         </div>
-        <div class="status-item terminal-status-item total">
+        <div class="status-item">
             <div class="line"></div>
             <div class="item_con">
                 今日新增会员(个)
             </div>
             <div class="count">567</div>
         </div>
-        <div class="status-item terminal-status-item total">
+        <div class="status-item">
             <div class="line"></div>
             <div class="item_con">
                 今日推广费用(元)

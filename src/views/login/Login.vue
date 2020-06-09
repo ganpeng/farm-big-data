@@ -150,7 +150,6 @@ h3 {
             .el-button {
                 width: 100%;
                 height: 40px;
-                font-size: $normalFontSize;
                 background: #0062C4;
                 border: none;
                 &:hover {

@@ -1,6 +1,6 @@
 <template>
     <div class="tracing-list-container my-content-container">
-        <tracing-bord></tracing-bord>
+        <my-bord :bordList="bordList"></my-bord>
         <div class="search-field">
             <div class="field-row">
                 <div class="row-left">
@@ -183,13 +183,15 @@
 </template>
 <script>
 import {mapGetters, mapMutations} from 'vuex';
-import TracingBord from './TracingBord';
+import MyBord from '@/components/MyBord';
+import bords from '@/util/bords';
 export default {
     name: 'TracingList',
-    components: {TracingBord},
+    components: {MyBord},
     data() {
         return {
             tracingTypeOptions: this.$util.tracingTypeOptions,
+            bordList: bords.TRACING_BORD_LIST,
             pagination: {
                 total: 4,
                 pageSize: 30,

@@ -1,6 +1,6 @@
 <template>
     <div class="data-statistics-container my-content-container">
-        <bord2></bord2>
+        <my-bord :bordList="bordList"></my-bord>
         <div class="bottom-field">
             <div class="bottom-left bottom-item">
                 <div @click="gotoDataDetail(0)" class="header">
@@ -290,10 +290,11 @@
     </div>
 </template>
 <script>
-import Bord2 from './Bord2';
+import MyBord from '@/components/MyBord';
+import bords from '@/util/bords';
 export default {
     name: 'DataStatistics',
-    components: {Bord2},
+    components: {MyBord},
     data() {
         this.chartSettings = {
             label: {
@@ -310,6 +311,7 @@ export default {
         };
 
         return {
+            bordList: bords.DATA_STATISTICS_BORD_LIST,
             chartData1: {
                 columns: ['类型', '数据'],
                 rows: [

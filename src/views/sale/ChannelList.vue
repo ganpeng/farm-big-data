@@ -1,6 +1,6 @@
 <template>
     <div class="channel-list-container my-content-container">
-        <bord></bord>
+        <my-bord :bordList="bordList"></my-bord>
         <div class="search-field">
             <div class="field-row">
                 <div class="row-left">
@@ -148,13 +148,15 @@
 </template>
 <script>
 import {mapGetters, mapMutations} from 'vuex';
-import Bord from './Bord';
+import MyBord from '@/components/MyBord';
+import bords from '@/util/bords';
 export default {
     name: 'ChannelList',
-    components: {Bord},
+    components: {MyBord},
     data() {
         return {
             channelTypeOptions: this.$util.channelTypeOptions,
+            bordList: bords.CHANNEL_BORD_LIST,
             pagination: {
                 total: 3,
                 pageSize: 30,
