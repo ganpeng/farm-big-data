@@ -20,11 +20,11 @@
                     <div class="search-field-item">
                         <label class="search-field-item-label">类型</label>
                         <el-select
-                            :value="searchField.type"
+                            :value="searchField.manageType"
                             filterable
                             clearable
                             placeholder="全部"
-                            @input="inputHandler($event, 'type')">
+                            @input="inputHandler($event, 'manageType')">
                             <el-option
                                 v-for="(item, index) in farmVisualTypeOptions"
                                 :key="index"
@@ -76,12 +76,12 @@
                 </el-table-column>
                 <el-table-column min-width="120px" label="类型">
                     <template slot-scope="scope">
-                        {{ scope.row.type}}
+                        {{farmTypeLabel(scope.row.farmType)}}
                     </template>
                 </el-table-column>
                 <el-table-column prop="sn" min-width="100px" label="地块面积(公顷)">
                     <template slot-scope="scope">
-                        {{ scope.row.area}}
+                        {{scope.row.fieldArea}}
                     </template>
                 </el-table-column>
                 <!--
@@ -118,13 +118,13 @@
                             width="300" trigger="hover">
                             <div class="pop-content">
                                 <div class="title">
-                                    {{scope.row.standing.name}}
+                                    {{scope.row.contactName}}
                                 </div>
                                 <div class="date-time">
-                                    电话：{{scope.row.standing.phone}}
+                                    电话：{{scope.rowcontactTel}}
                                 </div>
                             </div>
-                            <span class="text-success pointer" slot="reference">{{scope.row.standing.name}}</span>
+                            <span class="text-success pointer" slot="reference">{{scope.row.contactName}}</span>
                         </el-popover>
                     </template>
                 </el-table-column>
@@ -147,17 +147,17 @@
         <el-pagination
             @size-change="handlePaginationChange($event, 'pageSize')"
             @current-change="handlePaginationChange($event, 'pageNum')"
-            :current-page="pagination.pageNum"
-            :page-sizes="[10, 30, 50,100, 200, 500]"
-            :page-size="pagination.pageSize"
+            :current-page="list.pagination.pageNum"
+            :page-sizes="[10, 20, 50,100, 200, 500]"
+            :page-size="list.pagination.pageSize"
             layout="total, sizes, prev, pager, next, jumper"
-            :total="pagination.total">
+            :total="list.pagination.total">
         </el-pagination>
         <farm-create-dialog ref="farmCreateDialog"></farm-create-dialog>
     </div>
 </template>
 <script>
-import {mapGetters, mapMutations} from 'vuex';
+import {mapGetters, mapMutations, mapActions} from 'vuex';
 import MyBord from '@/components/MyBord';
 import bords from '@/util/bords';
 import FarmCreateDialog from './FarmCreateDialog';
@@ -167,24 +167,27 @@ export default {
     data() {
         return {
             farmVisualTypeOptions: this.$util.farmVisualTypeOptions,
-            bordList: bords.FARM_BORD_LIST,
-            pagination: {
-                total: 24,
-                pageSize: 30,
-                pageNum: 1
-            }
+            bordList: bords.FARM_BORD_LIST
         }
     },
     computed: {
         ...mapGetters({
             list: 'farm/list',
             searchField: 'farm/searchField'
-        })
+        }),
+        farmTypeLabel() {
+            return (value) => {
+                let farmTypeOptions = this.$util.farmVisualTypeOptions
+                let index = farmTypeOptions.findIndex((item) => item.value === value);
+                return index >= 0 ? _.get(farmTypeOptions, `${index}.label`) : '';
+            };
+        }
     },
     async created() {
         try {
             this.resetSearchField();
             this.resetPagination();
+            await this.getFarmList();
         } catch (err) {
             console.log(err);
         }
@@ -195,6 +198,9 @@ export default {
             updatePagination: 'farm/updatePagination',
             resetSearchField: 'farm/resetSearchField',
             resetPagination: 'farm/resetPagination'
+        }),
+        ...mapActions({
+            getFarmList: 'farm/getFarmList'
         }),
         tableRowClassName({rowIndex}) {
             if ((rowIndex % 2) === 0) {
@@ -215,7 +221,6 @@ export default {
         },
         createFarm() {
             this.$router.push({ name: 'FarmCreate' });
-            // this.$refs.farmCreateDialog.show();
         },
         editFarmHandler(id) {
             this.$router.push({ name: 'FarmEdit', params: {id} });

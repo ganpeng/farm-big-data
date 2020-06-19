@@ -8,7 +8,7 @@
     </div>
 </template>
 <script>
-import {mapMutations} from 'vuex';
+import {mapMutations, mapActions} from 'vuex';
 import FarmForm from './FarmForm';
 export default {
     name: 'FarmCreate',
@@ -20,8 +20,18 @@ export default {
         ...mapMutations({
             resetCurrentFarm: 'farm/resetCurrentFarm'
         }),
-        farmCreateHandler() {
-            this.gotoFarmList();
+        ...mapActions({
+            createFarm: 'farm/createFarm'
+        }),
+        async farmCreateHandler() {
+            try {
+                let res = await this.createFarm();
+                if (res && res.code === 0) {
+                    this.gotoFarmList();
+                }
+            } catch (err) {
+                console.log(err);
+            }
         },
         gotoFarmList() {
             this.$router.push({name: 'FarmList'});

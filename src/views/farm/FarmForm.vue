@@ -9,7 +9,7 @@
             class="my-form">
             <el-row>
                 <h4 class="content-sub-title">基础信息</h4>
-                <el-col span="10">
+                <el-col :span="10">
                     <el-form-item label="农场名称" prop="name">
                         <el-input
                             maxlength="20"
@@ -24,58 +24,45 @@
                         ></el-input>
                     </el-form-item>
                     <el-form-item label="经度" prop="latitude">
-                        <el-select
-                            :value="farm.latitude"
-                            clearable
-                            placeholder="请选择"
-                            @input="inputHandler($event, 'latitude')"
-                        >
-                            <el-option
-                                v-for="item in lonlatOptions"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value">
-                            </el-option>
-                        </el-select>
-                    </el-form-item>
-                    <el-form-item label="地块面积(公顷)" prop="area">
                         <el-input
-                            maxlength="20"
-                            :value="farm.area"
-                            @input="inputHandler($event, 'area')"
+                            :value="farm.latitude"
+                            @input="inputHandler($event, 'latitude')"
                         ></el-input>
                     </el-form-item>
-                    <el-form-item label="地址" prop="type">
+                    <el-form-item label="地块面积(公顷)" prop="fieldArea">
                         <el-input
-                            maxlength="20"
-                            :value="farm.address.city"
-                            @input="inputHandler($event, 'address.city')"
+                            :value="farm.fieldArea"
+                            @input="inputHandler($event, 'fieldArea')"
+                        ></el-input>
+                    </el-form-item>
+                    <el-form-item label="地址" prop="address">
+                        <el-input
+                            :value="farm.address"
+                            @input="inputHandler($event, 'address')"
                         ></el-input>
                     </el-form-item>
                     <el-form-item label="主要特色" prop="feature">
                         <el-input
-                            maxlength="20"
                             :value="farm.feature"
                             @input="inputHandler($event, 'feature')"
                         ></el-input>
                     </el-form-item>
-                    <el-form-item label="农场简介" prop="desc">
+                    <el-form-item label="农场简介" prop="description">
                         <el-input
-                            maxlength="20"
-                            :value="farm.desc"
+                            :value="farm.description"
                             type="textarea"
-                            @input="inputHandler($event, 'desc')"
+                            @input="inputHandler($event, 'description')"
                         ></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col span="10">
-                    <el-form-item label="农场类型" prop="type">
+                <el-col :span="10">
+                    <el-form-item label="农场类型" prop="farmType">
                         <el-select
-                            :value="farm.type"
+                            :value="farm.farmType"
                             filterable
                             clearable
                             placeholder="全部"
-                            @input="inputHandler($event, 'type')">
+                            @input="inputHandler($event, 'farmType')">
                             <el-option
                                 v-for="(item, index) in farmVisualTypeOptions"
                                 :key="index"
@@ -91,26 +78,17 @@
                         ></el-input>
                     </el-form-item>
                     <el-form-item label="纬度" prop="longitude">
-                        <el-select
+                        <el-input
                             :value="farm.longitude"
-                            clearable
-                            placeholder="请选择"
                             @input="inputHandler($event, 'longitude')"
-                        >
-                            <el-option
-                                v-for="item in lonlatOptions"
-                                :key="item.value"
-                                :label="item.label"
-                                :value="item.value">
-                            </el-option>
-                        </el-select>
+                        ></el-input>
                     </el-form-item>
-                    <el-form-item label="经营项目" prop="project">
+                    <el-form-item label="经营项目" prop="manageType">
                         <el-select
-                            :value="farm.project"
+                            :value="farm.manageType"
                             clearable
                             placeholder="请选择"
-                            @input="inputHandler($event, 'project')"
+                            @input="inputHandler($event, 'manageType')"
                         >
                             <el-option
                                 v-for="item in projectOptions"
@@ -120,12 +98,12 @@
                             </el-option>
                         </el-select>
                     </el-form-item>
-                    <el-form-item label="专业级别" prop="level">
+                    <el-form-item label="专业级别" prop="professionalType">
                         <el-select
-                            :value="farm.level"
+                            :value="farm.professionalType"
                             clearable
                             placeholder="请选择"
-                            @input="inputHandler($event, 'level')"
+                            @input="inputHandler($event, 'professionalType')"
                         >
                             <el-option
                                 v-for="item in farmLevelOptions"
@@ -140,35 +118,35 @@
             <div class="seperator-line"></div>
             <el-row>
                 <h4 class="content-sub-title">法人信息</h4>
-                <el-col span="10">
+                <el-col :span="10">
                     <el-form-item label="姓名">
                         <el-input
                             maxlength="20"
-                            :value="farm.legal.name"
-                            @input="inputHandler($event, 'legal.name')"
+                            :value="farm.corporationName"
+                            @input="inputHandler($event, 'corporationName')"
                         ></el-input>
                     </el-form-item>
                     <el-form-item label="身份证号">
                         <el-input
                             maxlength="20"
-                            :value="farm.legal.cId"
-                            @input="inputHandler($event, 'legal.cId')"
+                            :value="farm.corporationId"
+                            @input="inputHandler($event, 'corporationId')"
                         ></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col span="10">
+                <el-col :span="10">
                     <el-form-item label="联系电话">
                         <el-input
                             maxlength="20"
-                            :value="farm.legal.phone"
-                            @input="inputHandler($event, 'legal.phone')"
+                            :value="farm.corporationTel"
+                            @input="inputHandler($event, 'corporationTel')"
                         ></el-input>
                     </el-form-item>
                     <el-form-item label="住址">
                         <el-input
                             maxlength="20"
-                            :value="farm.legal.address"
-                            @input="inputHandler($event, 'legal.address')"
+                            :value="farm.corporationAddr"
+                            @input="inputHandler($event, 'corporationAddr')"
                         ></el-input>
                     </el-form-item>
                 </el-col>
@@ -176,21 +154,21 @@
             <div class="seperator-line"></div>
             <el-row>
                 <h4 class="content-sub-title">常务联系人</h4>
-                <el-col span="10">
+                <el-col :span="10">
                     <el-form-item label="姓名">
                         <el-input
                             maxlength="20"
-                            :value="farm.standing.name"
-                            @input="inputHandler($event, 'standing.name')"
+                            :value="farm.contactName"
+                            @input="inputHandler($event, 'contactName')"
                         ></el-input>
                     </el-form-item>
                 </el-col>
-                <el-col span="10">
+                <el-col :span="10">
                     <el-form-item label="联系电话">
                         <el-input
                             maxlength="20"
-                            :value="farm.standing.phone"
-                            @input="inputHandler($event, 'standing.phone')"
+                            :value="farm.contactTel"
+                            @input="inputHandler($event, 'contactTel')"
                         ></el-input>
                     </el-form-item>
                 </el-col>
@@ -198,14 +176,14 @@
             <div class="seperator-line"></div>
             <el-row>
                 <h4 class="content-sub-title">党组信息</h4>
-                <el-col span="10">
+                <el-col :span="10">
                     <el-form-item label="成立党组织">
-                        <el-radio @input="inputHandler(true, 'isPart')" :value="farm.isPart" :label="true">是</el-radio>
-                        <el-radio @input="inputHandler(false, 'isPart')" :value="farm.isPart" :label="false">否</el-radio>
+                        <el-radio @input="inputHandler(true, 'partyOrg')" :value="farm.partyOrg" :label="true">是</el-radio>
+                        <el-radio @input="inputHandler(false, 'partyOrg')" :value="farm.partyOrg" :label="false">否</el-radio>
                     </el-form-item>
                 </el-col>
-                <el-col span="10">
-                    <el-form-item v-if="farm.isPart" label="人数">
+                <el-col :span="10">
+                    <el-form-item v-if="farm.partyOrg" label="人数">
                         <el-input
                             :value="farm.partCount"
                             @input="inputHandler($event, 'partCount')"
@@ -222,8 +200,6 @@ export default {
     name: 'FarmForm',
     data() {
         return {
-            lonlatOptions: this.$util.lonlatOptions,
-            peeFarmOptions: this.$util.peeFarmOptions,
             farmVisualTypeOptions: this.$util.farmVisualTypeOptions,
             projectOptions: this.$util.projectOptions,
             farmLevelOptions: this.$util.farmLevelOptions

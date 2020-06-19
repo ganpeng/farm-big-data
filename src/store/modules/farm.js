@@ -1,49 +1,40 @@
 // 物理环境设备
 import _ from 'lodash';
 import {DEFAULT_LIST, DEFAULT_PAGINATION} from '@/util/constants';
-import farmList from '@/mock/farm';
+// import farmList from '@/mock/farm';
+import service from '@/service';
 
 const defaultSearchFiled = {
     keyword: '',
-    type: '' // 类型
+    manageType: '' // 类型
 };
 
 const defaultFarm = {
-    id: 0,
-    name: '', // 名称
-    type: '', // 类型
-    area: 0, // 地块面积
-    desc: '', // 详情
+    name: '',  // 农场名称
+    address: '', // 地址
+    contactName: '', //  联系人名称
+    contactTel: '', // 联系人电话
+    corporationAddr: '', // 法人地址
+    corporationId: '', // 法人id
+    corporationName: '', // 法人名称
+    corporationTel: '', // 法人电话
+    creditCode: '', // 统一社会信用代码
+    description: '', // 详情
+    farmType: '', // 农场类型
     feature: '', // 特色
-    address: { // 地址
-        province: '',
-        city: '',
-        area: '',
-        detail: ''
-    },
+    fieldArea: '', // 地块面积
     latitude: '', // 经度
     longitude: '', // 纬度
-    creditCode: '', // 统一社会信用代码
-    standing: {  // 常务联系人
-        name: '',
-        phone: ''
-    },
-    legal: { // 法人
-        name: '',
-        phone: '',
-        cId: '',
-        address: ''
-    },
-    isPart: false, // 是否成立党组织
-    partCount: 0, // 党组织成员
-    project: '', // 经营项目
-    level: '', // 专业级别
-    createdAt: '' // 创立时间
+    manageType: '', // 经营项目
+    partyOrg: false, // 是否成立党组织
+    partCount: '', // 党组人数
+    professionalType: '', // 专业级别
+    createdAt: '' // 创建日期
 };
 
 const state = {
     searchField: _.cloneDeep(defaultSearchFiled),
-    list: _.cloneDeep(Object.assign(DEFAULT_LIST, {data: farmList})),
+    list: _.cloneDeep(Object.assign(DEFAULT_LIST)),
     currentFarm: _.cloneDeep(defaultFarm)
 };
 
@@ -88,7 +79,7 @@ const mutations = {
     resetSearchField(state) {
         state.searchField = _.cloneDeep(defaultSearchFiled);
     },
-    //  当前物环设备
+    // 当前农场
     setCurrentFarm(state, payload) {
         state.currentFarm = payload.farm;
     },
@@ -108,9 +99,81 @@ const mutations = {
     }
 }
 
+let isLoading = false;
+const actions = {
+    async createFarm({state}) {
+        try {
+            if (!isLoading) {
+                isLoading = true;
+                let {currentFarm} = state;
+                let reqBody = _.cloneDeep(currentFarm);
+                let res = await service.createFarm(reqBody);
+                isLoading = false;
+                return res;
+            }
+        } catch (err) {
+            isLoading = false;
+            console.log(err);
+        }
+    },
+    async updateFarmById({state}, id) {
+        try {
+            if (!isLoading) {
+                isLoading = true;
+                let {currentFarm} = state;
+                let reqBody = Object.assign({}, currentFarm, {id});
+                let res = await service.updateFarmById(reqBody);
+                isLoading = false;
+                return res;
+            }
+        } catch (err) {
+            isLoading = false;
+            console.log(err);
+        }
+    },
+    async deleteFarmById({state}, id) {
+        try {
+            if (!isLoading) {
+                isLoading = true;
+                let res = await service.deleteFarmById(id);
+                isLoading = false;
+                return res;
+            }
+        } catch (err) {
+            isLoading = false;
+            console.log(err);
+        }
+    },
+    async getFarmById({state}, id) {
+        try {
+            let res = await service.getFarmById(id);
+            return res;
+        } catch (err) {
+            isLoading = false;
+            console.log(err);
+        }
+    },
+    async getFarmList({state, commit}) {
+        try {
+            let params = Object.assign({}, state.searchFields, state.pagination, {
+                pageNum: state.pagination.pageNum - 1
+            });
+
+            let res = await service.getFarmList(params);
+            if (res && res.code === 0) {
+                let {list, pageNum, pageSize, total} = res.data;
+                commit('setList', {pageNum: pageNum + 1, pageSize, total, data: list});
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
+};
+
 export default {
     namespaced: true,
     state,
     getters,
-    mutations
+    mutations,
+    actions
 }

@@ -273,7 +273,7 @@ const tracingTypeOptions = [
 
 const farmVisualTypeOptions = [
     {
-        value: '农民专业合作社',
+        value: 'FARMER_PROFESSIONAL_COOPERATIVES',
         label: '农民专业合作社'
     },
     // {
@@ -281,11 +281,11 @@ const farmVisualTypeOptions = [
     //     label: '家庭农场'
     // },
     {
-        value: '国有企业',
+        value: 'STATE_ENTERPRISE',
         label: '国有企业'
     },
     {
-        value: '个体企业',
+        value: 'SELF_EMPLOYED_BUSSINESS',
         label: '个体企业'
     }
 ];
@@ -305,53 +305,50 @@ const tracingAuthOptions = [
     }
 ];
 
+// 经营项目
 const projectOptions = [
     {
-        value: '水稻种植',
+        value: 'RICE',
         label: '水稻种植'
     },
     {
-        value: '杂粮种植',
+        value: 'GRAINS',
         label: '杂粮种植'
     },
     {
-        value: '菌类种植',
+        value: 'FUNGI',
         label: '菌类种植'
     },
     {
-        value: '果蔬种植',
+        value: 'FRUITS_VEGETABLES',
         label: '果蔬种植'
     },
     {
-        value: '家禽养殖',
+        value: 'FOWL',
         label: '家禽养殖'
     },
     {
-        value: '水产养殖',
+        value: 'AQUATIC_PRODUCT',
         label: '水产养殖'
     },
     {
-        value: '其他',
+        value: 'OTHERS',
         label: '其他'
     }
 ];
 
 const farmLevelOptions = [
     {
-        value: '省级专业合作社',
+        value: 'PROVINCE',
         label: '省级专业合作社'
     },
     {
-        value: '市级专业合作社',
+        value: 'CITY',
         label: '市级专业合作社'
     },
     {
-        value: '县级专业合作社',
+        value: 'COUNTY',
         label: '县级专业合作社'
-    },
-    {
-        value: '无',
-        label: '无'
     }
 ];
 
