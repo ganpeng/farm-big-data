@@ -8,7 +8,7 @@
     </div>
 </template>
 <script>
-import {mapMutations} from 'vuex';
+import {mapActions} from 'vuex';
 import FarmForm from './FarmForm';
 export default {
     name: 'FarmEdit',
@@ -16,16 +16,32 @@ export default {
     data() {
         return {};
     },
-    created() {
-        let {id} = this.$route.params;
-        this.setCurrentFarmById({id});
+    async created() {
+        try {
+            let {id} = this.$route.params;
+            await this.getFarmById(id);
+        } catch (err) {
+            console.log(err);
+        }
     },
     methods: {
-        ...mapMutations({
-            setCurrentFarmById: 'farm/setCurrentFarmById'
+        ...mapActions({
+            getFarmById: 'farm/getFarmById',
+            updateFarmById: 'farm/updateFarmById'
         }),
-        farmEditHandler() {
-            this.gotoFarmList();
+        async farmEditHandler() {
+            try {
+                let valid = await this.$refs.farmFormComponent.$refs.farmForm.validate();
+                if (valid) {
+                    let {id} = this.$route.params;
+                    let res = await this.updateFarmById(id);
+                    if (res && res.code === 0) {
+                        this.gotoFarmList();
+                    }
+                }
+            } catch (err) {
+                console.log(err);
+            }
         },
         gotoFarmList() {
             this.$router.push({name: 'FarmList'});

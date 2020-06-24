@@ -121,7 +121,7 @@ const actions = {
             if (!isLoading) {
                 isLoading = true;
                 let {currentFarm} = state;
-                let reqBody = Object.assign({}, currentFarm, {id});
+                let reqBody = Object.assign({}, _.omit(currentFarm, ['createdAt']), {id});
                 let res = await service.updateFarmById(reqBody);
                 isLoading = false;
                 return res;
@@ -144,9 +144,12 @@ const actions = {
             console.log(err);
         }
     },
-    async getFarmById({state}, id) {
+    async getFarmById({commit}, id) {
         try {
             let res = await service.getFarmById(id);
+            if (res && res.code === 0) {
+                commit('setCurrentFarm', {farm: res.data});
+            }
             return res;
         } catch (err) {
             isLoading = false;
@@ -155,8 +158,8 @@ const actions = {
     },
     async getFarmList({state, commit}) {
         try {
-            let params = Object.assign({}, state.searchFields, state.pagination, {
-                pageNum: state.pagination.pageNum - 1
+            let params = Object.assign({}, state.searchFields, state.list.pagination, {
+                pageNum: state.list.pagination.pageNum - 1
             });
 
             let res = await service.getFarmList(params);

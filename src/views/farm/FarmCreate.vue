@@ -25,9 +25,12 @@ export default {
         }),
         async farmCreateHandler() {
             try {
-                let res = await this.createFarm();
-                if (res && res.code === 0) {
-                    this.gotoFarmList();
+                let valid = await this.$refs.farmFormComponent.$refs.farmForm.validate();
+                if (valid) {
+                    let res = await this.createFarm();
+                    if (res && res.code === 0) {
+                        this.gotoFarmList();
+                    }
                 }
             } catch (err) {
                 console.log(err);

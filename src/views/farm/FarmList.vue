@@ -158,6 +158,7 @@
 </template>
 <script>
 import {mapGetters, mapMutations, mapActions} from 'vuex';
+import _ from 'lodash';
 import MyBord from '@/components/MyBord';
 import bords from '@/util/bords';
 import FarmCreateDialog from './FarmCreateDialog';
